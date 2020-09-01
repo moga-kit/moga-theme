@@ -55,27 +55,54 @@
         <div class="col">
             [{* article picture with zoom *}]
             [{block name="details_productmain_zoom"}]
-                [{if $oView->showZoomPics()}]
-                    [{* ToDo: This logical part should be ported into a core function. *}]
-                    [{if $oConfig->getConfigParam('sAltImageUrl') || $oConfig->getConfigParam('sSSLAltImageUrl')}]
-                        [{assign var="aPictureInfo" value=$oPictureProduct->getMasterZoomPictureUrl(1)|@getimagesize}]
-                    [{else}]
-                        [{assign var="sPictureName" value=$oPictureProduct->oxarticles__oxpic1->value}]
-                        [{assign var="aPictureInfo" value=$oConfig->getMasterPicturePath("product/1/`$sPictureName`")|@getimagesize}]
-                    [{/if}]
-
-                    <div class="picture details-picture">
-                        <a class="details-picture-link" href="[{$oPictureProduct->getMasterZoomPictureUrl(1)}]" id="zoom1"[{if $aPictureInfo}] data-width="[{$aPictureInfo.0}]" data-height="[{$aPictureInfo.1}]"[{/if}]>
-                            <img src="[{$oView->getActPicture()}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" itemprop="image" class="img-fluid">
-                        </a>
+                <div class="row g-1">
+                    [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
+                    <div data-target="#details-slider" data-slide-to="[{$iPicNr-1}]" class="col-6 d-none d-md-block">
+                        <img class="details-thumbs lazyload" data-src="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]" alt="morepic-[{$smarty.foreach.sMorePics.iteration}]">
                     </div>
-                [{else}]
-                    <div class="picture details-picture">
-                        <img src="[{$oView->getActPicture()}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" itemprop="image" class="img-fluid">
+                    [{/foreach}]
+                </div>
+                <div id="details-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
+                        [{assign var="sPictureName" value=$oPictureProduct->getPictureFieldValue("oxpic", $iPicNr)}]
+                        [{assign var="aPictureInfo" value=$oConfig->getMasterPicturePath("product/`$iPicNr`/`$sPictureName`")|@getimagesize}]
+                        <div class="carousel-item[{if $smarty.foreach.sMorePics.first}] active[{/if}]">
+                            <div class="embed-responsive embed-responsive-1by1">
+                                <div class="embed-responsive-item">
+                                    <img data-src="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="img-fluid lazyload">
+                                </div>
+                            </div>
+                        </div>
+                        [{/foreach}]
                     </div>
-                [{/if}]
+                    <a class="carousel-control-prev" href="#details-slider" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#details-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <div class="carousel-close" id="carousel-close">
+                        <i class="moga-times"></i>
+                    </div>
+                </div>
             [{/block}]
+            <script>
+                var elements = document.getElementsByClassName("details-thumbs");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].addEventListener('click', function () {
+                        var slider = document.getElementById('details-slider')
+                        slider.classList.add('fullsize');
+                    })
+                }
 
+                document.getElementById('carousel-close').addEventListener('click', function () {
+                    var slider = document.getElementById('details-slider')
+                    slider.classList.remove('fullsize');
+                });
+            </script>
         </div>
 
         <div class="col">
@@ -101,13 +128,13 @@
             [{block name="details_productmain_shortdesc"}]
                 [{oxhasrights ident="SHOWSHORTDESCRIPTION"}]
                     [{if $oDetailsProduct->oxarticles__oxshortdesc->rawValue}]
-                        <p class="details-shortdesc" id="productShortdesc" itemprop="description">[{$oDetailsProduct->oxarticles__oxshortdesc->rawValue}]</p>
+                        <p class="details-shortdesc" id="productShortdesc">[{$oDetailsProduct->oxarticles__oxshortdesc->rawValue}]</p>
                     [{/if}]
                 [{/oxhasrights}]
             [{/block}]
 
             [{* article main info block *}]
-            <div class="details-information[{if $oManufacturer->oxmanufacturers__oxicon->value}] hasBrand[{/if}]"" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <div class="details-information[{if $oManufacturer->oxmanufacturers__oxicon->value}] hasBrand[{/if}]">
 
                     [{* additional info *}]
                     [{oxhasrights ident="SHOWARTICLEPRICE"}]
@@ -209,9 +236,6 @@
                                             [{if $oView->isVatIncluded()}]
                                                 <span class="price-markup">*</span>
                                             [{/if}]
-                                            <span class="d-none">
-                                                <span itemprop="price">[{oxprice price=$oPrice currency=$currency}]</span>
-                                            </span>
                                         </span>
                                     </label>
                                 [{/if}]
@@ -252,25 +276,20 @@
                             <span class="stockFlag notOnStock">
                                 <span class="text-danger">●</span>
                                 [{if $oDetailsProduct->oxarticles__oxnostocktext->value}]
-                                    <link itemprop="availability" href="http://schema.org/OutOfStock"/>
                                     [{$oDetailsProduct->oxarticles__oxnostocktext->value}]
                                 [{elseif $oViewConf->getStockOffDefaultMessage()}]
-                                    <link itemprop="availability" href="http://schema.org/OutOfStock"/>
                                     [{oxmultilang ident="MESSAGE_NOT_ON_STOCK"}]
                                 [{/if}]
                                 [{if $oDetailsProduct->getDeliveryDate()}]
-                                    <link itemprop="availability" href="http://schema.org/PreOrder"/>
                                     [{oxmultilang ident="AVAILABLE_ON"}] [{$oDetailsProduct->getDeliveryDate()}]
                                 [{/if}]
                             </span>
                         [{elseif $oDetailsProduct->getStockStatus() == 1}]
-                            <link itemprop="availability" href="http://schema.org/InStock"/>
                             <span class="stockFlag lowStock">
                                 <span class="text-warning">●</span> [{oxmultilang ident="LOW_STOCK"}]
                             </span>
                         [{elseif $oDetailsProduct->getStockStatus() == 0}]
                             <span class="stockFlag">
-                                <link itemprop="availability" href="http://schema.org/InStock"/>
                                 <span class="text-success">●</span>
                                 [{if $oDetailsProduct->oxarticles__oxstocktext->value}]
                                     [{$oDetailsProduct->oxarticles__oxstocktext->value}]
@@ -304,7 +323,6 @@
                                 <img src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                             [{/if}]
                         </a>
-                        <span itemprop="brand" class="d-none">[{$oManufacturer->oxmanufacturers__oxtitle->value}]</span>
                     [{/block}]
                 </div>
             [{/if}]
