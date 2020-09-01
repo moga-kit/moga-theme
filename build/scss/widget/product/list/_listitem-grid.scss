@@ -1,0 +1,80 @@
+.grid-view {
+  .boxwrapper & {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
+
+  .card {
+    height: 100%;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+
+    picture {
+      height: 150px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media-breakpoint-up(md) {
+        height: 200px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 300px;
+      }
+    }
+
+    .product-img {
+      max-height: 150px;
+      max-width: 100%;
+
+      @include media-breakpoint-up(md) {
+        max-height: 200px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-height: 300px;
+      }
+    }
+
+    &-body {
+      padding: 5px 0;
+
+      @include media-breakpoint-up(md) {
+        top: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: #fff;
+        max-height: 0;
+        transition: all 150ms;
+        opacity: 0;
+        overflow: hidden;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &:hover {
+        .card-body {
+          max-height: none;
+          z-index: 10;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-title {
+      margin: 0;
+
+      @include media-breakpoint-up(md) {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}

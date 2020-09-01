@@ -1,0 +1,48 @@
+@function url-friendly-colour($colour) {
+  @return '%23' + str-slice('#{$colour}', 2, -1)
+}
+
+body {
+  font-size: $font-size-sm;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-lg;
+  }
+}
+
+#wrapper {
+  background-color: $white;
+
+  &:after {
+    content: '';
+    display: table;
+  }
+}
+
+.products {
+  padding: $row-padding 0;
+  text-align: center;
+
+  .page-header {
+    margin-bottom: $row-padding/2;
+  }
+}
+
+.lazyload {
+  opacity: 0;
+}
+
+.lazyloading {
+  opacity: 1;
+  transition: opacity 300ms;
+  background: #f7f7f7 url(../../img/loading.svg) no-repeat center;
+  background-size: 50px 50px;
+}
+
+.page-header {
+
+}

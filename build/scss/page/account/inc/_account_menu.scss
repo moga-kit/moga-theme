@@ -1,0 +1,25 @@
+.account-menu {
+  .list-group {
+    padding-bottom: 15px;
+
+    &-item {
+      &.active {
+        color: $white;
+        &:hover, &:focus {
+          color: $white;
+          background-color: $primary;
+        }
+      }
+    }
+
+    &-link {
+      color:inherit;
+      display: block;
+    }
+  }
+}
+
+.cl-account .card {
+  height: auto;
+  margin-bottom: $grid-gutter-width;
+}

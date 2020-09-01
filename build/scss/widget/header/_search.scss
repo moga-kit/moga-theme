@@ -1,0 +1,16 @@
+.search.search {
+  @include media-breakpoint-up(lg) {
+    display: block;
+    order: 1;
+    max-width: 250px;
+    flex: 0 0 250px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 300px;
+    flex: 0 0 300px;
+  }
+}
+
+
+

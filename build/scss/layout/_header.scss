@@ -1,0 +1,91 @@
+//
+// Header
+// --------------------------------------------------
+// Import header modules
+@import '../widget/header/betanote';
+@import '../widget/header/categorylist';
+@import '../widget/header/cookienote';
+@import '../widget/header/currencies';
+@import '../widget/header/languages';
+@import '../widget/header/loginbox';
+@import '../widget/header/menubasket';
+@import '../widget/header/minibasket';
+@import '../widget/header/search';
+@import '../widget/header/servicebox';
+@import '../widget/header/servicemenu';
+
+.header {
+  background-color: $ox-container-header-background-color;
+  padding: 5px 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 10px 0;
+  }
+
+  .logo-link {
+    max-width: 100px;
+    flex: 0 0 100px;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      order: 2;
+    }
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 37px;
+    fill: $primary;
+  }
+
+  .menu-dropdowns,
+  .icon-wrapper {
+    margin-left: auto;
+    max-width: 96px;
+    flex: 0 0 96px;
+    padding: 0;
+    text-align: right;
+
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      max-width: 250px;
+      flex: 0 0 250px;
+      order: 3;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 300px;
+      flex: 0 0 300px;
+    }
+  }
+
+  .icon-wrapper {
+    text-align: left;
+    margin: 0 auto 0 0;
+  }
+
+  .btn {
+    padding: 4px 8px;
+
+    .count {
+      position: absolute;
+      font-size: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: 15px;
+    }
+  }
+
+  i {
+    font-size: 1.4rem;
+    color: $primary;
+  }
+
+  .btn-primary i {
+    color: #fff;
+  }
+}
