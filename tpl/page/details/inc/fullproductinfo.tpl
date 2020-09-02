@@ -14,5 +14,5 @@
         [{/if}]
     </div>
 
-    [{include file="page/details/inc/related_products.tpl"}]
+    [{include file="page/details/inc/related_products_tabs.tpl"}]
 </div>

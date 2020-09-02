@@ -29,7 +29,7 @@
         left: 0;
         height: 100vh;
         width: 100vw;
-        z-index: 100;
+        z-index: 2100;
 
         .carousel-close {
           display: block;
@@ -38,9 +38,15 @@
           right: 0;
           z-index: 3310;
           font-size: 40px;
-          padding: 10px;
+          padding: 10px 20px;
           color: #fff;
           cursor: pointer;
+          background: rgba(0, 0, 0, 0.5);
+          transition: background-color 150ms;
+
+          &:hover {
+            background: #000;
+          }
         }
       }
     }
@@ -56,7 +62,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
+      cursor: zoom-in;
       transition: opacity 150ms;
       position: relative;
 
