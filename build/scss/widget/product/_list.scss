@@ -1,7 +1,7 @@
 @import 'list/listitem-grid';
 @import 'list/listitem-line';
 
-
 .article-list {
-  padding: 0 0 $row-padding 0;
+  padding: $row-padding 0;
+  background: #f1f1f1;
 }

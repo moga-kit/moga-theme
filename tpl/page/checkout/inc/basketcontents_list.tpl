@@ -14,7 +14,7 @@
                         [{block name="checkout_basketcontents_basketitem_image"}]
                             [{* product image *}]
                             [{if $editable}]<a href="[{$basketitem->getLink()}]">[{/if}]
-                            <img src="[{$oViewConf->getImageUrl('spinner.gif')}]" data-src="[{$basketitem->getIconUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                            <img class="img-fluid lazyload" data-src="[{$basketitem->getIconUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
                             [{if $editable}]</a>[{/if}]
                         [{/block}]
                     </div>

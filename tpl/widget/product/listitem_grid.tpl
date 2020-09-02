@@ -38,7 +38,7 @@
             </div>
         [{/block}]
 
-        <div class="price">
+        <div class="price[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
             [{block name="widget_product_listitem_grid_price"}]
                 [{oxhasrights ident="SHOWARTICLEPRICE"}]
                     [{assign var="oUnitPrice" value=$product->getUnitPrice()}]

@@ -93,36 +93,30 @@
                 [{oxscript add="var basketModal = new bootstrap.Modal(document.getElementById('basketModal')); basketModal.show()"}]
             [{else}]
                 [{block name="dd_layout_page_header_icon_menu_minibasket_title"}]
-                    <p class="title">
+                    <li class="title">
                         <strong>[{$oxcmp_basket->getItemsCount()}] [{oxmultilang ident="ITEMS_IN_BASKET"}]</strong>
-                    </p>
+                    </li>
                 [{/block}]
 
-                <div id="[{$_prefix}]basketFlyout" class="basketFlyout[{if $blScrollable}] scrollable[{/if}]">
                     [{block name="dd_layout_page_header_icon_menu_minibasket_table"}]
 
-                    <div class="minibasket">
                         [{foreach from=$oxcmp_basket->getContents() name=miniBasketList item=_product}]
                             [{block name="widget_minibasket_product"}]
                                 [{assign var="minibasketItemTitle" value=$_product->getTitle()}]
-                                <div class="row minibasket-item-row">
-                                    <div class="col-4 minibasket-item-col text-center">
-                                        <span class="badge">[{$_product->getAmount()}]</span>
-                                        <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
-                                            <img class="minibasket-img" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]"/>
-                                        </a>
-                                    </div>
-                                    <div class="col-4 minibasket-item-col">
-                                        <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">[{$minibasketItemTitle|strip_tags}]</a>
-
-                                    </div>
-                                    <div class="col-4 minibasket-item-col text-right">
-                                        <span class="price">[{oxprice price=$_product->getPrice() currency=$currency}]</span>
-                                    </div>
-                                </div>
+                                <li class="my-1">
+                                    <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
+                                        <span>
+                                            <img class="minibasket-img lazyload img-fluid" data-src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]">
+                                        </span>
+                                        <span>
+                                            [{$_product->getAmount()}] x [{$minibasketItemTitle|strip_tags}]<br>
+                                            [{oxprice price=$_product->getPrice() currency=$currency}]
+                                        </span>
+                                    </a>
+                                </li>
                             [{/block}]
                         [{/foreach}]
-                        <div class="row minibasket-total-row">
+                        <li class="row minibasket-total-row">
                             <div class="col-8 minibasket-total-col">
                                 <strong>[{oxmultilang ident="TOTAL"}]</strong>
                             </div>
@@ -135,24 +129,22 @@
                                     [{/if}]
                                 </strong>
                             </div>
-                        </div>
-                    </div>
+                        </li>
 
                             [{block name="widget_minibasket_total"}][{/block}]
                     [{/block}]
-                </div>
 
                 [{include file="widget/minibasket/countdown.tpl"}]
 
                 [{block name="dd_layout_page_header_icon_menu_minibasket_functions"}]
-                    <p class="functions clear text-right">
+                    <li class="functions clear text-right">
                         [{if $oxcmp_user}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=payment"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{else}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{/if}]
                         <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
-                    </p>
+                    </li>
                 [{/block}]
             [{/if}]
         [{/oxhasrights}]

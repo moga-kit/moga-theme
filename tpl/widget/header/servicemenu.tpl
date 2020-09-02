@@ -9,7 +9,7 @@
 [{/if}]
 [{math equation="a+b+c+d" a=$oView->getCompareItemsCnt() b=$noticeListCount c=$wishListCount d=$recommListCount assign="notificationsCounter"}]
 
-<div class="btn-group service-menu [{if !$oxcmp_user}]showLogin[{/if}]">
+<div class="dropdown service-menu [{if !$oxcmp_user}]showLogin[{/if}]">
     <button type="button" aria-label="Usercenter" class="btn dropdown-toggle" data-toggle="dropdown" data-href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account"}]">
         [{block name="dd_layout_page_header_icon_menu_account_button"}]
             <span class="d-none d-lg-inline-block">
