@@ -12,6 +12,16 @@
     text-decoration: none;
     border: none;
 
+    @include media-breakpoint-up(md) {
+      transition: all 150ms;
+
+      &:hover {
+        z-index: 10;
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+
     picture {
       height: 150px;
       text-align: center;
