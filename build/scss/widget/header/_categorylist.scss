@@ -1,8 +1,3 @@
-html,
-body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
-
 @include media-breakpoint-down(md) {
   .navbar-collapse {
     display: block !important;
