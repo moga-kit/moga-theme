@@ -106,7 +106,7 @@
                                 <li class="my-1">
                                     <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
                                         <span>
-                                            <img class="minibasket-img lazyload img-fluid" data-src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]">
+                                            <img loading="lazy" class="minibasket-img img-fluid" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]">
                                         </span>
                                         <span>
                                             [{$_product->getAmount()}] x [{$minibasketItemTitle|strip_tags}]<br>

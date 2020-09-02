@@ -13,7 +13,7 @@
                 [{/if}]
             </h3>
             <div class="featured icon">
-                <img class="lazyload" data-src="[{$actCategory->getIconUrl()}]" alt="[{$actCategory->getTitle()}]">
+                <img loading="lazy" src="[{$actCategory->getIconUrl()}]" alt="[{$actCategory->getTitle()}]">
             </div>
         </div>
         [{/if}]
@@ -29,35 +29,34 @@
             [{/if}]
             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                 <picture class="list-img">
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'webp')}]" media="(max-width: 375px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'jpg')}]" media="(max-width: 375px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'webp')}]" media="(max-width: 375px)">
 
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'webp')}]" media="(max-width: 767px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'jpg')}]" media="(max-width: 767px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'webp')}]" media="(max-width: 767px)">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'jpg')}]" media="(max-width: 767px)">
 
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'webp')}]" media="(max-width: 991px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'jpg')}]" media="(max-width: 991px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'webp')}]" media="(max-width: 991px)">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'jpg')}]" media="(max-width: 991px)">
 
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'webp')}]" media="(max-width: 1199px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'webp')}]" media="(max-width: 1199px)">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
 
                     [{if $headerImageWidth == 'w100c100'}]
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]" media="(max-width: 1399px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]" media="(max-width: 1399px)">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
 
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'webp')}]" media="(max-width: 1599px)">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'webp')}]" media="(max-width: 1599px)">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
 
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'webp')}]">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'jpg')}]">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'webp')}]">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'jpg')}]">
                         [{else}]
-                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]">
-                    <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]">
+                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]">
+                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]">
                     [{/if}]
-                    <img data-src="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'webp')}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="lazyload w-100 img-fluid">
+                    <img src="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'jpg')}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
                 </picture>
             [{else}]
-                <img data-src="[{$actCategory->getThumbUrl()}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid lazyload">
+                <img src="[{$actCategory->getThumbUrl()}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
             [{/if}]
 
             [{if $headerImageWidth == 'container'}]
@@ -116,7 +115,7 @@
                                     <div class="card-body">
                                         [{if $iconUrl}]
                                         <a href="[{$category->getLink()}]">
-                                            <img data-src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-fluid subcat-icon lazyload">
+                                            <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-fluid subcat-icon">
                                         </a>
                                         [{else}]
                                         <a href="[{$category->getLink()}]" class="btn btn-block btn-info">[{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]</a>

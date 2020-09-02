@@ -16,7 +16,7 @@
                                 <i class="moga-bars"></i>
                             </button>
                         [{/block}]
-                        <button class="btn search-toggler" data-toggle="collapse" data-target="#searchCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn search-toggler" data-toggle="collapse" data-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]" role="button" aria-expanded="false" aria-controls="collapseExample">
                             <i class="moga-search"></i>
                         </button>
                     </div>
@@ -28,12 +28,11 @@
                             [{if $slogoImg}]
                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                 <picture>
-                                    <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'webp')}]">
-                                    <source type="image/png" data-srcset="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]">
-                                    <img data-src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="lazyload logo-img">
+                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'webp')}]">
+                                    <img loading="lazy" src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
                                 </picture>
                                 [{else}]
-                                    <img src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="lazyload logo-img">
+                                    <img loading="lazy" src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
                                 [{/if}]
                             [{else}]
                                 <svg version="1.1" class="logo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

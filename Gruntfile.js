@@ -70,9 +70,10 @@ module.exports = function (grunt) {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
                         //'<%= project.dev %>node_modules/jquery/dist/jquery.min.js',
-                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                        //'<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                        '<%= project.dev %>build/js/bootstrap.bundle.js',
                         //'<%= project.dev %>node_modules/slick-carousel/slick/slick.js',
-                        '<%= project.dev %>node_modules/lazysizes/lazysizes.min.js',
+                        //'<%= project.dev %>node_modules/lazysizes/lazysizes.min.js',
                         //'<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [

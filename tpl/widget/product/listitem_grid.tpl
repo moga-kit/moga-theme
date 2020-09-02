@@ -20,14 +20,13 @@
     [{block name="widget_product_listitem_grid_gridpicture"}]
             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
             <picture>
-                <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" media="(max-width: 375px)">
-                <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" media="(max-width: 375px)">
-                <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'webp', true)}]">
-                <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
-                <img data-src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="lazyload product-img">
+                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" media="(max-width: 375px)">
+                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'webp', true)}]">
+                <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
+                <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
             </picture>
             [{else}]
-                <img data-src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="lazyload product-img">
+                <img loading="lazy" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
             [{/if}]
     [{/block}]
 

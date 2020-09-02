@@ -59,12 +59,11 @@
                         <a id="[{$testid}]" href="[{$_productLink}]" title="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]">
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                             <picture>
-                                <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 190, '', 'webp')}]">
-                                <source type="image/jpeg" data-srcset="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 190, '', 'jpg')}]">
-                                <img data-src="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 190, '', 'jpeg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="lazyload img-fluid">
+                                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 190, '', 'webp')}]">
+                                <img src="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 190, '', 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="img-fluid">
                             </picture>
                             [{else}]
-                                <img data-src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="lazyload img-fluid">
+                                <img src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="img-fluid">
                             [{/if}]
                         </a>
                     [{/block}]

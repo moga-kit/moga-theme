@@ -17,12 +17,11 @@
                     <a href="[{$oManufacturer->getLink()}]" title="[{oxmultilang ident="VIEW_ALL_PRODUCTS"}]" class="manufacturer-item">
                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                         <picture>
-                            <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'webp')}]">
-                            <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'jpg')}]">
-                            <img data-src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'webp')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="img-fluid lazyload">
+                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'webp')}]">
+                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="img-fluid">
                         </picture>
                         [{else}]
-                            <img  class="img-fluid lazyload" data-src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
+                            <img loading="lazy" class="img-fluid" src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                         [{/if}]
                     </a>
                 </div>

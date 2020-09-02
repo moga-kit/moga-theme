@@ -32,35 +32,35 @@
                                                 [{/if}]
                                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                                     <picture>
-                                                        <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'webp')}]" media="(max-width: 375px)">
-                                                        <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'jpg')}]" media="(max-width: 375px)">
+                                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'webp')}]" media="(max-width: 375px)">
+                                                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'jpg')}]" media="(max-width: 375px)">
 
-                                                        <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'webp')}]" media="(max-width: 767px)">
-                                                        <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'jpg')}]" media="(max-width: 767px)">
+                                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'webp')}]" media="(max-width: 767px)">
+                                                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'jpg')}]" media="(max-width: 767px)">
 
-                                                        <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 970, 370, 'webp')}]" media="(max-width: 991px)">
-                                                        <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 970, 370, 'jpg')}]" media="(max-width: 991px)">
+                                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 970, 370, 'webp')}]" media="(max-width: 991px)">
+                                                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 970, 370, 'jpg')}]" media="(max-width: 991px)">
 
-                                                        <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1170, 400, 'webp')}]" media="(max-width: 1199px)">
-                                                        <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
+                                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1170, 400, 'webp')}]" media="(max-width: 1199px)">
+                                                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
 
                                                         [{if $promosliderWidth == 'w100c100'}]
-                                                            <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]" media="(max-width: 1399px)">
-                                                            <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]" media="(max-width: 1399px)">
+                                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
 
-                                                            <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'webp')}]" media="(max-width: 1599px)">
-                                                            <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'webp')}]" media="(max-width: 1599px)">
+                                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
 
-                                                            <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'webp')}]">
-                                                            <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'jpg')}]">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'webp')}]">
+                                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'jpg')}]">
                                                         [{else}]
-                                                            <source type="image/webp" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]">
-                                                            <source type="image/jpg" data-srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]">
+                                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]">
                                                         [{/if}]
-                                                        <img data-src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 120, 'webp')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="lazyload promoslider-img">
+                                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 120, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="promoslider-img">
                                                     </picture>
                                                 [{else}]
-                                                    <img src="[{$sBannerPictureUrl}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="lazyload">
+                                                    <img loading="lazy" src="[{$sBannerPictureUrl}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="promoslider-img">
                                                 [{/if}]
 
                                                 [{if $sBannerLink}]
