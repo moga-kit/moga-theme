@@ -27,26 +27,24 @@
             [{/if}]
 
             <form name="tobasket[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
-                <div class="hidden">
-                    [{$oViewConf->getNavFormParams()}]
-                    [{$oViewConf->getHiddenSid()}]
-                    <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
-                    [{if $recommid}]
-                        <input type="hidden" name="recommid" value="[{$recommid}]">
-                    [{/if}]
-                    [{if $blShowToBasket}]
-                        [{oxhasrights ident="TOBASKET"}]
-                            <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
-                            <input type="hidden" name="fnc" value="tobasket">
-                            <input type="hidden" name="aid" value="[{$_product->oxarticles__oxid->value}]">
-                            <input type="hidden" name="anid" value="[{$_product->oxarticles__oxnid->value}]">
-                            <input type="hidden" name="am" value="1">
-                        [{/oxhasrights}]
-                    [{else}]
-                        <input type="hidden" name="cl" value="details">
+                [{$oViewConf->getNavFormParams()}]
+                [{$oViewConf->getHiddenSid()}]
+                <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
+                [{if $recommid}]
+                    <input type="hidden" name="recommid" value="[{$recommid}]">
+                [{/if}]
+                [{if $blShowToBasket}]
+                    [{oxhasrights ident="TOBASKET"}]
+                        <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
+                        <input type="hidden" name="fnc" value="tobasket">
+                        <input type="hidden" name="aid" value="[{$_product->oxarticles__oxid->value}]">
                         <input type="hidden" name="anid" value="[{$_product->oxarticles__oxnid->value}]">
-                    [{/if}]
-                </div>
+                        <input type="hidden" name="am" value="1">
+                    [{/oxhasrights}]
+                [{else}]
+                    <input type="hidden" name="cl" value="details">
+                    <input type="hidden" name="anid" value="[{$_product->oxarticles__oxnid->value}]">
+                [{/if}]
 
                 <div class="col-12 col-md-6 col-lg-[{$iColIdent}] productBox">
                     <div class="picture text-center">

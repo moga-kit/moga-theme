@@ -20,37 +20,35 @@
     [{oxscript add="$('button.removeButton').oxListRemoveButton();"}]
 
     <form name="tobasket.[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]  class="js-oxProductForm line-view-item">
-        <div class="hidden">
-            [{$oViewConf->getNavFormParams()}]
-            [{$oViewConf->getHiddenSid()}]
-            <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
-            [{if $recommid}]
-                <input type="hidden" name="recommid" value="[{$recommid}]">
-            [{/if}]
-            [{if $blShowToBasket}]
-                [{oxhasrights ident="TOBASKET"}]
-                    <input type="hidden" name="cl" value="[{$oViewConf->getTopActiveClassName()}]">
-                    [{if $owishid}]
-                        <input type="hidden" name="owishid" value="[{$owishid}]">
-                    [{/if}]
-                    [{if $toBasketFunction}]
-                        <input type="hidden" name="fnc" value="[{$toBasketFunction}]">
-                    [{else}]
-                        <input type="hidden" name="fnc" value="tobasket">
-                    [{/if}]
-                    <input type="hidden" name="aid" value="[{$product->oxarticles__oxid->value}]">
-                    [{if $altproduct}]
-                        <input type="hidden" name="anid" value="[{$altproduct}]">
-                    [{else}]
-                        <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
-                    [{/if}]
-                    <input id="am_[{$testid}]" type="hidden" name="am" value="1">
-                [{/oxhasrights}]
-            [{else}]
-                <input type="hidden" name="cl" value="details">
-                <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
-            [{/if}]
-        </div>
+        [{$oViewConf->getNavFormParams()}]
+        [{$oViewConf->getHiddenSid()}]
+        <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
+        [{if $recommid}]
+            <input type="hidden" name="recommid" value="[{$recommid}]">
+        [{/if}]
+        [{if $blShowToBasket}]
+            [{oxhasrights ident="TOBASKET"}]
+                <input type="hidden" name="cl" value="[{$oViewConf->getTopActiveClassName()}]">
+                [{if $owishid}]
+                    <input type="hidden" name="owishid" value="[{$owishid}]">
+                [{/if}]
+                [{if $toBasketFunction}]
+                    <input type="hidden" name="fnc" value="[{$toBasketFunction}]">
+                [{else}]
+                    <input type="hidden" name="fnc" value="tobasket">
+                [{/if}]
+                <input type="hidden" name="aid" value="[{$product->oxarticles__oxid->value}]">
+                [{if $altproduct}]
+                    <input type="hidden" name="anid" value="[{$altproduct}]">
+                [{else}]
+                    <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                [{/if}]
+                <input id="am_[{$testid}]" type="hidden" name="am" value="1">
+            [{/oxhasrights}]
+        [{else}]
+            <input type="hidden" name="cl" value="details">
+            <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+        [{/if}]
 
         <div class="row">
             <div class="col-12 col-md-2">
@@ -155,7 +153,7 @@
                     [{/block}]
 
                     [{if $product->loadAmountPriceInfo()}]
-                        <div class="form-group">
+                        <div class="mb-3">
                             [{include file="page/details/inc/priceinfo.tpl" oDetailsProduct=$product}]
                         </div>
                     [{/if}]
@@ -183,7 +181,7 @@
                         [{if $blShowToBasket}]
                             [{oxhasrights ident="TOBASKET"}]
 
-                                <div class="form-group">
+                                <div class="mb-3">
                                     <div class="input-group">
                                         <input id="amountToBasket_[{$testid}]" type="text" name="am" value="1" size="3" autocomplete="off" class="form-control amount">
                                         <button id="toBasket_[{$testid}]" type="submit" aria-label="[{oxmultilang ident="TO_CART"}]" class="btn btn-primary hasTooltip" title="[{oxmultilang ident="TO_CART"}]" data-container="body">

@@ -26,14 +26,12 @@
         [{block name="user_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             <div class="addressCollumns">
-                <div class="hidden">
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="fnc" value="changeuser_testvalues">
                     <input type="hidden" name="cl" value="account_user">
                     <input type="hidden" name="CustomError" value='user'>
                     <input type="hidden" name="blshowshipaddress" value="1">
-                </div>
 
                 [{* Rechnungsadresse *}]
                 <div class="card">
@@ -90,7 +88,7 @@
                     [{oxscript add="$('#showShipAddress').change( function() { $('#shippingAddress').toggle($(this).is(':not(:checked)')); });"}]
                 [{/block}]
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <div class="col-lg-12">
                     <button id="accUserSaveTop" class="btn btn-primary" name="userform" type="submit">[{oxmultilang ident="SAVE"}]</button>
                 </div>

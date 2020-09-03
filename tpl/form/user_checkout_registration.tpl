@@ -27,7 +27,6 @@
 
     <form class="form-horizontal js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" role="form" novalidate="novalidate">
         [{block name="user_checkout_registration_form"}]
-            <div class="hidden">
                 [{$oViewConf->getHiddenSid()}]
                 [{$oViewConf->getNavFormParams()}]
                 <input type="hidden" name="cl" value="user">
@@ -40,7 +39,6 @@
                 [{/if}]
                 <input type="hidden" id="reloadAddress" name="reloadaddress" value="">
                 <input type="hidden" name="blshowshipaddress" value="1">
-            </div>
 
             [{block name="user_checkout_registration_next_step_top"}]
                 <div class="card bg-light cart-buttons">
@@ -73,7 +71,7 @@
                         <h3 class="card-title">[{oxmultilang ident="SHIPPING_ADDRESS"}]</h3>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="mb-3">
                             <div class="col-lg-9 offset-lg-3">
                                 <div class="checkbox">
                                     <label>

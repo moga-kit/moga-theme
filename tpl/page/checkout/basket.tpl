@@ -31,11 +31,9 @@
                         [{block name="checkout_basket_backtoshop_top"}]
                             [{if $oView->showBackToShop()}]
                                 <form action="[{$oViewConf->getSslSelfLink()}]" method="post" class="float-left">
-                                    <div class="hidden">
                                         [{$oViewConf->getHiddenSid()}]
                                         <input type="hidden" name="cl" value="basket">
                                         <input type="hidden" name="fnc" value="backtoshop">
-                                    </div>
                                     <button type="submit" class="btn btn-outline-primary submitButton largeButton float-left">
                                         <i class="moga-left"></i> [{oxmultilang ident="CONTINUE_SHOPPING"}]
                                     </button>
@@ -51,10 +49,8 @@
                         [{if !$oView->isLowOrderPrice()}]
                             [{block name="basket_btn_next_top"}]
                                 <form action="[{$oViewConf->getSslSelfLink()}]" method="post" class="float-right">
-                                    <div class="hidden">
                                         [{$oViewConf->getHiddenSid()}]
                                         <input type="hidden" name="cl" value="user">
-                                    </div>
                                     <button type="submit" class="btn btn-primary submitButton largeButton nextStep float-right">
                                         [{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}] <i class="moga-right"></i>
                                     </button>
@@ -101,10 +97,8 @@
                         [{if !$oView->isLowOrderPrice()}]
                             [{block name="basket_btn_next_bottom"}]
                                 <form action="[{$oViewConf->getSslSelfLink()}]" method="post" class="float-right">
-                                    <div class="hidden">
                                         [{$oViewConf->getHiddenSid()}]
                                         <input type="hidden" name="cl" value="user">
-                                    </div>
                                     <button type="submit" class="btn btn-primary submitButton largeButton nextStep pull-right">
                                         [{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}] <i class="moga-right"></i>
                                     </button>

@@ -3,7 +3,7 @@
 [{if $oSelections}]
     <div class="mb-3 dropDown">
         [{if !$blHideLabel}]
-            <label class="control-label">[{$oSelectionList->getLabel()}]</label>
+            <label class="form-label">[{$oSelectionList->getLabel()}]</label>
         [{/if}]
         <div class="dropdown">
             <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">

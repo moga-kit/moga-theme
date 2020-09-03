@@ -9,22 +9,20 @@
 <form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" novalidate="novalidate">
     <div class="row">
         <div class="col-md-6">
-            <div class="hidden">
                 [{$oViewConf->getHiddenSid()}]
                 [{$oViewConf->getNavFormParams()}]
                 <input type="hidden" name="fnc" value="forgotpassword">
                 <input type="hidden" name="cl" value="forgotpwd">
                 <input type="hidden" name="actcontrol" value="forgotpwd">
-            </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="req">[{oxmultilang ident="YOUR_EMAIL_ADDRESS"}]</label>
 
                 <input id="forgotPasswordUserLoginName[{$idPrefix}]" type="email" name="lgn_usr"
                        value="[{$oView->getActiveUsername()}]" class="form-control" required="required">
                 <p class="help-block"></p>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <button class="btn btn-primary submitButton" type="submit">[{oxmultilang ident="REQUEST_PASSWORD"}]</button>
             </div>
         </div>

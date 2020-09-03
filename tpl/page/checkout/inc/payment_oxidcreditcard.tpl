@@ -6,10 +6,10 @@
     </dt>
     <dd class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
 
-        <div class="form-group">
-            <label class="req control-label col-lg-3">[{oxmultilang ident="CREDITCARD"}]</label>
+        <div class="mb-3">
+            <label class="req form-label col-lg-3">[{oxmultilang ident="CREDITCARD"}]</label>
             <div class="col-lg-9">
-                <select name="dynvalue[kktype]" class="form-control" required="required">
+                <select name="dynvalue[kktype]" class="form-select" required="required">
                     <option value="mcd" [{if ($dynvalue.kktype == "mcd" || !$dynvalue.kktype)}]selected[{/if}]>[{oxmultilang ident="CARD_MASTERCARD"}]</option>
                     <option value="vis" [{if $dynvalue.kktype == "vis"}]selected[{/if}]>[{oxmultilang ident="CARD_VISA"}]</option>
                     <!--
@@ -25,25 +25,25 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="req control-label col-lg-3">[{oxmultilang ident="NUMBER"}]</label>
+        <div class="mb-3">
+            <label class="req form-label col-lg-3">[{oxmultilang ident="NUMBER"}]</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control js-oxValidate js-oxValidate_notEmpty" size="20" maxlength="64" name="dynvalue[kknumber]" value="[{$dynvalue.kknumber}]" required="required">
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="req control-label col-lg-3">[{oxmultilang ident="BANK_ACCOUNT_HOLDER"}]</label>
+        <div class="mb-3">
+            <label class="req form-label col-lg-3">[{oxmultilang ident="BANK_ACCOUNT_HOLDER"}]</label>
             <div class="col-lg-9">
                 <input type="text" size="20" class="form-control js-oxValidate js-oxValidate_notEmpty" maxlength="64" name="dynvalue[kkname]" value="[{if $dynvalue.kkname}][{$dynvalue.kkname}][{else}][{$oxcmp_user->oxuser__oxfname->value}] [{$oxcmp_user->oxuser__oxlname->value}][{/if}]" required="required">
                 <span class="help-block">[{oxmultilang ident="IF_DIFFERENT_FROM_BILLING_ADDRESS"}]</span>
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="req control-label col-12 col-lg-3">[{oxmultilang ident="VALID_UNTIL"}]</label>
+        <div class="mb-3">
+            <label class="req form-label col-12 col-lg-3">[{oxmultilang ident="VALID_UNTIL"}]</label>
             <div class="col-6 col-lg-2">
-                <select name="dynvalue[kkmonth]" class="form-control" required="required">
+                <select name="dynvalue[kkmonth]" class="form-select" required="required">
                     <option [{if $dynvalue.kkmonth == "01"}]selected[{/if}]>01</option>
                     <option [{if $dynvalue.kkmonth == "02"}]selected[{/if}]>02</option>
                     <option [{if $dynvalue.kkmonth == "03"}]selected[{/if}]>03</option>
@@ -59,7 +59,7 @@
                 </select>
             </div>
             <div class="col-6 col-lg-2">
-                <select name="dynvalue[kkyear]" class="form-control">
+                <select name="dynvalue[kkyear]" class="form-select">
                     [{foreach from=$oView->getCreditYears() item=year}]
                         <option [{if $dynvalue.kkyear == $year}]selected[{/if}]>[{$year}]</option>
                     [{/foreach}]
@@ -68,8 +68,8 @@
             <div class="col-sm-3"></div>
         </div>
 
-        <div class="form-group">
-            <label class="req control-label col-lg-3">[{oxmultilang ident="CARD_SECURITY_CODE"}]</label>
+        <div class="mb-3">
+            <label class="req form-label col-lg-3">[{oxmultilang ident="CARD_SECURITY_CODE"}]</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control js-oxValidate js-oxValidate_notEmpty" size="20" maxlength="64" name="dynvalue[kkpruef]" value="[{$dynvalue.kkpruef}]" required="required">
                 <span class="help-block">[{oxmultilang ident="CARD_SECURITY_CODE_DESCRIPTION"}]</span>

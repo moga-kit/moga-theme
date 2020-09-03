@@ -1,6 +1,11 @@
 .details {
   .carousel {
     text-align: center;
+    margin: 0 (-$grid-gutter-width);
+
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
 
     img {
       max-width: 100%;
@@ -16,7 +21,6 @@
       justify-content: center;
       display: flex;
     }
-
 
     @include media-breakpoint-up(md) {
       display: none;
@@ -52,12 +56,17 @@
     }
   }
 
-  .details-thumb-img {
+  &-title {
+    margin: $hr-margin-y 0 0;
+    font-size: 18px;
+  }
+
+  &-thumb-img {
     display: none;
   }
 
   @include media-breakpoint-up(md) {
-    .details-thumb-img {
+    &-thumb-img {
       display: block;
       width: 100%;
       height: 100%;

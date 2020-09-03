@@ -11,7 +11,6 @@
         <div class="card-header">[{oxmultilang ident="LOGIN"}]</div>
         <div class="card-body">
             <form name="login" class="js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate="novalidate">
-                <div class="hidden">
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="fnc" value="login_noredirect">
@@ -25,22 +24,21 @@
                         [{assign var="product" value=$oView->getProduct()}]
                         <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
                     [{/if}]
-                </div>
 
                 <p>[{oxmultilang ident="LOGIN_ALREADY_CUSTOMER"}]</p>
 
-                <div class="form-group[{if $aErrors}] oxInValid[{/if}]">
+                <div class="mb-3[{if $aErrors}] oxInValid[{/if}]">
                     <label class="req">[{oxmultilang ident="EMAIL"}]</label>
                         <input id="loginUser" class="js-oxValidate js-oxValidate_notEmpty form-control" type="text" name="lgn_usr" role="loginUser" required="required">
                         <div class="help-block"></div>
                 </div>
-                <div class="form-group[{if $aErrors}] oxInValid[{/if}]">
+                <div class="mb-3[{if $aErrors}] oxInValid[{/if}]">
                     <label class="req">[{oxmultilang ident="PASSWORD"}]</label>
                         <input id="loginPwd" class="js-oxValidate js-oxValidate_notEmpty  form-control" type="password" name="lgn_pwd" role="loginPwd" required="required">
                         <div class="help-block"></div>
                 </div>
                 [{if $oView->showRememberMe()}]
-                    <div class="form-group">
+                    <div class="mb-3">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" class="checkbox" name="lgn_cook" value="1"> [{oxmultilang ident="KEEP_LOGGED_IN"}]
@@ -49,11 +47,11 @@
                     </div>
                 [{/if}]
 
-                <div class="form-group">
+                <div class="mb-3">
                     <button id="loginButton" type="submit" class="btn btn-primary" role="loginButton">[{oxmultilang ident="LOGIN"}]</button>
                 </div>
 
-                <div class="form-group">
+                <div class="mb-3">
                     <a id="forgotPasswordLink" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=forgotpwd"}]" class="textLink">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
                 </div>
             </form>

@@ -17,13 +17,11 @@
 								<h3 class="card-title">[{oxmultilang ident="PURCHASE_WITHOUT_REGISTRATION"}]</h3>
 							</div>
 							<div class="card-body">
-								<div class="hidden">
 									[{$oViewConf->getHiddenSid()}]
 									[{$oViewConf->getNavFormParams()}]
 									<input type="hidden" name="cl" value="user">
 									<input type="hidden" name="fnc" value="">
 									<input type="hidden" name="option" value="1">
-								</div>
 								[{block name="checkout_options_noreg_text"}]
 									<p>[{oxmultilang ident="DO_NOT_WANT_CREATE_ACCOUNT"}]</p>
 									[{if $oView->isDownloadableProductWarning()}]
@@ -47,13 +45,11 @@
 							<h3 class="card-title">[{oxmultilang ident="OPEN_ACCOUNT"}]</h3>
 						</div>
 						<div class="card-body">
-							<div class="hidden">
 								[{$oViewConf->getHiddenSid()}]
 								[{$oViewConf->getNavFormParams()}]
 								<input type="hidden" name="cl" value="user">
 								<input type="hidden" name="fnc" value="">
 								<input type="hidden" name="option" value="3">
-							</div>
 
 							[{block name="checkout_options_reg_text"}]
 								[{oxifcontent ident="oxregistrationdescription" object="oCont"}]

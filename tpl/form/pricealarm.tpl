@@ -13,15 +13,15 @@
         [{/if}]
         <input type="hidden" name="fnc" value="addme">
     </div>
-    <div class="form-group">
-        <label class="req control-label col-lg-3">[{oxmultilang ident="YOUR_PRICE"}] ([{$currency->sign}]):</label>
+    <div class="mb-3">
+        <label class="req form-label col-lg-3">[{oxmultilang ident="YOUR_PRICE"}] ([{$currency->sign}]):</label>
         <div class="col-lg-9">
             <input class="form-control" type="text" name="pa[price]" value="[{oxhasrights ident="SHOWARTICLEPRICE"}][{if $product}][{$product->getFPrice()}][{/if}][{/oxhasrights}]" maxlength="32" required="required">
             <div class="help-block"></div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="req control-label col-lg-3">[{oxmultilang ident="EMAIL"}]:</label>
+    <div class="mb-3">
+        <label class="req form-label col-lg-3">[{oxmultilang ident="EMAIL"}]:</label>
         <div class="col-lg-9">
             <input class="form-control" type="email" name="pa[email]" value="[{if $oxcmp_user}][{$oxcmp_user->oxuser__oxusername->value}][{/if}]" maxlength="128" required="required">
             <div class="help-block"></div>
@@ -30,7 +30,7 @@
 
     [{block name="captcha_form"}][{/block}]
 
-    <div class="form-group">
+    <div class="mb-3">
         <div class="col-lg-9 offset-lg-3">
             <button class="submitButton btn btn-primary" type="submit">[{oxmultilang ident="SEND"}]</button>
         </div>

@@ -14,7 +14,7 @@
             <ul class="form listmania-add list-unstyled">
                 <li class="listmania-select-list">
                     <label>[{oxmultilang ident="SELECT_LISTMANIA_LIST"}]:</label>
-                    <select name="recomm">
+                    <select name="recomm" class="form-select">
                         [{foreach from=$oView->getRecommLists() item=oList}]
                             <option value="[{$oList->oxrecommlists__oxid->value}]">[{$oList->oxrecommlists__oxtitle->value}]</option>
                         [{/foreach}]

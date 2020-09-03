@@ -26,11 +26,9 @@
                             [{block name="account_delete_my_account_confirmation_form"}]
                                 <form name="delete_my_account" action="[{$oViewConf->getSelfActionLink()}]"
                                       method="post" role="form">
-                                    <div class="hidden">
                                         [{$oViewConf->getHiddenSid()}]
                                         <input type="hidden" name="cl" value="account">
                                         <input type="hidden" name="fnc" value="deleteAccount">
-                                    </div>
                                     [{block name="account_delete_my_account_confirmation_form_button_set"}]
                                         <button type="submit" class="btn btn-danger">
                                             [{oxmultilang ident="DD_DELETE_MY_ACCOUNT"}]

@@ -1,25 +1,8 @@
 .account-menu {
-  .list-group {
-    padding-bottom: 15px;
+  font-size: 14px;
+  margin-bottom: 30px;
 
-    &-item {
-      &.active {
-        color: $white;
-        &:hover, &:focus {
-          color: $white;
-          background-color: $primary;
-        }
-      }
-    }
-
-    &-link {
-      color:inherit;
-      display: block;
-    }
+  @include media-breakpoint-up(xl) {
+    font-size: 16px;
   }
-}
-
-.cl-account .card {
-  height: auto;
-  margin-bottom: $grid-gutter-width;
 }

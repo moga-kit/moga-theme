@@ -3,15 +3,13 @@
 
         <div class="list-filter">
             <form method="get" action="[{$oViewConf->getSelfActionLink()}]" name="_filterlist" id="filterList" class="row row-cols-md-auto g-1 mb-3 align-items-center">
-                <div class="hidden">
-                    [{$oViewConf->getHiddenSid()}]
-                    [{$oViewConf->getNavFormParams()}]
-                    <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
-                    <input type="hidden" name="tpl" value="[{$oViewConf->getActTplName()}]">
-                    <input type="hidden" name="oxloadid" value="[{$oViewConf->getActContentLoadId()}]">
-                    <input type="hidden" name="fnc" value="executefilter">
-                    <input type="hidden" name="fname" value="">
-                </div>
+                [{$oViewConf->getHiddenSid()}]
+                [{$oViewConf->getNavFormParams()}]
+                <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
+                <input type="hidden" name="tpl" value="[{$oViewConf->getActTplName()}]">
+                <input type="hidden" name="oxloadid" value="[{$oViewConf->getActContentLoadId()}]">
+                <input type="hidden" name="fnc" value="executefilter">
+                <input type="hidden" name="fname" value="">
 
                 [{if $oView->getClassName() == 'alist'}]
                     <strong>[{oxmultilang ident="DD_LISTLOCATOR_FILTER_ATTRIBUTES" suffix="COLON"}]</strong>

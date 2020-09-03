@@ -21,7 +21,7 @@
                         [{block name="widget_reviews_form"}]
                             <form action="[{$oViewConf->getSelfActionLink()}]" method="post" id="rating" class="form-horizontal" novalidate="novalidate">
                                 <div id="writeReview" class="product-review">
-                                    <div class="hidden">
+                                    <div class="d-none">
                                         [{if $oView->canRate()}]
                                             <input id="productRating" type="hidden" name="artrating" value="0">
                                             <input id="recommListRating" type="hidden" name="recommlistrating" value="0">
@@ -58,7 +58,7 @@
                                     [{/block}]
 
                                     [{block name="widget_reviews_form_fields"}]
-                                        <div class="form-group">
+                                        <div class="mb-3">
                                             <div class="col-12">
                                                 <textarea  rows="15" name="rvw_txt" class="form-control"></textarea>
                                             </div>
@@ -66,7 +66,7 @@
                                     [{/block}]
 
                                     [{block name="widget_reviews_form_buttons"}]
-                                        <div class="form-group">
+                                        <div class="mb-3">
                                             <div class="col-12">
                                                 <button id="reviewSave" type="submit" class="submitButton btn btn-primary">[{oxmultilang ident="SAVE_RATING_AND_REVIEW"}]</button>
                                             </div>
@@ -87,7 +87,7 @@
             [{foreach from=$oView->getReviews() item=review name=ReviewsCounter}]
                 <div class="card" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]" itemprop="review" itemscope itemtype="http://schema.org/Review">
                     [{* Bloofusion Google-Produkt-Markup für Google *}]
-                    <div class="hidden">
+                    <div class="d-none">
                         <span itemprop="itemreviewed">[{$oDetailsProduct->oxarticles__oxtitle->value}] [{$oDetailsProduct->oxarticles__oxvarselect->value}]</span>
                         <span itemprop="name">[{$review->oxreviews__oxtext->value|truncate:100}]</span>
                     </div>
@@ -110,7 +110,7 @@
                                                     <i class="moga-star"></i>
                                                 [{/if}]
                                             [{/section}]
-                                            <div class="hidden">
+                                            <div class="d-none">
                                                 <span itemprop="worstRating">1</span>
                                                 <span itemprop="ratingValue">[{$review->oxreviews__oxrating->value|default:'0'}]</span>
                                                 <span itemprop="bestRating">5</span>

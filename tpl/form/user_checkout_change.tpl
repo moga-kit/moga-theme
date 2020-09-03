@@ -99,7 +99,7 @@
                     [{/block}]
                     <div class="card-body">
                         [{block name="user_checkout_shipping_change"}]
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <div class="col-lg-9 offset-lg-3">
                                     <div class="checkbox">
                                         <label for="showShipAddress">

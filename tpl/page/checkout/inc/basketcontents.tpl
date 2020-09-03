@@ -22,14 +22,12 @@
         <div id="basketVoucher" class="col-12 col-md-6">
             <form name="voucher" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="js-oxValidate form-inline" role="form" novalidate="novalidate">
                 <div class="couponBox" id="coupon">
-                    <div class="hidden">
                         [{$oViewConf->getHiddenSid()}]
                         <input type="hidden" name="cl" value="basket">
                         <input type="hidden" name="fnc" value="addVoucher">
                         <input type="hidden" name="CustomError" value="basket">
-                    </div>
 
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label class="req sr-only voucher-label" for="input_voucherNr">[{oxmultilang ident="ENTER_COUPON_NUMBER"}]</label>
                         <div class="input-group">
                             <input type="text" name="voucherNr" size="30" class="form-control voucher-code js-oxValidate js-oxValidate_notEmpty" id="input_voucherNr" placeholder="[{oxmultilang ident="ENTER_COUPON_NUMBER"}]" required="required">

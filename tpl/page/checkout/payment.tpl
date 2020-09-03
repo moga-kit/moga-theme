@@ -8,12 +8,10 @@
             [{if $oView->getAllSets()}]
                 [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
                 <form action="[{$oViewConf->getSslSelfLink()}]" name="shipping" id="shipping" method="post">
-                    <div class="hidden">
                         [{$oViewConf->getHiddenSid()}]
                         [{$oViewConf->getNavFormParams()}]
                         <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
                         <input type="hidden" name="fnc" value="changeshipping">
-                    </div>
 
                     <div class="card">
                         <div class="card-header">
@@ -21,15 +19,15 @@
                         </div>
                         <div class="card-body">
                             [{block name="act_shipping"}]
-                                <div class="form-group">
-                                    <select class="form-control" name="sShipSet" onchange="this.form.submit();">
+                                <div class="mb-3">
+                                    <select class="form-select" name="sShipSet" onchange="this.form.submit();">
                                         [{foreach key=sShipID from=$oView->getAllSets() item=oShippingSet name=ShipSetSelect}]
                                             <option value="[{$sShipID}]" [{if $oShippingSet->blSelected}]SELECTED[{/if}]>[{$oShippingSet->oxdeliveryset__oxtitle->value}]</option>
                                         [{/foreach}]
                                     </select>
                                 </div>
                                 <noscript>
-                                    <div class="form-group">
+                                    <div class="mb-3">
                                         <button type="submit" class="btn btn-success submitButton largeButton">[{oxmultilang ident="UPDATE_SHIPPING_CARRIER"}]</button>
                                     </div>
                                 </noscript>
@@ -88,12 +86,10 @@
             [{oxscript add="$( '#payment' ).oxPayment();"}]
             [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
             <form action="[{$oViewConf->getSslSelfLink()}]" class="form-horizontal js-oxValidate payment" id="payment" name="order" method="post" novalidate="novalidate">
-                <div class="hidden">
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
                     <input type="hidden" name="fnc" value="validatepayment">
-                </div>
 
                 [{if $oView->getPaymentList()}]
                     <div class="card">

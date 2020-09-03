@@ -1,6 +1,6 @@
-<div class="form-group [{if $aErrors.oxuser__oxusername}]oxInValid[{/if}]">
+<div class="mb-3 [{if $aErrors.oxuser__oxusername}]oxInValid[{/if}]">
     [{block name="user_noaccount_email"}]
-        <label class="control-label col-lg-3 req">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
+        <label class="form-label col-lg-3 req">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         <div class="col-lg-9">
             <input id="userLoginName" class="form-control js-oxValidate js-oxValidate_notEmpty js-oxValidate_email" type="email" name="lgn_usr" value="[{$oView->getActiveUsername()}]">
             <div class="help-block">
@@ -9,7 +9,7 @@
         </div>
     [{/block}]
 </div>
-<div class="form-group">
+<div class="mb-3">
     [{block name="user_noaccount_newsletter"}]
         <div class="col-lg-9 offset-lg-3">
             <input type="hidden" name="blnewssubscribed" value="0">

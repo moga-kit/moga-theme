@@ -64,11 +64,9 @@
                     <div id="orderAddress" class="row">
                         <div class="col-12 col-md-6">
                             <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                                <div class="hidden">
                                     [{$oViewConf->getHiddenSid()}]
                                     <input type="hidden" name="cl" value="user">
                                     <input type="hidden" name="fnc" value="">
-                                </div>
 
                                 <div class="card">
                                     <div class="card-header">
@@ -87,11 +85,9 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                                <div class="hidden">
                                     [{$oViewConf->getHiddenSid()}]
                                     <input type="hidden" name="cl" value="user">
                                     <input type="hidden" name="fnc" value="">
-                                </div>
 
                                 <div class="card">
                                     <div class="card-header">
@@ -120,11 +116,9 @@
                     <div class="row">
                         <div class="col-12 col-md-6" id="orderShipping">
                             <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                                <div class="hidden">
                                     [{$oViewConf->getHiddenSid()}]
                                     <input type="hidden" name="cl" value="payment">
                                     <input type="hidden" name="fnc" value="">
-                                </div>
 
                                 <div class="card">
                                     <div class="card-header">
@@ -144,11 +138,9 @@
                         </div>
                         <div class="col-12 col-md-6" id="orderPayment">
                             <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                                <div class="hidden">
                                     [{$oViewConf->getHiddenSid()}]
                                     <input type="hidden" name="cl" value="payment">
                                     <input type="hidden" name="fnc" value="">
-                                </div>
 
                                 <div class="card">
                                     <div class="card-header">
@@ -172,11 +164,9 @@
                 [{block name="checkout_order_remark"}]
                     [{if $oView->getOrderRemark()}]
                         <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                            <div class="hidden">
                                 [{$oViewConf->getHiddenSid()}]
                                 <input type="hidden" name="cl" value="user">
                                 <input type="hidden" name="fnc" value="">
-                            </div>
 
                             <div class="card orderRemarks">
                                 <div class="card-header">
@@ -212,11 +202,9 @@
 
                 <div id="orderEditCart">
                     <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
-                        <div class="hidden">
                             [{$oViewConf->getHiddenSid()}]
                             <input type="hidden" name="cl" value="basket">
                             <input type="hidden" name="fnc" value="">
-                        </div>
 
                         <div class="card">
                             <div class="card-header">
@@ -249,7 +237,6 @@
                 [{else}]
                     [{block name="checkout_order_btn_confirm_bottom"}]
                         <form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="orderConfirmAgbBottom" class="form-horizontal">
-                            <div class="hidden">
                                 [{$oViewConf->getHiddenSid()}]
                                 [{$oViewConf->getNavFormParams()}]
                                 <input type="hidden" name="cl" value="order">
@@ -264,7 +251,6 @@
                                 [{/if}]
                                 <input type="hidden" name="oxdownloadableproductsagreement" value="0">
                                 <input type="hidden" name="oxserviceproductsagreement" value="0">
-                            </div>
 
                             <div class="card bg-light cart-buttons">
                                 <div class="card-body">

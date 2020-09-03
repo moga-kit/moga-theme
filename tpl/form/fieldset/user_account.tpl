@@ -1,4 +1,4 @@
-<div class="form-group row[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
     [{block name="user_account_username"}]
         <label class="col-lg-3 req" for="userLoginName">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         <div class="col-lg-9">
@@ -7,7 +7,7 @@
         </div>
     [{/block}]
 </div>
-<div class="form-group row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
     [{block name="user_account_password"}]
         <label class="col-lg-3 req" for="userPassword">[{oxmultilang ident="PASSWORD"}]</label>
         <input type="hidden" id="passwordLength" value="[{$oViewConf->getPasswordLength()}]">
@@ -17,7 +17,7 @@
         </div>
     [{/block}]
 </div>
-<div class="form-group row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
     [{block name="user_account_confirmpwd"}]
         <label class="col-lg-3 req">[{oxmultilang ident="CONFIRM_PASSWORD"}]</label>
         <div class="col-lg-9">
@@ -26,7 +26,7 @@
         </div>
     [{/block}]
 </div>
-<div class="form-group row">
+<div class="mb-3 row">
     [{block name="user_account_newsletter"}]
         <div class="col-lg-9 offset-lg-3">
             <input type="hidden" name="blnewssubscribed" value="0">

@@ -26,11 +26,11 @@ handleDropdownLinkClick = (e) => {
     // do ajax stuff
     let reloadForm = document.querySelector('.js-oxWidgetReload');
     let formData = serialize(reloadForm);
-    let aSelectionInputs = document.querySelectorAll( 'input[name^=varselid]','form.js-oxProductForm' );
+    let aSelectionInputs = document.querySelectorAll('input[name^=varselid]', 'form.js-oxProductForm');
 
 
     aSelectionInputs.forEach((inputField, i) => {
-        formData += '&varselid%5B' + i +'%5D=' + inputField.value;
+        formData += '&varselid%5B' + i + '%5D=' + inputField.value;
     });
 
 
@@ -38,7 +38,7 @@ handleDropdownLinkClick = (e) => {
     var request = new XMLHttpRequest();
     request.open('GET', '/index.php?' + formData, true);
 
-    request.onload = function() {
+    request.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // Success!
             let html = this.response;
@@ -49,7 +49,7 @@ handleDropdownLinkClick = (e) => {
         }
     };
 
-    request.onerror = function() {
+    request.onerror = function () {
         // There was a connection error of some sort
         console.log('error');
     };
@@ -73,7 +73,6 @@ handleVariantAddToBasket = (e) => {
 
 
 addDropdownLinksEventListeners();
-
 
 
 /*!

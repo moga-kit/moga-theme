@@ -12,7 +12,7 @@
 [{/if}]
 
 [{oxscript include="js/widgets/oxcountrystateselect.min.js" priority=10}]
-[{oxscript add="$( '#`$countrySelectId`' ).oxCountryStateSelect({selectedStateId:'`$selectedStateId`', listItem: '.form-group', span: 'div'});"}]
+[{oxscript add="$( '#`$countrySelectId`' ).oxCountryStateSelect({selectedStateId:'`$selectedStateId`', listItem: '.mb-3', span: 'div'});"}]
 [{oxscript add="$( '#`$countrySelectId`' ).change( function() { $( 'select[name=\"`$stateSelectName`\"]' ).selectpicker('refresh'); } );"}]
 
 <script type="text/javascript"><!--
@@ -37,6 +37,6 @@
         allCountryIds['[{$country->getId()}]']  = cCount;
     [{/foreach}]
 --></script>
-<select name="[{$stateSelectName}]" id="[{$stateSelectId}]" [{if $class}]class="[{$class}]"[{/if}]>
+<select name="[{$stateSelectName}]" id="[{$stateSelectId}]" class="form-select[{if $class}] [{$class}][{/if}]">
     <option value="">[{oxmultilang ident="PLEASE_SELECT_STATE"}]</option>
 </select>

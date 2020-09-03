@@ -141,7 +141,6 @@
     </form>
 
     <form action="[{$oViewConf->getSelfActionLink()}]" method="post">
-        <div class="hidden">
             [{$oViewConf->getHiddenSid()}]
             [{$oViewConf->getNavFormParams()}]
             <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
@@ -151,7 +150,6 @@
             <input type="hidden" name="pgNr" value="0">
             <input type="hidden" name="am" value="1">
             <input type="hidden" name="removecompare" value="1">
-        </div>
         [{oxhasrights ident="TOBASKET"}]
             <button class="btn btn-danger btn-sm" id="remove_cmp_[{$product->oxarticles__oxid->value}]" type="submit" title="[{oxmultilang ident="REMOVE"}]" name="send">
                 <i class="moga-trash"></i> [{oxmultilang ident="REMOVE"}]

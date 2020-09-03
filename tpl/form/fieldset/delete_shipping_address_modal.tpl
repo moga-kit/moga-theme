@@ -25,13 +25,11 @@
                                     <form name="delete_shipping_address_modal_form_[{$shippingAddressNumber}]"
                                           action="[{$oViewConf->getSelfActionLink()}]"
                                           method="post">
-                                        <div class="hidden">
                                             [{$oViewConf->getHiddenSid()}]
                                             <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
                                             <input type="hidden" name="fnc" value="deleteShippingAddress">
                                             <input type="hidden" name="oxaddressid"
                                                    value="[{$shippingAddress->oxaddress__oxid->value}]">
-                                        </div>
                                         [{include file="widget/address/shipping_address.tpl" delivadr=$shippingAddress}]
                                     </form>
                                 </div>

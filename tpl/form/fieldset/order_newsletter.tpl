@@ -1,5 +1,5 @@
 [{if $blSubscribeNews}]
-    <div class="form-group">
+    <div class="mb-3">
         [{block name="user_billing_newsletter"}]
             <div class="col-lg-9 offset-lg-3">
                 <input type="hidden" name="blnewssubscribed" value="0">

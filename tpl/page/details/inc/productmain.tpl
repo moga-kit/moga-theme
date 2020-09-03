@@ -36,7 +36,6 @@
 
 [{oxhasrights ident="TOBASKET"}]
     <form class="js-oxProductForm" action="[{$oViewConf->getSelfActionLink()}]" method="post">
-        <div class="hidden">
             [{$oViewConf->getHiddenSid()}]
             [{$oViewConf->getNavFormParams()}]
             <input type="hidden" name="cl" value="[{$oViewConf->getTopActiveClassName()}]">
@@ -47,7 +46,6 @@
             [{if !$oDetailsProduct->isNotBuyable()}]
                 <input type="hidden" name="fnc" value="tobasket">
             [{/if}]
-        </div>
 [{/oxhasrights}]
 
 <div class="details-top container-fluid">
@@ -116,6 +114,11 @@
                 </div>
                 <div id="details-slider" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
+                        <ol class="carousel-indicators">
+                            [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
+                            <li data-target="#details-slider" data-slide-to="[{$iPicNr-1}]"[{if $smarty.foreach.sMorePics.first}] class="active"[{/if}]></li>
+                            [{/foreach}]
+                        </ol>
                         [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
                             [{assign var="sPictureName" value=$oPictureProduct->getPictureFieldValue("oxpic", $iPicNr)}]
                             [{assign var="aPictureInfo" value=$oConfig->getMasterPicturePath("product/`$iPicNr`/`$sPictureName`")|@getimagesize}]
@@ -317,7 +320,7 @@
                         [{oxhasrights ident="SHOWARTICLEPRICE"}]
                             [{block name="details_productmain_price_value"}]
                                 [{if $oDetailsProduct->getFPrice()}]
-                                    <label id="productPrice" class="price-label">
+                                    <div id="productPrice" class="price-label">
                                         [{assign var="sFrom" value=""}]
                                         [{assign var="oPrice" value=$oDetailsProduct->getPrice()}]
                                         [{if $oDetailsProduct->isParentNotBuyable()}]
@@ -333,7 +336,7 @@
                                                 <span class="price-markup">*</span>
                                             [{/if}]
                                         </span>
-                                    </label>
+                                    </div>
                                 [{/if}]
                                 [{if $oDetailsProduct->loadAmountPriceInfo()}]
                                     [{include file="page/details/inc/priceinfo.tpl"}]
@@ -347,15 +350,48 @@
                     [{* pers params *}]
                     [{block name="details_productmain_persparams"}]
                         [{if $oView->isPersParam()}]
-                            <div class="form-group">
-                                <label for="persistentParam" class="control-label">[{oxmultilang ident="LABEL"}]</label>
+                            <div class="mb-3">
+                                <label for="persistentParam" class="form-label">[{oxmultilang ident="LABEL"}]</label>
                                 <input type="text" id="persistentParam" name="persparam[details]" value="[{$oDetailsProduct->aPersistParam.text}]" size="35" class="form-control">
                             </div>
                         [{/if}]
                     [{/block}]
 
+                    [{block name="details_productmain_stockstatus"}]
+                    <small class="stockFlag">
+                        [{if $oDetailsProduct->getStockStatus() == -1}]
+                        <span class="text-danger">●</span>
+                        [{if $oDetailsProduct->oxarticles__oxnostocktext->value}]
+                        [{$oDetailsProduct->oxarticles__oxnostocktext->value}]
+                        [{elseif $oViewConf->getStockOffDefaultMessage()}]
+                        [{oxmultilang ident="MESSAGE_NOT_ON_STOCK"}]
+                        [{/if}]
+                        [{if $oDetailsProduct->getDeliveryDate()}]
+                        [{oxmultilang ident="AVAILABLE_ON"}] [{$oDetailsProduct->getDeliveryDate()}]
+                        [{/if}]
+                        [{elseif $oDetailsProduct->getStockStatus() == 1}]
+                        <span class="text-warning">●</span> [{oxmultilang ident="LOW_STOCK"}]
+                        [{elseif $oDetailsProduct->getStockStatus() == 0}]
+                        <span class="text-success">●</span>
+                        [{if $oDetailsProduct->oxarticles__oxstocktext->value}]
+                        [{$oDetailsProduct->oxarticles__oxstocktext->value}]
+                        [{elseif $oViewConf->getStockOnDefaultMessage()}]
+                        [{oxmultilang ident="READY_FOR_SHIPPING"}]
+                        [{/if}]
+                        [{/if}]
+                    </small>
+                    [{/block}]
+
+                    [{oxhasrights ident="TOBASKET"}]
+                    [{if $oDetailsProduct->isBuyable()}]
+                    [{block name="details_productmain_deliverytime"}]
+                    [{include file="page/details/inc/deliverytime.tpl"}]
+                    [{/block}]
+                    [{/if}]
+                    [{/oxhasrights}]
+
                     [{block name="details_productmain_tobasket"}]
-                        <div class="tobasket-function my-5">
+                        <div class="tobasket-function my-3 my-lg-5">
                             [{oxhasrights ident="TOBASKET"}]
                                 [{if !$oDetailsProduct->isNotBuyable()}]
                                     <input id="amountToBasket" type="hidden" name="am" value="1">
@@ -364,39 +400,6 @@
                             [{/oxhasrights}]
                         </div>
                     [{/block}]
-
-                    [{block name="details_productmain_stockstatus"}]
-                        <small class="stockFlag">
-                            [{if $oDetailsProduct->getStockStatus() == -1}]
-                                <span class="text-danger">●</span>
-                                [{if $oDetailsProduct->oxarticles__oxnostocktext->value}]
-                                    [{$oDetailsProduct->oxarticles__oxnostocktext->value}]
-                                [{elseif $oViewConf->getStockOffDefaultMessage()}]
-                                    [{oxmultilang ident="MESSAGE_NOT_ON_STOCK"}]
-                                [{/if}]
-                                [{if $oDetailsProduct->getDeliveryDate()}]
-                                    [{oxmultilang ident="AVAILABLE_ON"}] [{$oDetailsProduct->getDeliveryDate()}]
-                                [{/if}]
-                            [{elseif $oDetailsProduct->getStockStatus() == 1}]
-                                <span class="text-warning">●</span> [{oxmultilang ident="LOW_STOCK"}]
-                            [{elseif $oDetailsProduct->getStockStatus() == 0}]
-                                <span class="text-success">●</span>
-                                [{if $oDetailsProduct->oxarticles__oxstocktext->value}]
-                                    [{$oDetailsProduct->oxarticles__oxstocktext->value}]
-                                [{elseif $oViewConf->getStockOnDefaultMessage()}]
-                                    [{oxmultilang ident="READY_FOR_SHIPPING"}]
-                                [{/if}]
-                            [{/if}]
-                        </small>
-                    [{/block}]
-
-                    [{oxhasrights ident="TOBASKET"}]
-                        [{if $oDetailsProduct->isBuyable()}]
-                            [{block name="details_productmain_deliverytime"}]
-                                [{include file="page/details/inc/deliverytime.tpl"}]
-                            [{/block}]
-                        [{/if}]
-                    [{/oxhasrights}]
 
                     [{block name="details_productmain_social"}]
                     [{/block}]

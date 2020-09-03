@@ -29,14 +29,14 @@
 [{else}]
     [{assign var="oxuser__oxsal" value=$oxcmp_user->oxuser__oxsal->value}]
 [{/if}]
-<div class="form-group row">
+<div class="mb-3 row">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxsal)}] req[{/if}]" for="invadr_oxuser__oxfname">[{oxmultilang ident="TITLE"}]</label>
     <div class="col-lg-9">
         [{include file="form/fieldset/salutation.tpl" name="invadr[oxuser__oxsal]" value=$oxuser__oxsal class="form-control" id="invadr_oxuser__oxfname"}]
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxfname}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxfname}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxfname)}] req[{/if}]">[{oxmultilang ident="FIRST_NAME"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="255" name="invadr[oxuser__oxfname]" value="[{if isset( $invadr.oxuser__oxfname )}][{$invadr.oxuser__oxfname}][{else}][{$oxcmp_user->oxuser__oxfname->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxfname)}] required=""[{/if}]>
@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxlname}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxlname}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxlname)}] req[{/if}]">[{oxmultilang ident="LAST_NAME"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="255" name="invadr[oxuser__oxlname]" value="[{if isset( $invadr.oxuser__oxlname )}][{$invadr.oxuser__oxlname}][{else}][{$oxcmp_user->oxuser__oxlname->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxlname)}] required=""[{/if}]>
@@ -54,7 +54,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxcompany}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxcompany}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxcompany)}] req[{/if}]">[{oxmultilang ident="COMPANY"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="255" name="invadr[oxuser__oxcompany]" value="[{if isset( $invadr.oxuser__oxcompany )}][{$invadr.oxuser__oxcompany}][{else}][{$oxcmp_user->oxuser__oxcompany->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxcompany)}] required=""[{/if}]>
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxaddinfo}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxaddinfo}] text-danger[{/if}]">
     [{assign var="_address_addinfo_tooltip" value="FORM_FIELDSET_USER_BILLING_ADDITIONALINFO_TOOLTIP"|oxmultilangassign}]
     <label [{if $_address_addinfo_tooltip}]title="[{$_address_addinfo_tooltip}]"[{/if}] class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxaddinfo)}] req[{/if}][{if $_address_addinfo_tooltip}] tooltip[{/if}]">[{oxmultilang ident="ADDITIONAL_INFO"}]</label>
     <div class="col-lg-9">
@@ -73,7 +73,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxstreet}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxstreet}] text-danger[{/if}]">
     <label class="col-12 col-lg-3[{if $oView->isFieldRequired(oxuser__oxstreet) || $oView->isFieldRequired(oxuser__oxstreetnr)}] req[{/if}]">[{oxmultilang ident="STREET_AND_STREETNO"}]</label>
     <div class="col-8 col-lg-6">
         <input class="form-control" type="text" maxlength="255" name="invadr[oxuser__oxstreet]" value="[{if isset( $invadr.oxuser__oxstreet )}][{$invadr.oxuser__oxstreet}][{else}][{$oxcmp_user->oxuser__oxstreet->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxstreet)}] required=""[{/if}]>
@@ -88,7 +88,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxzip}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxzip}] text-danger[{/if}]">
     <label class="col-12 col-lg-3[{if $oView->isFieldRequired(oxuser__oxzip) || $oView->isFieldRequired(oxuser__oxcity)}] req[{/if}]">[{oxmultilang ident="POSTAL_CODE_AND_CITY"}]</label>
     <div class="col-5 col-lg-3">
         <input class="form-control" type="text" maxlength="16" name="invadr[oxuser__oxzip]" value="[{if isset( $invadr.oxuser__oxzip )}][{$invadr.oxuser__oxzip}][{else}][{$oxcmp_user->oxuser__oxzip->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxzip)}] required=""[{/if}]>
@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxustid}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxustid}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxustid)}] req[{/if}]">[{oxmultilang ident="VAT_ID_NUMBER"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="255" name="invadr[oxuser__oxustid]" value="[{if isset( $invadr.oxuser__oxustid )}][{$invadr.oxuser__oxustid}][{else}][{$oxcmp_user->oxuser__oxustid->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxustid)}] required=""[{/if}]>
@@ -113,10 +113,10 @@
 </div>
 
 [{block name="form_user_billing_country"}]
-    <div class="form-group row[{if $aErrors.oxuser__oxcountryid}] text-danger[{/if}]">
+    <div class="mb-3 row[{if $aErrors.oxuser__oxcountryid}] text-danger[{/if}]">
         <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxcountryid)}] req[{/if}]">[{oxmultilang ident="COUNTRY"}]</label>
         <div class="col-lg-9">
-            <select class="form-control" id="invCountrySelect" name="invadr[oxuser__oxcountryid]"[{if $oView->isFieldRequired(oxuser__oxcountryid)}] required=""[{/if}]>
+            <select class="form-select" id="invCountrySelect" name="invadr[oxuser__oxcountryid]"[{if $oView->isFieldRequired(oxuser__oxcountryid)}] required=""[{/if}]>
                 <option value="">-</option>
                 [{assign var="blCountrySelected" value=false}]
                 [{foreach from=$oViewConf->getCountryList() item=country key=country_id}]
@@ -135,7 +135,7 @@
             <div class="help-block"></div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="mb-3 row">
         <label class="col-lg-3" for="[{$oxcmp_user->oxuser__oxstateid->value}]">[{oxmultilang ident="DD_USER_LABEL_STATE" suffix="COLON"}]</label>
         <div class="col-lg-9">
             [{include file="form/fieldset/state.tpl"
@@ -149,7 +149,7 @@
     </div>
 [{/block}]
 
-<div class="form-group row[{if $aErrors.oxuser__oxfon}] text-danger"[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxfon}] text-danger"[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxfon)}] req[{/if}]">[{oxmultilang ident="PHONE"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="128" name="invadr[oxuser__oxfon]" value="[{if isset( $invadr.oxuser__oxfon )}][{$invadr.oxuser__oxfon}][{else}][{$oxcmp_user->oxuser__oxfon->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxfon)}] required=""[{/if}]>
@@ -158,7 +158,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxfax}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxfax}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxfax)}] req[{/if}]">[{oxmultilang ident="FAX"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="128" name="invadr[oxuser__oxfax]" value="[{if isset( $invadr.oxuser__oxfax )}][{$invadr.oxuser__oxfax}][{else}][{$oxcmp_user->oxuser__oxfax->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxfax)}] required=""[{/if}]>
@@ -167,7 +167,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxmobfon}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxmobfon}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxmobfon)}] req[{/if}]">[{oxmultilang ident="CELLUAR_PHONE"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="64" name="invadr[oxuser__oxmobfon]" value="[{if isset( $invadr.oxuser__oxmobfon )}][{$invadr.oxuser__oxmobfon}][{else}][{$oxcmp_user->oxuser__oxmobfon->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxmobfon)}] required=""[{/if}]>
@@ -176,7 +176,7 @@
     </div>
 </div>
 
-<div class="form-group row[{if $aErrors.oxuser__oxprivfon}] text-danger[{/if}]">
+<div class="mb-3 row[{if $aErrors.oxuser__oxprivfon}] text-danger[{/if}]">
     <label class="col-lg-3[{if $oView->isFieldRequired(oxuser__oxprivfon)}] req[{/if}]">[{oxmultilang ident="PERSONAL_PHONE"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" maxlength="64" name="invadr[oxuser__oxprivfon]" value="[{if isset( $invadr.oxuser__oxprivfon )}][{$invadr.oxuser__oxprivfon}][{else}][{$oxcmp_user->oxuser__oxprivfon->value}][{/if}]"[{if $oView->isFieldRequired(oxuser__oxprivfon)}] required=""[{/if}]>
@@ -186,13 +186,13 @@
 </div>
 
 [{if $oViewConf->showBirthdayFields()}]
-    <div class="form-group row oxDate[{if $aErrors.oxuser__oxbirthdate}] text-danger[{/if}]">
+    <div class="mb-3 row oxDate[{if $aErrors.oxuser__oxbirthdate}] text-danger[{/if}]">
         <label class="col-12 col-lg-3[{if $oView->isFieldRequired(oxuser__oxbirthdate)}] req[{/if}]">[{oxmultilang ident="BIRTHDATE"}]</label>
         <div class="col-3 col-lg-3">
             <input id="oxDay" class="oxDay form-control" name="invadr[oxuser__oxbirthdate][day]" type="text" maxlength="2" value="[{if $iBirthdayDay > 0}][{$iBirthdayDay}][{/if}]" placeholder="[{oxmultilang ident="DAY"}]"[{if $oView->isFieldRequired(oxuser__oxbirthdate)}] required=""[{/if}]>
         </div>
         <div class="col-6 col-lg-3">
-            <select class="oxMonth form-control" name="invadr[oxuser__oxbirthdate][month]"[{if $oView->isFieldRequired(oxuser__oxbirthdate)}] required=""[{/if}]>
+            <select class="oxMonth form-select" name="invadr[oxuser__oxbirthdate][month]"[{if $oView->isFieldRequired(oxuser__oxbirthdate)}] required=""[{/if}]>
                 <option value="" label="-">-</option>
                 [{section name="month" start=1 loop=13}]
                     <option value="[{$smarty.section.month.index}]" label="[{$smarty.section.month.index}]" [{if $iBirthdayMonth == $smarty.section.month.index}] selected="selected" [{/if}]>
@@ -211,14 +211,14 @@
     </div>
 [{/if}]
 
-<div class="form-group row">
+<div class="mb-3 row">
     <div class="offset-lg-3 col-lg-9 col-12">
         <p class="alert alert-info">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
     </div>
 </div>
 
 [{if !$noFormSubmit}]
-    <div class="form-group row">
+    <div class="mb-3 row">
         <div class="offset-lg-3 col-lg-9 col-12">
             <button id="accUserSaveTop" type="submit" name="save" class="btn btn-primary">[{oxmultilang ident="SAVE"}]</button>
         </div>

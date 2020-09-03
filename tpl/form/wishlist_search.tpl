@@ -1,12 +1,10 @@
 <form name="wishlist_searchbox" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="form-horizontal">
-    <div class="hidden">
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="cl" value="[{$searchClass}]">
         <input type="hidden" name="fnc" value="searchforwishlist">
-    </div>
 
-    <div class="form-group">
-        <label class="control-label col-lg-3" for="input_[{$searchClass}]">[{oxmultilang ident="SEARCH_GIFT_REGISTRY"}]</label>
+    <div class="mb-3">
+        <label class="form-label col-lg-3" for="input_[{$searchClass}]">[{oxmultilang ident="SEARCH_GIFT_REGISTRY"}]</label>
         <div class="col-lg-9">
             <div class="input-group">
                 <input type="text" name="search" id="input_[{$searchClass}]" value="[{$oView->getWishListSearchParam()}]" class="form-control" placeholder="[{oxmultilang ident="ENTER_EMAIL_OR_NAME"}]">

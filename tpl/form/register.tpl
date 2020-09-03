@@ -1,7 +1,6 @@
 [{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
 <form class="form-horizontal" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
-    <div class="hidden">
         [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
@@ -10,13 +9,12 @@
         <input type="hidden" name="lgn_cook" value="0">
         <input type="hidden" id="reloadAddress" name="reloadaddress" value="">
         <input type="hidden" name="option" value="3">
-    </div>
 
     <h3 class="blockHead">[{oxmultilang ident="ACCOUNT_INFORMATION"}]</h3>
     [{include file="form/fieldset/user_account.tpl"}]
 
     [{if $oView->isActive('PsLogin')}]
-        <div class="form-group row">
+        <div class="mb-3 row">
             <label class="col-lg-3">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
             <div class="col-lg-9">
                 <input type="hidden" name="ord_agb" value="0">

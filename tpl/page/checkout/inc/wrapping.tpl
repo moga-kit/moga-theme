@@ -27,11 +27,9 @@
                         <div class="alert alert-danger">[{oxmultilang ident="BASKET_EMPTY"}]</div>
                     [{else}]
                         <form name="basket" action="[{$oViewConf->getSelfActionLink()}]" method="post" role="form" id="giftoptions_modal_form">
-                            <div class="hidden">
                                 [{$oViewConf->getHiddenSid()}]
                                 <input type="hidden" name="cl" value="basket">
                                 <input type="hidden" name="fnc" value="changewrapping">
-                            </div>
 
                             [{assign var="oWrapList" value=$oView->getWrappingList()}]
                             [{if $oWrapList->count()}]
@@ -61,7 +59,7 @@
                                                 <div class="row">
                                                 <div class="col-3"></div>
                                                     <div class="col-9 offset-sm-3">
-                                                        <div class="form-group">
+                                                        <div class="mb-3">
                                                             <div class="radio">
                                                                 <label>
                                                                     <input class="radiobox" type="radio" name="wrapping[[{$basketindex}]]" id="wrapping_[{$basketindex}]" value="0" [{if !$basketitem->getWrappingId()}]CHECKED[{/if}]>
@@ -84,7 +82,7 @@
                                                     [{else}]
                                                         <div class="col-12">
                                                     [{/if}]
-                                                            <div class="form-group">
+                                                            <div class="mb-3">
                                                                 <div class="radio">
                                                                     <label>
                                                                         <input class="radiobox" type="radio" name="wrapping[[{$basketindex}]]" id="wrapping_[{$wrapping->oxwrapping__oxid->value}]" value="[{$wrapping->oxwrapping__oxid->value}]" [{if $basketitem->getWrappingId() == $wrapping->oxwrapping__oxid->value}]CHECKED[{/if}]>
@@ -116,7 +114,7 @@
                                             <div class="card-header">
                                                 <div class="row">
                                                     <div class="col-sm-9 offset-sm-3">
-                                                        <div class="form-group">
+                                                        <div class="mb-3">
                                                             <div class="radio">
                                                                 <label>
                                                                     <input type="radio" class="radiobox" name="chosencard" id="chosencard" value="0" [{if !$oxcmp_basket->getCardId()}]CHECKED[{/if}]> [{oxmultilang ident="NO_GREETING_CARD"}]
@@ -142,7 +140,7 @@
                                                     [{else}]
                                                         <div class="col-12">
                                                     [{/if}]
-                                                        <div class="form-group">
+                                                        <div class="mb-3">
                                                             <div class="radio">
                                                                 <label>
                                                                     <input class="radiobox" type="radio" name="chosencard" id="chosen_[{$card->oxwrapping__oxid->value}]" value="[{$card->oxwrapping__oxid->value}]" [{if $oxcmp_basket->getCardId() == $card->oxwrapping__oxid->value}]CHECKED[{/if}]> [{$card->oxwrapping__oxname->value}] <strong>[{$card->getFPrice()}] [{$currency->sign}]</strong>
@@ -160,8 +158,8 @@
 
                                 [{/block}]
                                 [{block name="checkout_wrapping_comment"}]
-                                    <div class="form-group wrappingComment">
-                                        <label for="giftmessage" class="control-label">[{oxmultilang ident="GREETING_MESSAGE"}]</label>
+                                    <div class="mb-3 wrappingComment">
+                                        <label for="giftmessage" class="form-label">[{oxmultilang ident="GREETING_MESSAGE"}]</label>
                                         <textarea cols="102" rows="5" name="giftmessage" id="giftmessage" class="form-control">[{$oxcmp_basket->getCardMessage()}]</textarea>
                                     </div>
                                 [{/block}]

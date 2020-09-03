@@ -2,9 +2,8 @@
 <div class="row">
     <div class="col-12 mx-auto col-md-8 mx-md-0 col-lg-12">
         <form class="newsletter-form" role="form" action="[{$oViewConf->getSslSelfLink()}]" method="post">
-            <div class="form-group">
+            <div class="mb-3">
                 [{block name="dd_footer_newsletter_form_inner"}]
-                    <div class="hidden">
                         [{$oViewConf->getHiddenSid()}]
                         <input type="hidden" name="fnc" value="fill">
                         <input type="hidden" name="cl" value="newsletter">
@@ -12,7 +11,6 @@
                             [{assign var="product" value=$oView->getProduct()}]
                             <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
                         [{/if}]
-                    </div>
 
                     [{block name="dd_footer_newsletter_form_inner_group"}]
                         <label class="sr-only" for="footer_newsletter_oxusername">[{oxmultilang ident="NEWSLETTER"}]</label>

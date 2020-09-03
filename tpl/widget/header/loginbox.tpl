@@ -23,11 +23,11 @@
 
             <span class="lead">[{oxmultilang ident="LOGIN"}]</span>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <input id="loginEmail" type="email" name="lgn_usr" autocomplete="email" value="" class="form-control" placeholder="[{oxmultilang ident="EMAIL_ADDRESS"}]">
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <div class="input-group">
                     <input id="loginPasword" type="password" name="lgn_pwd" autocomplete="current-password" class="form-control" value="" placeholder="[{oxmultilang ident="PASSWORD"}]">
                     <a class="forgotPasswordOpener btn btn-outline-primary" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">?</a>
