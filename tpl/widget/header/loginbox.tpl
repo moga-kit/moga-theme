@@ -45,7 +45,7 @@
             <button type="submit" class="btn btn-primary">[{oxmultilang ident="LOGIN"}]</button>
 
             [{if !$oxcmp_user}]
-                <a class="btn" id="registerLink" role="button" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=register"}]" title="[{oxmultilang ident="REGISTER"}]">[{oxmultilang ident="REGISTER"}]</a>
+                <a class="btn" id="registerLink"  href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=register"}]" title="[{oxmultilang ident="REGISTER"}]">[{oxmultilang ident="REGISTER"}]</a>
             [{/if}]
 
             [{block name="thirdparty_login"}][{/block}]

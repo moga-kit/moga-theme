@@ -20,7 +20,7 @@
 [{if $oViewConf->getShowVouchers() && $oViewConf->getActiveClassName() == 'basket'}]
     [{block name="checkout_basket_vouchers"}]
         <div id="basketVoucher" class="col-12 col-md-6">
-            <form name="voucher" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="js-oxValidate form-inline" role="form" novalidate="novalidate">
+            <form name="voucher" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="js-oxValidate form-inline"  novalidate="novalidate">
                 <div class="couponBox" id="coupon">
                         [{$oViewConf->getHiddenSid()}]
                         <input type="hidden" name="cl" value="basket">

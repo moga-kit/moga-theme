@@ -1,5 +1,5 @@
 <div class="dropdown">
-    <button type="button" aria-label="Minibasket" role="button" class="btn btn-minibasket dropdown-toggle" aria-expanded="false" data-toggle="dropdown" data-href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]">
+    <button type="button" aria-label="Minibasket"  class="btn btn-minibasket dropdown-toggle" aria-expanded="false" data-toggle="dropdown" data-href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]">
         [{block name="dd_layout_page_header_icon_menu_minibasket_button"}]
             <i class="moga-bag" aria-hidden="true"></i>
             [{if $oxcmp_basket->getItemsCount() > 0}]<span class="count">[{ $oxcmp_basket->getItemsCount() }]</span>[{/if}]

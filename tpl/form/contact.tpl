@@ -2,7 +2,7 @@
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
 
 [{assign var="editval" value=$oView->getUserData()}]
-<form class="form-horizontal" action="[{$oViewConf->getSslSelfLink()}]" method="post" role="form" novalidate="novalidate">
+<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate="novalidate">
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="fnc" value="send"/>
         <input type="hidden" name="cl" value="contact"/>

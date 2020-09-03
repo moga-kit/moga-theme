@@ -6,9 +6,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
-        <link rel="preload" href="[{$oViewConf->getBaseDir()}]out/moga/src/css/styles.min.css" as="style">
-        <link rel="preload" href="[{$oViewConf->getBaseDir()}]out/moga/src/js/scripts.min.js" as="script">
-        <link rel="preload" href="[{$oViewConf->getBaseDir()}]out/moga/src/fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
 
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
@@ -104,7 +101,7 @@
         [{/block}]
 
         [{block name="base_style"}]
-            <link rel="stylesheet" href="[{$oViewConf->getBaseDir()}]out/moga/src/css/styles.min.css">
+            [{oxstyle include="css/styles.min.css"}]
         [{/block}]
 
         [{block name="base_fonts"}]
@@ -193,6 +190,8 @@
     [{block name="base_js"}]
         [{include file="i18n/js_vars.tpl"}]
         <script src="[{$oViewConf->getBaseDir()}]out/moga/src/js/scripts.min.js"></script>
+
+        [{*oxscript include="js/scripts.min.js"*}]
     [{/block}]
 
     [{if $oViewConf->isTplBlocksDebugMode()}]

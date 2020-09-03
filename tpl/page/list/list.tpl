@@ -164,7 +164,7 @@
             [{if $categoryWidth == 'container'}]
                 <div class="container-xxl">
             [{/if}]
-                    <section class="article-list">
+                    <div class="article-list">
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                             [{if $oView->getArticleList()|count}]
                                 [{block name="page_list_upperlocator"}]
@@ -182,7 +182,7 @@
                                 [{/block}]
                             [{/if}]
                         </div>
-                    </section>
+                    </div>
 
             [{if $categoryWidth == 'container'}]
                 </div>

@@ -2,7 +2,7 @@
 
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 
-<script type="text/javascript">[{strip}]
+<script>[{strip}]
     var sBaseUrl = '[{$oViewConf->getSelfActionLink()}]';
     var sActCl = '[{$oViewConf->getTopActiveClassName()}]';
 [{/strip}]</script>
@@ -99,7 +99,7 @@
 
     [{if $sGoogleVendorId && $sPageLanguage}]
         [{* Händler-Gütesiegelcode *}]
-        <script type="text/javascript">
+        <script>
             var gts = gts || [];
 
             gts.push(["id", "[{$sGoogleVendorId}]"]);
@@ -118,7 +118,7 @@
 
             (function() {
                 var gts = document.createElement("script");
-                gts.type = "text/javascript";
+                gts.type = "";
                 gts.async = true;
                 gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
                 var s = document.getElementsByTagName("script")[0];

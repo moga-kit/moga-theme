@@ -14,28 +14,26 @@
                 <div class="reviews-landscape">
                     [{foreach from=$oView->getReviewList() item=review name=ReviewsCounter}]
                         [{block name="account_reviewlist_item"}]
-                            <div class="card" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                            <div class="card" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]">
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-md-3 date">
                                             <span>
-                                                <time itemprop="datePublished" datetime="[{$review->getCreatedAt()|date_format:"%Y-%m-%d"}]">[{$review->getCreatedAt()|date_format:"%d.%m.%Y"}]</time>
+                                                <time datetime="[{$review->getCreatedAt()|date_format:"%Y-%m-%d"}]">[{$review->getCreatedAt()|date_format:"%d.%m.%Y"}]</time>
                                             </span>
                                         </div>
                                         <div class="col-md-5 articleTitle">
-                                            <span itemprop="itemreviewed">[{$review->getObjectTitle()|truncate:60}]</span>
+                                            [{$review->getObjectTitle()|truncate:60}]
                                         </div>
                                         <div class="col-md-3 rating text-right">
                                             [{if $review->getRating()}]
-                                                <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-                                                    [{section name="starRatings" start=0 loop=5}]
-                                                        [{if $review->getRating() >= $smarty.section.starRatings.iteration}]
-                                                            <i class="moga-star"></i>
-                                                        [{else}]
-                                                            <i class="moga-star"></i>
-                                                        [{/if}]
-                                                    [{/section}]
-                                                </div>
+                                                [{section name="starRatings" start=0 loop=5}]
+                                                    [{if $review->getRating() >= $smarty.section.starRatings.iteration}]
+                                                        <i class="moga-star"></i>
+                                                    [{else}]
+                                                        <i class="moga-star"></i>
+                                                    [{/if}]
+                                                [{/section}]
                                             [{/if}]
                                         </div>
                                         [{block name="account_reviewlist_item_action"}]
@@ -58,7 +56,7 @@
                                     </div>
                                 </div>
                                 [{if $review->getReviewText()}]
-                                    <div class="card-body" id="reviewText_[{$smarty.foreach.ReviewsCounter.iteration}]" itemprop="description">[{$review->getReviewText()}]</div>
+                                    <div class="card-body" id="reviewText_[{$smarty.foreach.ReviewsCounter.iteration}]">[{$review->getReviewText()}]</div>
                                 [{/if}]
                             </div>
                         [{/block}]

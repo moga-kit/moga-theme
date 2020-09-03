@@ -85,7 +85,7 @@
             [{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
             [{oxscript add="$( '#payment' ).oxPayment();"}]
             [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
-            <form action="[{$oViewConf->getSslSelfLink()}]" class="form-horizontal js-oxValidate payment" id="payment" name="order" method="post" novalidate="novalidate">
+            <form action="[{$oViewConf->getSslSelfLink()}]" class="max-600 js-oxValidate payment" id="payment" name="order" method="post" novalidate="novalidate">
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">

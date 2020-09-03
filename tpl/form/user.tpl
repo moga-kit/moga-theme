@@ -22,7 +22,7 @@
 
 [{oxscript add=$sValidationJS}]
 [{block name="user"}]
-    <form class="js-oxValidate form-horizontal" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate="novalidate">
+    <form class="js-oxValidate max-600" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate="novalidate">
         [{block name="user_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             <div class="addressCollumns">

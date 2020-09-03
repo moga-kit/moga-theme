@@ -23,7 +23,7 @@
 [{oxscript add=$sValidationJS}]
 
 [{block name="user_checkout_change"}]
-    <form class="form-horizontal" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
+    <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
         [{block name="user_checkout_change_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             [{$oViewConf->getHiddenSid()}]

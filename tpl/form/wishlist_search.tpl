@@ -1,4 +1,4 @@
-<form name="wishlist_searchbox" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="form-horizontal">
+<form name="wishlist_searchbox" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="max-600">
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="cl" value="[{$searchClass}]">
         <input type="hidden" name="fnc" value="searchforwishlist">

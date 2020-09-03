@@ -16,7 +16,7 @@
                                 <i class="moga-bars"></i>
                             </button>
                         [{/block}]
-                        <button class="btn search-toggler" data-toggle="collapse" data-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn search-toggler" data-toggle="collapse" data-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]"  aria-expanded="false" aria-controls="searchCollapse">
                             <i class="moga-search"></i>
                         </button>
                     </div>

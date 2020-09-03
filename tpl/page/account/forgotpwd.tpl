@@ -22,7 +22,7 @@
     [{elseif $oView->updateSuccess()}]
         <div class="alert alert-success">[{oxmultilang ident="PASSWORD_CHANGED"}]</div>
 
-        <form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" role="form">
+        <form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" >
             <div>
                 [{$oViewConf->getHiddenSid()}]
                 <input type="hidden" name="cl" value="start">

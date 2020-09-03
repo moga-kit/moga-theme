@@ -153,11 +153,11 @@
                         [{/foreach}]
                     </div>
                     [{if $imageCount > 1}]
-                    <a class="carousel-control-prev" href="#details-slider" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#details-slider"  data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#details-slider" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#details-slider"  data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -267,7 +267,7 @@
                         [{if $aVariantSelections && $aVariantSelections.selections}]
                             [{*oxscript include="js/jquery.min.js" priority=4 }]
                             [{oxscript include="js/jquery-ui.js" priority=4 *}]
-                            [{oxscript include="js/details.min.js" priority=11 }]
+                            [{oxscript|replace:'type="text/javascript"':'' include="js/details.min.js" priority=11}]
                             [{*oxscript include="js/widgets/oxajax.min.js" priority=10 *}]
                             [{*oxscript include="js/widgets/oxarticlevariant.min.js" priority=10 *}]
                             [{*oxscript add="$( '#variants' ).oxArticleVariant();"*}]

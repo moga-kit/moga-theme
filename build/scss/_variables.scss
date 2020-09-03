@@ -137,12 +137,12 @@ $ox-checkout-steps-passed-color: #FFF;
 
 //## Headings
 
-$h1-font-size: 36px;
-$h2-font-size: 30px;
-$h3-font-size: 24px;
-$h4-font-size: 18px;
-$h5-font-size: 14px;
-$h6-font-size: 12px;
+$h1-font-size:                $font-size-base * 1.75;
+$h2-font-size:                $font-size-base * 1.5;
+$h3-font-size:                $font-size-base * 1.25;
+$h4-font-size:                $font-size-base;
+$h5-font-size:                $font-size-base;
+$h6-font-size:                $font-size-base;
 
 $headings-font-weight:        400;
 
@@ -193,7 +193,7 @@ $enable-transitions:          true;
 $enable-reduced-motion:       true;
 $enable-grid-classes:         true;
 $enable-button-pointers:      true;
-$enable-rfs:                  true;
+$enable-rfs:                  false;
 $enable-validation-icons:     false;
 $enable-negative-margins:     false;
 $enable-deprecation-messages: false;

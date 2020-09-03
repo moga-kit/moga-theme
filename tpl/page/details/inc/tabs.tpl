@@ -6,7 +6,7 @@
         [{if $oLongdesc->value}]
             [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#description" data-toggle="tab">[{oxmultilang ident="DESCRIPTION"}]</a>[{/capture}]
             [{capture append="tabsContent"}]
-                <div id="description" class="tab-pane[{if $blFirstTab}] active[{/if}]" itemprop="description">
+                <div id="description" class="tab-pane[{if $blFirstTab}] active[{/if}]">
                     <div class="container-xxl">
                         [{oxeval var=$oLongdesc}]
                         [{if $oDetailsProduct->oxarticles__oxexturl->value}]

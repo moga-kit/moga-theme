@@ -32,7 +32,7 @@
                             [{if $oxcmp_user}]
                                 <div class="divider"></div>
                                 <div class="text-right">
-                                    <a class="btn btn-danger" role="button" href="[{$oViewConf->getLogoutLink()}]" title="[{oxmultilang ident="LOGOUT"}]">
+                                    <a class="btn btn-danger"  href="[{$oViewConf->getLogoutLink()}]" title="[{oxmultilang ident="LOGOUT"}]">
                                         [{oxmultilang ident="LOGOUT"}]
                                     </a>
                                 </div>

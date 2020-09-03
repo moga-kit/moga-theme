@@ -15,7 +15,7 @@
 [{oxscript add="$( '#`$countrySelectId`' ).oxCountryStateSelect({selectedStateId:'`$selectedStateId`', listItem: '.mb-3', span: 'div'});"}]
 [{oxscript add="$( '#`$countrySelectId`' ).change( function() { $( 'select[name=\"`$stateSelectName`\"]' ).selectpicker('refresh'); } );"}]
 
-<script type="text/javascript"><!--
+<script><!--
     var allStates = new Array();
     var allStateIds = new Array();
     var allCountryIds = new Object();

@@ -26,7 +26,7 @@
                     [{if !$oxcmp_basket->getProductsCount()}]
                         <div class="alert alert-danger">[{oxmultilang ident="BASKET_EMPTY"}]</div>
                     [{else}]
-                        <form name="basket" action="[{$oViewConf->getSelfActionLink()}]" method="post" role="form" id="giftoptions_modal_form">
+                        <form name="basket" action="[{$oViewConf->getSelfActionLink()}]" method="post"  id="giftoptions_modal_form">
                                 [{$oViewConf->getHiddenSid()}]
                                 <input type="hidden" name="cl" value="basket">
                                 <input type="hidden" name="fnc" value="changewrapping">

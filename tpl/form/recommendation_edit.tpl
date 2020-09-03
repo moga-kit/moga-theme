@@ -1,4 +1,4 @@
-<form action="[{$oViewConf->getSelfActionLink()}]" name="saverecommlist" method="post" class="form-horizontal">
+<form action="[{$oViewConf->getSelfActionLink()}]" name="saverecommlist" method="post" class="max-600">
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
         <input type="hidden" name="fnc" value="saveRecommList">

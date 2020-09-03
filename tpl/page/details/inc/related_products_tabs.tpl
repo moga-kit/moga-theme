@@ -36,10 +36,10 @@
 [{block name="details_relatedproducts_similarproducts"}]
     [{if $oView->getSimilarProducts()}]
         [{capture append="reltabs"}]
-            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#similar" data-toggle="tab">[{oxmultilang ident="SIMILAR_PRODUCTS"}]</a>
+            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#similars" data-toggle="tab">[{oxmultilang ident="SIMILAR_PRODUCTS"}]</a>
         [{/capture}]
         [{capture append="reltabsContent"}]
-            <div id="similar" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+            <div id="similars" class="tab-pane[{if $blFirstTab}] active[{/if}]">
                 <div class="container-xxl">
                     [{include file="widget/product/list.tpl" type="grid" listId="similar"  products=$oView->getSimilarProducts() subhead="WIDGET_PRODUCT_RELATED_PRODUCTS_SIMILAR_SUBHEADER"|oxmultilangassign}]
                 </div>
@@ -57,7 +57,7 @@
         [{capture append="reltabsContent"}]
         <div id="cross" class="tab-pane[{if $blFirstTab}] active[{/if}]">
             <div class="container-xxl">
-                [{include file="widget/product/list.tpl" type="grid" listId="cross" products=$oView->getCrossSelling() subhead="WIDGET_PRODUCT_RELATED_PRODUCTS_CROSSSELING_SUBHEADER"|oxmultilangassign}]
+                [{include file="widget/product/list.tpl" type="grid" listId="crossproducts" products=$oView->getCrossSelling() subhead="WIDGET_PRODUCT_RELATED_PRODUCTS_CROSSSELING_SUBHEADER"|oxmultilangassign}]
             </div>
         </div>
         [{/capture}]

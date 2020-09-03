@@ -3,7 +3,7 @@
 
 [{assign var="currency" value=$oView->getActCurrency()}]
 <p class="alert alert-info">[{oxmultilang ident="MESSAGE_PRICE_ALARM_PRICE_CHANGE"}]</p>
-<form class="js-oxValidate form-horizontal" name="pricealarm" action="[{$oViewConf->getSelfActionLink()}]" method="post" novalidate="novalidate">
+<form class="js-oxValidate max-600" name="pricealarm" action="[{$oViewConf->getSelfActionLink()}]" method="post" novalidate="novalidate">
     <div>
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]

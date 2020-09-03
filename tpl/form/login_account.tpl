@@ -61,7 +61,7 @@
         <div class="card-header">[{oxmultilang ident="OPEN_ACCOUNT"}]</div>
         <div class="card-body">
             <p>[{oxmultilang ident="DD_LOGIN_ACCOUNT_PANEL_CREATE_BODY"}]</p>
-            <a id="openAccountLink" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=register"}]" class="btn btn-primary" role="button">[{oxmultilang ident="OPEN_ACCOUNT"}]</a><br />
+            <a id="openAccountLink" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=register"}]" class="btn btn-primary" >[{oxmultilang ident="OPEN_ACCOUNT"}]</a><br />
         </div>
     </div>
 </div>

@@ -27,6 +27,6 @@
         [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxpassword}]
     </div>
     <div class="mb-3">
-        <button id="savePass" type="submit" class="btn btn-primary" role="button">[{oxmultilang ident="SAVE"}]</button>
+        <button id="savePass" type="submit" class="btn btn-primary" >[{oxmultilang ident="SAVE"}]</button>
     </div>
 </form>

@@ -7,9 +7,9 @@
                     <li class="text-muted pr-3">[{oxmultilang ident="YOU_ARE_HERE"}]:</li>
 
                     [{foreach from=$oView->getBreadCrumb() item="sCrum" name="breadcrumb"}]
-                        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb-item[{if $smarty.foreach.breadcrumb.last}] active[{/if}]">
-                            <a href="[{if $sCrum.link}][{$sCrum.link}][{else}]#[{/if}]" class="breadcrumb-link" title="[{$sCrum.title|escape:'html'}]" itemprop="url">
-                                <span itemprop="title">[{$sCrum.title}]</span>
+                        <li class="breadcrumb-item[{if $smarty.foreach.breadcrumb.last}] active[{/if}]">
+                            <a href="[{if $sCrum.link}][{$sCrum.link}][{else}]#[{/if}]" class="breadcrumb-link" title="[{$sCrum.title|escape:'html'}]">
+                                [{$sCrum.title}]
                             </a>
                         </li>
                     [{/foreach}]

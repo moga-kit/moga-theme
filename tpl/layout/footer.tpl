@@ -18,7 +18,7 @@
                                 [{block name="dd_footer_servicelist"}]
                                 <section
                                         class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] footer-box footer-box-service">
-                                    <div class="h4 footer-box-title">[{oxmultilang ident="SERVICES"}]</div>
+                                    <h6 class="h4 footer-box-title">[{oxmultilang ident="SERVICES"}]</h6>
                                     <div class="footer-box-content">
                                         [{block name="dd_footer_servicelist_inner"}]
                                         [{oxid_include_widget cl="oxwServiceList" noscript=1 nocookie=1 force_sid=$force_sid}]
@@ -29,7 +29,7 @@
                                 [{block name="dd_footer_information"}]
                                 <section
                                         class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] footer-box footer-box-information">
-                                    <div class="h4 footer-box-title">[{oxmultilang ident="INFORMATION"}]</div>
+                                    <h6 class="h4 footer-box-title">[{oxmultilang ident="INFORMATION"}]</h6>
                                     <div class="footer-box-content">
                                         [{block name="dd_footer_information_inner"}]
                                         [{oxid_include_widget cl="oxwInformation" noscript=1 nocookie=1 force_sid=$force_sid}]
@@ -40,7 +40,7 @@
                                 [{if $blShowFullFooter}]
                                 [{block name="dd_footer_manufacturerlist"}]
                                 <section class="col-12 col-md-6 col-lg-3 footer-box footer-box-manufacturers">
-                                    <div class="h4 footer-box-title">[{oxmultilang ident="OUR_BRANDS"}]</div>
+                                    <h6 class="h4 footer-box-title">[{oxmultilang ident="OUR_BRANDS"}]</h6>
                                     <div class="footer-box-content">
                                         [{block name="dd_footer_manufacturerlist_inner"}]
                                         [{oxid_include_widget cl="oxwManufacturerList" _parent=$oView->getClassName() noscript=1 nocookie=1}]
@@ -50,7 +50,7 @@
                                 [{/block}]
                                 [{block name="dd_footer_categorytree"}]
                                 <section class="col-12 col-md-6 col-lg-3 footer-box footer-box-categories">
-                                    <div class="h4 footer-box-title">[{oxmultilang ident="CATEGORIES"}]</div>
+                                    <h6 class="h4 footer-box-title">[{oxmultilang ident="CATEGORIES"}]</h6>
                                     <div class="footer-box-content">
                                         [{block name="dd_footer_categorytree_inner"}]
                                         [{oxid_include_widget cl="oxwCategoryTree" _parent=$oView->getClassName() sWidgetType="footer" noscript=1 nocookie=1}]
@@ -66,7 +66,7 @@
                                 <div class="col-12 mx-auto mx-lg-0">
                                     [{if $oView->showNewsletter()}]
                                     <section class="footer-box footer-box-newsletter">
-                                        <div class="h4 footer-box-title">[{oxmultilang ident="NEWSLETTER"}]</div>
+                                        <h6 class="h4 footer-box-title">[{oxmultilang ident="NEWSLETTER"}]</h6>
                                         <div class="footer-box-content">
                                             [{block name="dd_footer_newsletter"}]
                                             <p class="small">[{oxmultilang ident="FOOTER_NEWSLETTER_INFO"}]</p>
