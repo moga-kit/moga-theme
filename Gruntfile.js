@@ -79,7 +79,7 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
                         //'<%= project.dev %>build/vendor/jquery-ui/js/jquery-ui.js',
                         '<%= project.dev %>build/js/pages/details.js',
-                        '<%= project.dev %>build/js/pages/review.js',
+                        //'<%= project.dev %>build/js/pages/review.js',
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
                         '<%= project.dev %>build/js/pages/compare.js'
@@ -96,13 +96,12 @@ module.exports = function (grunt) {
                 dest: '<%= project.out %><%= project.theme %>/src/fonts/',
                 destCss: '<%= project.dev %>/build/scss/',
                 options: {
-                    engine: 'node',
                     relativeFontPath: '../fonts/',
                     fontPathVariables: true,
                     stylesheet: 'scss',
                     fontFamilyName: 'icons',
                     hash: false,
-                    normalize: true,
+                    normalize: false,
                     fontFilename: 'icons',
                     types: 'woff2,woff',
                     template: 'build/tasks/templates/custom_webfont.scss'
@@ -115,7 +114,7 @@ module.exports = function (grunt) {
                     beautify: false,
                     expand: false
                 },
-                src: '<%= project.out %><%= project.theme %>/src/css/styles.min.css',
+                src:  '<%= project.out %><%= project.theme %>/src/css/styles.min.css',
                 dest: '<%= project.out %><%= project.theme %>/src/css/styles.min.css'
             }
         },

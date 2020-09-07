@@ -1,0 +1,42 @@
+body {
+  font-size: $font-size-base;
+}
+
+.wrapper {
+  background-color: $white;
+
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.sidebarLeft {
+      display: flex;
+      padding: 0 $grid-gutter-width;
+
+      .sidebar {
+        flex: 0 0 250px;
+        max-width: 250px;
+      }
+
+     .content {
+        padding: 0 0 0 $grid-gutter-width;
+        flex: 1 0 0;
+      }
+    }
+  }
+}
+
+.products {
+  padding: $row-padding 0;
+  text-align: center;
+
+  .page-header {
+    margin-bottom: $row-padding/2;
+  }
+}
+
+.max-600 {
+  max-width: 600px;
+}
