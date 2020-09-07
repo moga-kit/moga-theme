@@ -1,5 +1,5 @@
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 [{if $oView->getAccountDeletionStatus() == true}]
     [{assign var="statusMessage" value="DD_DELETE_MY_ACCOUNT_SUCCESS"|oxmultilangassign}]

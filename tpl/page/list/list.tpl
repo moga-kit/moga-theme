@@ -118,7 +118,7 @@
                                             <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-fluid subcat-icon">
                                         </a>
                                         [{else}]
-                                        <a href="[{$category->getLink()}]" class="btn btn-block btn-info">[{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]</a>
+                                        <a href="[{$category->getLink()}]" class="btn btn-block btn-outline-primary">[{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]</a>
                                         [{/if}]
 
                                         [{if $category->getHasVisibleSubCats()}]

@@ -6,16 +6,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
-
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
 
         [{block name="head_meta_robots"}]
-            [{if $oView->noIndex() == 1}]
+            [{*if $oView->noIndex() == 1}]
                 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
             [{elseif $oView->noIndex() == 2}]
                 <meta name="ROBOTS" content="NOINDEX, FOLLOW">
-            [{/if}]
+            [{/if*}]
+            <meta name="ROBOTS" content="INDEX, FOLLOW">
         [{/block}]
 
         [{block name="head_meta_description"}]
@@ -159,27 +159,9 @@
             [{$_block}]
         [{/foreach}]
         [{oxstyle}]
-
-        [{*if $sStyle}]
-            <style>
-                body {
-                    [{$sStyle}]
-                }
-            </style>
-        [{/if*}]
-        [{*if $oViewConf->getViewThemeParam('sPrimaryColor')}]
-
-            [{assign var="sPrimary" value=$oViewConf->getViewThemeParam('sPrimaryColor')}]
-            <style>
-                :root {
-                    --primary: [{$sPrimary}];
-                }
-            </style>
-        [{/if*}]
     </head>
 
     <body class="cl-[{$oView->getClassName()}][{if $smarty.get.plain == '1'}] popup[{/if}][{if $blIsCheckout}] is-checkout[{/if}][{if $oxcmp_user && $oxcmp_user->oxuser__oxpassword->value}] is-logged-in[{/if}]">
-
     [{* Theme SVG icons block *}]
     [{block name="theme_svg_icons"}][{/block}]
 
@@ -192,10 +174,9 @@
     [{/if*}]
 
     [{block name="base_js"}]
-        [{include file="i18n/js_vars.tpl"}]
-        <script src="[{$oViewConf->getBaseDir()}]out/moga/src/js/scripts.min.js"></script>
+        [{*include file="i18n/js_vars.tpl"*}]
+        [{oxscript include="js/scripts.min.js"}]
 
-        [{*oxscript include="js/scripts.min.js"*}]
     [{/block}]
 
     [{if $oViewConf->isTplBlocksDebugMode()}]
@@ -203,7 +184,7 @@
         [{oxscript add="$( 'body' ).oxBlockDebug();"}]
     [{/if}]
 
-    [{oxscript}]
+    [{oxscript|replace:'type="text/javascript"':''}]
 
     [{if !$oView->isDemoShop()}]
         [{oxid_include_dynamic file="widget/dynscript.tpl"}]

@@ -1,5 +1,6 @@
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
+
 <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
         [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
         [{$oViewConf->getHiddenSid()}]

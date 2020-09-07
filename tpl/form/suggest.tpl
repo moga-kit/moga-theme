@@ -1,7 +1,7 @@
 [{assign var="_oProduct" value=$oView->getProduct()}]
 [{assign var="editval" value=$oView->getSuggestData()}]
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate="novalidate">
         [{$oViewConf->getHiddenSid()}]

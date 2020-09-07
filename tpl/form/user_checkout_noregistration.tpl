@@ -1,6 +1,6 @@
 [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
 
-[{block name="user_checkout_noregistration"}]
+[{*block name="user_checkout_noregistration"}]
     [{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 
     [{capture assign="sValidationJS"}]
@@ -23,7 +23,7 @@
         [{/strip}]
     [{/capture}]
 
-    [{oxscript add=$sValidationJS}]
+    [{oxscript add=$sValidationJS*}]
 
     <form class="max-600 js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post"  novalidate="novalidate">
         [{block name="user_checkout_noregistration_form"}]

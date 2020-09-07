@@ -1,12 +1,12 @@
 [{assign var="currency" value=$oView->getActCurrency()}]
-    <a href="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-info btn-staffel freeButton" data-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</a>
+    <a href="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</a>
 
 <div class="modal fade" id="modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="h4 modal-title">[{oxmultilang ident="BLOCK_PRICE"}]</span>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="moga-times"></i> </button>
             </div>
             <div class="modal-body">
                 <dl class="dl-horizontal">

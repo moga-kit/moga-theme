@@ -33,7 +33,6 @@
                                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                                     <picture>
                                                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'webp')}]" media="(max-width: 375px)">
-                                                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'jpg')}]" media="(max-width: 375px)">
 
                                                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'webp')}]" media="(max-width: 767px)">
                                                         <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 750, 300, 'jpg')}]" media="(max-width: 767px)">

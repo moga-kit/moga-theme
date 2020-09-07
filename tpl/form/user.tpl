@@ -1,4 +1,4 @@
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 
 [{capture assign="sValidationJS"}]
     [{strip}]
@@ -20,7 +20,7 @@
     [{/strip}]
 [{/capture}]
 
-[{oxscript add=$sValidationJS}]
+[{oxscript add=$sValidationJS*}]
 [{block name="user"}]
     <form class="js-oxValidate max-600" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate="novalidate">
         [{block name="user_form"}]

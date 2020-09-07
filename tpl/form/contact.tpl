@@ -1,8 +1,7 @@
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
-
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 [{assign var="editval" value=$oView->getUserData()}]
-<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate="novalidate">
+<form class="max-600 needs-validation" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="fnc" value="send"/>
         <input type="hidden" name="cl" value="contact"/>
@@ -11,97 +10,80 @@
 
     [{block name="contact_form_fields"}]
         <div class="mb-3">
-            <label class="[{if $contactFormFields.salutation.isRequired}]req[{/if}] form-label col-lg-2">
+            <label class="[{if $contactFormFields.salutation.isRequired}]req[{/if}] form-label">
                 [{oxmultilang ident="TITLE"}]
             </label>
-            <div class="col-lg-10 controls">
-                [{include
-                file="form/fieldset/salutation.tpl"
-                name="editval[oxuser__oxsal]"
-                value=$editval.oxuser__oxsal
-                class="form-control selectpicker show-tick "
-                required=$contactFormFields.salutation.isRequired
-                }]
-            </div>
+            [{include
+            file="form/fieldset/salutation.tpl"
+            name="editval[oxuser__oxsal]"
+            value=$editval.oxuser__oxsal
+            class="form-select"
+            required=$contactFormFields.salutation.isRequired
+            }]
         </div>
         <div class="mb-3[{if $aErrors.oxuser__oxfname}] oxInValid[{/if}]">
-            <label class="[{if $contactFormFields.firstName.isRequired}]req[{/if}] form-label col-lg-2"
-                   for="editval[oxuser__oxfname]">
+            <label class="[{if $contactFormFields.firstName.isRequired}]req[{/if}] form-label" for="editval[oxuser__oxfname]">
                 [{oxmultilang ident="FIRST_NAME"}]
             </label>
-            <div class="col-lg-10 controls">
-                <input type="text"
-                       name="editval[oxuser__oxfname]"
-                       id="editval[oxuser__oxfname]"
-                       size="70"
-                       maxlength="255"
-                       value="[{$editval.oxuser__oxfname}]"
-                       class="form-control"
-                       [{if $contactFormFields.firstName.isRequired}]required="required"[{/if}] >
-            </div>
+            <input type="text"
+               name="editval[oxuser__oxfname]"
+               id="editval[oxuser__oxfname]"
+               size="70"
+               maxlength="255"
+               value="[{$editval.oxuser__oxfname}]"
+               class="form-control"[{if $contactFormFields.firstName.isRequired}] required[{/if}] >
         </div>
         <div class="mb-3[{if $aErrors.oxuser__oxlname}] oxInValid[{/if}]">
-            <label class="[{if $contactFormFields.lastName.isRequired}]req[{/if}] form-label col-lg-2"
-                   for="editval[oxuser__oxlname]">
+            <label class="[{if $contactFormFields.lastName.isRequired}]req[{/if}] form-label" for="editval[oxuser__oxlname]">
                 [{oxmultilang ident="LAST_NAME"}]
             </label>
-            <div class="col-lg-10 controls">
-                <input type="text"
-                       name="editval[oxuser__oxlname]"
-                       id="editval[oxuser__oxlname]"
-                       size=70
-                       maxlength=255
-                       value="[{$editval.oxuser__oxlname}]"
-                       class="form-control"
-                       [{if $contactFormFields.lastName.isRequired}]required="required"[{/if}]>
-            </div>
+            <input type="text"
+               name="editval[oxuser__oxlname]"
+               id="editval[oxuser__oxlname]"
+               size=70
+               maxlength=255
+               value="[{$editval.oxuser__oxlname}]"
+               class="form-control"
+               [{if $contactFormFields.lastName.isRequired}] required[{/if}]>
         </div>
         <div class="mb-3[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
-            <label class="[{if $contactFormFields.email.isRequired}]req[{/if}] form-label col-lg-2"
-                   for="contactEmail">
+            <label class="[{if $contactFormFields.email.isRequired}]req[{/if}] form-label" for="contactEmail">
                 [{oxmultilang ident="EMAIL"}]
             </label>
-            <div class="col-lg-10 controls">
-                <input id="contactEmail"
-                       type="email"
-                       name="editval[oxuser__oxusername]"
-                       size=70
-                       maxlength=255
-                       value="[{$editval.oxuser__oxusername}]"
-                       class="form-control"
-                       [{if $contactFormFields.email.isRequired}]required="required"[{/if}]>
-            </div>
+            <input id="contactEmail"
+               type="email"
+               name="editval[oxuser__oxusername]"
+               size=70
+               maxlength=255
+               value="[{$editval.oxuser__oxusername}]"
+               class="form-control"
+               [{if $contactFormFields.email.isRequired}] required[{/if}]>
         </div>
         <div class="mb-3[{if $aErrors && !$oView->getContactSubject()}] oxInValid[{/if}]">
-            <label class="[{if $contactFormFields.subject.isRequired}]req[{/if}] form-label col-lg-2"
-                   for="c_subject">
+            <label class="[{if $contactFormFields.subject.isRequired}]req [{/if}]form-label" for="c_subject">
                 [{oxmultilang ident="SUBJECT"}]
             </label>
-            <div class="col-lg-10 controls">
-                <input type="text"
-                       name="c_subject"
-                       id="c_subject"
-                       size="70"
-                       maxlength=80
-                       value="[{$oView->getContactSubject()}]"
-                       class="form-control"
-                       [{if $contactFormFields.subject.isRequired}]required="required"[{/if}]>
-            </div>
+            <input type="text"
+               name="c_subject"
+               id="c_subject"
+               size="70"
+               maxlength=80
+               value="[{$oView->getContactSubject()}]"
+               class="form-control"
+               [{if $contactFormFields.subject.isRequired}] required[{/if}]>
         </div>
         <div class="mb-3">
-            <label class="[{if $contactFormFields.message.isRequired}]req[{/if}] form-label col-lg-2"
-                   for="c_message">
+            <label class="[{if $contactFormFields.message.isRequired}]req [{/if}]form-label" for="c_message">
                 [{oxmultilang ident="MESSAGE"}]
             </label>
-            <div class="col-lg-10 controls">
-                    <textarea rows="15"
-                              cols="70"
-                              name="c_message"
-                              id="c_message"
-                              class="form-control"
-                              [{if $contactFormFields.message.isRequired}]required="required"[{/if}]
-                    >[{$oView->getContactMessage()}]</textarea>
-            </div>
+            <textarea rows="15"
+                cols="70"
+                name="c_message"
+                id="c_message"
+                class="form-control"
+                [{if $contactFormFields.message.isRequired}] required[{/if}]>
+                [{$oView->getContactMessage()}]
+            </textarea>
         </div>
     [{/block}]
 

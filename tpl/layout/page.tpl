@@ -7,16 +7,16 @@
         [{include file="layout/header.tpl"}]
     [{/block}]
 
-    <div id="wrapper"[{if $sidebar}] class="sidebar[{$sidebar}]"[{/if}]>
+    <div class="wrapper[{if $sidebar}] sidebar[{$sidebar}][{/if}]">
         [{$smarty.capture.loginErrors}]
 
         [{if $sidebar && $sidebar != "Right"}]
-            <div class="[{$oView->getClassName()}]" id="sidebar">
+            <div class="[{$oView->getClassName()}]">
                 [{include file="layout/sidebar.tpl"}]
             </div>
         [{/if}]
 
-        <div class="content" id="content">
+        <div class="content">
             [{block name="content_main"}]
                 [{include file="message/errors.tpl"}]
 
@@ -27,7 +27,7 @@
         </div>
 
         [{if $sidebar && $sidebar == "Right"}]
-            <div id="sidebar" class="[{$oView->getClassName()}]">
+            <div class="[{$oView->getClassName()}]">
                 [{include file="layout/sidebar.tpl"}]
             </div>
         [{/if}]

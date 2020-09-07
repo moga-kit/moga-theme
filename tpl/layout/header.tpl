@@ -6,7 +6,7 @@
     [{if $headerWidth == 'container'}]
 <div class="container-xxl">
     [{/if}]
-    <header id="header" class="header">
+    <header class="header">
         <div class="header-box">
             <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                 <div class="row">
@@ -29,10 +29,10 @@
                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                 <picture>
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'webp')}]">
-                                    <img loading="lazy" src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
+                                    <img  src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
                                 </picture>
                                 [{else}]
-                                    <img loading="lazy" src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
+                                    <img  src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
                                 [{/if}]
                             [{else}]
                                 <svg version="1.1" class="logo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

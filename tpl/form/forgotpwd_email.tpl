@@ -1,5 +1,5 @@
-[{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
+[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+[{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 <p>
     [{oxmultilang ident="HAVE_YOU_FORGOTTEN_PASSWORD"}]<br>

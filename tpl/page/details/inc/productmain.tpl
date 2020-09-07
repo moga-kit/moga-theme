@@ -68,11 +68,8 @@
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                             <picture>
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, 375, 'webp')}]" media="(max-width: 375px)">
-                                <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, 375, 'jpg')}]" media="(max-width: 375px)">
-
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, 750, 'webp')}]" media="(max-width: 767px)">
                                 <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, 750, 'jpg')}]" media="(max-width: 767px)">
-
 
                                 [{if $imageCount == 1}]
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 660, 660, 'webp')}]" media="(max-width: 991px)">
@@ -128,7 +125,6 @@
                                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                         <picture>
                                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'webp')}]" media="(max-width: 375px)">
-                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'jpg')}]" media="(max-width: 375px)">
 
                                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'webp')}]" media="(max-width: 767px)">
                                             <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'jpg')}]" media="(max-width: 767px)">
@@ -142,7 +138,7 @@
                                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'webp')}]">
                                             <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'jpg')}]">
 
-                                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'webp')}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="w-100 img-fluid">
+                                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'jpg')}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="w-100 img-fluid">
                                         </picture>
                                         [{else}]
                                             <img loading="lazy" src="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="w-100 img-fluid">
@@ -193,8 +189,7 @@
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                 <picture>
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', 'webp')}]">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', 'jpg')}]">
-                                    <img src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', 'webp')}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
+                                    <img src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', 'jpg')}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                                 </picture>
                             [{else}]
                                 <img src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">

@@ -1,5 +1,5 @@
 [{block name="user_checkout_registration"}]
-    [{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+    [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 
     [{capture assign="sValidationJS"}]
         [{strip}]
@@ -21,7 +21,7 @@
         [{/strip}]
     [{/capture}]
 
-    [{oxscript add=$sValidationJS}]
+    [{oxscript add=$sValidationJS*}]
 
     [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
 
