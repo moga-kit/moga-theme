@@ -40,10 +40,10 @@ $ox-footer-border: $ox-border;
 
 $ox-bg: $gray-100;
 $ox-header-bg: $ox-bg;
-$ox-footer-bg: $gray-800;
+$ox-footer-bg: $ox-bg;
 
 $ox-color: $gray-600;
-$ox-footer-color: #fff;
+$ox-footer-color: #000;
 $ox-header-color: $ox-color;
 
 $ox-container-base-background-color:    $white;
@@ -55,13 +55,11 @@ $ox-footer-color-twitter:               #1AB2E8;
 $ox-footer-color-youtube:               #CC181E;
 $ox-footer-color-blog:                  #333333;
 
-$zindex-sticky:                     999;
-
 //$ox-footer-bg:                          #F2F2F2;
 //$ox-footer-border:                      #E7E7E7;
 //$ox-footer-color:                       #666666;
 
-$grid-gutter-width: 1rem;
+
 //== Boxed layout
 //
 //## Variables to use across the boxed layout
@@ -137,12 +135,12 @@ $ox-checkout-steps-passed-color: #FFF;
 
 //## Headings
 
-$h1-font-size:                $font-size-base * 1.75;
-$h2-font-size:                $font-size-base * 1.5;
-$h3-font-size:                $font-size-base * 1.25;
-$h4-font-size:                $font-size-base;
-$h5-font-size:                $font-size-base;
-$h6-font-size:                $font-size-base;
+$h1-font-size: 36px;
+$h2-font-size: 30px;
+$h3-font-size: 24px;
+$h4-font-size: 18px;
+$h5-font-size: 14px;
+$h6-font-size: 12px;
 
 $headings-font-weight:        400;
 
@@ -193,7 +191,7 @@ $enable-transitions:          true;
 $enable-reduced-motion:       true;
 $enable-grid-classes:         true;
 $enable-button-pointers:      true;
-$enable-rfs:                  false;
+$enable-rfs:                  true;
 $enable-validation-icons:     false;
 $enable-negative-margins:     false;
 $enable-deprecation-messages: false;
