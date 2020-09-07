@@ -101,7 +101,11 @@
         [{/block}]
 
         [{block name="base_style"}]
-            [{oxstyle include="css/styles.min.css"}]
+            [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
+                [{oxstyle include="css/preview.css"}]
+            [{else}]
+                [{oxstyle include="css/styles.min.css"}]
+            [{/if}]
         [{/block}]
 
         [{block name="base_fonts"}]
