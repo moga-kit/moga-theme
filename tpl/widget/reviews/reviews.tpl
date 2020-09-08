@@ -19,7 +19,7 @@
                 <div id="review_form" class="panel-collapse collapse">
                     <div class="card-body">
                         [{block name="widget_reviews_form"}]
-                            <form action="[{$oViewConf->getSelfActionLink()}]" method="post" id="rating" class="max-600" novalidate="novalidate">
+                            <form action="[{$oViewConf->getSelfActionLink()}]" method="post" id="rating" class="max-600" novalidate>
                                 <div id="writeReview" class="product-review">
                                     <div class="d-none">
                                         [{if $oView->canRate()}]

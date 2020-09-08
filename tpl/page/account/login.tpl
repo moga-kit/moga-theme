@@ -1,7 +1,7 @@
 [{assign var="template_title" value="REGISTER"|oxmultilangassign}]
 [{capture append="oxidBlock_content"}]
-    <div class="accountLoginView">
-        <h1 id="loginAccount" class="page-header">[{oxmultilang ident="LOGIN"}]</h1>
+    <div class="container-xxl">
+        <h1 class="page-header">[{oxmultilang ident="LOGIN"}]</h1>
         [{include file="form/login_account.tpl"}]
     </div>
     [{insert name="oxid_tracker" title=$template_title}]

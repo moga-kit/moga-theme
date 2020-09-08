@@ -1,5 +1,5 @@
 <div class="well">
-    <form name="login" class="js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" method="post" id="private-sales-login">
+    <form name="login" class="needs-validation" action="[{$oViewConf->getSslSelfLink()}]" method="post" id="private-sales-login">
 
         <div>
             [{$oViewConf->getHiddenSid()}]
