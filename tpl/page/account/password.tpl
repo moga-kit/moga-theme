@@ -14,7 +14,7 @@
         </div>
     [{/if}]
 
-    <h1 id="personalSettingsHeader">[{oxmultilang ident="CHANGE_PASSWORD"}]</h1>
+    <h1 class="h2">[{oxmultilang ident="CHANGE_PASSWORD"}]</h1>
 
     [{include file="form/user_password.tpl"}]
 

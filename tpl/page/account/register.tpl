@@ -10,7 +10,7 @@
             [{include file="message/errors.tpl"}]
         [{/if}]
 
-        <h1 id="openAccHeader">[{oxmultilang ident="OPEN_ACCOUNT"}]</h1>
+        <h1 class="h2">[{oxmultilang ident="OPEN_ACCOUNT"}]</h1>
         [{include file="form/register.tpl"}]
     </div>
 [{/capture}]

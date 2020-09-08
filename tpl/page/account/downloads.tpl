@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value="MY_DOWNLOADS"|oxmultilangassign}]
-    <h1>[{oxmultilang ident="MY_DOWNLOADS"}]</h1>
+    <h1 class="h2">[{oxmultilang ident="MY_DOWNLOADS"}]</h1>
     [{if $oView->getOrderFilesList()|count}]
     <ol class="list-unstyled downloadList">
         [{foreach from=$oView->getOrderFilesList() item="oOrderArticle"}]

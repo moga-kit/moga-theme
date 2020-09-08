@@ -13,7 +13,7 @@
         [{assign var="template_title" value="FORGOT_PASSWORD"|oxmultilangassign}]
     [{/if}]
 
-    <h1>[{$template_title}]</h1>
+    <h1 class="h2">[{$template_title}]</h1>
 
     [{if $oView->isExpiredLink()}]
         <div class="alert alert-danger">[{oxmultilang ident="ERROR_MESSAGE_PASSWORD_LINK_EXPIRED"}]</div>

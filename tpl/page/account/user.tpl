@@ -1,5 +1,5 @@
 [{capture append="oxidBlock_content"}]
-    <h1 id="addressSettingsHeader">[{$oView->getTitle()}]</h1>
+    <h1 class="h2">[{$oView->getTitle()}]</h1>
 
     [{block name="account_user_form"}]
         [{include file="form/user.tpl"}]

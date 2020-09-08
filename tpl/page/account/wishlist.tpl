@@ -10,7 +10,7 @@
         [{include file="message/notice.tpl" statusMessage=$_statusMessage}]
     [{/if}]
 
-    <h1>[{$oView->getTitle()}]</h1>
+    <h1 class="h2">[{$oView->getTitle()}]</h1>
 
     <div class="wishlist-search">
         [{include file="form/wishlist_search.tpl" searchClass="account_wishlist"}]

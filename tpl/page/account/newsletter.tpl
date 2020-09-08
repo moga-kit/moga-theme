@@ -8,7 +8,7 @@
         [{/if}]
     [{/if}]
 
-    <h1 id="newsletterSettingsHeader">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</h1>
+    <h1 class="h2">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</h1>
 
     [{include file="form/account_newsletter.tpl"}]
 

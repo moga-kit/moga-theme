@@ -4,7 +4,7 @@
 
     [{block name="account_reviewlist_header"}]
         [{assign var="template_title" value="MY_REVIEWS"|oxmultilangassign}]
-        <h1>[{oxmultilang ident="MY_REVIEWS"}]</h1>
+        <h1 class="h2">[{oxmultilang ident="MY_REVIEWS"}]</h1>
     [{/block}]
 
     [{block name="account_reviewlist_list"}]

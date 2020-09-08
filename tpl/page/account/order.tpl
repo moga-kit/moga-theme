@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value="ORDER_HISTORY"|oxmultilangassign}]
-    <h1>[{oxmultilang ident="ORDER_HISTORY"}]</h1>
+    <h1 class="h2">[{oxmultilang ident="ORDER_HISTORY"}]</h1>
 
     [{assign var=oOrders value=$oView->getOrderList()}]
 
