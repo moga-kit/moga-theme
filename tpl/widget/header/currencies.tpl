@@ -1,12 +1,12 @@
 [{if $oView->loadCurrency()}]
     [{assign var="currency" value=$oView->getActCurrency()}]
-    <div class="btn-group currencies-menu">
+    <div class="btn-group" role="group">
         <button type="button" aria-label="Currencys" class="btn dropdown-toggle" data-toggle="dropdown">
             [{block name="dd_layout_page_header_icon_menu_currencies_button"}]
-                [{$currency->name}] <i class="moga-down"></i>
+                [{$currency->name}]
             [{/block}]
         </button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <ul class="dropdown-menu dropdown-menu-right">
             [{block name="dd_layout_page_header_icon_menu_currencies_list"}]
                 [{foreach from=$oxcmp_cur item=_cur}]
                     [{if $_cur->selected}]

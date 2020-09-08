@@ -48,8 +48,5 @@
 
     [{block name="sidebar_social"}]
     [{/block}]
-
-    [{block name="sidebar_shopluperatings"}]
-    [{/block}]
 [{/block}]
 

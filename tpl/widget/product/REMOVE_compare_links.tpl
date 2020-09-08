@@ -4,3 +4,5 @@
 [{else}]
     <a class="compare add" data-aid="[{$_compare_aid}]" id="toCmp[{$_compare_testid}]" href="[{$oView->getLink()|oxaddparams:"am=1&amp;addcompare=1&amp;fnc=tocomparelist&aid=`$_compare_aid`&amp;anid=`$_compare_anid`&amp;pgNr=`$_compare_page`&amp;$_additionalParams"}]">[{oxmultilang ident="COMPARE"}]</a>
 [{/if}]
+
+[{* ToDo: REMOVE TPL after checking. *}]

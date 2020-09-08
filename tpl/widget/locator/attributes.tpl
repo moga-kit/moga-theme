@@ -2,7 +2,7 @@
     [{if $attributes}]
 
         <div class="list-filter">
-            <form method="get" action="[{$oViewConf->getSelfActionLink()}]" name="_filterlist" id="filterList" class="row row-cols-md-auto g-1 mb-3 align-items-center">
+            <form method="get" action="[{$oViewConf->getSelfActionLink()}]" name="_filterlist" class="row row-cols-md-auto g-1 mb-3 align-items-center">
                 [{$oViewConf->getHiddenSid()}]
                 [{$oViewConf->getNavFormParams()}]
                 <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">

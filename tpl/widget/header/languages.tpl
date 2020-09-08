@@ -1,12 +1,12 @@
 [{if $oView->isLanguageLoaded()}]
-    <div class="btn-group languages-menu">
+    <div class="btn-group" role="group">
         <button type="button" aria-label="Language" class="btn dropdown-toggle" data-toggle="dropdown">
             [{assign var="sLangImg" value="lang/"|cat:$oViewConf->getActLanguageAbbr()|cat:".png"}]
             [{block name="dd_layout_page_header_icon_menu_languages_button"}]
-                <img src="[{$oViewConf->getImageUrl($sLangImg)}]" alt="[{$sLangImg}]"> <i class="moga-down"></i>
+                <img src="[{$oViewConf->getImageUrl($sLangImg)}]" alt="[{$sLangImg}]">
             [{/block}]
         </button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <ul class="dropdown-menu dropdown-menu-right">
             [{block name="dd_layout_page_header_icon_menu_languages_list"}]
                 [{foreach from=$oxcmp_lang item=_lng}]
                     [{assign var="sLangImg" value="lang/"|cat:$_lng->abbr|cat:".png"}]

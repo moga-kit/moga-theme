@@ -14,3 +14,5 @@
         <span class="dismiss"><a href="#" title="[{oxmultilang ident='BETA_NOTE_CLOSE'}]">x</a></span>
     </div>
 </div>
+
+[{* ToDo: REMOVE TPL after checking. *}]

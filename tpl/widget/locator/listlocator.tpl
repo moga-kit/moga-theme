@@ -11,21 +11,21 @@
 
     [{if $listDisplayType || $sort || $itemsPerPage}]
         [{if $place != "bottom"}]
-        <div class="col text-right options">
-            <div class="btn-group" role="group">
-            [{if $listDisplayType}]
-            [{include file="widget/locator/listdisplaytype.tpl"}]
-            [{/if}]
+            <div class="col text-right options">
+                <div class="btn-group" role="group">
+                    [{if $listDisplayType}]
+                        [{include file="widget/locator/listdisplaytype.tpl"}]
+                    [{/if}]
 
-            [{if $sort}]
-            [{include file="widget/locator/sort.tpl"}]
-            [{/if}]
+                    [{if $sort}]
+                        [{include file="widget/locator/sort.tpl"}]
+                    [{/if}]
 
-            [{if $itemsPerPage}]
-            [{include file="widget/locator/itemsperpage.tpl"}]
-            [{/if}]
+                    [{if $itemsPerPage}]
+                        [{include file="widget/locator/itemsperpage.tpl"}]
+                    [{/if}]
+                </div>
             </div>
-        </div>
         [{/if}]
     [{/if}]
 </div>
