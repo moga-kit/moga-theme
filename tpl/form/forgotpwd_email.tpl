@@ -6,7 +6,7 @@
     [{oxmultilang ident="HERE_YOU_SET_UP_NEW_PASSWORD"}]
 </p>
 
-<form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" novalidate="novalidate">
+<form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" novalidate>
     <div class="row">
         <div class="col-md-6">
                 [{$oViewConf->getHiddenSid()}]

@@ -1,7 +1,7 @@
 [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
-<form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post"   novalidate="novalidate">
+<form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post"   novalidate>
     [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]

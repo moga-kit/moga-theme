@@ -1,7 +1,7 @@
 [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 <div class="card">
-    <form class="js-oxValidate" id="optionLogin" name="login" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate="novalidate">
+    <form class="js-oxValidate" id="optionLogin" name="login" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate>
 
         <div class="card-header">
             <h3 class="card-title">[{oxmultilang ident="ALREADY_CUSTOMER"}]</h3>

@@ -1,7 +1,7 @@
 [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
-<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
+<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate>
         [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
@@ -16,24 +16,22 @@
 
     [{if $oView->isActive('PsLogin')}]
         <div class="mb-3 row">
-            <label class="col-lg-3">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
-            <div class="col-lg-9">
-                <input type="hidden" name="ord_agb" value="0">
-                <div class="checkbox">
-                    <label>
-                        <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
-                        [{oxifcontent ident="oxagb" object="oCont"}]
-                            [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
-                                <a href="#" data-toggle="modal" data-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
-                            [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
-                        [{/oxifcontent}]
-                        [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
-                            [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
-                                <a href="#" data-toggle="modal" data-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
-                            [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
-                        [{/oxifcontent}]
-                    </label>
-                </div>
+            <label>[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
+            <input type="hidden" name="ord_agb" value="0">
+            <div class="checkbox">
+                <label>
+                    <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
+                    [{oxifcontent ident="oxagb" object="oCont"}]
+                        [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
+                            <a href="#" data-toggle="modal" data-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
+                        [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
+                    [{/oxifcontent}]
+                    [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
+                        [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
+                            <a href="#" data-toggle="modal" data-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
+                        [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
+                    [{/oxifcontent}]
+                </label>
             </div>
         </div>
     [{/if}]

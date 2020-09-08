@@ -2,7 +2,7 @@
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 [{assign var="aRegParams" value=$oView->getRegParams()}]
-<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate="novalidate">
+<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post"  novalidate>
     [{$oViewConf->getHiddenSid()}]
     <input type="hidden" name="fnc" value="send">
     <input type="hidden" name="cl" value="newsletter">

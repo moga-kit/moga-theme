@@ -1,4 +1,4 @@
-<form class="max-600" action="[{$oViewConf->getSelfActionLink()}]" name="changepassword" method="post" novalidate="novalidate">
+<form class="max-600" action="[{$oViewConf->getSelfActionLink()}]" name="changepassword" method="post" novalidate>
     [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
 
     [{$oViewConf->getHiddenSid()}]

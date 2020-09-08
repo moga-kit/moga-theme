@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-header">[{oxmultilang ident="LOGIN"}]</div>
         <div class="card-body">
-            <form name="login" class="js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate="novalidate">
+            <form name="login" class="js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="fnc" value="login_noredirect">
@@ -34,21 +34,20 @@
                 </div>
                 <div class="mb-3[{if $aErrors}] oxInValid[{/if}]">
                     <label class="req">[{oxmultilang ident="PASSWORD"}]</label>
-                        <input id="loginPwd" class="js-oxValidate js-oxValidate_notEmpty  form-control" type="password" name="lgn_pwd" role="loginPwd" required="required">
+                        <input id="loginPwd" class="js-oxValidate js-oxValidate_notEmpty form-control" type="password" name="lgn_pwd" role="loginPwd" required="required">
                         <div class="help-block"></div>
                 </div>
                 [{if $oView->showRememberMe()}]
-                    <div class="mb-3">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" class="checkbox" name="lgn_cook" value="1"> [{oxmultilang ident="KEEP_LOGGED_IN"}]
-                            </label>
-                        </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="lgn_cook" name="lgn_cook" value="1">
+                        <label for="lgn_cook" class="form-check-label">
+                             [{oxmultilang ident="KEEP_LOGGED_IN"}]
+                        </label>
                     </div>
                 [{/if}]
 
                 <div class="mb-3">
-                    <button id="loginButton" type="submit" class="btn btn-primary" role="loginButton">[{oxmultilang ident="LOGIN"}]</button>
+                    <button id="loginButton" type="submit" class="btn btn-primary">[{oxmultilang ident="LOGIN"}]</button>
                 </div>
 
                 <div class="mb-3">

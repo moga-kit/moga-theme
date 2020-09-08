@@ -3,7 +3,7 @@
 [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
-<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate="novalidate">
+<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
         <input type="hidden" name="fnc" value="send">

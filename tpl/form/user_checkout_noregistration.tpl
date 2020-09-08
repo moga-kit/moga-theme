@@ -25,7 +25,7 @@
 
     [{oxscript add=$sValidationJS*}]
 
-    <form class="max-600 js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post"  novalidate="novalidate">
+    <form class="max-600 js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post"  novalidate>
         [{block name="user_checkout_noregistration_form"}]
                 [{$oViewConf->getHiddenSid()}]
                 [{$oViewConf->getNavFormParams()}]

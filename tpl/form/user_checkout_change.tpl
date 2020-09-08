@@ -25,7 +25,7 @@
 [{oxscript include="js/changeaddress.min.js" priority=10}]
 
 [{block name="user_checkout_change"}]
-    <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
+    <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate>
         [{block name="user_checkout_change_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             [{$oViewConf->getHiddenSid()}]

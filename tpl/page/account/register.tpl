@@ -5,15 +5,14 @@
 [{/capture}]
 
 [{capture append="oxidBlock_content"}]
-    [{assign var="template_title" value="OPEN_ACCOUNT"|oxmultilangassign}]
-    [{if $oView->isActive('PsLogin')}]
-        [{include file="message/errors.tpl"}]
-    [{/if}]
+    <div class="container-xxl">
+        [{if $oView->isActive('PsLogin')}]
+            [{include file="message/errors.tpl"}]
+        [{/if}]
 
-    <h1 id="openAccHeader">[{oxmultilang ident="OPEN_ACCOUNT"}]</h1>
-    [{include file="form/register.tpl"}]
-
-
+        <h1 id="openAccHeader">[{oxmultilang ident="OPEN_ACCOUNT"}]</h1>
+        [{include file="form/register.tpl"}]
+    </div>
 [{/capture}]
 
 [{if $oView->isActive('PsLogin')}]

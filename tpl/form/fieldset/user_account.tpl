@@ -1,41 +1,30 @@
-<div class="mb-3 row[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
+<div class="mb-3[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
     [{block name="user_account_username"}]
-        <label class="col-lg-3 req" for="userLoginName">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
-        <div class="col-lg-9">
-            <input id="userLoginName" class="form-control js-oxValidate js-oxValidate_notEmpty js-oxValidate_email" type="email" name="lgn_usr" value="[{$oView->getActiveUsername()}]" required="required">
-            <div class="help-block"></div>
-        </div>
+        <label class="req" for="userLoginName">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
+        <input id="userLoginName" class="form-control" type="email" name="lgn_usr" value="[{$oView->getActiveUsername()}]" required="required">
     [{/block}]
 </div>
-<div class="mb-3 row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
+<div class="mb-3[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
     [{block name="user_account_password"}]
-        <label class="col-lg-3 req" for="userPassword">[{oxmultilang ident="PASSWORD"}]</label>
+        <label class="req" for="userPassword">[{oxmultilang ident="PASSWORD"}]</label>
         <input type="hidden" id="passwordLength" value="[{$oViewConf->getPasswordLength()}]">
-        <div class="col-lg-9">
-            <input id="userPassword" class="form-control textbox js-oxValidate js-oxValidate_notEmpty js-oxValidate_length js-oxValidate_match" type="password" name="lgn_pwd" value="[{$lgn_pwd}]" required="required">
-            <div class="help-block"></div>
-        </div>
+        <input id="userPassword" class="form-control" type="password" name="lgn_pwd" value="[{$lgn_pwd}]" required="required">
     [{/block}]
 </div>
-<div class="mb-3 row[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
+<div class="mb-3[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
     [{block name="user_account_confirmpwd"}]
-        <label class="col-lg-3 req">[{oxmultilang ident="CONFIRM_PASSWORD"}]</label>
-        <div class="col-lg-9">
-            <input id="userPasswordConfirm" class="form-control textbox js-oxValidate js-oxValidate_notEmpty js-oxValidate_length js-oxValidate_match" type="password" name="lgn_pwd2" value="[{$lgn_pwd2}]" required="required">
-            <div class="help-block"></div>
-        </div>
+        <label class="req">[{oxmultilang ident="CONFIRM_PASSWORD"}]</label>
+        <input id="userPasswordConfirm" class="form-control" type="password" name="lgn_pwd2" value="[{$lgn_pwd2}]" required="required">
     [{/block}]
 </div>
-<div class="mb-3 row">
-    [{block name="user_account_newsletter"}]
-        <div class="col-lg-9 offset-lg-3">
-            <input type="hidden" name="blnewssubscribed" value="0">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="blnewssubscribed" value="1" [{if $oView->isNewsSubscribed()}]checked[{/if}]> [{oxmultilang ident="NEWSLETTER_SUBSCRIPTION"}]
-                </label>
-            </div>
-            <span class="help-block">[{oxmultilang ident="MESSAGE_NEWSLETTER_SUBSCRIPTION"}]</span>
-        </div>
-    [{/block}]
-</div>
+[{block name="user_account_newsletter"}]
+    <input type="hidden" name="blnewssubscribed" value="0">
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="blnewssubscribed" name="blnewssubscribed" value="1" [{if $oView->isNewsSubscribed()}]checked[{/if}]>
+
+        <label class="form-check-label" for="blnewssubscribed">
+            [{oxmultilang ident="NEWSLETTER_SUBSCRIPTION"}]
+        </label>
+        <p class="text-muted">[{oxmultilang ident="MESSAGE_NEWSLETTER_SUBSCRIPTION"}]</p>
+    </div>
+[{/block}]
