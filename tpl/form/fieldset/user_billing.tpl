@@ -135,6 +135,9 @@
             <div class="help-block"></div>
         </div>
     </div>
+
+    [{* STATE DROPDOWN REMOVED *}]
+    [{*
     <div class="mb-3 row">
         <label class="col-lg-3" for="[{$oxcmp_user->oxuser__oxstateid->value}]">[{oxmultilang ident="DD_USER_LABEL_STATE" suffix="COLON"}]</label>
         <div class="col-lg-9">
@@ -147,6 +150,7 @@
             }]
         </div>
     </div>
+    *}]
 [{/block}]
 
 <div class="mb-3 row[{if $aErrors.oxuser__oxfon}] text-danger"[{/if}]">

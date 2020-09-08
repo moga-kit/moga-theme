@@ -37,6 +37,6 @@
         allCountryIds['[{$country->getId()}]']  = cCount;
     [{/foreach}]
 --></script>
-<select name="[{$stateSelectName}]" id="[{$stateSelectId}]" class="form-select[{if $class}] [{$class}][{/if}]">
+<select name="[{$stateSelectName}]" id="[{$stateSelectId}]" class="BLABLUBTT form-select[{if $class}] [{$class}][{/if}]">
     <option value="">[{oxmultilang ident="PLEASE_SELECT_STATE"}]</option>
 </select>

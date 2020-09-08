@@ -75,6 +75,4 @@
     [{/if}]
 </div>
 
-[{oxscript add="$('#checkAgbTop').click(function(){ $('input[name=ord_agb]').val($(this).is(':checked') ? '1' : '0');});"}]
-[{oxscript add="$('#oxdownloadableproductsagreement').click(function(){ $('input[name=oxdownloadableproductsagreement]').val($(this).is(':checked') ? '1' : '0');});"}]
-[{oxscript add="$('#oxserviceproductsagreement').click(function(){ $('input[name=oxserviceproductsagreement]').val($(this).is(':checked') ? '1' : '0');});"}]
+[{oxscript include="js/agb.min.js" priority=10}]

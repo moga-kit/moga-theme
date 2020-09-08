@@ -21,6 +21,9 @@
 [{/capture}]
 
 [{oxscript add=$sValidationJS*}]
+
+[{oxscript include="js/changeaddress.min.js" priority=10}]
+
 [{block name="user"}]
     <form class="js-oxValidate max-600" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate="novalidate">
         [{block name="user_form"}]
@@ -60,7 +63,7 @@
                     </div>
                 </div>
 
-                [{oxscript add="$('#userChangeAddress').click( function() { $('#addressForm, #addressText').toggle();return false;});"}]
+                [{*oxscript add="$('#userChangeAddress').click( function() { $('#addressForm, #addressText').toggle();return false;});"*}]
 
                 [{* Lieferadresse *}]
                 [{block name="user_shipping_address"}]
@@ -85,7 +88,6 @@
                             [{/block}]
                         </div>
                     </div>
-                    [{oxscript add="$('#showShipAddress').change( function() { $('#shippingAddress').toggle($(this).is(':not(:checked)')); });"}]
                 [{/block}]
             </div>
             <div class="mb-3">
