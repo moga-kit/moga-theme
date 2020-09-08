@@ -1,114 +1,115 @@
 [{assign var="template_title" value="MY_ACCOUNT"|oxmultilangassign}]
 [{capture append="oxidBlock_content"}]
-    <div class="accountDashboardView">
-        <h1 id="accountMain">[{oxmultilang ident="MY_ACCOUNT"}]
-            "[{$oxcmp_user->oxuser__oxusername->value}]"</h1>
+    <h1 class="h2">[{oxmultilang ident="MY_ACCOUNT"}]
+        "[{$oxcmp_user->oxuser__oxusername->value}]"</h1>
 
-        [{if $oView->getAccountDeletionStatus() === false}]
-            [{assign var="statusMessage" value="DD_DELETE_MY_ACCOUNT_ERROR"|oxmultilangassign}]
-            [{include file="message/error.tpl" statusMessage=$statusMessage}]
-        [{/if}]
+    [{if $oView->getAccountDeletionStatus() === false}]
+        [{assign var="statusMessage" value="DD_DELETE_MY_ACCOUNT_ERROR"|oxmultilangassign}]
+        [{include file="message/error.tpl" statusMessage=$statusMessage}]
+    [{/if}]
 
-        <div class="row">
-            <div class="col-12 col-md-6">
-                [{block name="account_dashboard_col1"}]
-                    <div class="card">
-                        <div class="card-header">
-                            <a id="linkAccountPassword" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_password"}]">[{oxmultilang ident="CHANGE_PASSWORD"}]</a>
-                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_password"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                <i class="moga-right"></i>
-                            </a>
-                        </div>
-                        <div class="card-body">[{oxmultilang ident="CHANGE_PASSWORD"}]</div>
+    <div class="row row-cols-md-2">
+        [{block name="account_dashboard_col1"}]
+            <div class="col mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">[{oxmultilang ident="CHANGE_PASSWORD"}]</h4>
+                        <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_password"}]" class="btn btn-primary stretched-link">[{oxmultilang ident="CHANGE_PASSWORD"}]</a>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a id="linkAccountNewsletter" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_newsletter"}]">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</a>
-                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_newsletter"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                <i class="moga-right"></i>
-                            </a>
-                        </div>
-                        <div class="card-body">[{oxmultilang ident="NEWSLETTER_SUBSCRIBE_CANCEL"}]</div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a id="linkAccountBillship" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_user"}]">[{oxmultilang ident="BILLING_SHIPPING_SETTINGS"}]</a>
-                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_user"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                <i class="moga-right"></i>
-                            </a>
-                        </div>
-                        <div class="card-body">[{oxmultilang ident="UPDATE_YOUR_BILLING_SHIPPING_SETTINGS"}]</div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a id="linkAccountOrder" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_order"}]">[{oxmultilang ident="ORDER_HISTORY"}]</a>
-                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_order"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                <i class="moga-right"></i>
-                            </a>
-                        </div>
-                        <div class="card-body">[{oxmultilang ident="ORDERS"}] [{$oView->getOrderCnt()}]</div>
-                    </div>
-                    [{if $oView->isEnabledDownloadableFiles()}]
-                        <div class="card">
-                            <div class="card-header">
-                                <a id="linkAccountDownloads" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_downloads"}]">[{oxmultilang ident="MY_DOWNLOADS"}]</a>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_downloads"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                    <i class="moga-right"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">[{oxmultilang ident="MY_DOWNLOADS_DESC"}]</div>
-                        </div>
-                    [{/if}]
-                [{/block}]
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-                [{block name="account_dashboard_col2"}]
+            <div class="col mb-2"><div class="card">
+                <div class="card-header">
+                    <a id="linkAccountNewsletter" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_newsletter"}]">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</a>
+                    <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_newsletter"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                        <i class="moga-right"></i>
+                    </a>
+                </div>
+                <div class="card-body">[{oxmultilang ident="NEWSLETTER_SUBSCRIBE_CANCEL"}]</div>
+            </div></div>
+            <div class="col mb-2"><div class="card">
+                <div class="card-header">
+                    <a id="linkAccountBillship" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_user"}]">[{oxmultilang ident="BILLING_SHIPPING_SETTINGS"}]</a>
+                    <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_user"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                        <i class="moga-right"></i>
+                    </a>
+                </div>
+                <div class="card-body">[{oxmultilang ident="UPDATE_YOUR_BILLING_SHIPPING_SETTINGS"}]</div>
+            </div></div>
+            <div class="col mb-2"><div class="card">
+                <div class="card-header">
+                    <a id="linkAccountOrder" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_order"}]">[{oxmultilang ident="ORDER_HISTORY"}]</a>
+                    <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_order"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                        <i class="moga-right"></i>
+                    </a>
+                </div>
+                <div class="card-body">[{oxmultilang ident="ORDERS"}] [{$oView->getOrderCnt()}]</div>
+            </div></div>
+            [{if $oView->isEnabledDownloadableFiles()}]
+                <div class="col mb-2"><div class="card">
+                    <div class="card-header">
+                        <a id="linkAccountDownloads" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_downloads"}]">[{oxmultilang ident="MY_DOWNLOADS"}]</a>
+                        <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_downloads"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                            <i class="moga-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">[{oxmultilang ident="MY_DOWNLOADS_DESC"}]</div>
+                            </div></div>
+            [{/if}]
+        [{/block}]
+        [{block name="account_dashboard_col2"}]
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_noticelist"}]">[{oxmultilang ident="MY_WISH_LIST"}]</a>
+                        <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_noticelist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                            <i class="moga-right"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oxcmp_user}][{$oxcmp_user->getNoticeListArtCnt()}][{else}]0[{/if}]</div>
+                </div>
+            </div>
+            [{if $oViewConf->getShowWishlist()}]
+                <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_noticelist"}]">[{oxmultilang ident="MY_WISH_LIST"}]</a>
-                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_noticelist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_wishlist"}]">[{oxmultilang ident="MY_GIFT_REGISTRY"}]</a>
+                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_wishlist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
                                 <i class="moga-right"></i>
                             </a>
                         </div>
-                        <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oxcmp_user}][{$oxcmp_user->getNoticeListArtCnt()}][{else}]0[{/if}]</div>
+                        <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oxcmp_user}][{$oxcmp_user->getWishListArtCnt()}][{else}]0[{/if}]</div>
                     </div>
-                    [{if $oViewConf->getShowWishlist()}]
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_wishlist"}]">[{oxmultilang ident="MY_GIFT_REGISTRY"}]</a>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_wishlist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                    <i class="moga-right"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oxcmp_user}][{$oxcmp_user->getWishListArtCnt()}][{else}]0[{/if}]</div>
+                </div>
+            [{/if}]
+            [{if $oViewConf->getShowCompareList()}]
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=compare"}]">[{oxmultilang ident="MY_PRODUCT_COMPARISON"}]</a>
+                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=compare"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                                <i class="moga-right"></i>
+                            </a>
                         </div>
-                    [{/if}]
-                    [{if $oViewConf->getShowCompareList()}]
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=compare"}]">[{oxmultilang ident="MY_PRODUCT_COMPARISON"}]</a>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=compare"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                    <i class="moga-right"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oView->getCompareItemsCnt()}][{$oView->getCompareItemsCnt()}][{else}]0[{/if}]</div>
-                        </div>
-                    [{/if}]
+                        <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oView->getCompareItemsCnt()}][{$oView->getCompareItemsCnt()}][{else}]0[{/if}]</div>
+                    </div>
+                </div>
+            [{/if}]
 
-                    [{if $oView->isUserAllowedToManageOwnReviews()}]
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_reviewlist"}]">[{oxmultilang ident="MY_REVIEWS"}]</a>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_reviewlist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                    <i class="moga-right"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">[{oxmultilang ident="MY_REVIEWS"}] [{if $oView->getReviewAndRatingItemsCount()}][{$oView->getReviewAndRatingItemsCount()}][{else}]0[{/if}]</div>
+            [{if $oView->isUserAllowedToManageOwnReviews()}]
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_reviewlist"}]">[{oxmultilang ident="MY_REVIEWS"}]</a>
+                            <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_reviewlist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
+                                <i class="moga-right"></i>
+                            </a>
                         </div>
-                    [{/if}]
-                [{/block}]
-            </div>
-        </div>
+                        <div class="card-body">[{oxmultilang ident="MY_REVIEWS"}] [{if $oView->getReviewAndRatingItemsCount()}][{$oView->getReviewAndRatingItemsCount()}][{else}]0[{/if}]</div>
+                    </div>
+                </div>
+            [{/if}]
+        [{/block}]
     </div>
 
     <div class="row">
@@ -132,7 +133,6 @@
                [{oxmultilang ident="LOGOUT"}]
             </a>
         </div>
-        <p>&nbsp;</p>
     </div>
 [{/capture}]
 
