@@ -5,7 +5,7 @@
         [{include file="message/error.tpl" statusMessage=$_statusMessage}]
     [{/if}]
     <h1 class="page-header">[{if $wishuser}][{oxmultilang ident="GIFT_REGISTRY_OF"}] [{$wishuser->oxuser__oxfname->value}] [{$wishuser->oxuser__oxlname->value}][{else}][{oxmultilang ident="PUBLIC_GIFT_REGISTRIES"}][{/if}]</h1>
-    <div class="wishlistView clear bottomRound">
+    <div class="wishlistView bottomRound">
         [{include file="form/wishlist_search.tpl" searchClass="wishlist"}]
         [{if $oView->getWishList()}]
             [{assign var="wishuser" value=$oView->getWishUser()}]

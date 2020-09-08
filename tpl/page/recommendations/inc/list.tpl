@@ -18,10 +18,10 @@
                                         <input type="hidden" name="cl" value="account_recommlist">
                                         <input type="hidden" name="fnc" value="editList">
                                         <input type="hidden" name="recommid" value="[{$recommlist->getId()}]">
-                                    <button class="btn btn-outline-primary btn-sm hasTooltip" type="submit" name="editList" title="[{oxmultilang ident="EDIT"}]">
+                                    <button class="btn btn-outline-primary btn-sm" type="submit" name="editList">
                                         <i class="moga-pencil"></i>
                                     </button>
-                                    <button class="btn btn-danger btn-sm hasTooltip" type="submit" name="deleteList" value="1" title="[{oxmultilang ident="REMOVE"}]">
+                                    <button class="btn btn-danger btn-sm" type="submit" name="deleteList" value="1">
                                         <i class="moga-times"></i>
                                     </button>
                                 </form>

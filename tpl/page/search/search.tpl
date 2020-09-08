@@ -15,7 +15,7 @@
     </div>
     [{block name="search_results"}]
         [{if $oView->getArticleCount()}]
-            <div class="listRefine clear bottomRound">
+            <div class="listRefine bottomRound">
                 [{block name="search_top_listlocator"}]
                     [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() listDisplayType=true itemsPerPage=true sort=true}]
                 [{/block}]

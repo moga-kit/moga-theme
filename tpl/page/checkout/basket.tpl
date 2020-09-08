@@ -10,13 +10,11 @@
         [{if $oView->isLowOrderPrice()}]
             [{block name="checkout_basket_loworderprice_top"}]
                 <div class="alert alert-info">[{oxmultilang ident="MIN_ORDER_PRICE"}] [{$oView->getMinOrderPrice()}] [{$currency->sign}]</div>
-                <div class="spacer"></div>
             [{/block}]
         [{/if}]
 
         [{if !$oxcmp_basket->getProductsCount()}]
             [{block name="checkout_basket_emptyshippingcart"}]
-                <div class="spacer"></div>
                 <div class="alert alert-danger" id="empty-basket-warning">
                     <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="btn btn-outline-primary"><i class="moga-left"></i> [{oxmultilang ident="DD_BASKET_BACK_TO_SHOP"}]</a>
                     [{oxmultilang ident="BASKET_EMPTY"}]

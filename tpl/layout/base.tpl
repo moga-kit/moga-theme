@@ -10,12 +10,11 @@
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
 
         [{block name="head_meta_robots"}]
-            [{*if $oView->noIndex() == 1}]
+            [{if $oView->noIndex() == 1}]
                 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
             [{elseif $oView->noIndex() == 2}]
                 <meta name="ROBOTS" content="NOINDEX, FOLLOW">
-            [{/if*}]
-            <meta name="ROBOTS" content="INDEX, FOLLOW">
+            [{/if}]
         [{/block}]
 
         [{block name="head_meta_description"}]

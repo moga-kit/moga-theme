@@ -54,7 +54,7 @@
                                     [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
                                         [{assign var="oSelections" value=$basketproduct->getSelections(null,$basketitem->getSelList())}]
                                         [{if $oSelections}]
-                                            <div class="selectorsBox clear" id="cartItemSelections_[{$smarty.foreach.basketContents.iteration}]">
+                                            <div class="selectorsBox" id="cartItemSelections_[{$smarty.foreach.basketContents.iteration}]">
                                                 [{foreach from=$oSelections item=oList name=selections}]
                                                     [{if $oViewConf->showSelectListsInList()}]
                                                         [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="aproducts[`$basketindex`][sel]" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop"}]
@@ -227,8 +227,6 @@
                         [{/block}]
                     </div>
                 </div>
-
-                <hr/>
             </li>
         [{/block}]
 

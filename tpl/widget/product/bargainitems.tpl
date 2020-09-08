@@ -85,7 +85,7 @@
                             <div class="btn-group">
                                 [{if !( $_product->hasMdVariants() || ($oViewConf->showSelectListsInList() && $_product->getSelections(1)) || $_product->getVariants() )}]
                                     [{oxhasrights ident="TOBASKET"}]
-                                        <button type="submit" class="btn btn-outline-primary hasTooltip" data-placement="bottom" title="[{oxmultilang ident="TO_CART"}]">
+                                        <button type="submit" class="btn btn-outline-primary">
                                             <i class="moga-bag"></i>
                                         </button>
                                     [{/oxhasrights}]

@@ -10,7 +10,6 @@
     [{block name="account_reviewlist_list"}]
         <div id="review">
             [{if $oView->getReviewAndRatingItemsCount() }]
-                <div class="spacer"></div>
                 <div class="reviews-landscape">
                     [{foreach from=$oView->getReviewList() item=review name=ReviewsCounter}]
                         [{block name="account_reviewlist_item"}]
@@ -42,8 +41,7 @@
                                                     <div class="btn-group">
                                                         <button
                                                                 type="submit"
-                                                                class="btn btn-danger btn-block hasTooltip"
-                                                                title="[{oxmultilang ident="DD_DELETE_REVIEW_AND_RATING"}]"
+                                                                class="btn btn-danger btn-block"
                                                                 data-toggle="modal"
                                                                 data-target="#delete_review_[{$smarty.foreach.ReviewsCounter.iteration}]"
                                                         >

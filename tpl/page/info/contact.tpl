@@ -28,7 +28,7 @@
                             <span itemprop="streetAddress">[{$oxcmp_shop->oxshops__oxstreet->value}]</span><br>
                             <span itemprop="postalCode">[{$oxcmp_shop->oxshops__oxzip->value}]</span> [{$oxcmp_shop->oxshops__oxcity->value}]<br>
                             [{$oxcmp_shop->oxshops__oxcountry->value}]<br>
-                            <span class="hidden" itemprop="addressLocality">[{$oxcmp_shop->oxshops__oxcity->value}], [{$oxcmp_shop->oxshops__oxcountry->value}]</span>
+                            <span itemprop="addressLocality">[{$oxcmp_shop->oxshops__oxcity->value}], [{$oxcmp_shop->oxshops__oxcountry->value}]</span>
                         </span>
                         [{if $oxcmp_shop->oxshops__oxtelefon->value}]
                             <strong>[{oxmultilang ident="PHONE" suffix="COLON"}]</strong> <span itemprop="telephone">[{$oxcmp_shop->oxshops__oxtelefon->value}]</span><br>
@@ -39,7 +39,7 @@
                         [{if $oxcmp_shop->oxshops__oxinfoemail->value}]
                             <strong>[{oxmultilang ident="EMAIL" suffix="COLON"}]</strong> <span itemprop="email">[{oxmailto address=$oxcmp_shop->oxshops__oxinfoemail->value}]</span><br>
                         [{/if}]
-                        <span class="hidden" itemprop="url">[{$oViewConf->getHomeLink()}]</span>
+                        <span itemprop="url">[{$oViewConf->getHomeLink()}]</span>
                     </address>
                 </div>
             </div>

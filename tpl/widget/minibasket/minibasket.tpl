@@ -137,7 +137,7 @@
                 [{include file="widget/minibasket/countdown.tpl"}]
 
                 [{block name="dd_layout_page_header_icon_menu_minibasket_functions"}]
-                    <li class="functions clear text-right">
+                    <li class="functions text-right">
                         [{if $oxcmp_user}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=payment"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{else}]

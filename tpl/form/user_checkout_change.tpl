@@ -49,7 +49,7 @@
                 </div>
             [{/block}]
 
-            <div class="checkoutCollumns clear">
+            <div class="checkoutCollumns">
                 <div class="card">
                     [{block name="user_checkout_billing"}]
                         <div class="card-header">

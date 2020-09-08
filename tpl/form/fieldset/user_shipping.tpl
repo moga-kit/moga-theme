@@ -15,7 +15,7 @@
             <div class="col-lg-9 offset-lg-3">
         [{/if}]
 
-            <input type="hidden" class="hidden" name="changeClass" value="[{$onChangeClass|default:'account_user'}]">
+            <input type="hidden" name="changeClass" value="[{$onChangeClass|default:'account_user'}]">
 
             [{oxscript include="js/widgets/oxusershipingaddressselect.min.js" priority=10}]
             [{oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
@@ -33,14 +33,12 @@
                                     [{block name="form_user_shipping_address_actions"}]
                                     [{if $address->isSelected()}]
                                         [{block name="form_user_shipping_address_edit_action"}]
-                                        <button class="btn btn-outline-primary btn-sm hasTooltip float-right dd-action dd-edit-shipping-address edit-button"
-                                                title="[{oxmultilang ident="CHANGE"}]">
+                                        <button class="btn btn-outline-primary btn-sm float-right dd-action dd-edit-shipping-address edit-button">
                                             <i class="moga-pencil"></i>
                                         </button>
                                         [{/block}]
                                         [{block name="form_user_shipping_address_delete_action"}]
-                                        <button class="btn btn-danger btn-sm hasTooltip float-right dd-action dd-delete-shipping-address edit-button"
-                                                title="[{oxmultilang ident="DD_DELETE"}]"
+                                        <button class="btn btn-danger btn-sm float-right dd-action dd-delete-shipping-address edit-button"
                                                 data-toggle="modal"
                                                 data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
                                             <i class="moga-trash"></i>
@@ -50,9 +48,9 @@
                                     [{/block}]
                                     [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
                                 </div>
-                                <div class="card-footer" >
+                                <div class="card-footer">
                                     <label class="btn btn-outline-primary btn-block[{if $address->isSelected()}] active[{/if}]">
-                                        <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" class="hidden" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
+                                        <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
                                     </label>
                                 </div>
                             </div>
@@ -67,7 +65,7 @@
                             </div>
                             <div class="card-footer" >
                                 <label class="btn btn-outline-primary btn-block">
-                                    <input type="radio" name="oxaddressid" value="-1" class="hidden" autocomplete="off"><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
+                                    <input type="radio" name="oxaddressid" value="-1" autocomplete="off"><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
                                 </label>
                             </div>
                         </div>

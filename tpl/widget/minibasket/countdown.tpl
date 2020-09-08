@@ -6,5 +6,4 @@
         </span>
         <strong class="price" id="countdown">[{$oViewConf->getBasketTimeLeft()|oxformattime}]</strong>
     </p>
-    <hr>
 [{/if}]

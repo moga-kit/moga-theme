@@ -8,7 +8,7 @@
             <div class="box card categorytree">
                 <section>
                     <div class="page-header h3">
-                        <div class="pull-right visible-xs visible-sm">
+                        <div class="visible-sm">
                             <i class="moga-down toggleTree"></i>
                         </div>
                         [{oxmultilang ident="CATEGORIES"}]
@@ -50,9 +50,6 @@
     [{/block}]
 
     [{block name="sidebar_shopluperatings"}]
-        [{if $oView->getClassName() eq "start"}]
-           [{include file="widget/shoplupe/ratings.tpl"}]
-        [{/if}]
     [{/block}]
 [{/block}]
 

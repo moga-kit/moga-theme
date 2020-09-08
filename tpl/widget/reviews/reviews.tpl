@@ -3,7 +3,7 @@
 [{oxscript add="$('.ox-write-review').on('click', function () { $('html,body').animate({scrollTop: $('#review').offset().top*0.75}, 1000) })"*}]
 
 <div id="review">
-    <div class="panel-group" id="review_form_accordion">
+    <div id="review_form_accordion">
         <div class="card">
             <div class="card-header toggle-accordion">
                 <div class="h4 card-title">
@@ -16,7 +16,7 @@
             </div>
 
             [{if $oxcmp_user}]
-                <div id="review_form" class="panel-collapse collapse">
+                <div id="review_form" class="collapse">
                     <div class="card-body">
                         [{block name="widget_reviews_form"}]
                             <form action="[{$oViewConf->getSelfActionLink()}]" method="post" id="rating" class="max-600" novalidate>
@@ -82,7 +82,6 @@
     </div>
 
     [{if $oView->getReviews()}]
-        <div class="spacer"></div>
         <div class="reviews-landscape">
             [{foreach from=$oView->getReviews() item=review name=ReviewsCounter}]
                 <div class="card" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]">
@@ -110,7 +109,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body" id="reviewText_[{$smarty.foreach.ReviewsCounter.iteration}]">[{$review->oxreviews__oxtext->value}]</div>
+                        <div class="card-body" id="reviewText_[{$smarty.foreach.ReviewsCounter.iteration}]">
+                            [{$review->oxreviews__oxtext->value}]
+                        </div>
                     [{/block}]
                 </div>
             [{/foreach}]

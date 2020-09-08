@@ -3,7 +3,7 @@
     <div>
     [{assign var="oNews" value=$oView->getNews()}]
     <h1 class="page-header">[{oxmultilang ident="LATEST_NEWS_AND_UPDATES_AT"}] [{$oxcmp_shop->oxshops__oxname->value}]</h1>
-    <div class="listRefine clear bottomRound">
+    <div class="listRefine bottomRound">
     </div>
         [{foreach from=$oNews item=oNews}]
             [{if !empty($oNews) && !empty($oNews->oxnews__oxshortdesc->value)}]

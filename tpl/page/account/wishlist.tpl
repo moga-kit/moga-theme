@@ -16,12 +16,9 @@
         [{include file="form/wishlist_search.tpl" searchClass="account_wishlist"}]
     </div>
 
-    <hr>
-
     <div class="wishlist">
         [{if $oView->getWishList()}]
             [{include file="form/wishlist_publish.tpl"}]
-            <hr>
             [{include file="form/wishlist_suggest.tpl"}]
         [{/if}]
     </div>

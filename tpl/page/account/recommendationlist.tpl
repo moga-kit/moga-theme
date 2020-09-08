@@ -13,7 +13,6 @@
 
         [{include file="form/recommendation_edit.tpl" actvrecommlist=$_actvrecommlist}]
 
-        <hr>
 
         [{if !$oView->getActiveRecommList()}]
             [{assign var="blEdit" value=true}]

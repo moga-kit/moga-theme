@@ -86,13 +86,13 @@
                                     [{/foreach}]
                                 [{/block}]
                             </div>
-                            <a class="carousel-control-prev" href="#promoCarousel"  data-slide="prev">
+                            <a class="carousel-control-prev" href="#promoCarousel" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
+                                <span class="sr-only">[{oxmultilang ident="PREVIOUS"}]</span>
                             </a>
-                            <a class="carousel-control-next" href="#promoCarousel"  data-slide="next">
+                            <a class="carousel-control-next" href="#promoCarousel" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                                <span class="sr-only">[{oxmultilang ident="NEXT"}]</span>
                             </a>
                         </div>
                     [{if $promosliderWidth == 'w100cContainer'}]

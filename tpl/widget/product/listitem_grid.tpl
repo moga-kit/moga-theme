@@ -5,20 +5,20 @@
     [{assign var="showMainLink"    value=$oView->getShowMainLink()}]
     [{assign var="currency" value=$oView->getActCurrency()}]
     [{if $showMainLink}]
-    [{assign var='_productLink' value=$product->getMainLink()}]
+        [{assign var='_productLink' value=$product->getMainLink()}]
     [{else}]
-    [{assign var='_productLink' value=$product->getLink()}]
+        [{assign var='_productLink' value=$product->getLink()}]
     [{/if}]
     [{assign var="aVariantSelections" value=$product->getVariantSelections(null,null,1)}]
     [{assign var="blShowToBasket" value=true}] [{* tobasket or more info ? *}]
     [{if $blDisableToCart || $product->isNotBuyable() || ($aVariantSelections&&$aVariantSelections.selections) || $product->hasMdVariants() || ($oViewConf->showSelectListsInList() && $product->getSelections(1)) || $product->getVariants()}]
-    [{assign var="blShowToBasket" value=false}]
+        [{assign var="blShowToBasket" value=false}]
     [{/if}]
 <a href="[{$_productLink}]" class="card">
 
 
     [{block name="widget_product_listitem_grid_gridpicture"}]
-            [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+    [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
             <picture>
                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" media="(max-width: 375px)">
 
@@ -26,9 +26,9 @@
                 <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
                 <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
             </picture>
-            [{else}]
-                <img loading="lazy" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
-            [{/if}]
+        [{else}]
+            <img loading="lazy" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
+        [{/if}]
     [{/block}]
 
     <div class="card-body">
@@ -88,9 +88,7 @@
                 [{/oxhasrights}]
             [{/block}]
         </div>
-        [{block name="widget_product_listitem_grid_tobasket"}]
-
-        [{/block}]
+        [{block name="widget_product_listitem_grid_tobasket"}][{/block}]
     </div>
 </a>
 [{/block}]

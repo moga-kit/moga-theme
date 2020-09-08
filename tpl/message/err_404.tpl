@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="col-md-6">
-                <div class="gears-box hidden-xs">
+                <div class="gears-box">
                     <div class="paper-overlay"></div>
                     <img class="gear-rotate reverse" style="top: -55px; left: 65px;" src="[{$oViewConf->getImageUrl('404/gear.png')}]">
                     <img class="gear-rotate" style="top: 177px; left: -11px;" src="[{$oViewConf->getImageUrl('404/gear.png')}]">

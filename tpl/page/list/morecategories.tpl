@@ -5,8 +5,8 @@
     [{assign var="_iCategoriesPerRow"  value=3}]
     [{assign var="iSubCategoriesCount" value=0}]
     [{if $_navcategorytree|count}]
-        [{oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
-        [{oxscript add="$(window).on('load', function(){ if( !isMobileDevice() ) { oxEqualizer.equalHeight( $( '.subcatList .row .panel' ) ); } });"}]
+        [{*oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
+        [{oxscript add="$(window).on('load', function(){ if( !isMobileDevice() ) { oxEqualizer.equalHeight( $( '.subcatList .row .panel' ) ); } });"*}]
         <div class="subcatList">
             <div class="row">
                 [{foreach from=$_navcategorytree item=category name=MoreSubCat}]

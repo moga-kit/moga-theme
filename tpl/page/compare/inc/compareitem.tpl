@@ -79,7 +79,7 @@
                     [{/if}]
                 </p>
             [{/oxhasrights}]
-            <div class="tobasketFunction clear">
+            <div class="tobasketFunction">
                 [{oxhasrights ident="SHOWARTICLEPRICE"}]
                     <span id="productPrice_[{$testid}]" class="price lead[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">[{$product->getFPrice()}] [{$currency->sign}] [{if $blShowToBasket}]*[{/if}]</span>
                     [{if $product->loadAmountPriceInfo()}]
@@ -91,7 +91,7 @@
                     [{oxhasrights ident="TOBASKET"}]
                         <div class="input-group">
                             <input type="text" name="am" value="1" size="3" autocomplete="off" class="form-control" title="[{oxmultilang ident="QUANTITY"}]">
-                            <button type="submit" class="btn btn-primary hasTooltip" title="[{oxmultilang ident="TO_CART"}]">
+                            <button type="submit" class="btn btn-primary" title="[{oxmultilang ident="TO_CART"}]">
                                 <i class="moga-bag"></i>
                             </button>
                         </div>
@@ -104,7 +104,7 @@
             </div>
 
             [{* additional info *}]
-            <div class="additionalInfo clear">
+            <div class="additionalInfo">
                 [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
                 [{if $oUnitPrice}]
                     <span id="productPriceUnit">[{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]</span>

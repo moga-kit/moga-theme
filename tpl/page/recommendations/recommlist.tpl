@@ -17,23 +17,17 @@
         [{/if}]
 
         </h1>
-        <div class="listRefine clear bottomRound">
+        <div class="listRefine bottomRound">
             [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigation()}]
         </div>
 
         [{block name="recommendations_desc"}]
-            <div>
-                <div class="clear">
-                    <div>
-                        [{$_actvrecommlist->oxrecommlists__oxdesc->value}]
-                    </div>
-                    [{if $oView->isReviewActive()}]
-                    <div class="rating clear">
-                        [{include file="widget/reviews/rating.tpl" itemid="recommid="|cat:$_actvrecommlist->getId() sRateUrl=$oViewConf->getSelfLink()|cat:"cl=recommlist"}]
-                    </div>
-                    [{/if}]
+            [{$_actvrecommlist->oxrecommlists__oxdesc->value}]
+                [{if $oView->isReviewActive()}]
+                <div class="rating ">
+                    [{include file="widget/reviews/rating.tpl" itemid="recommid="|cat:$_actvrecommlist->getId() sRateUrl=$oViewConf->getSelfLink()|cat:"cl=recommlist"}]
                 </div>
-            </div>
+                [{/if}]
         [{/block}]
         [{* List types: grid|line *}]
         [{include file="widget/product/list.tpl" type="line" listId="productList" products=$oView->getArticleList() recommid=$_actvrecommlist->getId()}]

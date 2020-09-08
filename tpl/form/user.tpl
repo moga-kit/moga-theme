@@ -38,7 +38,7 @@
                     <div class="card-header">
                         [{block name="user_billing_address_head"}]
                             [{oxmultilang ident="BILLING_ADDRESS"}]
-                            <button id="userChangeAddress" class="btn btn-outline-primary btn-sm hasTooltip float-right edit-button" name="changeBillAddress" type="button" title="[{oxmultilang ident="CHANGE"}]">
+                            <button id="userChangeAddress" class="btn btn-outline-primary btn-sm float-right edit-button" name="changeBillAddress" type="button">
                                 <i class="moga-pencil"></i>
                             </button>
                         [{/block}]

@@ -109,7 +109,7 @@
                             [{if $oCardList->count()}]
                                 [{block name="checkout_wrapping_cards"}]
                                     <h3 class="page-header blockHead">[{oxmultilang ident="GREETING_CARD"}]</h3>
-                                    <div class="wrappingCard clear" id="wrappCard">
+                                    <div class="wrappingCard" id="wrappCard">
                                         <div class="card">
                                             <div class="card-header">
                                                 <div class="row">

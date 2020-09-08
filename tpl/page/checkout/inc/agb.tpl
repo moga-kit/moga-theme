@@ -62,13 +62,13 @@
 
             [{if $oViewConf->isFunctionalityEnabled("blShowTSInternationalFeesMessage")}]
                 [{oxifcontent ident="oxtsinternationalfees" object="oTSIFContent"}]
-                    <hr/>[{$oTSIFContent->oxcontents__oxcontent->value}]
+                    [{$oTSIFContent->oxcontents__oxcontent->value}]
                 [{/oxifcontent}]
             [{/if}]
 
             [{if $payment->oxpayments__oxid->value eq "oxidcashondel" && $oViewConf->isFunctionalityEnabled("blShowTSCODMessage")}]
                 [{oxifcontent ident="oxtscodmessage" object="oTSCODContent"}]
-                    <hr/>[{$oTSCODContent->oxcontents__oxcontent->value}]
+                    [{$oTSCODContent->oxcontents__oxcontent->value}]
                 [{/oxifcontent}]
             [{/if}]
         </div>

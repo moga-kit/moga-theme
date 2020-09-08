@@ -147,7 +147,7 @@
                             [{$oCont->oxcontents__oxcontent->value}]
                         [{/oxifcontent}]
                         <input type="hidden" name="paymentid" value="oxempty">
-                        <div class="lineBox clear">
+                        <div class="lineBox">
                             <div class="card bg-light cart-buttons">
                                 <div class="card-body">
                                     <div class="row">

@@ -12,7 +12,6 @@
         [{/if}]
 
         [{if !$smarty.foreach.mediaURLs.first}]
-            <hr/>
         [{/if}]
         <div class="[{if $blIsYouTubeMedia}]embed-responsive embed-responsive-4by3[{/if}]">
             [{$oMediaUrl->getHtml()}]
