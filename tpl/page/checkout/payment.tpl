@@ -82,9 +82,9 @@
 
         [{block name="change_payment"}]
             [{oxscript include="js/widgets/oxpayment.min.js" priority=10}]
-            [{oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
+            [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10*}]
             [{oxscript add="$( '#payment' ).oxPayment();"}]
-            [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"}]
+            [{*oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
             <form action="[{$oViewConf->getSslSelfLink()}]" class="max-600 js-oxValidate payment" id="payment" name="order" method="post" novalidate="novalidate">
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]

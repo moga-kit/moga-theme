@@ -185,6 +185,9 @@
                 [{/if}]
             </div>
         </div>
+
+        [{* STATE DROPDOWN REMOVED *}]
+        [{*
         <div class="mb-3">
             <label class="form-label col-lg-3" for="[{$countrySelectId}]">[{oxmultilang ident="DD_USER_LABEL_STATE" suffix="COLON"}]</label>
             <div class="col-lg-9">
@@ -196,6 +199,7 @@
                     class="form-control"}]
             </div>
         </div>
+        *}]
     [{/block}]
     <div class="mb-3[{if $aErrors.oxaddress__oxfon}] oxInValid[{/if}]">
         <label class="form-label col-lg-3[{if $oView->isFieldRequired(oxaddress__oxfon)}] req[{/if}]">[{oxmultilang ident="PHONE"}]</label>

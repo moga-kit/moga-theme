@@ -22,6 +22,8 @@
 
 [{oxscript add=$sValidationJS*}]
 
+[{oxscript include="js/changeaddress.min.js" priority=10}]
+
 [{block name="user_checkout_change"}]
     <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate="novalidate">
         [{block name="user_checkout_change_form"}]
@@ -60,7 +62,7 @@
                                         <i class="moga-pencil"></i>
                                     </button>
                                 </h3>
-                                [{oxscript add="$('#userChangeAddress').click( function() { $('#addressForm').show();$('#addressText').hide();$('#userChangeAddress').hide();return false;});"}]
+                                [{*oxscript add="$('#userChangeAddress').click( function() { $('#addressForm').show();$('#addressText').hide();$('#userChangeAddress').hide();return false;});"*}]
                             [{/block}]
                         </div>
                     [{/block}]
@@ -93,7 +95,6 @@
                                         </button>
                                     [{/if}]
                                 </h3>
-                                [{oxscript add="$('#userChangeShippingAddress').toggle($(this).is(':not(:checked)'));"}]
                             [{/block}]
                         </div>
                     [{/block}]
@@ -108,7 +109,7 @@
                                     </div>
                                 </div>
                             </div>
-                            [{oxscript add="$('#showShipAddress').change( function() { $('#shippingAddress').toggle($(this).is(':not(:checked)'));});"}]
+                            [{*oxscript add="$('#showShipAddress').change( function() { $('#shippingAddress').toggle($(this).is(':not(:checked)'));});"*}]
                         [{/block}]
                         [{block name="user_checkout_shipping_form"}]
                             <div id="shippingAddress" [{if !$oView->showShipAddress()}]style="display: none;"[{/if}]>
