@@ -7,12 +7,9 @@
     [{assign var="search_head" value=$oView->getArticleCount()|cat:" "|cat:$search_head|cat:" &quot;"|cat:$oView->getSearchParamForHtml()|cat:"&quot;"}]
 
 
-    <div class="page-header">
-        [{block name="search_header"}]
-            <h1 class="float-left">[{$search_head}]</h1>
-
-        [{/block}]
-    </div>
+    [{block name="search_header"}]
+        <h1>[{$search_head}]</h1>
+    [{/block}]
     [{block name="search_results"}]
         [{if $oView->getArticleCount()}]
             <div class="listRefine bottomRound">

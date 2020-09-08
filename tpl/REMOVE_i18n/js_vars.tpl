@@ -12,3 +12,6 @@
             DD_FORM_VALIDATION_CHECKONE:       "[{oxmultilang ident="DD_FORM_VALIDATION_CHECKONE"}]"
         };
 </script>
+
+
+[{* ToDo: REMOVE TPL after checking. *}]
