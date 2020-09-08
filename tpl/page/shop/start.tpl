@@ -84,7 +84,5 @@
             [{/if}]
         [{/if}]
     [{/block}]
-
-    [{insert name="oxid_tracker"}]
 [{/capture}]
 [{include file="layout/page.tpl"}]

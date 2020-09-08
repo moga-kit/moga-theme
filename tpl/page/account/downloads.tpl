@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value="MY_DOWNLOADS"|oxmultilangassign}]
-    <h1 class="page-header">[{oxmultilang ident="MY_DOWNLOADS"}]</h1>
+    <h1>[{oxmultilang ident="MY_DOWNLOADS"}]</h1>
     [{if $oView->getOrderFilesList()|count}]
     <ol class="list-unstyled downloadList">
         [{foreach from=$oView->getOrderFilesList() item="oOrderArticle"}]
@@ -44,7 +44,7 @@
         <p class="alert alert-info">[{oxmultilang ident="DOWNLOADS_EMPTY"}]</p>
     [{/if}]
 
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{capture append="oxidBlock_sidebar"}]
     [{include file="page/account/inc/account_menu.tpl" active_link="downloads"}]

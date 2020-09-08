@@ -36,11 +36,11 @@
 
             [{if $oView->getAlsoBoughtTheseProducts()}]
                 <br><br>
-                <h1 class="page-header">[{oxmultilang ident="WHO_BOUGHT_ALSO_BOUGHT"}]</h1>
+                <h1>[{oxmultilang ident="WHO_BOUGHT_ALSO_BOUGHT"}]</h1>
                 [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="alsoBoughtThankyou" products=$oView->getAlsoBoughtTheseProducts() blDisableToCart=true}]
             [{/if}]
         </div>
     [{/block}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{include file="layout/page.tpl"}]

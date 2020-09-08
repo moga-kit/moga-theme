@@ -8,11 +8,11 @@
         [{/if}]
     [{/if}]
 
-    <h1 id="newsletterSettingsHeader" class="page-header">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</h1>
+    <h1 id="newsletterSettingsHeader">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</h1>
 
     [{include file="form/account_newsletter.tpl"}]
 
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{capture append="oxidBlock_sidebar"}]
     [{include file="page/account/inc/account_menu.tpl" active_link="newsletter"}]

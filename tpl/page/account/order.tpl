@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value="ORDER_HISTORY"|oxmultilangassign}]
-    <h1 class="page-header">[{oxmultilang ident="ORDER_HISTORY"}]</h1>
+    <h1>[{oxmultilang ident="ORDER_HISTORY"}]</h1>
 
     [{assign var=oOrders value=$oView->getOrderList()}]
 
@@ -99,7 +99,7 @@
             [{oxmultilang ident="ORDER_EMPTY_HISTORY"}]
         [{/if}]
     [{/block}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{capture append="oxidBlock_sidebar"}]

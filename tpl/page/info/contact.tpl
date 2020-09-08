@@ -17,10 +17,10 @@
     <div class="container-xxl mb-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="page-header">[{oxmultilang ident="DD_CONTACT_PAGE_HEADING"}]</h1>
+                <h1>[{oxmultilang ident="DD_CONTACT_PAGE_HEADING"}]</h1>
             </div>
             <div class="col-12 col-lg-3 order-2">
-                <h2 class="page-header">[{oxmultilang ident="ADDRESS"}]</h2>
+                <h2>[{oxmultilang ident="ADDRESS"}]</h2>
                 <div itemscope itemtype="http://schema.org/Organization">
                     <address>
                         <strong itemprop="name">[{$oxcmp_shop->oxshops__oxcompany->value}]</strong><br>
@@ -44,12 +44,12 @@
                 </div>
             </div>
             <div class="col-12 col-lg-9 order-1">
-                <h2 class="page-header">[{oxmultilang ident="DD_CONTACT_FORM_HEADING"}]</h2>
+                <h2>[{oxmultilang ident="DD_CONTACT_FORM_HEADING"}]</h2>
                 [{include file="form/contact.tpl"}]
             </div>
         </div>
     </div>
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{include file="layout/page.tpl"}]

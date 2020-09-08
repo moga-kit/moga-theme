@@ -4,7 +4,7 @@
 
     [{block name="account_reviewlist_header"}]
         [{assign var="template_title" value="MY_REVIEWS"|oxmultilangassign}]
-        <h1 class="page-header">[{oxmultilang ident="MY_REVIEWS"}]</h1>
+        <h1>[{oxmultilang ident="MY_REVIEWS"}]</h1>
     [{/block}]
 
     [{block name="account_reviewlist_list"}]
@@ -80,7 +80,7 @@
         [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigation() place="bottom"}]
     [{/block}]
 
-    [{insert name="oxid_tracker" title=$template_title}]
+
 
 [{/capture}]
 [{capture append="oxidBlock_sidebar"}]

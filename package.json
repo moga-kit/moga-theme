@@ -24,6 +24,7 @@
     "grunt-webfont": "^1.7.2",
     "lazysizes": "^5.2.2",
     "matchdep": "^2.0.0",
+    "node-gyp": "^7.1.0",
     "popper.js": "^1.12.6",
     "uglify": "^0.1.5"
   },

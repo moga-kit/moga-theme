@@ -1,7 +1,7 @@
 [{assign var="template_title" value="MY_ACCOUNT"|oxmultilangassign}]
 [{capture append="oxidBlock_content"}]
     <div class="accountDashboardView">
-        <h1 id="accountMain" class="page-header">[{oxmultilang ident="MY_ACCOUNT"}]
+        <h1 id="accountMain">[{oxmultilang ident="MY_ACCOUNT"}]
             "[{$oxcmp_user->oxuser__oxusername->value}]"</h1>
 
         [{if $oView->getAccountDeletionStatus() === false}]
@@ -94,17 +94,7 @@
                             <div class="card-body">[{oxmultilang ident="PRODUCT"}] [{if $oView->getCompareItemsCnt()}][{$oView->getCompareItemsCnt()}][{else}]0[{/if}]</div>
                         </div>
                     [{/if}]
-                    [{if $oViewConf->getShowListmania()}]
-                        <div class="card">
-                            <div class="card-header">
-                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_recommlist"}]">[{oxmultilang ident="MY_LISTMANIA"}]</a>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account_recommlist"}]" class="btn btn-outline-primary btn-sm float-right edit-button">
-                                    <i class="moga-right"></i>
-                                </a>
-                            </div>
-                            <div class="card-body">[{oxmultilang ident="LISTS"}] [{if $oxcmp_user->getRecommListsCount()}][{$oxcmp_user->getRecommListsCount()}][{else}]0[{/if}]</div>
-                        </div>
-                    [{/if}]
+
                     [{if $oView->isUserAllowedToManageOwnReviews()}]
                         <div class="card">
                             <div class="card-header">
@@ -144,7 +134,6 @@
         </div>
         <p>&nbsp;</p>
     </div>
-    [{insert name="oxid_tracker" title=$template_title}]
 [{/capture}]
 
 

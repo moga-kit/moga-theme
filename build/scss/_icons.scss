@@ -7,8 +7,8 @@ $icons-font-path : "../fonts/" !default;
 
 @font-face {
   font-family:"icons";
-  src:url($icons-font-path + "icons.woff2?01e83614ccada77a400b8ebcb91c1b89") format("woff2"),
-		url($icons-font-path + "icons.woff?01e83614ccada77a400b8ebcb91c1b89") format("woff");
+  src:url($icons-font-path + "icons.woff2?3822ae873c3fe0bfc67e72095aab5e15") format("woff2"),
+		url($icons-font-path + "icons.woff?3822ae873c3fe0bfc67e72095aab5e15") format("woff");
   font-weight:normal;
   font-style:normal;
   font-display: fallback;

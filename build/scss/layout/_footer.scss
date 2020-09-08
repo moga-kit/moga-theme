@@ -21,10 +21,9 @@
     text-align: left;
   }
 
-  a {
+  .nav-link {
     color: $ox-footer-color;
     text-decoration: none;
-    display: block;
     padding: 5px 0;
 
     &:hover {

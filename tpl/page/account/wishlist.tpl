@@ -10,7 +10,7 @@
         [{include file="message/notice.tpl" statusMessage=$_statusMessage}]
     [{/if}]
 
-    <h1 class="page-header">[{$oView->getTitle()}]</h1>
+    <h1>[{$oView->getTitle()}]</h1>
 
     <div class="wishlist-search">
         [{include file="form/wishlist_search.tpl" searchClass="account_wishlist"}]
@@ -30,7 +30,7 @@
             [{oxmultilang ident="GIFT_REGISTRY_EMPTY"}]
         </p>
     [{/if}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{capture append="oxidBlock_sidebar"}]
     [{include file="page/account/inc/account_menu.tpl" active_link="wishlist"}]

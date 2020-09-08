@@ -14,11 +14,11 @@
         </div>
     [{/if}]
 
-    <h1 id="personalSettingsHeader" class="page-header">[{oxmultilang ident="CHANGE_PASSWORD"}]</h1>
+    <h1 id="personalSettingsHeader">[{oxmultilang ident="CHANGE_PASSWORD"}]</h1>
 
     [{include file="form/user_password.tpl"}]
 
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{capture append="oxidBlock_sidebar"}]

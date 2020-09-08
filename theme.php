@@ -186,12 +186,6 @@ $aTheme = array(
         ),
         array(
             'group' => 'features',
-            'name'  => 'bl_showListmania',
-            'type'  => 'bool',
-            'value' => 1,
-        ),
-        array(
-            'group' => 'features',
             'name'  => 'bl_showVouchers',
             'type'  => 'bool',
             'value' => 1,

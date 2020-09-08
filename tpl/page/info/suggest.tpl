@@ -1,5 +1,5 @@
 [{capture append="oxidBlock_content"}]
-    <h1 class="page-header">[{$oView->getTitle()}]</h1>
+    <h1>[{$oView->getTitle()}]</h1>
 
     <ol>
         <li>[{oxmultilang ident="MESSAGE_ENTER_YOUR_ADDRESS_AND_MESSAGE"}]</li>
@@ -11,6 +11,6 @@
     [{/oxifcontent}]
 
     [{include file="form/suggest.tpl"}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{include file="layout/page.tpl" sidebar="Right"}]

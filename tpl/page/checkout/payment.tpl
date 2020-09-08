@@ -166,7 +166,7 @@
             </form>
         [{/block}]
     [{/block}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{include file="layout/page.tpl"}]

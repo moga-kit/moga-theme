@@ -30,14 +30,6 @@
 
     [{block name="sidebar_boxproducts"}][{/block}]
 
-    [{block name="sidebar_recommendation"}]
-        [{if $oViewConf->getShowListmania() && $oView->getSimilarRecommListIds()}]
-            [{oxid_include_widget nocookie=1 cl="oxwRecommendation" aArticleIds=$oView->getSimilarRecommListIds() searchrecomm=$oView->getRecommSearch()}]
-        [{elseif $oViewConf->getShowListmania() && $oView->getRecommSearch()}]
-            [{oxid_include_widget nocookie=1 cl="oxwRecommendation" _parent=$oView->getClassName() searchrecomm=$oView->getRecommSearch()}]
-        [{/if}]
-    [{/block}]
-
     [{block name="sidebar_news"}]
         [{if $oxcmp_news}]
             [{if $oxcmp_news|count}]

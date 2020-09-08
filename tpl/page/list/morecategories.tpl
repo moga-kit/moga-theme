@@ -1,5 +1,5 @@
 [{capture append="oxidBlock_content"}]
-    <h1 class="page-header">[{oxmultilang ident="CATEGORY_OVERVIEW"}]</h1>
+    <h1>[{oxmultilang ident="CATEGORY_OVERVIEW"}]</h1>
 
     [{assign var="_navcategorytree" value=$oView->getCategoryTree()}]
     [{assign var="_iCategoriesPerRow"  value=3}]
@@ -100,7 +100,6 @@
             </div>
         </div>
     [{/if}]
-    [{insert name="oxid_tracker"}]
 [{/capture}]
 
 

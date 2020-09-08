@@ -31,7 +31,7 @@
             [{/block}]
         [{/if}]
     [{/block}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{assign var="template_title" value="SEARCH"|oxmultilangassign}]
 

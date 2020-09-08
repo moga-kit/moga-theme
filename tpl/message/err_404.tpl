@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     <div class="err-404">
-        <h1 class="page-header">[{oxmultilang ident="ERROR"}]</h1>
+        <h1>[{oxmultilang ident="ERROR"}]</h1>
         <div class="row">
             <div class="col-md-6">
                 <p>

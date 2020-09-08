@@ -11,8 +11,6 @@
           </div>
           [{/if}]
     </div>
-
-    [{insert name="oxid_tracker" title=$template_title}]
 [{/capture}]
 
 [{capture append="oxidBlock_sidebar"}]

@@ -4,7 +4,7 @@
         [{assign var="_actvrecommlist" value=$oView->getActiveRecommList()}]
         [{assign var="recommendation_head" value=$_actvrecommlist->oxrecommlists__oxtitle->value}]
 
-        <h1 class="page-header">[{$recommendation_head}]</h1>
+        <h1>[{$recommendation_head}]</h1>
         <div class="listmaniaView">
             [{include file="form/recommendation_edit.tpl" actvrecommlist=$_actvrecommlist}]
         </div>
@@ -14,7 +14,7 @@
             [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigation() place="bottom"}]
         [{/if}]
     [{/if}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{capture append="oxidBlock_sidebar"}]
     [{include file="page/account/inc/account_menu.tpl" active_link="recommendationlist"}]

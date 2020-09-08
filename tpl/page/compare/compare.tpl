@@ -8,7 +8,7 @@
 
     [{*oxscript include="js/pages/compare.min.js"*}]
 
-    <h1 id="productComparisonHeader" class="page-header">[{$template_title}]</h1>
+    <h1 id="productComparisonHeader">[{$template_title}]</h1>
     [{if $oView->getCompareItemsCnt() >= 1}]
         <div id="comparePlayground" class="compare">
             <div id="compareLandscape" class="table-responsive">
@@ -58,7 +58,7 @@
     [{else}]
         <p class="alert alert-danger">[{oxmultilang ident="MESSAGE_SELECT_AT_LEAST_ONE_PRODUCT"}]</p>
     [{/if}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{if !$oxcmp_user->oxuser__oxpassword->value}]

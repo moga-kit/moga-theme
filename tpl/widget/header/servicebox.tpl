@@ -23,14 +23,7 @@
                     </a>
                 </li>
             [{/if}]
-            [{if $oViewConf->getShowListmania()}]
-                <li>
-                    <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_recommlist"}]">
-                        [{oxmultilang ident="MY_LISTMANIA"}]
-                        [{if $oxcmp_user && $oxcmp_user->getRecommListsCount()}] <span class="badge bg-secondary">[{$oxcmp_user->getRecommListsCount()}]</span>[{/if}]
-                    </a>
-                </li>
-            [{/if}]
+
             [{if $oViewConf->isFunctionalityEnabled( "blEnableDownloads" )}]
                 <li>
                     <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_downloads"}]">

@@ -5,7 +5,7 @@
 <div class="boxwrapper" id="boxwrapper_[{$listId}]">
     [{if $head}]
         [{if $header == "light"}]
-            <div class="page-header">
+            <div>
                 <span class="h3">[{$head}]</span>
 
                 [{if $subhead}]
@@ -13,7 +13,7 @@
                 [{/if}]
             </div>
         [{else}]
-            <div class="page-header">
+            <div>
                 <h2 class="h2">
                     [{$head}]
                     [{if $rsslink}]

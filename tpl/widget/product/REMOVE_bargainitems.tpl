@@ -1,6 +1,6 @@
 [{assign var="currency" value=$oView->getActCurrency()}]
 <div class="bargainitems list-container">
-    <h2 class="page-header">
+    <h2>
         [{oxmultilang ident="WEEK_SPECIAL"}]
 
         [{assign var='rsslinks' value=$oView->getRssLinks()}]

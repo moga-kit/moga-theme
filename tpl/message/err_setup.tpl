@@ -1,5 +1,5 @@
 [{capture append="oxidBlock_pageBody"}]
-    <h1 class="page-header">[{oxmultilang ident="ERROR_MESSAGE_OXID_SHOP_ERROR"}]</h1>
+    <h1>[{oxmultilang ident="ERROR_MESSAGE_OXID_SHOP_ERROR"}]</h1>
     [{capture append="_error_content"}]
         <div>
             <div>[{oxmultilang ident="ERROR_MESSAGE_OXID_SHOP_ERROR"}]</div>

@@ -11,7 +11,7 @@
         <input type="hidden" name="anid" value="[{$_oProduct->oxarticles__oxnid->value}]">
         <input type="hidden" name="CustomError" value='suggest'>
 
-    <h3 class="page-header">[{oxmultilang ident="CARD_TO" suffix="COLON"}]</h3>
+    <h3>[{oxmultilang ident="CARD_TO" suffix="COLON"}]</h3>
     <div class="mb-3">
         <label class="form-label col-lg-3 req">[{oxmultilang ident="RECIPIENT_NAME" suffix="COLON"}]</label>
         <div class="col-lg-9">
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <h3 class="page-header">[{oxmultilang ident="FROM" suffix="COLON"}]</h3>
+    <h3>[{oxmultilang ident="FROM" suffix="COLON"}]</h3>
     <div class="mb-3">
         <label class="form-label col-lg-3 req">[{oxmultilang ident="SENDER_NAME" suffix="COLON"}]</label>
         <div class="col-lg-9">

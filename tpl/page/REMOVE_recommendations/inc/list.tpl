@@ -14,10 +14,10 @@
                             [{if $blEdit}]
                             <div class="listmania-buttons float-right">
                                 <form action="[{$oViewConf->getSelfActionLink()}]" method="post" class="form-inline pull-right">
-                                        [{$oViewConf->getHiddenSid()}]
-                                        <input type="hidden" name="cl" value="account_recommlist">
-                                        <input type="hidden" name="fnc" value="editList">
-                                        <input type="hidden" name="recommid" value="[{$recommlist->getId()}]">
+                                    [{$oViewConf->getHiddenSid()}]
+                                    <input type="hidden" name="cl" value="account_recommlist">
+                                    <input type="hidden" name="fnc" value="editList">
+                                    <input type="hidden" name="recommid" value="[{$recommlist->getId()}]">
                                     <button class="btn btn-outline-primary btn-sm" type="submit" name="editList">
                                         <i class="moga-pencil"></i>
                                     </button>

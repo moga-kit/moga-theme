@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value=$oView->getTitle()}]
-    <h1 class="page-header">[{$oView->getTitle()}]</h1>
+    <h1>[{$oView->getTitle()}]</h1>
     <div class="cmsContent">
         <p>
             [{oxifcontent ident="oxcookiesexplanation" object="oCont"}]

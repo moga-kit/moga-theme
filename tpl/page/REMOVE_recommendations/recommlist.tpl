@@ -5,7 +5,7 @@
         [{assign var="recommendation_head" value="LIST_BY"|oxmultilangassign}]
         [{assign var="recommendation_head" value=$_actvrecommlist->oxrecommlists__oxtitle->value|cat:" <span>("|cat:$recommendation_head|cat:" "|cat:$_actvrecommlist->oxrecommlists__oxauthor->value|cat:")</span>"}]
         [{assign var="rsslinks" value=$oView->getRssLinks()}]
-        <h1 class="page-header">[{$recommendation_head}]
+        <h1>[{$recommendation_head}]
 
         [{assign var='rsslinks' value=$oView->getRssLinks()}]
 
@@ -43,9 +43,8 @@
         [{assign var="hitsfor" value="HITS_FOR"|oxmultilangassign}]
         [{assign var="recommendation_head" value=$oView->getArticleCount()|cat:" "|cat:$hitsfor|cat:" &quot;"|cat:$oView->getSearchForHtml()|cat:"&quot;"}]
 
-        <h1 class="page-header">[{$recommendation_head}]</h1>
+        <h1>[{$recommendation_head}]</h1>
         [{include file="page/recommendations/inc/list.tpl"}]
     [{/if}]
-    [{insert name="oxid_tracker"}]
 [{/capture}]
 [{include file="layout/page.tpl" sidebar="Left"}]

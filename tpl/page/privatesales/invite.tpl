@@ -1,6 +1,6 @@
 [{oxid_include_widget cl="oxwCookieNote" _parent=$oView->getClassName() nocookie=1}]
 [{capture append="oxidBlock_content"}]
-    <h1 class="page-header">[{$oView->getTitle()}]</h1>
+    <h1>[{$oView->getTitle()}]</h1>
     [{if !$oView->getInviteSendStatus()}]
         <ul>
             <li>[{ oxmultilang ident="MESSAGE_INVITE_YOUR_FRIENDS" }]</li>

@@ -113,7 +113,7 @@
            [{include file="page/checkout/inc/wrapping.tpl"}]
         [{/if}]
     [{/block}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 
 [{include file="layout/page.tpl"}]

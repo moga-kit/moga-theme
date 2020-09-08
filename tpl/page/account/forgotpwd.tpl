@@ -13,7 +13,7 @@
         [{assign var="template_title" value="FORGOT_PASSWORD"|oxmultilangassign}]
     [{/if}]
 
-    <h1 class="page-header">[{$template_title}]</h1>
+    <h1>[{$template_title}]</h1>
 
     [{if $oView->isExpiredLink()}]
         <div class="alert alert-danger">[{oxmultilang ident="ERROR_MESSAGE_PASSWORD_LINK_EXPIRED"}]</div>
@@ -51,7 +51,7 @@
     [{/if}]
 
     [{if !$oView->isActive('PsLogin')}]
-        [{insert name="oxid_tracker" title=$template_title}]
+
     [{/if}]
 [{/capture}]
 [{if $oView->isActive('PsLogin')}]

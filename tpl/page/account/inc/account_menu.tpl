@@ -11,9 +11,7 @@
         [{if $oViewConf->getShowWishlist()}]
             <a class="list-group-item list-group-item-action[{if $active_link == "wishlist"}] active[{/if}]" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_wishlist"}]" title="[{oxmultilang ident="MY_GIFT_REGISTRY"}]">[{oxmultilang ident="MY_GIFT_REGISTRY"}][{if $oxcmp_user && $oxcmp_user->getWishListArtCnt() > 0}] <span class="badge">[{$oxcmp_user->getWishListArtCnt()}]</span>[{/if}]</a>
         [{/if}]
-        [{if $oViewConf->getShowListmania()}]
-            <a class="list-group-item list-group-item-action[{if $active_link == "recommendationlist"}] active[{/if}]" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_recommlist"}]" title="[{oxmultilang ident="MY_LISTMANIA"}]">[{oxmultilang ident="MY_LISTMANIA"}]</a>
-        [{/if}]
+
         [{if $oView->isEnabledDownloadableFiles()}]
             <a class="list-group-item list-group-item-action[{if $active_link == "downloads"}] active[{/if}]" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_downloads"}]" title="[{oxmultilang ident="MY_DOWNLOADS"}]">[{oxmultilang ident="MY_DOWNLOADS"}]</a>
         [{/if}]

@@ -13,7 +13,7 @@
             </a>
         [{/block}]
 
-        <h1 id="loginAccount" class="page-header">[{$oView->getTitle()}]</h1>
+        <h1 id="loginAccount">[{$oView->getTitle()}]</h1>
         [{if $oView->confirmTerms()}]
             [{include file="form/privatesales/accept_terms.tpl"}]
         [{else}]

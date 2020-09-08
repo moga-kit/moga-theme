@@ -3,8 +3,8 @@
     [{assign var="template_title" value=$oView->getTitle()}]
     [{assign var="tpl" value=$oViewConf->getActTplName()}]
     [{assign var="oxloadid" value=$oViewConf->getActContentLoadId()}]
-    <h1 class="page-header">[{$template_title}]</h1>
+    <h1>[{$template_title}]</h1>
     [{$oView->getParsedContent()}]
-    [{insert name="oxid_tracker" title=$template_title}]
+
 [{/capture}]
 [{include file="layout/popup.tpl"}]
