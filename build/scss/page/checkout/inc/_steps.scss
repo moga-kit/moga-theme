@@ -1,5 +1,5 @@
 .checkout-steps {
-  border-top: 3px solid $primary;
+  border-top: 3px solid $ox-checkout-steps-bg;
   width: 100%;
   height: 40px;
   padding: 0;
@@ -19,13 +19,15 @@
 
     &.active {
       .num {
-        background-color: $secondary;
+        background-color: $ox-checkout-steps-active-bg;
+        color: $ox-checkout-steps-active-color;
       }
     }
 
     &.passed {
       .num {
-        background-color: $success;
+        background-color: $ox-checkout-steps-passed-bg;
+        color: $ox-checkout-steps-passed-color;
       }
     }
   }
@@ -33,7 +35,7 @@
   .num {
     border: 2px solid $white;
     border-radius: 50%;
-    background-color: $primary;
+    background-color: $ox-checkout-steps-bg;
     width: 30px;
     height: 30px;
     padding-top: 1px;
@@ -41,7 +43,7 @@
     position: absolute;
     top: -16px;
     left: 50%;
-    color: $white;
+    color: $ox-checkout-steps-color;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
@@ -54,5 +56,4 @@
       display: block;
     }
   }
-
 }

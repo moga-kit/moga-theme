@@ -15,7 +15,8 @@
 @import '../widget/header/servicemenu';
 
 .header {
-  background-color: $ox-container-header-background-color;
+  background-color: $ox-header-bg;
+  color: $ox-header-color;
   padding: 5px 0;
 
   @include media-breakpoint-up(lg) {
@@ -82,6 +83,10 @@
     }
   }
 
+  .dropdown-toggle {
+    color: $ox-header-color;
+  }
+
   i {
     font-size: 1.4rem;
     color: $primary;
@@ -89,5 +94,9 @@
 
   .btn-primary i {
     color: #fff;
+  }
+
+  .nav-link {
+    color: $ox-header-link-color;
   }
 }

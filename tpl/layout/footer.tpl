@@ -88,55 +88,45 @@
                         [{if $oViewConf->getViewThemeParam('sFacebookUrl') || $oViewConf->getViewThemeParam('sGooglePlusUrl') || $oViewConf->getViewThemeParam('sTwitterUrl') || $oViewConf->getViewThemeParam('sYouTubeUrl') || $oViewConf->getViewThemeParam('sBlogUrl')}]
                             <div class="social-links">
                                 [{block name="dd_footer_social_links_inner"}]
-                                <ul class="social-links-list ">
+                                <nav class="nav justify-content-center">
                                     [{block name="dd_footer_social_links_list"}]
                                     [{if $oViewConf->getViewThemeParam('sFacebookUrl')}]
-                                    <li class="social-links-item">
-                                        <a target="_blank" class="social-links-link"
+                                        <a target="_blank" class="nav-link"
                                            rel="noopener"
                                            href="[{$oViewConf->getViewThemeParam('sFacebookUrl')}]">
                                             <span>Facebook</span>
                                         </a>
-                                    </li>
                                     [{/if}]
                                     [{if $oViewConf->getViewThemeParam('sInstagramUrl')}]
-                                    <li class="social-links-item">
-                                        <a target="_blank" class="social-links-link"
+                                        <a target="_blank" class="nav-link"
                                            rel="noopener"
                                            href="[{$oViewConf->getViewThemeParam('sInstagramUrl')}]">
                                             <span>Instagram</span>
                                         </a>
-                                    </li>
                                     [{/if}]
                                     [{if $oViewConf->getViewThemeParam('sTwitterUrl')}]
-                                    <li class="social-links-item">
-                                        <a target="_blank" class="social-links-link"
+                                        <a target="_blank" class="nav-link"
                                            rel="noopener"
                                            href="[{$oViewConf->getViewThemeParam('sTwitterUrl')}]">
                                             <span>Twitter</span>
                                         </a>
-                                    </li>
                                     [{/if}]
                                     [{if $oViewConf->getViewThemeParam('sYouTubeUrl')}]
-                                    <li class="social-links-item">
-                                        <a target="_blank" class="social-links-link"
+                                        <a target="_blank" class="nav-link"
                                            rel="noopener"
                                            href="[{$oViewConf->getViewThemeParam('sYouTubeUrl')}]">
                                             <span>YouTube</span>
                                         </a>
-                                    </li>
                                     [{/if}]
                                     [{if $oViewConf->getViewThemeParam('sBlogUrl')}]
-                                    <li class="social-links-item">
-                                        <a target="_blank" class="social-links-link"
+                                        <a target="_blank" class="nav-link"
                                            rel="noopener"
                                            href="[{$oViewConf->getViewThemeParam('sBlogUrl')}]">
                                             <span>Blog</span>
                                         </a>
-                                    </li>
                                     [{/if}]
                                     [{/block}]
-                                </ul>
+                                </nav>
                                 [{/block}]
                             </div>
                         [{/if}]

@@ -1,0 +1,49 @@
+$font-family-base: Raleway, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+$primary: #7952b3;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+
+$body-color: #333;
+$body-bg: #fff;
+
+$enable-caret: false;
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-validation-icons: true;
+
+//== Header/Footer
+
+$ox-header-bg: #fff;
+$ox-header-color: $body-color;
+$ox-header-link-color: $ox-header-color;
+$ox-footer-bg: $gray-800;
+$ox-footer-color: #fff;
+$ox-footer-link-color: $ox-footer-color;
+
+//== Home page
+
+$ox-start-manufacturer-bg: #F2F2F2;
+
+//== Lists
+$ox-list-bg: #f1f1f1;
+
+//== Details page
+
+$ox-page-details-rating-star-filled-color:  $warning;
+$ox-page-details-rating-star-empty-color:   #C7C7C7;
+
+//== Checkout (Global)
+
+$ox-checkout-steps-bg:           $primary;
+$ox-checkout-steps-color:        #fff;
+$ox-checkout-steps-active-bg:    $secondary;
+$ox-checkout-steps-active-color: #fff;
+$ox-checkout-steps-passed-bg:    $success;
+$ox-checkout-steps-passed-color: #fff;

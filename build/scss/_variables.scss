@@ -1,4 +1,3 @@
-
 //
 // Theme Variables
 // --------------------------------------------------
@@ -8,14 +7,20 @@ $font-size-base: 1rem;
 $line-height-base: 1.5;
 
 $primary: #7952b3;
-$secondary:     #6c757d;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
 
+$body-color: #333;
+$body-bg: #fff;
 $row-padding: 3rem;
 
-$fa-font-path : '../fonts/';
+$fa-font-path: '../fonts/';
 
 // stylelint-disable
-$white:    #fff;
+$white: #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -25,101 +30,46 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #333333;
 $gray-900: #212529;
-$black:    #000;
+$black: #000;
+
+$zindex-sticky: 999;
 
 $gray-dark: $gray-800;
-
-$ox-border: $gray-200;
-$ox-header-border: $ox-border;
-$ox-footer-border: $ox-border;
-
-$ox-bg: $gray-100;
-$ox-header-bg: $ox-bg;
+$ox-header-bg: #fff;
+$ox-header-color: $body-color;
+$ox-header-link-color: $ox-header-color;
 $ox-footer-bg: $gray-800;
-
-$ox-color: $gray-600;
 $ox-footer-color: #fff;
-$ox-header-color: $ox-color;
+$ox-footer-link-color: $ox-footer-color;
 
-$ox-container-base-background-color:    $white;
-$ox-container-header-background-color:  $ox-container-base-background-color;
-$ox-container-wrapper-background-color: $ox-container-base-background-color;
-$ox-footer-color-facebook:              #428BCA;
-$ox-footer-color-google-plus:           #d73d32;
-$ox-footer-color-twitter:               #1AB2E8;
-$ox-footer-color-youtube:               #CC181E;
-$ox-footer-color-blog:                  #333333;
-
-$zindex-sticky:                     999;
 
 //$ox-footer-bg:                          #F2F2F2;
 //$ox-footer-border:                      #E7E7E7;
 //$ox-footer-color:                       #666666;
 
 $grid-gutter-width: 1rem;
-//== Boxed layout
-//
-//## Variables to use across the boxed layout
-
-$ox-boxed-container-shadow: 0 5px 20px rgba( 0, 0, 0, 0.2 );
-
 
 //== Home page
 
-$ox-start-section-margin-vertical:   50px;
-$ox-start-manufacturerslider-bg:     #F2F2F2;
-$ox-start-manufacturerslider-border: #E7E7E7;
-
+$ox-start-manufacturer-bg: #F2F2F2;
 
 //== Lists
 
-$ox-listitem-grid-row-margin-bottom:     30px;
-$ox-listitem-grid-picture-height:        190px;
-$ox-listitem-grid-picture-padding:       15px;
-$ox-listitem-grid-title-rows:            2;
-
-$ox-listitem-infogrid-row-margin-bottom: 50px;
-$ox-listitem-infogrid-picture-height:    275px;
-$ox-listitem-infogrid-title-rows:        2;
-
-$ox-listfilter-bg:                       #F2F2F2;
-$ox-listfilter-border:                   #E7E7E7;
-$ox-listfilter-padding-horizontal:       15px;
-$ox-listfilter-padding-vertical:         10px;
-$ox-listfilter-margin-top:               15px;
-
-
-//== Main navbar
-$navbar-padding-y:                  0;
-$ox-mainnav-link-font-size: 1.2em;
-$ox-mainnav-link-font-weight: 200;
-$ox-mainnav-fixed-shadow: 0 0 3px rgba( 0, 0, 0, 0.2 );
-
-
-//== Minibasket
-
-$ox-shopping-bag-font-family:    $font-family-base;
-$ox-shopping-bag-font-size:      20px;
-$ox-shopping-bag-mini-font-size: 22px;
-
+$ox-list-bg: #f1f1f1;
 
 //== Details page
 
-$ox-page-details-items-pager-border-bottom: #E7E7E7;
-$ox-page-details-product-title-font-size:   22px;
-$ox-page-details-rating-star-filled-color:  #F60;
-$ox-page-details-rating-star-empty-color:   #C7C7C7;
-
+$ox-page-details-rating-star-filled-color:  $warning;
+$ox-page-details-rating-star-empty-color: #C7C7C7;
 
 //== Checkout (Global)
 
-$ox-checkout-steps-border-color: $primary;
-$ox-checkout-steps-bg:           $ox-checkout-steps-border-color;
-$ox-checkout-steps-color:        #FFF;
-$ox-checkout-steps-active-bg:    $secondary;
-$ox-checkout-steps-active-color: #FFF;
-$ox-checkout-steps-passed-bg:    #5cb85c;
-$ox-checkout-steps-passed-color: #FFF;
+$ox-checkout-steps-bg: $primary;
+$ox-checkout-steps-color: #fff;
+$ox-checkout-steps-active-bg: $secondary;
+$ox-checkout-steps-active-color: #fff;
+$ox-checkout-steps-passed-bg: #5cb85c;
+$ox-checkout-steps-passed-color: #fff;
 
 
 //
@@ -132,24 +82,24 @@ $ox-checkout-steps-passed-color: #FFF;
 
 //## Headings
 
-$h1-font-size:                $font-size-base * 1.75;
-$h2-font-size:                $font-size-base * 1.5;
-$h3-font-size:                $font-size-base * 1.25;
-$h4-font-size:                $font-size-base;
-$h5-font-size:                $font-size-base;
-$h6-font-size:                $font-size-base;
+$h1-font-size: $font-size-base * 1.75;
+$h2-font-size: $font-size-base * 1.5;
+$h3-font-size: $font-size-base * 1.25;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base;
+$h6-font-size: $font-size-base;
 
-$headings-font-weight:        400;
+$headings-font-weight: 400;
 
 
 //## Line Height
-$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+$line-height-computed: floor(($font-size-base * $line-height-base)); // ~20px
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
-$link-color:       $gray-dark;
+$link-color: $gray-dark;
 $link-hover-color: $primary;
 $link-disabled-color: #C7C7C7;
 
@@ -158,42 +108,42 @@ $link-disabled-color: #C7C7C7;
 //
 //##
 
-$navbar-height:                    40px;
-$navbar-margin-bottom:             0;
-$navbar-border-radius:             0;
-$navbar-default-bg:                #FFF;
-$navbar-default-color:             $primary;
-$navbar-default-link-active-bg:    transparent;
-$navbar-default-link-hover-bg:     $navbar-default-link-active-bg;
+$navbar-height: 40px;
+$navbar-margin-bottom: 0;
+$navbar-border-radius: 0;
+$navbar-default-bg: #FFF;
+$navbar-default-color: $primary;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-hover-bg: $navbar-default-link-active-bg;
 $navbar-default-link-active-color: $secondary;
-$navbar-default-link-hover-color:  $navbar-default-link-active-color;
+$navbar-default-link-hover-color: $navbar-default-link-active-color;
 
 
 //== Breadcrumbs
 //
 //##
 
-$breadcrumb-bg:                 transparent;
-$breadcrumb-active-color:       $secondary;
+$breadcrumb-bg: transparent;
+$breadcrumb-active-color: $secondary;
 $breadcrumb-padding-horizontal: 0;
-$breadcrumb-padding-y:              0;
-$breadcrumb-padding-x:              8px;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 8px;
 
 
-$enable-caret:                false;
-$enable-rounded:              false;
-$enable-shadows:              false;
-$enable-gradients:            false;
-$enable-transitions:          true;
-$enable-reduced-motion:       true;
-$enable-grid-classes:         true;
-$enable-button-pointers:      true;
-$enable-rfs:                  false;
-$enable-validation-icons:     true;
-$enable-negative-margins:     false;
+$enable-caret: false;
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-grid-classes: true;
+$enable-button-pointers: true;
+$enable-rfs: false;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
 $enable-deprecation-messages: false;
-$enable-important-utilities:  false;
+$enable-important-utilities: false;
 
 $carousel-control-color: #fff;
-$carousel-control-prev-icon-bg:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
-$carousel-control-next-icon-bg:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+$carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
