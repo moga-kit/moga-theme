@@ -139,6 +139,7 @@ $aLang = array(
     'DD_SELECT_SALUTATION'                                  => 'Bitte auswählen',
 
     'DD_CATEGORY_RESET_BUTTON'                              => 'Zurücksetzen',
+    'MOVE_TO_WISH_LIST'                                     => 'Auf Merkzettel verschieben',
 );
 
 /*

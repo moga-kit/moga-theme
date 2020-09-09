@@ -14,7 +14,7 @@
                 [{assign var="sPictureName" value=$oPictureProduct->getPictureFieldValue("oxpic", $iPicNr)}]
                 [{assign var="aPictureInfo" value=$oConfig->getMasterPicturePath("product/`$iPicNr`/`$sPictureName`")|@getimagesize}]
                 <li class="details-picture-more-list-item">
-                    <a id="morePics_[{$smarty.foreach.sMorePics.iteration}]"  class="details-picture-more-link[{if $smarty.foreach.sMorePics.first}] selected[{/if}]" href="[{$oPictureProduct->getPictureUrl($iPicNr)}]" data-num="[{$smarty.foreach.sMorePics.iteration}]"[{if $aPictureInfo}] data-width="[{$aPictureInfo.0}]" data-height="[{$aPictureInfo.1}]"[{/if}] data-zoom-url="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]">
+                    <a id="morePics_[{$smarty.foreach.sMorePics.iteration}]" class="details-picture-more-link[{if $smarty.foreach.sMorePics.first}] selected[{/if}]" href="[{$oPictureProduct->getPictureUrl($iPicNr)}]" data-num="[{$smarty.foreach.sMorePics.iteration}]"[{if $aPictureInfo}] data-width="[{$aPictureInfo.0}]" data-height="[{$aPictureInfo.1}]"[{/if}] data-zoom-url="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]">
                         <img class="details-picture-more-img" src="[{$oPictureProduct->getIconUrl($iPicNr)}]" alt="morepic-[{$smarty.foreach.sMorePics.iteration}]">
                     </a>
                 </li>
