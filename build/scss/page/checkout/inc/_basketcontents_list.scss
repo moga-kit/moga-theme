@@ -34,3 +34,9 @@
     content: map-get($icons, 'down');
   }
 }
+
+.cart-img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+}

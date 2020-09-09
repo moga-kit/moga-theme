@@ -11,9 +11,18 @@
                     <div class="row" id="list_cartItem_[{$smarty.foreach.basketContents.iteration}]">
                         <div class="col-md-5 col-lg-3 col-xl-3">
                             [{block name="checkout_basketcontents_basketitem_image"}]
+                            [{assign var="oBasketitemArticle" value=$basketitem->getArticle()}]
+
                             [{* product image *}]
                             [{*if $editable}]<a href="[{$basketitem->getLink()}]">[{/if*}]
-                            <img class="img-fluid" loading="lazy" src="[{$basketitem->getIconUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                            [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                <picture>
+                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oBasketitemArticle->getThumbnailUrl(), 200, 200, 'webp', true)}]">
+                                    <img class="cart-img" loading="lazy" src="[{$oViewConf->getDynamicImage($oBasketitemArticle->getThumbnailUrl(), 200, 200, 'jpg', true)}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                                </picture>
+                            [{else}]
+                                <img class="cart-img" loading="lazy" src="[{$oBasketitemArticle->getThumbnailUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                            [{/if}]
                             [{*if $editable}]</a>[{/if*}]
                             [{/block}]
                         </div>
