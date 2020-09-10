@@ -39,9 +39,6 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/css/styles.min.css': [
                         '<%= project.dev %>/build/scss/style.scss'
                     ],
-                    '<%= project.out %><%= project.theme %>/src/css/manufacturer.min.css': [
-                        '<%= project.dev %>/build/scss/manufacturer.scss'
-                    ],
                     '<%= project.out %><%= project.theme %>/src/css/promoslider.min.css': [
                         '<%= project.dev %>/build/scss/promoslider.scss'
                     ]
