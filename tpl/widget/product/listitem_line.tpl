@@ -1,3 +1,5 @@
+[{oxscript include="js/listremovebutton.min.js" priority=10}]
+
 [{block name="widget_product_listitem_line"}]
     [{assign var="product"         value=$oView->getProduct()}]
     [{assign var="blDisableToCart" value=$oView->getDisableToCart()}]
@@ -15,9 +17,6 @@
     [{if $blDisableToCart || $product->isNotBuyable()||($aVariantSelections&&$aVariantSelections.selections)||$product->getVariants()||($oViewConf->showSelectListsInList()&&$product->getSelections(1))}]
         [{assign var="blShowToBasket" value=false}]
     [{/if}]
-
-    [{oxscript include="js/widgets/oxlistremovebutton.min.js" priority=10}]
-    [{oxscript add="$('button.removeButton').oxListRemoveButton();"}]
 
     <form name="tobasket.[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]  class="js-oxProductForm line-view-item">
         [{$oViewConf->getNavFormParams()}]
@@ -187,7 +186,7 @@
                                             <i class="moga-bag"></i>
                                         </button>
                                         [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
-                                            <button triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger removeButton">
+                                        <button data-triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger removeButton listRemoveButton">
                                                 <i class="moga-times"></i>
                                             </button>
                                         [{/if}]

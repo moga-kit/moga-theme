@@ -90,6 +90,9 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/agb.min.js': [
                         '<%= project.dev %>build/js/pages/checkout/order/agb.js'
                     ],
+                    '<%= project.out %><%= project.theme %>/src/js/listremovebutton.min.js': [
+                        '<%= project.dev %>build/js/pages/myaccount/listremovebutton.js'
+                    ],
                     '<%= project.out %><%= project.theme %>/src/js/changeaddress.min.js': [
                         '<%= project.dev %>build/js/form/changeaddress.js'
                     ]
