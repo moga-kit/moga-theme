@@ -11,17 +11,16 @@
                     <div class="row" id="list_cartItem_[{$smarty.foreach.basketContents.iteration}]">
                         <div class="col-md-5 col-lg-3 col-xl-3">
                             [{block name="checkout_basketcontents_basketitem_image"}]
-                            [{assign var="oBasketitemArticle" value=$basketitem->getArticle()}]
 
                             [{* product image *}]
                             [{*if $editable}]<a href="[{$basketitem->getLink()}]">[{/if*}]
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                 <picture>
-                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oBasketitemArticle->getThumbnailUrl(), 200, 200, 'webp', true)}]">
-                                    <img class="cart-img" loading="lazy" src="[{$oViewConf->getDynamicImage($oBasketitemArticle->getThumbnailUrl(), 200, 200, 'jpg', true)}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oArticle->getThumbnailUrl(), 200, 200, 'webp', true)}]">
+                                    <img class="cart-img" loading="lazy" src="[{$oViewConf->getDynamicImage($oArticle->getThumbnailUrl(), 200, 200, 'jpg', true)}]" alt="[{$basketitem->getTitle()|strip_tags}]">
                                 </picture>
                             [{else}]
-                                <img class="cart-img" loading="lazy" src="[{$oBasketitemArticle->getThumbnailUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
+                                <img class="cart-img" loading="lazy" src="[{$oArticle->getThumbnailUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
                             [{/if}]
                             [{*if $editable}]</a>[{/if*}]
                             [{/block}]
@@ -201,7 +200,7 @@
                                         </button>
 
                                         [{if $oxcmp_user}]
-                                            <button type="submit" name="moveBtn" class="btn btn-remove" onclick="document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
+                                            <button type="submit" name="removeBtn" class="btn btn-remove" onclick="addToNoticelist('[{$oArticle->getId()}]');document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1'">
                                                 <i class="moga-heart-fill"></i> [{oxmultilang ident="MOVE_TO_WISH_LIST"}]
                                             </button>
                                         [{/if}]

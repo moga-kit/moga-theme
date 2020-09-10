@@ -3,19 +3,19 @@ var oxdownloadableproductsagreement = document.getElementById('oxdownloadablepro
 var oxserviceproductsagreement = document.getElementById('oxserviceproductsagreement');
 
 if (checkAgbTop) {
-    checkAgbTop.addEventListener('click', function (evt) {
-        document.querySelectorAll('input[name=ord_agb]').forEach((item) => {item.value = evt.target.checked ? '1' : '0'});
+    checkAgbTop.addEventListener('click', function () {
+        document.querySelectorAll('input[name=ord_agb]').forEach((item) => {item.value = this.checked ? '1' : '0'});
     });
 }
 
 if (oxdownloadableproductsagreement) {
-    oxdownloadableproductsagreement.addEventListener('click', function (evt) {
-        document.querySelectorAll('input[name=oxdownloadableproductsagreement]').forEach((item) => {item.value = evt.target.checked ? '1' : '0'});
+    oxdownloadableproductsagreement.addEventListener('click', function () {
+        document.querySelectorAll('input[name=oxdownloadableproductsagreement]').forEach((item) => {item.value = this.checked ? '1' : '0'});
     });
 }
 
 if (oxserviceproductsagreement) {
-    oxserviceproductsagreement.addEventListener('click', function (evt) {
-        document.querySelectorAll('input[name=oxserviceproductsagreement]').forEach((item) => {item.value = evt.target.checked ? '1' : '0'});
+    oxserviceproductsagreement.addEventListener('click', function () {
+        document.querySelectorAll('input[name=oxserviceproductsagreement]').forEach((item) => {item.value = this.checked ? '1' : '0'});
     });
 }
