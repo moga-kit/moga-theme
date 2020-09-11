@@ -10,7 +10,7 @@
         <div class="header-box">
             <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                 <div class="row">
-                    <div class="icon-wrapper d-lg-none">
+                    <div class="icon-wrapper d-lg-none mr-auto p-0">
                         [{block name="dd_widget_header_categorylist_navbar_header"}]
                             <button class="btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <i class="moga-bars"></i>
@@ -24,7 +24,7 @@
                         [{assign var="slogoImg" value=$oViewConf->getViewThemeParam('sLogoFile')}]
                         [{assign var="sLogoWidth" value=$oViewConf->getViewThemeParam('sLogoWidth')}]
                         [{assign var="sLogoHeight" value=$oViewConf->getViewThemeParam('sLogoHeight')}]
-                        <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-link">
+                        <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-link p-0 mx-auto d-flex order-lg-2">
                             [{if $slogoImg}]
                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                 <picture>

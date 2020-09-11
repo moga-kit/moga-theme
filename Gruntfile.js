@@ -52,9 +52,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css'],
-                    '<%= project.out %><%= project.theme %>/src/css/manufacturer.min.css': ['<%= project.out %><%= project.theme %>/src/css/manufacturer.min.css'],
-                    '<%= project.out %><%= project.theme %>/src/css/promoslider.min.css': ['<%= project.out %><%= project.theme %>/src/css/promoslider.min.css']
+                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css']
                 }
             }
         },
@@ -66,17 +64,10 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
-                        //'<%= project.dev %>node_modules/jquery/dist/jquery.min.js',
-                        //'<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-                        '<%= project.dev %>build/js/bootstrap.bundle.js',
-                        //'<%= project.dev %>node_modules/slick-carousel/slick/slick.js',
-                        //'<%= project.dev %>node_modules/lazysizes/lazysizes.min.js',
-                        //'<%= project.dev %>build/js/main.js'
+                        '<%= project.dev %>build/js/bootstrap.bundle.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
-                        //'<%= project.dev %>build/vendor/jquery-ui/js/jquery-ui.js',
                         '<%= project.dev %>build/js/pages/details.js',
-                        //'<%= project.dev %>build/js/pages/review.js',
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
                         '<%= project.dev %>build/js/pages/compare.js'
@@ -173,6 +164,12 @@ module.exports = function (grunt) {
                         src: '*',
                         cwd: '<%= project.dev %>/build/vendor/raleway/',
                         dest: '<%= project.out %><%= project.theme %>/src/fonts/'
+                    },
+                    {
+                        expand: true,
+                        src: 'bootstrap.bundle.min.js',
+                        cwd: '<%= project.dev %>/build/js/',
+                        dest: '<%= project.out %><%= project.theme %>/src/js/'
                     }
                 ]
             },

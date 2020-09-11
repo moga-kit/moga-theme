@@ -1,49 +1,21 @@
 //
 // Footer
 // --------------------------------------------------
-// Import footer modules
-@import '../widget/footer/categorylist';
-@import '../widget/footer/info';
-@import '../widget/footer/manufacturerlist';
-@import '../widget/footer/services';
-@import '../widget/footer/newsletter';
 
 // General footer styles
 
 .footer {
-  text-align: center;
   background-color: $ox-footer-bg;
   color: $ox-footer-color;
-  padding: $row-padding 0;
-  font-size: 14px;
-
-  @include media-breakpoint-up(md) {
-    text-align: left;
-  }
 
   .nav-link {
     color: $ox-footer-link-color;
-    text-decoration: none;
     padding: 5px 0;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &-box {
-    margin-bottom: $grid-gutter-width;
-
     @include media-breakpoint-up(md) {
-      margin-bottom: inherit;
-    }
-
-    &-title {
-      text-transform: uppercase;
-    }
-
-    &-facebook {
-      margin-top: $line-height-computed / 2;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -56,9 +28,7 @@
 
 
 .vat-info {
-  float: right;
-
   a {
-    display: inline;
+    color: $ox-footer-color;
   }
 }

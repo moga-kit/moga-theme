@@ -1,6 +1,4 @@
 [{block name="dd_widget_promoslider"}]
-    [{oxstyle include="css/promoslider.min.css"}]
-
     [{assign var="oBanners" value=$oView->getBanners()}]
     [{assign var="currency" value=$oView->getActCurrency()}]
 
@@ -56,10 +54,10 @@
                                                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]">
                                                             <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]">
                                                         [{/if}]
-                                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 120, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="promoslider-img">
+                                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 120, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="w-100">
                                                     </picture>
                                                 [{else}]
-                                                    <img loading="lazy" src="[{$sBannerPictureUrl}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="promoslider-img">
+                                                    <img loading="lazy" src="[{$sBannerPictureUrl}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="w-100">
                                                 [{/if}]
 
                                                 [{if $sBannerLink}]

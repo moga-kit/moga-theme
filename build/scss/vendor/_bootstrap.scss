@@ -11,8 +11,8 @@
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
-$theme-colors: map-remove($theme-colors, "light", "secondary", "dark", "warning");
-
+$theme-colors: map-remove($theme-colors, "secondary", "dark", "warning");
+$table-variants: map-remove($table-variants,"primary", "secondary", "dark", "warning", "info", "danger", "success");
 
 // Layout & components
 @import "../../../node_modules/bootstrap/scss/root";
