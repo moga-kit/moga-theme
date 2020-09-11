@@ -24,6 +24,8 @@
 
 .card-collapse {
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
 
   &:after {
     font-family: 'icons';
@@ -33,10 +35,4 @@
   &.collapsed:after {
     content: map-get($icons, 'down');
   }
-}
-
-.cart-img {
-  max-height: 200px;
-  width: 100%;
-  object-fit: contain;
 }

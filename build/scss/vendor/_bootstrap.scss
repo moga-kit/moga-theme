@@ -11,8 +11,13 @@
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
+
 $theme-colors: map-remove($theme-colors, "secondary", "dark", "warning");
-$table-variants: map-remove($table-variants,"primary", "secondary", "dark", "warning", "info", "danger", "success");
+$table-variants: map-remove($table-variants, "primary", "secondary", "dark", "warning", "info", "danger", "success");
+$utilities: map-remove($utilities, "align", "overflow", "shadow", "border", "border-top", "border-right", "border-bottom", "border-left",
+        "border-color", "viewport-width", "min-viewport-width", "height", "max-height", "viewport-height", "min-viewport-height", "font-weight",
+        "line-height", "gradient", "font-style", "font-family", "rounded", "pointer-events", "user-select", "flex",
+        "flex-grow", "flex-shrink", "flex-wrap", "rounded", "rounded-top", "rounded-right", "rounded-bottom", "rounded-left");
 
 // Layout & components
 @import "../../../node_modules/bootstrap/scss/root";
@@ -30,7 +35,7 @@ $table-variants: map-remove($table-variants,"primary", "secondary", "dark", "war
 @import "../../../node_modules/bootstrap/scss/nav";
 @import "../../../node_modules/bootstrap/scss/navbar";
 @import "../../../node_modules/bootstrap/scss/card";
-@media screen and (min-width: map-get($container-max-widths, 'md')){
+@media screen and (min-width: map-get($container-max-widths, 'md')) {
   @import "../../../node_modules/bootstrap/scss/breadcrumb";
 }
 
