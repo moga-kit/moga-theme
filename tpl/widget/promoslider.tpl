@@ -7,7 +7,7 @@
         [{if $promosliderWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]
-                <div class="promoslider">
+                <div class="promoslider my-2">
                     [{if $promosliderWidth == 'w100cContainer'}]
                     <div class="container-xxl">
                     [{/if}]

@@ -1,19 +1,37 @@
 [{block name="checkout_steps_main"}]
-    <ol class="checkoutSteps checkout-steps row">
+    <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" id="progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="row g-0 text-center my-3">
         [{if $oxcmp_basket->getProductsCount()}]
             [{assign var=showStepLinks value=true}]
         [{/if}]
 
-        [{block name="checkout_steps_basket"}]
-            <li class="step step1[{if $active == 1}] active [{elseif $active > 1}] passed [{/if}]">
-                [{if $showStepLinks}]<a href="[{oxgetseourl ident=$oViewConf->getBasketLink()}]">[{/if}]
+        [{*block name="checkout_steps_basket"}]
+            <li class="nav-item">
+                [{if $showStepLinks}]
+                 <a class="nav-link[{if $active == 1}] active [{elseif $active > 1}] disabled [{/if}]" href="[{oxgetseourl ident=$oViewConf->getBasketLink()}]">
+                [{/if}]
                 <div class="num">1</div>
                 <div class="text">
                     [{oxmultilang ident="STEPS_BASKET"}]
                 </div>
-                [{if $showStepLinks}]</a>[{/if}]
+                [{if $showStepLinks}]
+                 </a>
+                [{/if}]
             </li>
-        [{/block}]
+        [{/block*}]
+
+        <script>
+            [{if $active == 2}]
+                document.getElementById('progress').setAttribute("style","width: 16.6666%");
+            [{elseif $active == 3}]
+                document.getElementById('progress').setAttribute("style","width: 49.9999%");
+            [{else}]
+                document.getElementById('progress').setAttribute("style","width: 83.3333%");
+            [{/if}]
+        </script>
 
         [{assign var=showStepLinks value=false}]
         [{if !$oView->isLowOrderPrice() && $oxcmp_basket->getProductsCount()}]
@@ -21,14 +39,9 @@
         [{/if}]
 
         [{block name="checkout_steps_send"}]
-            <li class="col step step2[{if $active == 2}] active [{elseif $active > 2}] passed [{/if}]">
-                [{if $showStepLinks}]<a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">[{/if}]
-                <div class="num">2</div>
-                <div class="text">
-                    [{oxmultilang ident="STEPS_SEND"}]
-                </div>
-                [{if $showStepLinks}]</a>[{/if}]
-            </li>
+            <div class="col[{if $active == 2}] text-success[{/if}]">
+                [{oxmultilang ident="STEPS_SEND"}]
+            </div>
         [{/block}]
 
         [{assign var=showStepLinks value=false}]
@@ -37,14 +50,9 @@
         [{/if}]
 
         [{block name="checkout_steps_pay"}]
-            <li class="col step step3[{if $active == 3}] active [{elseif $active > 3}] passed [{/if}]">
-                [{if $showStepLinks}]<a [{if $oViewConf->getActiveClassName() == "user"}]id="paymentStep"[{/if}] href="[{oxgetseourl ident=$oViewConf->getPaymentLink()}]">[{/if}]
-                <div class="num">3</div>
-                <div class="text">
-                    [{oxmultilang ident="STEPS_PAY"}]
-                </div>
-                [{if $showStepLinks}]</a>[{/if}]
-            </li>
+            <div class="col[{if $active == 3}] text-success[{else}] text-muted[{/if}]">
+                [{oxmultilang ident="STEPS_PAY"}]
+            </div>
             [{*[{oxscript add="$('#paymentStep').click( function() { $('#userNextStepBottom').click();return false;});"}]*}]
         [{/block}]
 
@@ -54,24 +62,21 @@
         [{/if}]
 
         [{block name="checkout_steps_order"}]
-            <li class="col step step4[{if $active == 4}] active [{elseif $active > 4}] passed [{/if}]">
-                [{if $showStepLinks}]<a [{if $oViewConf->getActiveClassName() == "payment"}]id="orderStep"[{/if}] href="[{if $oViewConf->getActiveClassName() == "payment"}]javascript:document.forms.order.submit();[{else}][{oxgetseourl ident=$oViewConf->getOrderConfirmLink()}][{/if}]">[{/if}]
-                <div class="num">4</div>
-                <div class="text">
-                    [{oxmultilang ident="STEPS_ORDER"}]
-                </div>
-                [{if $showStepLinks}]</a>[{/if}]
-            </li>
+            <div class="col[{if $active == 4}] text-success[{else}] text-muted[{/if}]">
+                [{oxmultilang ident="STEPS_ORDER"}]
+            </div>
             [{*[{oxscript add="$('#orderStep').click( function() { $('#paymentNextStepBottom').click();return false;});"}]*}]
         [{/block}]
 
-        [{block name="checkout_steps_laststep"}]
-            <li class="col step step5[{if $active == 5}] activeLast [{else}] defaultLast [{/if}] last">
-                <div class="num">5</div>
-                <div class="text">
-                    [{oxmultilang ident="READY"}]
-                </div>
+        [{*block name="checkout_steps_laststep"}]
+            <li class="nav-item">
+                <span  class="nav-link disabled">
+                    <div class="num">5</div>
+                    <div class="text">
+                        [{oxmultilang ident="READY"}]
+                    </div>
+                </span>
             </li>
-        [{/block}]
-    </ol>
+        [{/block*}]
+    </div>
 [{/block}]

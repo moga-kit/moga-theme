@@ -5,8 +5,11 @@
     [{block name="start_promoslider"}]
         [{if $oView->getBanners() && !empty($oView->getBanners())}]
             [{include file="widget/promoslider.tpl"}]
+            [{include file="widget/promotiles.tpl"}]
         [{/if}]
     [{/block}]
+
+    [{include file="widget/categories.tpl"}]
 
     [{block name="start_welcome_text"}]
         [{oxifcontent ident="oxstartwelcome" object="oCont"}]
