@@ -1,3 +1,5 @@
+[{oxscript include="js/wrapping.min.js" priority=10}]
+
 [{assign var="currency" value=$oView->getActCurrency()}]
 
 <div class="modal fade gift-options" id="giftoptions" tabindex="-1" role="dialog" aria-labelledby="giftoptions_modal_label" aria-hidden="true">
@@ -76,7 +78,7 @@
                                                     [{if $wrapping->oxwrapping__oxpic->value}]
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <img src="[{$wrapping->getPictureUrl()}]" alt="[{$wrapping->oxwrapping__oxname->value}]" class="img-thumbnail">
+                                                            <img data-target="wrapping_[{$wrapping->oxwrapping__oxid->value}]"  src="[{$wrapping->getPictureUrl()}]" alt="[{$wrapping->oxwrapping__oxname->value}]" class="img-thumbnail wrappingTargetImg">
                                                         </div>
                                                         <div class="col-9">
                                                     [{else}]
@@ -95,7 +97,6 @@
                                                 </div>
                                                 [{assign var="ictr" value="`$ictr+1`"}]
                                             [{/foreach}]
-                                            [{oxscript add="$( '#wrapp_`$smarty.foreach.wrappArt.iteration` img' ).click(function(){ $(this).parent().parent().find('input').click(); });"}]
                                         </div>
 
                                                 [{assign var="icounter" value="`$icounter+1`"}]
@@ -153,7 +154,6 @@
                                                 </div>
                                             [{assign var="icounter" value="`$icounter+1`"}]
                                         [{/foreach}]
-                                        [{oxscript add="$( '#wrappCard img' ).click(function(){ $(this).parent().siblings().find('input').click(); });"}]
                                     </div>
 
                                 [{/block}]
