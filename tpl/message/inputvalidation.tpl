@@ -1,3 +1,3 @@
 [{foreach from=$aErrors item="oError"}]
-    <div class="alert alert-danger">[{$oError->getMessage()}]</div>
+    <div class="invalid-feedback">[{$oError->getMessage()}]</div>
 [{/foreach}]

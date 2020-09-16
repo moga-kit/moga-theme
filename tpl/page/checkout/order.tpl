@@ -212,7 +212,7 @@
                                                 [{/block}]
                                             [{else}]
                                                 [{block name="checkout_order_btn_confirm_bottom"}]
-                                                    <form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="orderConfirmAgbBottom" class="max-600">
+                                                    <form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="orderConfirmAgbBottom">
                                                         [{$oViewConf->getHiddenSid()}]
                                                         [{$oViewConf->getNavFormParams()}]
                                                         <input type="hidden" name="cl" value="order">

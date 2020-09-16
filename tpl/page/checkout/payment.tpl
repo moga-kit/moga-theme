@@ -93,7 +93,7 @@
 
                                 [{block name="change_payment"}]
                                     [{oxscript include="js/payment.min.js" priority=10}]
-                                    <form action="[{$oViewConf->getSslSelfLink()}]" class="max-600 payment" id="payment" name="order" method="post" novalidate>
+                                    <form action="[{$oViewConf->getSslSelfLink()}]" class="payment" id="payment" name="order" method="post" novalidate>
                                         [{$oViewConf->getHiddenSid()}]
                                         [{$oViewConf->getNavFormParams()}]
                                         <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">

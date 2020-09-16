@@ -13,3 +13,7 @@
     color: $danger;
   }
 }
+
+.text-danger .invalid-feedback {
+  display: block;
+}

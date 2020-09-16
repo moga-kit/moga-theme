@@ -63,6 +63,7 @@
                 </label>
             </div>
 
+        [{oxscript include="js/changeaddress.min.js" priority=10}]
 
             <div id="shippingAddress" [{if !$oView->showShipAddress()}]style="display: none;"[{/if}]>
                 [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]

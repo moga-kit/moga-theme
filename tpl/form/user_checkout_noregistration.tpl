@@ -44,14 +44,14 @@
             [{/block}]
 
 
-            <h3 class="h4">[{oxmultilang ident="NOTREGISTERED_ACCOUNTINFO"}]</h3>
+            <h3>[{oxmultilang ident="NOTREGISTERED_ACCOUNTINFO"}]</h3>
 
             [{include file="form/fieldset/user_noaccount.tpl"}]
 
-            <h3 class="h4">[{oxmultilang ident="BILLING_ADDRESS"}]</h3>
+            <h3>[{oxmultilang ident="BILLING_ADDRESS"}]</h3>
             [{include file="form/fieldset/user_billing.tpl" noFormSubmit=true blOrderRemark=true}]
 
-            <h3 class="h4">[{oxmultilang ident="SHIPPING_ADDRESS"}]</h3>
+            <h3>[{oxmultilang ident="SHIPPING_ADDRESS"}]</h3>
 
             <div class="mb-3">
                 <div class="form-check">
@@ -61,6 +61,7 @@
                     </label>
                 </div>
             </div>
+        [{oxscript include="js/changeaddress.min.js" priority=10}]
 
             <div id="shippingAddress"[{if !$oView->showShipAddress()}] style="display: none;"[{/if}]>
                 [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]
