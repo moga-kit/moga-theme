@@ -6,67 +6,53 @@
     [{if $oView->getShowNoRegOption()}]
         [{assign var="sColClass" value="col-lg-4"}]
     [{/if}]
-
-    <div class="checkoutOptions">
-		<div class="card-deck">
+	<div class="accordion" id="accordionExample">
+		<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 			[{block name="checkout_options_noreg"}]
-				[{if $oView->getShowNoRegOption()}]
-					<div class="card">
-						<form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="optionNoRegistration">
-							<div class="card-header">
-								<h3 class="card-title">[{oxmultilang ident="PURCHASE_WITHOUT_REGISTRATION"}]</h3>
-							</div>
-							<div class="card-body">
-									[{$oViewConf->getHiddenSid()}]
-									[{$oViewConf->getNavFormParams()}]
-									<input type="hidden" name="cl" value="user">
-									<input type="hidden" name="fnc" value="">
-									<input type="hidden" name="option" value="1">
-								[{block name="checkout_options_noreg_text"}]
-									<p>[{oxmultilang ident="DO_NOT_WANT_CREATE_ACCOUNT"}]</p>
-									[{if $oView->isDownloadableProductWarning()}]
-										<p class="errorMsg">[{oxmultilang ident="MESSAGE_DOWNLOADABLE_PRODUCT"}]</p>
-									[{/if}]
-								[{/block}]
-							</div>
-							<div class="card-footer text-right">
-								<button class="btn btn-primary submitButton nextStep" type="submit">[{oxmultilang ident="NEXT"}] <i class="moga-right"></i></button>
-							</div>
-						</form>
-					</div>
+			[{if $oView->getShowNoRegOption()}]
+			<form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="optionNoRegistration">
+				[{$oViewConf->getHiddenSid()}]
+				[{$oViewConf->getNavFormParams()}]
+				<input type="hidden" name="cl" value="user">
+				<input type="hidden" name="fnc" value="">
+				<input type="hidden" name="option" value="1">
+				[{block name="checkout_options_noreg_text"}]
+				[{if $oView->isDownloadableProductWarning()}]
+				<p class="errorMsg">[{oxmultilang ident="MESSAGE_DOWNLOADABLE_PRODUCT"}]</p>
 				[{/if}]
+				[{/block}]
+				<button class="btn btn-outline-primary btn-block mb-2" type="submit">[{oxmultilang ident="PURCHASE_WITHOUT_REGISTRATION"}]</button>
+			</form>
+			[{/if}]
 			[{/block}]
 
 			[{block name="checkout_options_reg"}]
-				<div class="card">
-					<form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="optionRegistration">
-
-						<div class="card-header">
-							<h3 class="card-title">[{oxmultilang ident="OPEN_ACCOUNT"}]</h3>
-						</div>
-						<div class="card-body">
-								[{$oViewConf->getHiddenSid()}]
-								[{$oViewConf->getNavFormParams()}]
-								<input type="hidden" name="cl" value="user">
-								<input type="hidden" name="fnc" value="">
-								<input type="hidden" name="option" value="3">
-
-							[{block name="checkout_options_reg_text"}]
-								[{oxifcontent ident="oxregistrationdescription" object="oCont"}]
-									[{$oCont->oxcontents__oxcontent->value}]
-								[{/oxifcontent}]
-							[{/block}]
-						</div>
-						<div class="card-footer text-right">
-							<button class="btn btn-primary submitButton nextStep" type="submit">[{oxmultilang ident="NEXT"}] <i class="moga-right"></i></button>
-						</div>
-					</form>
-				</div>
+			<form action="[{$oViewConf->getSslSelfLink()}]" method="post" id="optionRegistration">
+				[{$oViewConf->getHiddenSid()}]
+				[{$oViewConf->getNavFormParams()}]
+				<input type="hidden" name="cl" value="user">
+				<input type="hidden" name="fnc" value="">
+				<input type="hidden" name="option" value="3">
+				<button class="btn btn-outline-primary btn-block mb-2" type="submit">[{oxmultilang ident="OPEN_ACCOUNT"}]</button>
+			</form>
 			[{/block}]
 
-			[{block name="checkout_options_login"}]
-				[{include file="form/login.tpl"}]
-			[{/block}]
+			<button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+				Einloggen
+			</button>
 		</div>
-    </div>
+
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+			[{block name="checkout_options_login"}]
+			[{include file="form/login.tpl"}]
+			[{/block}]
+
+			<button class="btn btn-outline-primary my-2 btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				Zurück
+			</button>
+		</div>
+	</div>
+
+
+
 [{/block}]

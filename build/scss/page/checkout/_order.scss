@@ -1,7 +1,29 @@
 @import 'inc/basketcontents_list';
 @import 'inc/payments';
-@import 'inc/steps';
 
 .voucher-code {
   max-width: 250px;
+}
+
+.is-checkout {
+  .card {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .disabled {
+    color: #bbb;
+  }
+
+  .done {
+    .card-header {
+      background: lighten($primary, 30%);
+      color: #fff;
+    }
+  }
+
+  .done-2 {
+    .card-header {
+      background: lighten($primary, 20%);
+    }
+  }
 }

@@ -27,7 +27,7 @@
                                 <div>
                                     [{block name="checkout_basketcontents_basketitem_titlenumber"}]
                                     [{block name="checkout_basketcontents_basketitem_title"}]
-                                        <div class="card-title">[{$basketitem->getTitle()}]</div>
+                                        <div class="h4">[{$basketitem->getTitle()}]</div>
                                         [{if $basketitem->isSkipDiscount()}] <sup><a href="#SkipDiscounts_link" >**</a></sup>[{/if}]
                                     [{/block}]
 
@@ -105,6 +105,7 @@
 
                                     [{/block}]
                                     <div>
+
                                         [{block name="checkout_basketcontents_basketitem_unitprice"}]
                                         [{* product price *}]
                                             <small class="unitPrice">

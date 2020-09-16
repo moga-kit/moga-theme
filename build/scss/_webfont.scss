@@ -2,35 +2,13 @@ $font-path: '../fonts';
 
 @media only screen and (min-width: 600px) {
 
-  /* raleway200*/
   @font-face {
-    font-family: 'Raleway';
+    font-family: 'Barlow Condensed';
     font-style: normal;
     font-display: swap;
-    font-weight: 200;
-    src: url($font-path + '/raleway200.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url($font-path + '/raleway200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
-  /* raleway400*/
-  @font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url($font-path + '/raleway400.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url($font-path + '/raleway400.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
-
-  /* raleway700*/
-  @font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 700;
-    src: url($font-path + '/raleway700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url($font-path + '/raleway700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    font-weight: 600;
+    src: url('./files/barlow-condensed-latin-600-normal.woff2') format('woff2'), url('./files/barlow-condensed-all-600-normal.woff') format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 }
 

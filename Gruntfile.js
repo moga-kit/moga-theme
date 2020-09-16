@@ -168,7 +168,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: '*',
-                        cwd: '<%= project.dev %>/build/vendor/raleway/',
+                        cwd: '<%= project.dev %>/build/vendor/barlow/',
                         dest: '<%= project.out %><%= project.theme %>/src/fonts/'
                     },
                     {

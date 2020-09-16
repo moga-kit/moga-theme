@@ -29,7 +29,10 @@ body {
 }
 
 .card-title {
-  font-weight: bold;
+  font-family: $headings-font-family;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .max-600 {
