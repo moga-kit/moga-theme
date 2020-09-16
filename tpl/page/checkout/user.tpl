@@ -1,6 +1,6 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value=""}]
-    [{if !$oView->getLoginOption()}]
+    [{if !$oView->getLoginOption() && !$oxcmp_user}]
         <div class="container-xxl py-5">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10 col-xl-9">
@@ -95,7 +95,6 @@
                 </div>
             </div>
         </div>
-
     [{/if}]
 [{/capture}]
 
