@@ -181,7 +181,7 @@
 [{/if}]
 
 <div class="mb-3">
-    <p class="alert alert-info">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+    <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
 </div>
 
 [{if !$noFormSubmit}]

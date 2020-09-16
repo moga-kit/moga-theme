@@ -1,22 +1,15 @@
-.form-horizontal {
-  .form-group {
-    @include make-row();
+.req {
+  &:after {
+    content: ' *';
+    color: $danger;
+  }
+}
 
-    .control-label {
-      @include media-breakpoint-up(md){
-        text-align: right;
-      }
+.req-waring {
+  color: $text-muted;
 
-      &.req {
-        font-weight: bold;
-      }
-    }
-
-    .help-block {
-      display: block;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      color: $gray-600;
-    }
+  &:before {
+    content: '* ';
+    color: $danger;
   }
 }

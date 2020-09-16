@@ -92,7 +92,7 @@
     [{block name="contact_form_buttons"}]
         <div class="mb-3">
             <div class="col-lg-offset-2 col-lg-10">
-                <p class="alert alert-info">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+                 <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
                 <button class="btn btn-primary" type="submit">
                     [{oxmultilang ident="SEND"}]
                 </button>

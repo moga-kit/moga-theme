@@ -225,7 +225,7 @@
 [{if !$noFormSubmit}]
     <div class="mb-3">
         <div class="col-12 col-lg-9 ml-lg-auto">
-            <p class="alert alert-info">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+             <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
             <button id="accUserSaveBottom" type="submit" class="submitButton" name="save">[{oxmultilang ident="SAVE"}]</button>
         </div>
     </div>

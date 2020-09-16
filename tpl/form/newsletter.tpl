@@ -38,7 +38,7 @@
         </label>
     </div>
     <div class="mb-3">
-        <p class="alert alert-info">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+         <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
         <button id="newsLetterSubmit" class="btn btn-primary" type="submit">[{oxmultilang ident="SUBMIT"}]</button>
     </div>
 </form>
