@@ -1,9 +1,9 @@
-<dl>
-    <dt>
-        <input id="payment_[{$sPaymentID}]" type="radio" name="paymentid" value="[{$sPaymentID}]" [{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}]checked[{/if}]>
-        <label for="payment_[{$sPaymentID}]"><b>[{$paymentmethod->oxpayments__oxdesc->value}]</b></label>
-    </dt>
-    <dd class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
+<div class="payment-option-toggle">
+    <div class="form-check">
+        <input class="form-check-input" id="payment_[{$sPaymentID}]" type="radio" name="paymentid" value="[{$sPaymentID}]"[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] checked[{/if}]>
+        <label class="form-check-label" for="payment_[{$sPaymentID}]">[{$paymentmethod->oxpayments__oxdesc->value}]</label>
+    </div>
+    <div class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
         [{if $paymentmethod->getPrice()}]
             [{assign var="oPaymentPrice" value=$paymentmethod->getPrice() }]
             [{if $oViewConf->isFunctionalityEnabled('blShowVATForPayCharge') }]
@@ -34,5 +34,5 @@
                 </div>
             [{/if}]
         [{/block}]
-    </dd>
-</dl>
+    </div>
+</div>

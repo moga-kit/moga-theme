@@ -1,6 +1,9 @@
+[{if $editable}]
 <div id="basket_list" class="card [{if $oViewConf->getActiveClassName() == 'order'}] orderBasketItems[{/if}]">
-    <h4 class="card-header card-title">[{oxmultilang ident="CART"}]</h4>
-    <div class="card-body">
+
+        <h4 class="card-header card-title">[{oxmultilang ident="CART"}]</h4>
+        <div class="card-body">
+    [{/if}]
         [{* basket items *}]
         [{assign var="basketitemlist" value=$oView->getBasketArticles()}]
         [{foreach key=basketindex from=$oxcmp_basket->getContents() item=basketitem name=basketContents}]
@@ -26,82 +29,89 @@
                             <div class="d-flex justify-content-between">
                                 <div>
                                     [{block name="checkout_basketcontents_basketitem_titlenumber"}]
-                                    [{block name="checkout_basketcontents_basketitem_title"}]
-                                        <div class="h4">[{$basketitem->getTitle()}]</div>
-                                        [{if $basketitem->isSkipDiscount()}] <sup><a href="#SkipDiscounts_link" >**</a></sup>[{/if}]
-                                    [{/block}]
+                                        [{block name="checkout_basketcontents_basketitem_title"}]
+                                            <div class="h4">
+                                                [{if !$editable}]
+                                                    [{$basketitem->getAmount()}] x
+                                                [{/if}]
+                                                [{$basketitem->getTitle()}]
+                                            </div>
+                                            [{if $basketitem->isSkipDiscount()}] <sup><a href="#SkipDiscounts_link" >**</a></sup>[{/if}]
+                                        [{/block}]
 
-                                    [{block name="checkout_basketcontents_basketitem_artnum"}]
-                                        <div class="small">
-                                            [{oxmultilang ident="PRODUCT_NO"}] [{$basketproduct->oxarticles__oxartnum->value}]
-                                        </div>
-                                    [{/block}]
+                                        [{block name="checkout_basketcontents_basketitem_artnum"}]
+                                            <div class="small">
+                                                [{oxmultilang ident="PRODUCT_NO"}] [{$basketproduct->oxarticles__oxartnum->value}]
+                                            </div>
+                                        [{/block}]
 
-                                    [{block name="checkout_basketcontents_basketitem_attributes"}]
-                                        <div class="small">
-                                            [{assign var=sep value=", "}]
-                                            [{assign var=result value=""}]
-                                            [{foreach key="oArtAttributes" from=$oAttributes->getArray() item="oAttr" name="attributeContents"}]
-                                                [{assign var=temp value=$oAttr->oxattribute__oxvalue->value}]
-                                                [{assign var=result value=$result|cat:$temp|cat:$sep}]
-                                            [{/foreach}]
-                                            [{$result|trim:$sep}]
-                                        </div>
-                                    [{/block}]
-
-                                    [{block name="checkout_basketcontents_basketitem_selectlists"}]
-                                        [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
-                                            [{assign var="oSelections" value=$basketproduct->getSelections(null,$basketitem->getSelList())}]
-                                            [{if $oSelections}]
-                                                <div class="selectorsBox" id="cartItemSelections_[{$smarty.foreach.basketContents.iteration}]">
-                                                    [{foreach from=$oSelections item=oList name=selections}]
-                                                        [{if $oViewConf->showSelectListsInList()}]
-                                                            [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="aproducts[`$basketindex`][sel]" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop"}]
-                                                        [{else}]
-                                                            [{assign var="oActiveSelection" value=$oList->getActiveSelection()}]
-                                                            [{if $oActiveSelection}]
-                                                                <input type="hidden" name="aproducts[[{$basketindex}]][sel][[{$smarty.foreach.selections.index}]]" value="[{$oActiveSelection->getValue()}]">
-                                                                <div>[{$oList->getLabel()}]: [{$oActiveSelection->getName()}]</div>
-                                                            [{/if}]
-                                                        [{/if}]
+                                        [{block name="checkout_basketcontents_basketitem_attributes"}]
+                                            [{if $oAttributes->getArray()}]
+                                                <div class="small">
+                                                    [{assign var=sep value=", "}]
+                                                    [{assign var=result value=""}]
+                                                    [{foreach key="oArtAttributes" from=$oAttributes->getArray() item="oAttr" name="attributeContents"}]
+                                                        [{assign var=temp value=$oAttr->oxattribute__oxvalue->value}]
+                                                        [{assign var=result value=$result|cat:$temp|cat:$sep}]
                                                     [{/foreach}]
+                                                    [{$result|trim:$sep}]
                                                 </div>
                                             [{/if}]
-                                        [{/if}]
-                                    [{/block}]
+                                        [{/block}]
 
-                                    [{block name="checkout_basketcontents_basketitem_persparams"}]
-                                        [{if !$editable}]
-                                            <p class="persparamBox">
-                                                <small>
-                                                    [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
-                                                        [{if !$smarty.foreach.persparams.first}]<br />[{/if}]
-                                                        [{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}]
-                                                            [{oxmultilang ident="LABEL"}]
-                                                        [{else}]
-                                                            [{$sVar}] :
-                                                        [{/if}]
-                                                        [{$aParam}]
-                                                    [{/foreach}]
-                                                </small>
-                                            </p>
-                                        [{else}]
-                                            [{if $basketproduct->oxarticles__oxisconfigurable->value}]
-                                                [{if $basketitem->getPersParams()}]
-                                                    <br />
-                                                    [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
-                                                        <p>
-                                                            <input class="textbox persParam form-control" type="text" name="aproducts[[{$basketindex}]][persparam][[{$sVar}]]" value="[{$aParam}]" placeholder="[{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}][{oxmultilang ident="LABEL"}][{else}][{$sVar}][{/if}]">
-                                                        </p>
-                                                    [{/foreach}]
-                                                [{else}]
-                                                    <p>
-                                                        <input class="textbox persParam form-control" type="text" name="aproducts[[{$basketindex}]][persparam][details]" value="" placeholder="[{oxmultilang ident="LABEL"}]">
-                                                    </p>
+                                        [{block name="checkout_basketcontents_basketitem_selectlists"}]
+                                            [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
+                                                [{assign var="oSelections" value=$basketproduct->getSelections(null,$basketitem->getSelList())}]
+                                                [{if $oSelections}]
+                                                    <div class="selectorsBox" id="cartItemSelections_[{$smarty.foreach.basketContents.iteration}]">
+                                                        [{foreach from=$oSelections item=oList name=selections}]
+                                                            [{if $oViewConf->showSelectListsInList()}]
+                                                                [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="aproducts[`$basketindex`][sel]" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop"}]
+                                                            [{else}]
+                                                                [{assign var="oActiveSelection" value=$oList->getActiveSelection()}]
+                                                                [{if $oActiveSelection}]
+                                                                    <input type="hidden" name="aproducts[[{$basketindex}]][sel][[{$smarty.foreach.selections.index}]]" value="[{$oActiveSelection->getValue()}]">
+                                                                    <div>[{$oList->getLabel()}]: [{$oActiveSelection->getName()}]</div>
+                                                                [{/if}]
+                                                            [{/if}]
+                                                        [{/foreach}]
+                                                    </div>
                                                 [{/if}]
                                             [{/if}]
-                                        [{/if}]
-                                    [{/block}]
+                                        [{/block}]
+
+                                        [{block name="checkout_basketcontents_basketitem_persparams"}]
+                                            [{if !$editable && $basketitem->getPersParams()}]
+                                                <p class="persparamBox">
+                                                    <small>
+                                                        [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
+                                                            [{if !$smarty.foreach.persparams.first}]<br />[{/if}]
+                                                            [{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}]
+                                                                [{oxmultilang ident="LABEL"}]
+                                                            [{else}]
+                                                                [{$sVar}] :
+                                                            [{/if}]
+                                                            [{$aParam}]
+                                                        [{/foreach}]
+                                                    </small>
+                                                </p>
+                                            [{else}]
+                                                [{if $basketproduct->oxarticles__oxisconfigurable->value}]
+                                                    [{if $basketitem->getPersParams()}]
+                                                        <br />
+                                                        [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
+                                                            <p>
+                                                                <input class="textbox persParam form-control" type="text" name="aproducts[[{$basketindex}]][persparam][[{$sVar}]]" value="[{$aParam}]" placeholder="[{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}][{oxmultilang ident="LABEL"}][{else}][{$sVar}][{/if}]">
+                                                            </p>
+                                                        [{/foreach}]
+                                                    [{else}]
+                                                        <p>
+                                                            <input class="textbox persParam form-control" type="text" name="aproducts[[{$basketindex}]][persparam][details]" value="" placeholder="[{oxmultilang ident="LABEL"}]">
+                                                        </p>
+                                                    [{/if}]
+                                                [{/if}]
+                                            [{/if}]
+                                        [{/block}]
 
                                     [{/block}]
                                     <div>
@@ -136,27 +146,27 @@
                                         [{/block}]
                                     </div>
                                 </div>
-                                <div>
+                                <div[{if !$editable}] class="d-none"[{/if}]>
                                     [{block name="checkout_basketcontents_basketitem_quantity"}]
                                     <div class="quantity">
                                         [{if $editable}]
-                                    <input type="hidden" name="aproducts[[{$basketindex}]][aid]" value="[{$basketitem->getProductId()}]">
-                                    <input type="hidden" name="aproducts[[{$basketindex}]][basketitemid]" value="[{$basketindex}]">
-                                    <input type="hidden" name="aproducts[[{$basketindex}]][override]" value="1">
-                                        [{if $basketitem->isBundle()}]
-                                    <input type="hidden" name="aproducts[[{$basketindex}]][bundle]" value="1">
-                                        [{/if}]
+                                            <input type="hidden" name="aproducts[[{$basketindex}]][aid]" value="[{$basketitem->getProductId()}]">
+                                            <input type="hidden" name="aproducts[[{$basketindex}]][basketitemid]" value="[{$basketindex}]">
+                                            <input type="hidden" name="aproducts[[{$basketindex}]][override]" value="1">
+                                            [{if $basketitem->isBundle()}]
+                                                <input type="hidden" name="aproducts[[{$basketindex}]][bundle]" value="1">
+                                            [{/if}]
 
-                                        [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
-                                        <div class="input-group justify-content-end">
-                                            <input id="am_[{$smarty.foreach.basketContents.iteration}]" type="number" class="form-control text-center" name="aproducts[[{$basketindex}]][am]" value="[{$basketitem->getAmount()}]" size="3" min="0" style="width:60px;float:right;"[{if $oConfig->getConfigParam('blAllowUnevenAmounts')}] step="any"[{/if}]>
-                                            <button class="btn btn-outline-primary" id="basketUpdate-[{$smarty.foreach.basketContents.iteration}]" type="submit" name="updateBtn" title="[{oxmultilang ident="UPDATE"}]">
-                                                <i class="moga-sync"></i>
-                                            </button>
-                                        </div>
-                                        [{/if}]
+                                            [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
+                                                <div class="input-group justify-content-end">
+                                                    <input id="am_[{$smarty.foreach.basketContents.iteration}]" type="number" class="form-control text-center" name="aproducts[[{$basketindex}]][am]" value="[{$basketitem->getAmount()}]" size="3" min="0" style="width:60px;float:right;"[{if $oConfig->getConfigParam('blAllowUnevenAmounts')}] step="any"[{/if}]>
+                                                    <button class="btn btn-outline-primary" id="basketUpdate-[{$smarty.foreach.basketContents.iteration}]" type="submit" name="updateBtn" title="[{oxmultilang ident="UPDATE"}]">
+                                                        <i class="moga-sync"></i>
+                                                    </button>
+                                                </div>
+                                            [{/if}]
                                         [{else}]
-                                        [{$basketitem->getAmount()}]
+                                            [{$basketitem->getAmount()}]
                                         [{/if}]
                                         [{if $basketitem->getdBundledAmount() > 0 && ($basketitem->isBundle() || $basketitem->isDiscountArticle())}]
                                         +[{$basketitem->getdBundledAmount()}]
@@ -278,5 +288,7 @@
         [{/block}]
 
         [{block name="checkout_basketcontents_basketfunctions"}][{/block}]
+[{if $editable}]
     </div>
 </div>
+[{/if}]

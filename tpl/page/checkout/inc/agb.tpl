@@ -1,18 +1,14 @@
-<div class="agb card">
+<div class="agb card mb-3">
     [{if !$hideButtons}]
 
         [{if !$oView->isActive('PsLogin')}]
             [{if $oView->isConfirmAGBActive()}]
                 [{oxifcontent ident="oxrighttocancellegend" object="oContent"}]
-                    <div class="card-header">
-                        <h3 class="card-title">[{$oContent->oxcontents__oxtitle->value}]</h3>
-                    </div>
+                   <h3 class="card-header card-title card-header-edit">[{$oContent->oxcontents__oxtitle->value}]</h3>
                 [{/oxifcontent}]
             [{else}]
                 [{oxifcontent ident="oxrighttocancellegend2" object="oContent"}]
-                    <div class="card-header">
-                        <h3 class="card-title">[{$oContent->oxcontents__oxtitle->value}]</h3>
-                    </div>
+                    <h3 class="card-header card-title card-header-edit">[{$oContent->oxcontents__oxtitle->value}]</h3>
                 [{/oxifcontent}]
             [{/if}]
         [{/if}]
@@ -21,11 +17,12 @@
             [{if !$oView->isActive('PsLogin')}]
                 [{if $oView->isConfirmAGBActive()}]
                     [{oxifcontent ident="oxrighttocancellegend" object="oContent"}]
-                        <p class="agbConfirmation checkbox">
-                            <label>
-                                <input id="checkAgbTop" type="checkbox" name="ord_agb" value="1"> [{$oContent->oxcontents__oxcontent->value}]
+                        <div class="form-check">
+                            <input id="checkAgbTop" class="form-check-input" type="checkbox" name="ord_agb" value="1">
+                            <label for="checkAgbTop" class="form-check-label">
+                                 [{$oContent->oxcontents__oxcontent->value}]
                             </label>
-                        </p>
+                        </div>
                     [{/oxifcontent}]
                 [{else}]
                     [{oxifcontent ident="oxrighttocancellegend2" object="oContent"}]

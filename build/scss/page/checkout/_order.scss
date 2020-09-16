@@ -18,12 +18,62 @@
     .card-header {
       background: lighten($primary, 30%);
       color: #fff;
+
+      &:after {
+        font-family: "icons";
+        content: map-get($icons, 'check');
+        position: absolute;
+        right: 0;
+        width: 50px;
+        text-align: center;
+      }
     }
   }
 
   .done-2 {
     .card-header {
       background: lighten($primary, 20%);
+    }
+  }
+
+  .done-3 {
+    .card-header {
+      background: lighten($primary, 10%);
+    }
+  }
+}
+
+.card-header-edit {
+  padding: 0 $card-cap-padding-x;
+  line-height: 50px;
+  text-transform: none;
+}
+
+
+button.card-header-edit {
+  text-align: left;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+
+  color: $primary;
+  position: relative;
+  transition: background-color 150ms;
+
+  &:after {
+    font-family: "icons";
+    content: map-get($icons, 'check');
+    position: absolute;
+    right: 0;
+    width: 50px;
+    text-align: center;
+  }
+
+  &:hover {
+    background: #f1f1f1;
+
+    &:after {
+      content: map-get($icons, 'pencil');
     }
   }
 }

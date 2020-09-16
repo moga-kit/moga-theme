@@ -1,11 +1,11 @@
-[{assign var="dynvalue" value=$oView->getDynValue()}]
-<dl>
-    <dt>
-        <input id="payment_[{$sPaymentID}]" type="radio" name="paymentid" value="[{$sPaymentID}]" [{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}]checked[{/if}]>
-        <label for="payment_[{$sPaymentID}]"><b>[{$paymentmethod->oxpayments__oxdesc->value}]</b></label>
-    </dt>
-    <dd class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
+<div class="payment-option-toggle">
+    [{assign var="dynvalue" value=$oView->getDynValue()}]
+    <div class="form-check">
+        <input class="form-check-input" id="payment_[{$sPaymentID}]" type="radio" name="paymentid" value="[{$sPaymentID}]" [{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}]checked[{/if}]>
+        <label class="form-check-label" for="payment_[{$sPaymentID}]"><b>[{$paymentmethod->oxpayments__oxdesc->value}]</b></label>
+    </div>
 
+    <div class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
         <div class="mb-3">
             <label class="req form-label col-lg-3">[{oxmultilang ident="CREDITCARD"}]</label>
             <div class="col-lg-9">
@@ -87,5 +87,5 @@
                 </div>
             [{/if}]
         [{/block}]
-    </dd>
-</dl>
+    </div>
+</div>
