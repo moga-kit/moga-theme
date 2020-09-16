@@ -7,11 +7,11 @@
         [{if $promosliderWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]
-                <div class="promoslider my-2">
+                <div class="promoslider">
                     [{if $promosliderWidth == 'w100cContainer'}]
                     <div class="container-xxl">
                     [{/if}]
-                        <div id="promoCarousel" class="carousel slide" data-ride="carousel">
+                        <div id="promoCarousel" class="carousel slide mb-2" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 [{foreach from=$oBanners key="iPicNr" item="oBanner" name="promoslider"}]
                                     <li data-target="#promoCarousel" data-slide-to="[{$smarty.foreach.promoslider.iteration-1}]"[{if $smarty.foreach.promoslider.first}] class="active"[{/if}]></li>

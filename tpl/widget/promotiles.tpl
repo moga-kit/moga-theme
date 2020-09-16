@@ -6,19 +6,18 @@
         [{if $promosliderWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]
-                <div class="my-2">
                     [{if $promosliderWidth == 'w100cContainer'}]
                     <div class="container-xxl">
                     [{/if}]
                         <div id="promoTiles">
-                            <div class="row g-2">
+                            <div class="row g-2 mb-2">
                                 [{block name="dd_widget_promoslider_list"}]
                                     [{foreach from=$oBanners key="iPicNr" item="oBanner" name="promoslider"}]
                                         [{assign var="oArticle" value=$oBanner->getBannerArticle()}]
                                         [{assign var="sBannerPictureUrl" value=$oBanner->getBannerPictureUrl()}]
 
                                         [{if $sBannerPictureUrl}]
-                                            <div class="col my-1">
+                                            <div class="col-md-6">
                                                 [{assign var="sBannerLink" value=$oBanner->getBannerLink()}]
 
                                                 [{if $sBannerLink}]
@@ -82,7 +81,6 @@
                     [{if $promosliderWidth == 'w100cContainer'}]
                     </div>
                     [{/if}]
-                </div>
         [{if $promosliderWidth == 'container'}]
             </div>
         [{/if}]

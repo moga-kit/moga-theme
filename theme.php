@@ -99,6 +99,29 @@ $aTheme = array(
             'constraints' => 'w100cContainer|w100c100|container',
             'position' => 11,
         ),
+        array(
+            'group' => 'startpage',
+            'name'  => 'bl_showPromoTiles',
+            'type'  => 'bool',
+            'value' => 1,
+            'position' => 14,
+        ),
+        array(
+            'group'       => 'startpage',
+            'name'        => 'sPromoTilesWidth',
+            'type'        => 'select',
+            'value'       => 'w100cContainer',
+            'constraints' => 'w100cContainer|w100c100|container',
+            'position' => 15,
+        ),
+        array(
+            'group'       => 'startpage',
+            'name'        => 'sPromoTilesGrid',
+            'type'        => 'select',
+            'value'       => '100_33',
+            'constraints' => '100_33|50|33|25',
+            'position' => 16,
+        ),
 
         array(
             'group' => 'startpage',

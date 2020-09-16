@@ -118,6 +118,17 @@ $aLang = array(
     'SHOP_THEME_sPromosliderWidth_w100c100'              => 'Alles 100%',
     'SHOP_THEME_sPromosliderWidth_container'             => 'Alles mittig',
 
+    'SHOP_THEME_sPromoTilesWidth'                       => 'Promo-Kacheln Breite',
+    'SHOP_THEME_sPromoTilesWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
+    'SHOP_THEME_sPromoTilesWidth_w100c100'              => 'Alles 100%',
+    'SHOP_THEME_sPromoTilesWidth_container'             => 'Alles mittig',
+
+    'SHOP_THEME_sPromoTilesGrid'                => 'Promo-Kacheln Breite',
+    'SHOP_THEME_sPromoTilesGrid_100_33'         => '1. 100%, Rest 33% auf Desktop',
+    'SHOP_THEME_sPromoTilesGrid_50'             => 'Alle 50% auf Desktop',
+    'SHOP_THEME_sPromoTilesGrid_33'             => 'Alle 33% auf Desktop',
+    'SHOP_THEME_sPromoTilesGrid_25'             => 'Alle 25% auf Desktop',
+
     'SHOP_THEME_sShowBargain'                        => 'Angebote der Woche anzeigen',
     'SHOP_THEME_sBargainWidth'                       => 'Angebote der Woche Breite',
     'SHOP_THEME_sBargainWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
@@ -167,6 +178,8 @@ $aLang = array(
     'HELP_SHOP_THEME_sGoogleMapsAddr'               => 'Bsp.: OXID eSales AG, Bertoldstraße 48, 79098 Freiburg‎',
 
     'SHOP_THEME_bl_showManufacturer'                => 'Hersteller auf Startseite anzeigen‎',
+    'SHOP_THEME_bl_showPromoTiles'                  => 'Banner-Kacheln anzeigen',
+    'SHOP_THEME_bl_showCategoryTiles'               => 'Kategorie-Kacheln anzeigen',
 
     'SHOP_THEME_blUseGAPageTracker'                 => 'Google Analytics PageTracker benutzen',
     'SHOP_THEME_blUseGAEcommerceTracking'           => 'Google Analytics Ecommerce Tracking benutzen',
