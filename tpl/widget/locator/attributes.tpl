@@ -16,14 +16,12 @@
                 [{/if}]
                 [{foreach from=$attributes item=oFilterAttr key=sAttrID name=attr}]
                     [{assign var="sActiveValue" value=$oFilterAttr->getActiveValue()}]
-                    <div class="col-12">
-                        <select class="form-select" aria-label="[{$oFilterAttr->getTitle()}]" name="attrfilter[[{$sAttrID}]]" onchange="this.form.submit()">
-                            <option[{if !$sActiveValue}] selected[{/if}] value="">[{oxmultilang ident="PLEASE_CHOOSE"}]</option>
-                            [{foreach from=$oFilterAttr->getValues() item=sValue}]
-                            <option[{if $sActiveValue == $sValue}] selected[{/if}] value="[{$sValue}]">[{$sValue}]</option>
-                            [{/foreach}]
-                        </select>
-                    </div>
+                    <select class="form-select" aria-label="[{$oFilterAttr->getTitle()}]" name="attrfilter[[{$sAttrID}]]" onchange="this.form.submit()">
+                        <option[{if !$sActiveValue}] selected[{/if}] value="">[{oxmultilang ident="PLEASE_CHOOSE"}]</option>
+                        [{foreach from=$oFilterAttr->getValues() item=sValue}]
+                        <option[{if $sActiveValue == $sValue}] selected[{/if}] value="[{$sValue}]">[{$sValue}]</option>
+                        [{/foreach}]
+                    </select>
                     [{if $sActiveValue}][{assign var="hasActiveValue" value=$sActiveValue}][{/if}]
                 [{/foreach}]
             </form>

@@ -1,12 +1,4 @@
 .grid-view {
-  .boxwrapper & {
-    text-align: center;
-
-    @include media-breakpoint-up(md) {
-      text-align: left;
-    }
-  }
-
   .card {
     height: 100%;
     text-decoration: none;
@@ -22,11 +14,9 @@
       }
     }
 
-    picture {
+    &-picture {
       height: 150px;
-      text-align: center;
       display: flex;
-      align-items: center;
       justify-content: center;
 
       @include media-breakpoint-up(md) {
@@ -60,7 +50,6 @@
 
       @include media-breakpoint-up(md) {
         text-transform: uppercase;
-        font-weight: bold;
       }
     }
   }

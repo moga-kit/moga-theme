@@ -140,6 +140,7 @@ $aLang = array(
 
     'DD_CATEGORY_RESET_BUTTON'                              => 'Zurücksetzen',
     'MOVE_TO_WISH_LIST'                                     => 'Auf Merkzettel verschieben',
+    'SUMMARY'                                               => 'Zusammenfassung',
 );
 
 /*

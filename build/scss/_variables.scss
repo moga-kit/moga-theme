@@ -3,6 +3,8 @@
 // --------------------------------------------------
 
 $font-family-base: Raleway, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: 'Barlow Condensed', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-weight: 600;
 $font-size-base: 1rem;
 $line-height-base: 1.5;
 
@@ -140,10 +142,14 @@ $enable-grid-classes: true;
 $enable-button-pointers: true;
 $enable-rfs: false;
 $enable-validation-icons: true;
-$enable-negative-margins: false;
+$enable-negative-margins: true;
 $enable-deprecation-messages: false;
 $enable-important-utilities: false;
 
 $carousel-control-color: #fff;
 $carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
 $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$card-cap-bg: #fff;
+$card-cap-padding-y:                1rem;
+$card-cap-padding-x:                1rem;

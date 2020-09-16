@@ -3,7 +3,6 @@
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 [{capture append="oxidBlock_content"}]
     <div class="container-xxl py-5">
-        <h1 class="h2">[{oxmultilang ident="CART"}]</h1>
         [{block name="checkout_basket_main"}]
             [{assign var="currency" value=$oView->getActCurrency()}]
 

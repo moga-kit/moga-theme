@@ -1,11 +1,9 @@
-[{oxstyle include="css/manufacturer.min.css"}]
-
 [{assign var="manufacturerWidth" value=$oViewConf->getViewThemeParam('sManufacturerWidth')}]
 [{if $manufacturerWidth == 'container'}]
 <div class="container-xxl">
 [{/if}]
 
-    <div id="manufacturer" class="manufacturer">
+    <div id="manufacturer" class="text-center py-5 bg-light">
         <div class="container[{if $manufacturerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
             <h3>[{oxmultilang ident="OUR_BRANDS"}]</h3>
             <span class="subhead">[{oxmultilang ident="MANUFACTURERSLIDER_SUBHEAD"}]</span>
@@ -14,7 +12,7 @@
                 [{foreach from=$oView->getManufacturerForSlider() item=oManufacturer}]
                 [{if $oManufacturer->oxmanufacturers__oxicon->value}]
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="[{$oManufacturer->getLink()}]" title="[{oxmultilang ident="VIEW_ALL_PRODUCTS"}]" class="manufacturer-item">
+                    <a href="[{$oManufacturer->getLink()}]" title="[{oxmultilang ident="VIEW_ALL_PRODUCTS"}]" class="d-block">
                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                         <picture>
                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'webp')}]">

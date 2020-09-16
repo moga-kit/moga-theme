@@ -29,12 +29,10 @@ body {
 }
 
 .card-title {
-  font-weight: bold;
-}
-
-.products {
-  padding: $row-padding 0;
-  text-align: center;
+  font-family: $headings-font-family;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .max-600 {

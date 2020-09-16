@@ -2,17 +2,9 @@
 // Header
 // --------------------------------------------------
 // Import header modules
-@import '../widget/header/betanote';
 @import '../widget/header/categorylist';
-@import '../widget/header/cookienote';
-@import '../widget/header/currencies';
-@import '../widget/header/languages';
-@import '../widget/header/loginbox';
-@import '../widget/header/menubasket';
 @import '../widget/header/minibasket';
 @import '../widget/header/search';
-@import '../widget/header/servicebox';
-@import '../widget/header/servicemenu';
 
 .header {
   background-color: $ox-header-bg;
@@ -26,14 +18,7 @@
   .logo-link {
     max-width: 100px;
     flex: 0 0 100px;
-    padding: 0;
-    margin: 0 auto;
     align-items: center;
-    display: flex;
-
-    @include media-breakpoint-up(lg) {
-      order: 2;
-    }
   }
 
   .logo-img {
@@ -42,8 +27,7 @@
     fill: $primary;
   }
 
-  .menu-dropdowns,
-  .icon-wrapper {
+  .menu-dropdowns {
     margin-left: auto;
     max-width: 96px;
     flex: 0 0 96px;
@@ -65,9 +49,8 @@
   }
 
   .icon-wrapper {
-    text-align: left;
-    margin: 0 auto 0 0;
-    justify-content: center;
+    max-width: 96px;
+    flex: 0 0 96px;
   }
 
   .btn {

@@ -28,7 +28,7 @@
                 <div class="container-xxl">
             [{/if}]
                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
-                    <picture class="list-img">
+                    <picture class="d-block mb-3">
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'webp')}]" media="(max-width: 375px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'webp')}]" media="(max-width: 767px)">
@@ -161,7 +161,7 @@
             [{if $categoryWidth == 'container'}]
                 <div class="container-xxl">
             [{/if}]
-                    <div class="article-list">
+                    <div class="article-list py-5">
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                             [{if $oView->getArticleList()|count}]
                                 [{block name="page_list_upperlocator"}]
