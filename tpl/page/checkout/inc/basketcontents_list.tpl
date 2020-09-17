@@ -207,7 +207,7 @@
                                         </button>
 
                                         [{if $oxcmp_user}]
-                                            <button type="submit" name="moveBtn" class="btn btn-remove" onclick="document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
+                                            <button type="submit" name="removeBtn" class="btn btn-remove" onclick="addToNoticelist('[{$oArticle->getId()}]');document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
                                                 <i class="moga-heart-fill"></i> [{oxmultilang ident="MOVE_TO_WISH_LIST"}]
                                             </button>
                                         [{/if}]

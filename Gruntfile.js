@@ -78,6 +78,9 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': [
                         '<%= project.dev %>build/js/pages/checkout/basket/wrapping.js'
                     ],
+                    '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': [
+                        '<%= project.dev %>build/js/pages/checkout/basket/movetonoticelist.js'
+                    ],
                     '<%= project.out %><%= project.theme %>/src/js/agb.min.js': [
                         '<%= project.dev %>build/js/pages/checkout/order/agb.js'
                     ],

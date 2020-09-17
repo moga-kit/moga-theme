@@ -1,3 +1,5 @@
+[{oxscript include="js/movetonoticelist.min.js" priority=10}]
+
 [{assign var="oConfig" value=$oViewConf->getConfig()}]
 [{capture append="oxidBlock_content"}]
     <div class="container-xxl py-5">
