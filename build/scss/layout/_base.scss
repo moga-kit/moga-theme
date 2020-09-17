@@ -20,7 +20,7 @@ body {
         max-width: 250px;
       }
 
-     .content {
+      .content {
         padding: 0 0 0 $grid-gutter-width;
         flex: 1 0 0;
       }
@@ -29,12 +29,39 @@ body {
 }
 
 .card-title {
-  font-family: $headings-font-family;
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 20px;
 }
 
 .max-600 {
   max-width: 600px;
+}
+
+.card.bg-dark {
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba($primary, 0.5);
+    transition: bottom 150ms;
+    z-index: 1;
+    height: 100%;
+  }
+
+  &:hover {
+    &:after {
+      bottom: 0;
+    }
+
+    .card-img-overlay {
+      color: #fff;
+    }
+  }
+
+  .card-img-overlay {
+    z-index: 10;
+  }
 }

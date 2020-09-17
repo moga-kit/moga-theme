@@ -26,7 +26,7 @@
     [{/if}]
 
     <div class="list-container" id="[{$listId}]">
-        <div class="row[{if $type != 'line'}] [{$colClass}][{/if}] [{$type}]-view justify-content-center g-1">
+        <div class="row[{if $type != 'line'}] [{$colClass}][{/if}] [{$type}]-view g-1">
         [{foreach from=$products item="_product" name="productlist"}]
             [{assign var="testid" value=$listId|cat:"_"|cat:$smarty.foreach.productlist.iteration}]
 

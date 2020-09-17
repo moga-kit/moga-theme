@@ -3,13 +3,24 @@
     [{assign var='rsslinks' value=$oView->getRssLinks()}]
 
     [{block name="start_promoslider"}]
+        [{assign var="promoslider" value=$oViewConf->getViewThemeParam('bl_showPromoslider')}]
+        [{assign var="promotiles" value=$oViewConf->getViewThemeParam('bl_showPromoTiles')}]
+        [{assign var="categories" value=$oViewConf->getViewThemeParam('bl_showCategoryTiles')}]
+
         [{if $oView->getBanners() && !empty($oView->getBanners())}]
-            [{include file="widget/promoslider.tpl"}]
-            [{include file="widget/promotiles.tpl"}]
+            [{if $promoslider}]
+                [{include file="widget/promoslider.tpl"}]
+            [{/if}]
+
+            [{if $promotiles}]
+                [{include file="widget/promotiles.tpl"}]
+            [{/if}]
         [{/if}]
     [{/block}]
 
-    [{include file="widget/categories.tpl"}]
+    [{if $categories}]
+        [{include file="widget/categories.tpl"}]
+    [{/if}]
 
     [{block name="start_welcome_text"}]
         [{oxifcontent ident="oxstartwelcome" object="oCont"}]

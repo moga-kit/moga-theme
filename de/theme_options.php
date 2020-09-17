@@ -118,16 +118,57 @@ $aLang = array(
     'SHOP_THEME_sPromosliderWidth_w100c100'              => 'Alles 100%',
     'SHOP_THEME_sPromosliderWidth_container'             => 'Alles mittig',
 
-    'SHOP_THEME_sPromoTilesWidth'                       => 'Promo-Kacheln Breite',
+    'SHOP_THEME_sPromoTilesWidth'                       => 'Banner-Kachel-Zeile Breite',
     'SHOP_THEME_sPromoTilesWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
     'SHOP_THEME_sPromoTilesWidth_w100c100'              => 'Alles 100%',
     'SHOP_THEME_sPromoTilesWidth_container'             => 'Alles mittig',
 
-    'SHOP_THEME_sPromoTilesGrid'                => 'Promo-Kacheln Breite',
+    'SHOP_THEME_sPromoTilesGrid'                => 'Banner-Kachel Breite',
     'SHOP_THEME_sPromoTilesGrid_100_33'         => '1. 100%, Rest 33% auf Desktop',
     'SHOP_THEME_sPromoTilesGrid_50'             => 'Alle 50% auf Desktop',
     'SHOP_THEME_sPromoTilesGrid_33'             => 'Alle 33% auf Desktop',
     'SHOP_THEME_sPromoTilesGrid_25'             => 'Alle 25% auf Desktop',
+
+    'SHOP_THEME_sPromoTilesBg'                  => 'Banner-Kacheln Hintergrund',
+    'SHOP_THEME_sPromoTilesBg_white'            => 'weiß',
+    'SHOP_THEME_sPromoTilesBg_light'            => 'grau',
+    'SHOP_THEME_sPromoTilesBg_dark'             => 'dunkel',
+    'SHOP_THEME_sPromoTilesBg_primary'          => 'primärfarbe',
+
+    'SHOP_THEME_sPromoTilesSpacing'             => 'Kachel-Abstand',
+    'SHOP_THEME_sPromoTilesSpacing_0'             => '0',
+    'SHOP_THEME_sPromoTilesSpacing_1'             => '1',
+    'SHOP_THEME_sPromoTilesSpacing_2'             => '2',
+    'SHOP_THEME_sPromoTilesSpacing_3'             => '3',
+    'SHOP_THEME_sPromoTilesSpacing_4'             => '4',
+    'SHOP_THEME_sPromoTilesSpacing_5'             => '5',
+
+    'SHOP_THEME_sCategoryTilesWidth'                       => 'Kategorie-Kacheln-Zeile Breite',
+    'SHOP_THEME_sCategoryTilesWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
+    'SHOP_THEME_sCategoryTilesWidth_w100c100'              => 'Alles 100%',
+    'SHOP_THEME_sCategoryTilesWidth_container'             => 'Alles mittig',
+
+    'SHOP_THEME_sCategoryTilesGrid'                => 'Kategorie-Kacheln Breite',
+    'SHOP_THEME_sCategoryTilesGrid_50'             => '50% auf Desktop',
+    'SHOP_THEME_sCategoryTilesGrid_33'             => '33% auf Desktop',
+    'SHOP_THEME_sCategoryTilesGrid_25'             => '25% auf Desktop',
+
+    'SHOP_THEME_sCategoryTilesRowPadding'          => 'Kategorie-Kachel-Zeile Innenabstand',
+    'SHOP_THEME_sPromoTilesRowPadding'             => 'Banner-Kachel-Zeile Innenabstand',
+
+    'SHOP_THEME_sCategoryTilesSpacing'             => 'Kachel-Abstand',
+    'SHOP_THEME_sCategoryTilesSpacing_0'             => '0',
+    'SHOP_THEME_sCategoryTilesSpacing_1'             => '1',
+    'SHOP_THEME_sCategoryTilesSpacing_2'             => '2',
+    'SHOP_THEME_sCategoryTilesSpacing_3'             => '3',
+    'SHOP_THEME_sCategoryTilesSpacing_4'             => '4',
+    'SHOP_THEME_sCategoryTilesSpacing_5'             => '5',
+
+    'SHOP_THEME_sCategoryTilesBg'                  => 'Kategorie-Kacheln Hintergrund',
+    'SHOP_THEME_sCategoryTilesBg_white'            => 'weiß',
+    'SHOP_THEME_sCategoryTilesBg_light'            => 'grau',
+    'SHOP_THEME_sCategoryTilesBg_dark'             => 'dunkel',
+    'SHOP_THEME_sCategoryTilesBg_primary'          => 'primärfarbe',
 
     'SHOP_THEME_sShowBargain'                        => 'Angebote der Woche anzeigen',
     'SHOP_THEME_sBargainWidth'                       => 'Angebote der Woche Breite',
@@ -178,6 +219,7 @@ $aLang = array(
     'HELP_SHOP_THEME_sGoogleMapsAddr'               => 'Bsp.: OXID eSales AG, Bertoldstraße 48, 79098 Freiburg‎',
 
     'SHOP_THEME_bl_showManufacturer'                => 'Hersteller auf Startseite anzeigen‎',
+    'SHOP_THEME_bl_showPromoslider'                 => 'Promoslider anzeigen',
     'SHOP_THEME_bl_showPromoTiles'                  => 'Banner-Kacheln anzeigen',
     'SHOP_THEME_bl_showCategoryTiles'               => 'Kategorie-Kacheln anzeigen',
 

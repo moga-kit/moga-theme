@@ -61,7 +61,7 @@ $ox-list-bg: #f1f1f1;
 
 //== Details page
 
-$ox-page-details-rating-star-filled-color:  $warning;
+$ox-page-details-rating-star-filled-color: $warning;
 $ox-page-details-rating-star-empty-color: #C7C7C7;
 
 //== Checkout (Global)
@@ -73,7 +73,7 @@ $ox-checkout-steps-active-color: #fff;
 $ox-checkout-steps-passed-bg: #5cb85c;
 $ox-checkout-steps-passed-color: #fff;
 
-$progress-height:                   0.5rem;
+$progress-height: 0.5rem;
 
 
 //
@@ -86,14 +86,14 @@ $progress-height:                   0.5rem;
 
 //## Headings
 
-$h1-font-size: $font-size-base * 1.75;
-$h2-font-size: $font-size-base * 1.5;
-$h3-font-size: $font-size-base * 1.25;
-$h4-font-size: $font-size-base;
-$h5-font-size: $font-size-base;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
 
-$headings-font-weight: 400;
+$headings-font-weight: 600;
 
 
 //## Line Height
@@ -153,5 +153,5 @@ $carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
 $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 16 16'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
 
 $card-cap-bg: #fff;
-$card-cap-padding-y:                1rem;
-$card-cap-padding-x:                1rem;
+$card-cap-padding-y: 1rem;
+$card-cap-padding-x: 1rem;
