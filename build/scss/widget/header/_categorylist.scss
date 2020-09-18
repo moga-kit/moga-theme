@@ -1,4 +1,4 @@
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .navbar-collapse {
     display: block !important;
     z-index: 123;
@@ -6,7 +6,7 @@
     top: 53px;
     padding: 0 1rem;
     bottom: 0;
-    width: 100%;
+    width: 300px;
     overflow-y: auto;
     background-color: #fff;
     transition: transform .3s ease-in-out;
@@ -19,3 +19,31 @@
     transform: translateX(-1rem);
   }
 }
+
+@include media-breakpoint-down(md) {
+  .navbar-collapse {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar {
+    position: absolute;
+    left: 140px;
+    right: 200px;
+    z-index: 1;
+    top: 10px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .navbar {
+    left: 200px;
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+  }
+}
+
+

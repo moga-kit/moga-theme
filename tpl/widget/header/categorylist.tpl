@@ -7,11 +7,11 @@
         [{assign var="oxcmp_categories" value=$oxcmp_categories}]
         [{assign var="blFullwidth" value=$oViewConf->getViewThemeParam('blFullwidthLayout')}]
 
-        <nav id="mainnav" class="navbar navbar-expand-lg p-0 pt-lg-2">
+        <nav id="mainnav" class="navbar navbar-expand-lg p-0">
             <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
             [{block name="dd_widget_header_categorylist_navbar"}]
 
-                <div class="navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul id="navigation" class="navbar-nav">
                         [{block name="dd_widget_header_categorylist_navbar_list"}]
                             [{foreach from=$oxcmp_categories item="ocat" key="catkey" name="root"}]
@@ -51,6 +51,16 @@
                             [{/foreach}]
                         [{/block}]
                     </ul>
+                    <div class="d-md-none">
+                        [{block name="dd_layout_page_header_icon_menu_languages"}]
+                        [{* Language Dropdown*}]
+                        [{oxid_include_widget cl="oxwLanguageList" lang=$oViewConf->getActLanguageId() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
+                        [{/block}]
+                        [{block name="dd_layout_page_header_icon_menu_currencies"}]
+                        [{* Currency Dropdown*}]
+                        [{oxid_include_widget cl="oxwCurrencyList" cur=$oViewConf->getActCurrency() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
+                        [{/block}]
+                    </div>
                 </div>
             [{/block}]
             </div>

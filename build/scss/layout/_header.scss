@@ -16,8 +16,6 @@
   }
 
   .logo-link {
-    max-width: 100px;
-    flex: 0 0 100px;
     align-items: center;
   }
 
@@ -29,28 +27,13 @@
 
   .menu-dropdowns {
     margin-left: auto;
-    max-width: 96px;
-    flex: 0 0 96px;
     padding: 0;
     text-align: right;
     justify-content: flex-end;
 
     @include media-breakpoint-up(lg) {
-      margin: 0;
-      max-width: 250px;
-      flex: 0 0 250px;
       order: 3;
     }
-
-    @include media-breakpoint-up(xl) {
-      max-width: 300px;
-      flex: 0 0 300px;
-    }
-  }
-
-  .icon-wrapper {
-    max-width: 96px;
-    flex: 0 0 96px;
   }
 
   .btn {
@@ -81,5 +64,9 @@
 
   .nav-link {
     color: $ox-header-link-color;
+  }
+
+  &-container {
+    display: flex;
   }
 }

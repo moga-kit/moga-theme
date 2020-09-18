@@ -11,14 +11,12 @@
 <div class="btn-group" role="group">
     <button type="button" aria-label="Usercenter" class="btn dropdown-toggle" data-toggle="dropdown" data-href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account"}]">
         [{block name="dd_layout_page_header_icon_menu_account_button"}]
-            <span class="d-none d-lg-inline-block">
-            [{if !$oxcmp_user->oxuser__oxpassword->value}]
+            [{*if !$oxcmp_user->oxuser__oxpassword->value}]
                 [{oxmultilang ident="LOGIN"}]
             [{else}]
                 [{oxmultilang ident="MY_ACCOUNT"}]
-            [{/if}]
-            </span>
-            <i class="moga-person d-inline-block d-md-none"></i>
+            [{/if*}]
+            <i class="moga-person d-inline-block"></i>
         [{/block}]
     </button>
     [{if !$oxcmp_user->oxuser__oxpassword->value}]
