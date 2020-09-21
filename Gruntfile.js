@@ -69,6 +69,9 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
                         '<%= project.dev %>build/js/pages/details.js',
                     ],
+                    '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
+                        '<%= project.dev %>build/js/pages/variants.js',
+                    ],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
                         '<%= project.dev %>build/js/pages/compare.js'
                     ],

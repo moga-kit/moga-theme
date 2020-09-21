@@ -249,11 +249,11 @@
                     [{block name="details_productmain_variantselections"}]
                         [{if $aVariantSelections && $aVariantSelections.selections}]
                             [{*oxscript include="js/jquery.min.js" priority=4 }]
-                            [{oxscript include="js/jquery-ui.js" priority=4 *}]
-                            [{oxscript include="js/details.min.js" priority=11}]
+                            [{oxscript include="js/jquery-ui.js" priority=4 }]
                             [{*oxscript include="js/widgets/oxajax.min.js" priority=10 *}]
                             [{*oxscript include="js/widgets/oxarticlevariant.min.js" priority=10 *}]
                             [{*oxscript add="$( '#variants' ).oxArticleVariant();"*}]
+                            [{oxscript include="js/variants.min.js" priority=11}]
 
                             [{assign var="blCanBuy" value=$aVariantSelections.blPerfectFit}]
                             [{if !$blHasActiveSelections}]
@@ -281,7 +281,7 @@
                         [{if $oSelections}]
                             <div class="variant-dropdown" id="productSelections">
                                 [{foreach from=$oSelections item=oList name=selections}]
-                                    [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop"}]
+                                    [{include file="widget/product/selectbox.tpl" blSubmitOnChange=false oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop"}]
                                 [{/foreach}]
                             </div>
                         [{/if}]
@@ -418,6 +418,7 @@
                                 <a id="loginToNotice" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:"&amp;sourcecl="|cat:$oViewConf->getTopActiveClassName()|cat:$oViewConf->getNavUrlParams()}]">[{oxmultilang ident="ADD_TO_WISH_LIST"}]</a>
                             [{/if}]
                         </li>
+
 
                         [{if $oViewConf->getShowWishlist()}]
                             <li>
