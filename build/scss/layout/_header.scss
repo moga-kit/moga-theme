@@ -64,6 +64,11 @@
 
   .nav-link {
     color: $ox-header-link-color;
+
+    &:hover {
+      background: $ox-header-link-color;
+      color: $ox-header-bg
+    }
   }
 
   &-container {
