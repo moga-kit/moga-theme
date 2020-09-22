@@ -8,7 +8,6 @@
         [{assign var="blFullwidth" value=$oViewConf->getViewThemeParam('blFullwidthLayout')}]
 
         <nav id="mainnav" class="navbar navbar-expand-lg p-0">
-            <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
             [{block name="dd_widget_header_categorylist_navbar"}]
 
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
@@ -63,7 +62,6 @@
                     </div>
                 </div>
             [{/block}]
-            </div>
         </nav>
     [{/if}]
 [{/block}]

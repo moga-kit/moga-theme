@@ -1,6 +1,7 @@
 [{assign var="currency" value=$oView->getActCurrency()}]
     <a href="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</a>
 
+[{capture append="oxidBlock_pageBody"}]
 <div class="modal fade" id="modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -33,5 +34,5 @@
         </div>
     </div>
 </div>
-
+[{/capture}]
 
