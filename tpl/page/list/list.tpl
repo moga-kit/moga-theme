@@ -165,9 +165,7 @@
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                             [{if $oView->getArticleList()|count}]
                                 [{block name="page_list_upperlocator"}]
-                                    <div class="listRefine">
-                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=true sort=true}]
-                                    </div>
+                                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=true sort=true}]
                                 [{/block}]
 
                                 [{* List types: grid|line *}]

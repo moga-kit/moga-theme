@@ -116,7 +116,7 @@
                                 </li>
                             [{/block}]
                         [{/foreach}]
-                        <li class="row minibasket-total-row">
+                        <li class="row minibasket-total-row mb-3">
                             <div class="col-8 minibasket-total-col">
                                 <strong>[{oxmultilang ident="TOTAL"}]</strong>
                             </div>
@@ -137,13 +137,13 @@
                 [{include file="widget/minibasket/countdown.tpl"}]
 
                 [{block name="dd_layout_page_header_icon_menu_minibasket_functions"}]
-                    <li class="functions text-right">
+                    <li class="d-flex">
                         [{if $oxcmp_user}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=payment"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{else}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{/if}]
-                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
+                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary ml-auto">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
                     </li>
                 [{/block}]
             [{/if}]

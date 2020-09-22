@@ -6,17 +6,20 @@
         </div>
     </div>
 [{else}]
-    [{include file="widget/locator/attributes.tpl"}]
-    [{if $listDisplayType}]
-        [{include file="widget/locator/listdisplaytype.tpl"}]
-    [{/if}]
+    <div class="d-flex mb-5">
+        [{include file="widget/locator/attributes.tpl"}]
+        <div class="ml-auto">
+            [{if $listDisplayType}]
+                [{include file="widget/locator/listdisplaytype.tpl"}]
+            [{/if}]
 
-    [{if $sort}]
-        [{include file="widget/locator/sort.tpl"}]
-    [{/if}]
-
-    [{if $itemsPerPage}]
-        [{include file="widget/locator/itemsperpage.tpl"}]
-    [{/if}]
+            [{if $sort}]
+                [{include file="widget/locator/sort.tpl"}]
+            [{/if}]
+        </div>
+        [{if $itemsPerPage}]
+            [{include file="widget/locator/itemsperpage.tpl"}]
+        [{/if}]
+    </div>
 [{/if}]
 

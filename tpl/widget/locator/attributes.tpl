@@ -2,7 +2,7 @@
     [{if $attributes}]
 
         <div class="list-filter">
-            <form method="get" action="[{$oViewConf->getSelfActionLink()}]" name="_filterlist" class="row row-cols-md-auto g-1 mb-3 align-items-center">
+            <form method="get" action="[{$oViewConf->getSelfActionLink()}]" name="_filterlist" class="row row-cols-md-auto align-items-center">
                 [{$oViewConf->getHiddenSid()}]
                 [{$oViewConf->getNavFormParams()}]
                 <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
@@ -17,7 +17,7 @@
                 [{foreach from=$attributes item=oFilterAttr key=sAttrID name=attr}]
                     [{assign var="sActiveValue" value=$oFilterAttr->getActiveValue()}]
                     <select class="form-select" aria-label="[{$oFilterAttr->getTitle()}]" name="attrfilter[[{$sAttrID}]]" onchange="this.form.submit()">
-                        <option[{if !$sActiveValue}] selected[{/if}] value="">[{oxmultilang ident="PLEASE_CHOOSE"}]</option>
+                        <option[{if !$sActiveValue}] selected[{/if}] value="">[{$oFilterAttr->getTitle()}]</option>
                         [{foreach from=$oFilterAttr->getValues() item=sValue}]
                         <option[{if $sActiveValue == $sValue}] selected[{/if}] value="[{$sValue}]">[{$sValue}]</option>
                         [{/foreach}]
