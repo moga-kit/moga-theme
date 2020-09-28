@@ -10,9 +10,9 @@
         [{if $promoTilesWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]
-                <div class="promo-tiles[{if $promoTilesRowPadding}] py-5[{/if}] bg-[{$promoTilesBg}]">
+                <div class="promo-tiles[{if $promoTilesRowPadding}] py-3 py-lg-5[{/if}] bg-[{$promoTilesBg}]">
                     [{if $promoTilesWidth == 'w100cContainer'}]
-                    <div class="container-xxl">
+                    <div class="container-xxl px-0">
                     [{/if}]
                         <div class="px-[{$promoTilesSpacing}]">
                             <div class="row g-[{$promoTilesSpacing}]">

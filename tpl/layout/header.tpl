@@ -10,7 +10,7 @@
         <div class="header-box">
             <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}] px-2 header-container">
                 [{block name="dd_widget_header_categorylist_navbar_header"}]
-                    <button class="btn d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="btn btn-toggle d-lg-none collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="moga-bars"></i>
                     </button>
                 [{/block}]

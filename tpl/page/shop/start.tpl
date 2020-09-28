@@ -38,7 +38,7 @@
                 [{if $bargainWidth == 'container'}]
                     <div class="container-xxl">
                 [{/if}]
-                        <div class="py-5 text-center container[{if $bargainWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                        <div class="py-3 py-lg-5 text-center container[{if $bargainWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                             [{include file="widget/product/list.tpl" type=$oViewConf->getViewThemeParam('sStartPageListDisplayType') head="START_BARGAIN_HEADER"|oxmultilangassign subhead="START_BARGAIN_SUBHEADER"|oxmultilangassign listId="bargainItems" products=$oBargainArticles rsslink=$rsslinks.bargainArticles rssId="rssBargainProducts" showMainLink=true iProductsPerLine=4}]
                         </div>
                 [{if $bargainWidth == 'container'}]

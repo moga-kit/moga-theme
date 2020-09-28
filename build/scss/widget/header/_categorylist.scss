@@ -1,28 +1,76 @@
-@include media-breakpoint-down(lg) {
-  .navbar-collapse {
-    display: block !important;
-    z-index: 123;
-    position: fixed;
-    top: 53px;
-    padding: 0 1rem;
-    bottom: 0;
-    width: 300px;
-    overflow-y: auto;
-    background-color: #fff;
-    transition: transform .3s ease-in-out;
-    transform: translateX(-110%);
-    height: calc(100% - 53px) !important;
+.navbar-collapse {
+  display: block !important;
+  z-index: 123;
+  position: fixed;
+  top: 51px;
+  padding: 0;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto;
+  background-color: #fff;
+  transition: transform .3s ease-in-out;
+  transform: translateX(-110%);
+  height: calc(100% - 51px) !important;
+
+  .nav-link {
+    padding: 8px 15px;
+
+    &.dropdown-toggle {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        right: 15px;
+        font-family: "icons";
+        content: map-get($icons, 'down');
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+
+      &.show:after {
+        content: map-get($icons, 'up');
+      }
+    }
   }
 
-  .navbar-collapse.show,
-  .navbar-collapse.collapsing {
-    transform: translateX(-1rem);
+  .dropdown-menu {
+    border: transparent;
+    padding: 0 15px;
+    margin: 0;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+    }
+  }
+
+  .d-md-none .dropdown-toggle {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
-@include media-breakpoint-down(md) {
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  transform: translateX(0);
+}
+
+.btn-toggle {
+  .moga-bars:before {
+    content: map-get($icons, 'times')
+  }
+
+  &.collapsed {
+    .moga-bars:before {
+      content: map-get($icons, 'bars')
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
   .navbar-collapse {
-    width: 100%;
+    width: 300px;
   }
 }
 
@@ -37,6 +85,12 @@
 
     &-collapse {
       justify-content: center;
+      position: static;
+      width: auto;
+      height: auto;
+      transform: inherit;
+      overflow: inherit;
+      margin: 0 auto;
     }
   }
 }
@@ -46,5 +100,6 @@
     margin: 0 auto;
   }
 }
+
 
 
