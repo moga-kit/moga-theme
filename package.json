@@ -6,7 +6,7 @@
   "author": "c&c concepts and creations gmbh",
   "devDependencies": {
     "ajv": "^5.2.5",
-    "bootstrap": "^5.0.0-alpha1",
+    "bootstrap": "^5.0.0-alpha3",
     "fontsource-barlow-condensed": "^3.0.9",
     "grunt": "^1.3.0",
     "grunt-combine-mq": "^0.9.0",
