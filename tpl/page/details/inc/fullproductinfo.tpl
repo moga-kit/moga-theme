@@ -7,8 +7,7 @@
         [{include file="page/details/inc/tabs.tpl"}]
 
         [{if $oView->isReviewActive()}]
-            <div class="reviews mt-5">
-                <div class="h2 mb-3">[{oxmultilang ident="WRITE_PRODUCT_REVIEW"}]</div>
+            <div class="reviews my-5 container">
                 [{include file="widget/reviews/reviews.tpl"}]
             </div>
         [{/if}]

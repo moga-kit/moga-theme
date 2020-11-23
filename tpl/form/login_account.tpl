@@ -6,7 +6,7 @@
     [{include file="message/success.tpl" statusMessage=$statusMessage}]
 [{/if}]
 
-<div class="card-deck">
+<div class="card-group mb-5">
     <div class="card">
         <div class="card-header">[{oxmultilang ident="LOGIN"}]</div>
         <div class="card-body">
@@ -29,13 +29,12 @@
 
                 <div class="mb-3[{if $aErrors}] oxInValid[{/if}]">
                     <label class="req">[{oxmultilang ident="EMAIL"}]</label>
-                        <input id="loginUser" class="js-oxValidate js-oxValidate_notEmpty form-control" type="text" name="lgn_usr" role="loginUser" required="required">
-                        <div class="help-block"></div>
+                    <input id="loginUser" class="form-control" type="text" name="lgn_usr" role="loginUser" required>
                 </div>
                 <div class="mb-3[{if $aErrors}] oxInValid[{/if}]">
                     <label class="req">[{oxmultilang ident="PASSWORD"}]</label>
-                        <input id="loginPwd" class="js-oxValidate js-oxValidate_notEmpty form-control" type="password" name="lgn_pwd" role="loginPwd" required="required">
-                        <div class="help-block"></div>
+                    <input id="loginPwd" class="form-control" type="password" name="lgn_pwd" role="loginPwd" required>
+                    <a id="forgotPasswordLink" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=forgotpwd"}]" class="btn btn-link px-0">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
                 </div>
                 [{if $oView->showRememberMe()}]
                     <div class="form-check mb-3">
@@ -48,10 +47,6 @@
 
                 <div class="mb-3">
                     <button id="loginButton" type="submit" class="btn btn-primary">[{oxmultilang ident="LOGIN"}]</button>
-                </div>
-
-                <div class="mb-3">
-                    <a id="forgotPasswordLink" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=forgotpwd"}]" class="textLink">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
                 </div>
             </form>
         </div>

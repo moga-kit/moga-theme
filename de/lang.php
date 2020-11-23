@@ -142,6 +142,8 @@ $aLang = array(
     'MOVE_TO_WISH_LIST'                                     => 'Auf Merkzettel verschieben',
     'SUMMARY'                                               => 'Zusammenfassung',
     'COMPLETE_MARKED_FIELDS'                                => 'Pflichtfelder bitte ausfüllen',
+    'WRITE_REVIEW'                                          => 'Bewertung schreiben',
+    'PRODUCT_REVIEW'                                        => 'Kundenmeinungen',
 );
 
 /*
