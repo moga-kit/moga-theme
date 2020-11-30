@@ -63,12 +63,15 @@
             [{/if}]
         [{/if}]
 
-        [{assign var="showPopBreadcrump" value=$oViewConf->getViewThemeParam('sShowPopBreadcrump')}]
-        [{if $showPopBreadcrump}]
-            [{include file="widget/breadcrumb.tpl"}]
-        [{/if}]
 
-        <div class="container-[{if $headerImageWidth == 'container'}]xxl[{else}]fluid[{/if}]">
+
+        <div class="container-[{if $headerImageWidth == 'container'}]fluid[{else}]xxl[{/if}]">
+            [{assign var="showPopBreadcrump" value=$oViewConf->getViewThemeParam('sShowPopBreadcrump')}]
+
+            [{if $showPopBreadcrump}]
+                [{include file="widget/breadcrumb.tpl"}]
+            [{/if}]
+
             [{assign var='rsslinks' value=$oView->getRssLinks()}]
             <h1 class="list-heading">
                 [{$actCategory->getTitle()}]
@@ -90,7 +93,7 @@
             [{if $oView->hasVisibleSubCats()}]
             [{assign var="iSubCategoriesCount" value=0}]
             <div class="subcatList mb-3">
-                <div class="row">
+                <div class="row g-2">
                     [{foreach from=$oView->getSubCatList() item=category name=MoreSubCat}]
                         [{if $category->getContentCats()}]
                             [{foreach from=$category->getContentCats() item=ocont name=MoreCms}]
@@ -107,43 +110,39 @@
                         [{if $category->getIsVisible()}]
                             [{assign var="iSubCategoriesCount" value=$iSubCategoriesCount+1}]
                             [{assign var="iconUrl" value=$category->getIconUrl()}]
-                            <div class="col-12 col-sm-4 col-md-3 col-xl-2">
-                                <div class="card mb-3 text-center">
-                                    <div class="card-header">
-                                        <a href="[{$category->getLink()}]">[{$category->oxcategories__oxtitle->value}]</a>
-                                        [{if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
-                                    </div>
-                                    <div class="card-body">
-                                        [{if $iconUrl}]
-                                            <a href="[{$category->getLink()}]">
-                                                <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-fluid">
-                                            </a>
-                                        [{else}]
-                                            <a href="[{$category->getLink()}]" class="btn btn-block btn-outline-primary">
-                                                [{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]
-                                            </a>
-                                        [{/if}]
+                            <div class="col-12 col-sm-4 col-md-3">
+                                <a href="[{$category->getLink()}]" class="card bg-dark text-white">
 
+                                    [{if $iconUrl}]
+                                        <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
+                                    [{else}]
+                                        [{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]
+                                    [{/if}]
+
+
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">[{$category->oxcategories__oxtitle->value}]</h5>
+                                        [{if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
                                         [{if $category->getHasVisibleSubCats()}]
                                         <ul class="list-unstyled">
                                             [{foreach from=$category->getSubCats() item=subcategory}]
-                                                [{if $subcategory->getIsVisible()}]
-                                                    [{foreach from=$subcategory->getContentCats() item=ocont name=MoreCms}]
-                                                    <li>
-                                                        <a href="[{$ocont->getLink()}]"><strong>[{$ocont->oxcontents__oxtitle->value}]</strong></a>
-                                                    </li>
-                                                    [{/foreach}]
+                                            [{if $subcategory->getIsVisible()}]
+                                            [{foreach from=$subcategory->getContentCats() item=ocont name=MoreCms}]
+                                            <li>
+                                                <a href="[{$ocont->getLink()}]"><strong>[{$ocont->oxcontents__oxtitle->value}]</strong></a>
+                                            </li>
+                                            [{/foreach}]
 
-                                                    <li>
-                                                        <a href="[{$subcategory->getLink()}]">[{$subcategory->oxcategories__oxtitle->value}]</a>
-                                                        [{if $oView->showCategoryArticlesCount() && ($subcategory->getNrOfArticles() > 0)}]&nbsp;([{$subcategory->getNrOfArticles()}])[{/if}]
-                                                    </li>
-                                                [{/if}]
+                                            <li>
+                                                <a href="[{$subcategory->getLink()}]">[{$subcategory->oxcategories__oxtitle->value}]</a>
+                                                [{if $oView->showCategoryArticlesCount() && ($subcategory->getNrOfArticles() > 0)}]&nbsp;([{$subcategory->getNrOfArticles()}])[{/if}]
+                                            </li>
+                                            [{/if}]
                                             [{/foreach}]
                                         </ul>
                                         [{/if}]
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         [{/if}]
                     [{/foreach}]

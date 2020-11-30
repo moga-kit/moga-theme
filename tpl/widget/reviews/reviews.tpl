@@ -45,14 +45,22 @@
 
                         [{block name="widget_reviews_form_rating"}]
                             [{if $oView->canRate()}]
+                        <script>
+                            function change(value){
+                                document.getElementById("productRating").value = value;
+                                document.getElementById("recommListRating").value = value;
+                                document.getElementById("reviewRating").className = "rating list-inline stars" + value;
+                            }
+                        </script>
                                 <ul id="reviewRating" class="rating list-inline">
                                     [{section name=star start=1 loop=6}]
                                         <li class="rating-star s[{$smarty.section.star.index}]" data-rate-value="[{$smarty.section.star.index}]">
-                                            <a class="ox-write-review ox-rateindex-[{$smarty.section.star.index}] text-warning" title="[{$smarty.section.star.index}] [{if $smarty.section.star.index==1}][{oxmultilang ident="STAR"}][{else}][{oxmultilang ident="STARS"}][{/if}]">
+                                            <a onclick="change([{$smarty.section.star.index}]);" class="ox-write-review ox-rateindex-[{$smarty.section.star.index}]" title="[{$smarty.section.star.index}] [{if $smarty.section.star.index==1}][{oxmultilang ident="STAR"}][{else}][{oxmultilang ident="STARS"}][{/if}]">
                                                 <i class="moga-star"></i>
                                             </a>
                                         </li>
                                     [{/section}]
+                                    <li class="rating-star" id="reviewRatingText"></li>
                                 </ul>
                             [{/if}]
                         [{/block}]
@@ -86,7 +94,6 @@
                         [{block name="widget_reviews_record"}]
                             <div class="rating float-right">
                                 [{if $review->oxreviews__oxrating->value}]
-                                <div class="text-warning">
                                     [{section name="starRatings" start=0 loop=5}]
                                     [{if $review->oxreviews__oxrating->value >= $smarty.section.starRatings.iteration}]
                                     <i class="moga-star active"></i>
@@ -94,7 +101,6 @@
                                     <i class="moga-star"></i>
                                     [{/if}]
                                     [{/section}]
-                                </div>
                                 [{/if}]
                             </div>
                             <div>
