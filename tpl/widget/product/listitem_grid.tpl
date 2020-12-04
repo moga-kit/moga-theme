@@ -22,7 +22,7 @@
                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" media="(max-width: 375px)">
 
                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'webp', true)}]">
-                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
+                    <source srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
                     <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
                 </picture>
             [{else}]

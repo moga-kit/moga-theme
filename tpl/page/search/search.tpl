@@ -6,32 +6,32 @@
     [{assign var="search_head" value="HITS_FOR"|oxmultilangassign}]
     [{assign var="search_head" value=$oView->getArticleCount()|cat:" "|cat:$search_head|cat:" &quot;"|cat:$oView->getSearchParamForHtml()|cat:"&quot;"}]
 
-
-    [{block name="search_header"}]
-        <h1>[{$search_head}]</h1>
-    [{/block}]
-    [{block name="search_results"}]
-        [{if $oView->getArticleCount()}]
-            <div class="listRefine bottomRound">
-                [{block name="search_top_listlocator"}]
-                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() listDisplayType=true itemsPerPage=true sort=true}]
+    <div class="container-xxl">
+        [{block name="search_header"}]
+            <h1 class="list-heading">[{$search_head}]</h1>
+        [{/block}]
+        [{block name="search_results"}]
+            [{if $oView->getArticleCount()}]
+                <div class="listRefine bottomRound">
+                    [{block name="search_top_listlocator"}]
+                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() listDisplayType=true itemsPerPage=true sort=true}]
+                    [{/block}]
+                </div>
+            [{else}]
+                <p class="alert alert-info">[{oxmultilang ident="NO_ITEMS_FOUND"}]</p>
+            [{/if}]
+            [{if $oView->getArticleList()}]
+                [{foreach from=$oView->getArticleList() name=search item=product}]
+                    [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="searchList" products=$oView->getArticleList() showMainLink=true}]
+                [{/foreach}]
+            [{/if}]
+            [{if $oView->getArticleCount()}]
+                [{block name="search_bottom_listlocator"}]
+                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedBottom() place="bottom"}]
                 [{/block}]
-            </div>
-        [{else}]
-            <p class="alert alert-info">[{oxmultilang ident="NO_ITEMS_FOUND"}]</p>
-        [{/if}]
-        [{if $oView->getArticleList()}]
-            [{foreach from=$oView->getArticleList() name=search item=product}]
-                [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="searchList" products=$oView->getArticleList() showMainLink=true}]
-            [{/foreach}]
-        [{/if}]
-        [{if $oView->getArticleCount()}]
-            [{block name="search_bottom_listlocator"}]
-                [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedBottom() place="bottom"}]
-            [{/block}]
-        [{/if}]
-    [{/block}]
-
+            [{/if}]
+        [{/block}]
+    </div>
 [{/capture}]
 [{assign var="template_title" value="SEARCH"|oxmultilangassign}]
 

@@ -32,26 +32,26 @@
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'webp')}]" media="(max-width: 375px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'webp')}]" media="(max-width: 767px)">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'jpg')}]" media="(max-width: 767px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, 350, 'jpg')}]" media="(max-width: 767px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'webp')}]" media="(max-width: 991px)">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'jpg')}]" media="(max-width: 991px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, 400, 'jpg')}]" media="(max-width: 991px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'webp')}]" media="(max-width: 1199px)">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
 
                         [{if $headerImageWidth == 'w100c100'}]
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]" media="(max-width: 1399px)">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]" media="(max-width: 1399px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'webp')}]" media="(max-width: 1599px)">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
 
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'webp')}]">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'jpg')}]">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, 600, 'jpg')}]">
                         [{else}]
                         <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'webp')}]">
-                        <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, 450, 'jpg')}]">
                         [{/if}]
                         <img loading="lazy" src="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, 220, 'jpg')}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
                     </picture>
@@ -122,7 +122,7 @@
 
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">[{$category->oxcategories__oxtitle->value}]</h5>
-                                        [{if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
+                                        [{*if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
                                         [{if $category->getHasVisibleSubCats()}]
                                         <ul class="list-unstyled">
                                             [{foreach from=$category->getSubCats() item=subcategory}]
@@ -140,7 +140,7 @@
                                             [{/if}]
                                             [{/foreach}]
                                         </ul>
-                                        [{/if}]
+                                        [{/if*}]
                                     </div>
                                 </a>
                             </div>

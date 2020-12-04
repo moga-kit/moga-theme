@@ -44,13 +44,13 @@
                                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 375, 220, 'webp')}]" media="(max-width: 375px)">
 
                                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 750, 350, 'webp')}]" media="(max-width: 767px)">
-                                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($image, 750, 350, 'jpg')}]" media="(max-width: 767px)">
+                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 750, 350, 'jpg')}]" media="(max-width: 767px)">
 
                                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 970, 400, 'webp')}]" media="(max-width: 991px)">
-                                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($image, 970, 400, 'jpg')}]" media="(max-width: 991px)">
+                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 970, 400, 'jpg')}]" media="(max-width: 991px)">
 
                                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 1170, 400, 'webp')}]" media="(max-width: 1199px)">
-                                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($image, 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
+                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 1170, 400, 'jpg')}]" media="(max-width: 1199px)">
 
                                                     <img loading="lazy" src="[{$oViewConf->getDynamicImage($image, 375, 270, 'jpg')}]" alt="[{$_cat->oxcategories__oxtitle->value}]" class="card-img">
                                                 </picture>

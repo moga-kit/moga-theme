@@ -68,26 +68,26 @@
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, 375, 'webp')}]" media="(max-width: 375px)">
 
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, 750, 'webp')}]" media="(max-width: 767px)">
-                                <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, 750, 'jpg')}]" media="(max-width: 767px)">
+                                <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, 750, 'jpg')}]" media="(max-width: 767px)">
 
                                 [{if $smarty.foreach.sMorePics.iteration > 2}]
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 114, 114, 'webp')}]" media="(max-width: 991px)">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 114, 114, 'jpg')}]" media="(max-width: 991px)">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 114, 114, 'jpg')}]" media="(max-width: 991px)">
 
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 190, 190, 'webp')}]" media="(max-width: 1199px)">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 190, 190, 'jpg')}]" media="(max-width: 1199px)">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 190, 190, 'jpg')}]" media="(max-width: 1199px)">
 
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 300, 300, 'webp')}]">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 300, 300, 'jpg')}]">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 300, 300, 'jpg')}]">
                                 [{else}]
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 230, 230, 'webp')}]" media="(max-width: 991px)">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 230, 230, 'jpg')}]" media="(max-width: 991px)">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 230, 230, 'jpg')}]" media="(max-width: 991px)">
 
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 440, 440, 'webp')}]" media="(max-width: 1199px)">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 440, 440, 'jpg')}]" media="(max-width: 1199px)">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 440, 440, 'jpg')}]" media="(max-width: 1199px)">
 
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 600, 600, 'webp')}]">
-                                    <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 600, 600, 'jpg')}]">
+                                    <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 600, 600, 'jpg')}]">
                                 [{/if}]
                                 <img class="details-thumb-img" loading="lazy" src="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, 375, 'jpg')}]" alt="morepic-[{$smarty.foreach.sMorePics.iteration}]">
                             </picture>
@@ -108,42 +108,40 @@
                             [{assign var="sPictureName" value=$oPictureProduct->getPictureFieldValue("oxpic", $iPicNr)}]
                             [{assign var="aPictureInfo" value=$oConfig->getMasterPicturePath("product/`$iPicNr`/`$sPictureName`")|@getimagesize}]
                             <div class="carousel-item[{if $smarty.foreach.sMorePics.first}] active[{/if}]">
-                                <div class="embed-responsive embed-responsive-1by1">
-                                    <div class="embed-responsive-item">
-                                        [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
-                                        <picture>
-                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'webp')}]" media="(max-width: 375px)">
+                                <div class="ratio ratio-1x1">
+                                    [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                    <picture>
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'webp')}]" media="(max-width: 375px)">
 
-                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'webp')}]" media="(max-width: 767px)">
-                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'jpg')}]" media="(max-width: 767px)">
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'webp')}]" media="(max-width: 767px)">
+                                        <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 750, '', 'jpg')}]" media="(max-width: 767px)">
 
-                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 970, '', 'webp')}]" media="(max-width: 991px)">
-                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 970, '', 'jpg')}]" media="(max-width: 991px)">
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 970, '', 'webp')}]" media="(max-width: 991px)">
+                                        <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 970, '', 'jpg')}]" media="(max-width: 991px)">
 
-                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1170, '', 'webp')}]" media="(max-width: 1199px)">
-                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1170, '', 'jpg')}]" media="(max-width: 1199px)">
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1170, '', 'webp')}]" media="(max-width: 1199px)">
+                                        <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1170, '', 'jpg')}]" media="(max-width: 1199px)">
 
-                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'webp')}]">
-                                            <source type="image/jpg" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'jpg')}]">
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'webp')}]">
+                                        <source srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 1600, '', 'jpg')}]">
 
-                                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'jpg')}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="w-100 img-fluid">
-                                        </picture>
-                                        [{else}]
-                                            <img loading="lazy" src="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]" class="w-100 img-fluid">
-                                        [{/if}]
-                                    </div>
+                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, '', 'jpg')}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]">
+                                    </picture>
+                                    [{else}]
+                                        <img loading="lazy" src="[{$oPictureProduct->getMasterZoomPictureUrl($iPicNr)}]" alt="[{$oPictureProduct->oxarticles__oxtitle->value|strip_tags}] [{$oPictureProduct->oxarticles__oxvarselect->value|strip_tags}]">
+                                    [{/if}]
                                 </div>
                             </div>
                         [{/foreach}]
                     </div>
                     [{if $imageCount > 1}]
-                    <a class="carousel-control-prev" href="#details-slider"  data-slide="prev">
+                    <a class="carousel-control-prev" href="#details-slider" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span class="visually-hidden-focusable">[{oxmultilang ident="PREVIOUS"}]</span>
                     </a>
-                    <a class="carousel-control-next" href="#details-slider"  data-slide="next">
+                    <a class="carousel-control-next" href="#details-slider" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                        <span class="visually-hidden-focusable">[{oxmultilang ident="NEXT"}]</span>
                     </a>
                     [{/if}]
                     <div class="carousel-close" id="carousel-close">

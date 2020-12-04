@@ -10,7 +10,7 @@
                 <span class="h4 modal-title float-left" id="giftoptions_modal_label">[{oxmultilang ident="GIFT_OPTION"}]</span>
                 [{/block}]
 
-                <button type="button" class="close float-right" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close float-right" data-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
                 <div class="row">

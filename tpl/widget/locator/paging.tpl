@@ -5,7 +5,7 @@
                 [{if $pages->previousPage}]
                 <a class="page-link" href="[{$pages->previousPage}]" aria-label="[{oxmultilang ident="PREVIOUS"}]">
                     <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">[{oxmultilang ident="PREVIOUS"}]</span>
+                    <span class="visually-hidden-focusable">[{oxmultilang ident="PREVIOUS"}]</span>
                 </a>
                 [{else}]
                 <span class="page-link">&laquo;</span>
@@ -42,7 +42,7 @@
                 [{if $pages->nextPage}]
                     <a class="page-link" href="[{$pages->nextPage}]" aria-label="[{oxmultilang ident="NEXT"}]">
                         <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">[{oxmultilang ident="NEXT"}]</span>
+                        <span class="visually-hidden-focusable">[{oxmultilang ident="NEXT"}]</span>
                     </a>
                 [{else}]
                     <span class="page-link">&raquo;</span>

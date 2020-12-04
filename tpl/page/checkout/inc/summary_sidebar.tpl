@@ -13,7 +13,7 @@
                             <input type="hidden" name="fnc" value="addVoucher">
                             <input type="hidden" name="CustomError" value="basket">
 
-                            <label class="sr-only" for="input_voucherNr">[{oxmultilang ident="ENTER_COUPON_NUMBER"}]</label>
+                            <label class="visually-hidden" for="input_voucherNr">[{oxmultilang ident="ENTER_COUPON_NUMBER"}]</label>
                             <div class="input-group">
                                 <input type="text" name="voucherNr" size="30" class="form-control" id="input_voucherNr" required>
                                 <button type="submit" class="btn btn-primary" title="[{oxmultilang ident="REDEEM_COUPON"}]"><i class="moga-right"></i> </button>

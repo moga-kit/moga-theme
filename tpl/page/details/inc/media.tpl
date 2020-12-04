@@ -13,7 +13,7 @@
 
         [{if !$smarty.foreach.mediaURLs.first}]
         [{/if}]
-        <div class="[{if $blIsYouTubeMedia}]embed-responsive embed-responsive-4by3[{/if}]">
+        <div class="[{if $blIsYouTubeMedia}]ratio ratio-16x9[{/if}]">
             [{$oMediaUrl->getHtml()}]
         </div>
     [{/foreach}]

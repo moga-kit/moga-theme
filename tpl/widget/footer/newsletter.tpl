@@ -11,7 +11,7 @@
                 [{/if}]
 
                 [{block name="dd_footer_newsletter_form_inner_group"}]
-                    <label class="sr-only" for="footer_newsletter_oxusername">[{oxmultilang ident="NEWSLETTER"}]</label>
+                    <label class="visually-hidden" for="footer_newsletter_oxusername">[{oxmultilang ident="NEWSLETTER"}]</label>
                     <div class="input-group">
                         <input class="form-control" type="email" id="footer_newsletter_oxusername" name="editval[oxuser__oxusername]" placeholder="[{oxmultilang ident="EMAIL"}]" aria-label="[{oxmultilang ident="EMAIL"}]">
                         <button class="btn btn-primary" type="submit">[{oxmultilang ident="SUBSCRIBE"}]</button>

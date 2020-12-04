@@ -6,7 +6,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="h4 modal-title">[{oxmultilang ident="BLOCK_PRICE"}]</span>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="moga-times"></i> </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"><i class="moga-times"></i> </button>
             </div>
             <div class="modal-body">
                 <dl class="dl-horizontal">

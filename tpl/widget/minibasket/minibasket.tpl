@@ -14,9 +14,9 @@
                             [{block name="widget_minibasket_modal_header"}]
                             <div class="modal-header">
                                 <h4 class="modal-title" id="basketModalLabel">[{$oxcmp_basket->getItemsCount()}] [{oxmultilang ident="ITEMS_IN_BASKET"}]</h4>
-                                <button type="button" class="close" data-dismiss="modal">
-                                    <span aria-hidden="true">&times;</span>
-                                    <span class="sr-only">[{oxmultilang ident="CLOSE"}]</span>
+                                <button type="button" class="btn-close" data-dismiss="modal">
+                                    <span aria-hidden="true"></span>
+                                    <span class="visually-hidden-focusable">[{oxmultilang ident="CLOSE"}]</span>
                                 </button>
                             </div>
                             [{/block}]
@@ -42,7 +42,7 @@
                                                                         <a href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
                                                                             <span class="item">
                                                                                 [{if $_product->getAmount() > 1}]
-                                                                                    [{$_product->getAmount()}] &times;
+                                                                                    [{$_product->getAmount()}]
                                                                                 [{/if}]
                                                                                 [{$minibasketItemTitle|strip_tags}]
                                                                             </span>

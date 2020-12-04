@@ -4,8 +4,8 @@
     [{oxscript include="js/widgets/oxcookienote.min.js"*}]
     <div id="cookieNote">
         <div class="alert alert-info" style="margin: 0;">
-            <button type="button" class="close" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span><span class="sr-only">[{oxmultilang ident='CLOSE'}]</span>
+            <button type="button" class="btn-close" data-dismiss="alert">
+                <span aria-hidden="true"></span><span class="visually-hidden-focusable">[{oxmultilang ident='CLOSE'}]</span>
             </button>
             [{oxmultilang ident='COOKIE_NOTE'}]
             <span class="cancelCookie"><a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=clearcookies"}]" title="[{oxmultilang ident='COOKIE_NOTE_DISAGREE'}]">[{oxmultilang ident='COOKIE_NOTE_DISAGREE'}]</a></span>
