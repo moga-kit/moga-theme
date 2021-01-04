@@ -5,11 +5,11 @@
 <div id="review">
     <div class="h2 mb-3">
         [{if $oxcmp_user}]
-        <a class="btn btn-link px-0 float-right" id="writeNewReview" data-toggle="collapse" href="#review_form">
+        <a class="btn btn-link px-0 float-end" id="writeNewReview" data-toggle="collapse" href="#review_form">
             [{oxmultilang ident="WRITE_REVIEW"}]
         </a>
         [{else}]
-        <a class="btn btn-link px-0 float-right" id="reviewsLogin" rel="nofollow" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:"&amp;sourcecl=details"|cat:$oViewConf->getNavUrlParams()}]">
+        <a class="btn btn-link px-0 float-end" id="reviewsLogin" rel="nofollow" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:"&amp;sourcecl=details"|cat:$oViewConf->getNavUrlParams()}]">
             [{oxmultilang ident="WRITE_REVIEW"}]
         </a>
         [{/if}]
@@ -92,7 +92,7 @@
                 <div class="card mb-3[{if $smarty.foreach.ReviewsCounter.iteration is odd}] bg-light[{/if}]" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]">
                     <div class="card-body">
                         [{block name="widget_reviews_record"}]
-                            <div class="rating float-right">
+                            <div class="rating float-end">
                                 [{if $review->oxreviews__oxrating->value}]
                                     [{section name="starRatings" start=0 loop=5}]
                                     [{if $review->oxreviews__oxrating->value >= $smarty.section.starRatings.iteration}]

@@ -5,7 +5,7 @@
         [{assign var="bIsError" value=1}]
     [{/foreach}]
 [{/capture}]
-<div class="dropdown-menu dropdown-menu-right">
+<div class="dropdown-menu dropdown-menu-end">
     <form class="px-3 py-2" name="login" action="[{$oViewConf->getSslSelfLink()}]" method="post" style="width: 270px">
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]

@@ -8,7 +8,7 @@
 [{else}]
     <div class="d-md-flex mb-5">
         [{include file="widget/locator/attributes.tpl"}]
-        <div class="ml-auto">
+        <div class="ms-auto">
             [{if $listDisplayType}]
                 [{include file="widget/locator/listdisplaytype.tpl"}]
             [{/if}]

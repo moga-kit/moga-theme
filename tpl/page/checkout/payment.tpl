@@ -146,10 +146,10 @@
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <div class="col-12 col-md-6">
-                                                                    <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-outline-primary float-left prevStep submitButton largeButton"><i class="moga-left"></i> [{oxmultilang ident="PREVIOUS_STEP"}]</a>
+                                                                    <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-outline-primary"><i class="moga-left"></i> [{oxmultilang ident="PREVIOUS_STEP"}]</a>
                                                                 </div>
-                                                                <div class="col-12 col-md-6 text-right">
-                                                                    <button type="submit" name="userform" class="btn btn-primary pull-right submitButton nextStep largeButton" id="paymentNextStepBottom">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}] <i class="moga-right"></i></button>
+                                                                <div class="col-12 col-md-6 text-end">
+                                                                    <button type="submit" name="userform" class="btn btn-primary" id="paymentNextStepBottom">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}] <i class="moga-right"></i></button>
                                                                 </div>
                                                             </div>
                                                         </div>

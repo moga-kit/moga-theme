@@ -12,11 +12,9 @@
         [{/block}]
         [{block name="search_results"}]
             [{if $oView->getArticleCount()}]
-                <div class="listRefine bottomRound">
-                    [{block name="search_top_listlocator"}]
-                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() listDisplayType=true itemsPerPage=true sort=true}]
-                    [{/block}]
-                </div>
+                [{block name="search_top_listlocator"}]
+                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() listDisplayType=true itemsPerPage=true sort=true}]
+                [{/block}]
             [{else}]
                 <p class="alert alert-info">[{oxmultilang ident="NO_ITEMS_FOUND"}]</p>
             [{/if}]

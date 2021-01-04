@@ -7,7 +7,7 @@
                     <img src="[{$oViewConf->getImageUrl($sLangImg)}]" alt="[{$sLangImg}]">
                 [{/block}]
             </button>
-            <ul class="dropdown-menu dropdown-menu-md-right">
+            <ul class="dropdown-menu dropdown-menu-md-end">
                 [{block name="dd_layout_page_header_icon_menu_languages_list"}]
                     [{foreach from=$oxcmp_lang item=_lng}]
                         [{assign var="sLangImg" value="lang/"|cat:$_lng->abbr|cat:".png"}]

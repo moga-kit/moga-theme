@@ -16,7 +16,7 @@
                                         [{* CMS category *}]
                                         [{if $_cat->getContentCats() && $deepLevel > 1}]
                                             [{foreach from=$_cat->getContentCats() item="_oCont"}]
-                                                <li class="nav-item[{if $oContentCat && $oContentCat->getId()==$_oCont->getId()}] active [{else}] end [{/if}]" >
+                                                <li class="nav-item[{if $oContentCat && $oContentCat->getId()==$_oCont->getId()}] active[{else}] end[{/if}]" >
                                                     <a href="nav-link[{$_oCont->getLink()}]" title="[{$_oCont->oxcontents__oxtitle->value}]"><i></i>[{$_oCont->oxcontents__oxtitle->value}]</a>
                                                 </li>
                                             [{/foreach}]

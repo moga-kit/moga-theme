@@ -30,7 +30,7 @@
                                         <input name="reviewId" value="[{$reviewId}]" type="hidden">
                                         <input name="ratingId" value="[{$ratingId}]" type="hidden">
                                         [{block name="delete_review_confirmation_modal_buttons_set"}]
-                                            <div class="text-right">
+                                            <div class="text-end">
                                                 <button type="submit" class="btn btn-danger">
                                                     [{oxmultilang ident="DD_DELETE"}]
                                                 </button>

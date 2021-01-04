@@ -202,7 +202,7 @@
                                 [{if $editable}]
                                     <div>
                                         <input type="hidden" name="aproducts[[{$basketindex}]][remove]" id="aproducts_[{$basketindex}]_remove" value="0">
-                                        <button type="submit" name="removeBtn" class="btn btn-remove mr-3" onclick="document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
+                                        <button type="submit" name="removeBtn" class="btn btn-remove me-3" onclick="document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
                                             <i class="moga-trash"></i> [{oxmultilang ident="REMOVE"}]
                                         </button>
 
@@ -217,7 +217,7 @@
 
                                 [{block name="checkout_basketcontents_basketitem_totalprice"}]
                                 [{* product quantity * price *}]
-                                <div class="totalPrice text-right">
+                                <div class="totalPrice text-end">
                                     <strong>[{oxprice price=$basketitem->getPrice() currency=$currency}]</strong>
                                 </div>
                                 [{/block}]

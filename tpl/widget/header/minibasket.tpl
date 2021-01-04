@@ -5,7 +5,7 @@
             [{if $oxcmp_basket->getItemsCount() > 0}]<span class="count">[{ $oxcmp_basket->getItemsCount() }]</span>[{/if}]
         [{/block}]
     </button>
-    <ul class="dropdown-menu dropdown-menu-right minibasket-menu">
+    <ul class="dropdown-menu dropdown-menu-end minibasket-menu">
         [{block name="dd_layout_page_header_icon_menu_minibasket_list"}]
             [{oxid_include_dynamic file="widget/minibasket/minibasket.tpl"}]
         [{/block}]

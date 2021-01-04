@@ -7,10 +7,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 [{block name="checkout_wrapping_header"}]
-                <span class="h4 modal-title float-left" id="giftoptions_modal_label">[{oxmultilang ident="GIFT_OPTION"}]</span>
+                <span class="h4 modal-title float-start" id="giftoptions_modal_label">[{oxmultilang ident="GIFT_OPTION"}]</span>
                 [{/block}]
 
-                <button type="button" class="close float-right" data-dismiss="modal" aria-hidden="true"></button>
+                <button type="button" class="close float-end" data-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
                 <div class="row">

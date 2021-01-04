@@ -26,7 +26,7 @@
             <div>
                 [{$oViewConf->getHiddenSid()}]
                 <input type="hidden" name="cl" value="start">
-                <button id="backToShop" class="submitButton largeButton btn btn-primary" type="submit">
+                <button id="backToShop" class="btn btn-primary" type="submit">
                     <i class="moga-left"></i> [{oxmultilang ident="BACK_TO_SHOP"}]
                 </button>
             </div>
@@ -39,7 +39,7 @@
                     <div>
                         [{$oViewConf->getHiddenSid()}]
                         <input type="hidden" name="cl" value="start">
-                        <button id="backToShop" class="btn btn-primary submitButton largeButton" type="submit">
+                        <button id="backToShop" class="btn btn-primary" type="submit">
                             <i class="moga-left"></i> [{oxmultilang ident="BACK_TO_SHOP"}]
                         </button>
                     </div>

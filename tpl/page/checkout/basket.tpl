@@ -308,45 +308,6 @@
                 </div>
             </div>
         </div>
-                [{*block name="checkout_basket_next_step_bottom"}]
-                    <div class="row">
-                                <div class="col-12 col-md-6">
-                        [{block name="checkout_basket_loworderprice_bottom"}][{/block}]
-
-                        [{block name="checkout_basket_backtoshop_bottom"}]
-                            [{if $oView->showBackToShop()}]
-                                <form action="[{$oViewConf->getSslSelfLink()}]" method="post" class="float-left">
-                                    <div class="backtoshop">
-                                        [{$oViewConf->getHiddenSid()}]
-                                        <input type="hidden" name="cl" value="basket">
-                                        <input type="hidden" name="fnc" value="backtoshop">
-                                        <button type="submit" class="btn btn-outline-primary submitButton largeButton float-left">
-                                            <i class="moga-left"></i> [{oxmultilang ident="CONTINUE_SHOPPING"}]
-                                        </button>
-                                    </div>
-                                </form>
-                            [{else}]
-                                <a href="[{$oViewConf->getHomeLink()}]" class="btn btn-outline-primary submitButton largeButton float-left">
-                                    <i class="moga-left"></i> [{oxmultilang ident="CONTINUE_SHOPPING"}]
-                                </a>
-                            [{/if}]
-                        [{/block}]
-                                </div>
-                                <div class="col-12 col-md-6 text-right">
-                            [{if !$oView->isLowOrderPrice()}]
-                                [{block name="basket_btn_next_bottom"}]
-                                    <form action="[{$oViewConf->getSslSelfLink()}]" method="post" class="float-right">
-                                            [{$oViewConf->getHiddenSid()}]
-                                            <input type="hidden" name="cl" value="user">
-                                        <button type="submit" class="btn btn-primary submitButton largeButton nextStep pull-right">
-                                            [{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}] <i class="moga-right"></i>
-                                        </button>
-                                    </form>
-                                [{/block}]
-                            [{/if}]
-                                </div>
-                            </div>
-                [{/block*}]
             [{/if}]
             [{if $oView->isWrapping()}]
                [{include file="page/checkout/inc/wrapping.tpl"}]

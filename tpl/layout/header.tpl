@@ -55,7 +55,7 @@ V2.9c0,0,0-0.1,0-0.1C30.5,2.4,30.3,2,30,1.7z"/>
                 [{/block}]
 
                 [{block name="layout_header_top"}]
-                    <div class="menu-dropdowns btn-group ml-lg-auto">
+                    <div class="menu-dropdowns btn-group ms-lg-auto">
                         <div class="d-none d-md-inline-flex">
                             [{block name="dd_layout_page_header_icon_menu_languages"}]
                                 [{* Language Dropdown*}]

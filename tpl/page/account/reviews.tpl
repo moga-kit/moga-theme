@@ -24,7 +24,7 @@
                                         <div class="col-md-5 articleTitle">
                                             [{$review->getObjectTitle()|truncate:60}]
                                         </div>
-                                        <div class="col-md-3 rating text-right">
+                                        <div class="col-md-3 rating text-end">
                                             [{if $review->getRating()}]
                                                 [{section name="starRatings" start=0 loop=5}]
                                                     [{if $review->getRating() >= $smarty.section.starRatings.iteration}]
@@ -36,7 +36,7 @@
                                             [{/if}]
                                         </div>
                                         [{block name="account_reviewlist_item_action"}]
-                                            <div class="col-md-1 pull-right">
+                                            <div class="col-md-1">
                                                 <div class="actions text-center">
                                                     <div class="btn-group">
                                                         <button

@@ -100,7 +100,7 @@
             [{/if}]
         </div>
         [{/block}]
-        <div class="col-6 text-right">
+        <div class="col-6 text-end">
             <a href="[{$oViewConf->getLogoutLink()}]" class="btn btn-outline-primary" role="getLogoutLink">
                 [{oxmultilang ident="LOGOUT"}]
             </a>

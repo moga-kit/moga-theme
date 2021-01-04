@@ -30,7 +30,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th>[{oxmultilang ident="PRODUCT"}]</th>
-                                                            <th class="text-right">[{oxmultilang ident="DD_MINIBASKET_MODAL_TABLE_PRICE"}]</th>
+                                                            <th class="text-end">[{oxmultilang ident="DD_MINIBASKET_MODAL_TABLE_PRICE"}]</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -48,7 +48,7 @@
                                                                             </span>
                                                                         </a>
                                                                     </td>
-                                                                    <td class="text-right">
+                                                                    <td class="text-end">
                                                                         <strong class="price">[{oxprice price=$_product->getPrice() currency=$currency}] *</strong>
                                                                     </td>
                                                                 </tr>
@@ -59,7 +59,7 @@
                                                         <tr>
                                                             [{block name="widget_minibasket_total"}]
                                                                 <td><strong>[{oxmultilang ident="TOTAL"}]</strong></td>
-                                                                <td class="text-right">
+                                                                <td class="text-end">
                                                                     <strong class="price">
                                                                         [{if $oxcmp_basket->isPriceViewModeNetto()}]
                                                                             [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
@@ -120,7 +120,7 @@
                             <div class="col-8 minibasket-total-col">
                                 <strong>[{oxmultilang ident="TOTAL"}]</strong>
                             </div>
-                            <div class="col-4 minibasket-total-col text-right">
+                            <div class="col-4 minibasket-total-col text-end">
                                 <strong>
                                     [{if $oxcmp_basket->isPriceViewModeNetto()}]
                                         [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
@@ -143,7 +143,7 @@
                         [{else}]
                             <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
                         [{/if}]
-                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary ml-auto">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
+                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary ms-auto">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
                     </li>
                 [{/block}]
             [{/if}]

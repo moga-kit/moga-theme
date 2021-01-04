@@ -10,7 +10,7 @@
     [{if $footerWidth == 'container'}]
         <div class="container-xxl">
     [{/if}]
-            <footer class="footer text-center text-md-left small py-5">
+            <footer class="footer text-center text-md-start small py-5">
                 <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                     <div class="row mb-4">
                         <div class="col-12 col-lg-8">
@@ -133,7 +133,7 @@
                 [{block name="footer_deliveryinfo"}]
                 [{oxifcontent ident="oxdeliveryinfo" object="oCont"}]
                 <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                    <div class="text-right">
+                    <div class="text-end">
                         [{if $oView->isVatIncluded()}]
                         <span class="vat-info-text">* [{oxmultilang ident="PLUS_SHIPPING"}]<a
                                 href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>

@@ -103,7 +103,7 @@
                                 [{/block}]
                             </div>
                             <div class="d-none d-md-block col-md-4 order-md-2 col-lg-2 order-lg-4">
-                                <div class="functions text-right">
+                                <div class="functions text-end">
                                     [{block name="widget_product_listitem_line_price"}]
                                     [{oxhasrights ident="SHOWARTICLEPRICE"}]
                                     [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
@@ -158,17 +158,17 @@
 
                                     [{block name="widget_product_listitem_line_selections"}]
                                     [{if $aVariantSelections && $aVariantSelections.selections }]
-                                    <div id="variantselector_[{$iIndex}]" class="selectorsBox variant-dropdown js-fnSubmit">
+                                    <div id="variantselector_[{$iIndex}]" class="selectorsBox variant-dropdown">
                                         [{foreach from=$aVariantSelections.selections item=oSelectionList key=iKey}]
-                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oSelectionList sJsAction="js-fnSubmit" blHideLabel=true}]
+                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oSelectionList blHideLabel=true}]
                                         [{/foreach}]
                                     </div>
                                     [{elseif $oViewConf->showSelectListsInList()}]
                                     [{assign var="oSelections" value=$product->getSelections(1)}]
                                     [{if $oSelections}]
-                                    <div id="selectlistsselector_[{$iIndex}]" class="selectorsBox js-fnSubmit">
+                                    <div id="selectlistsselector_[{$iIndex}]" class="selectorsBox">
                                         [{foreach from=$oSelections item=oList name=selections}]
-                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop" sJsAction="js-fnSubmit" blHideLabel=true}]
+                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop" blHideLabel=true}]
                                         [{/foreach}]
                                     </div>
                                     [{/if}]

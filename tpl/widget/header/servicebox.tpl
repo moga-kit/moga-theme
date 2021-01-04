@@ -1,6 +1,6 @@
 [{block name="widget_header_servicebox_flyoutbox"}]
     [{block name="widget_header_servicebox_items"}]
-        <ul class="dropdown-menu dropdown-menu-right">
+        <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=account"}]">[{oxmultilang ident="MY_ACCOUNT"}]</a>
             </li>

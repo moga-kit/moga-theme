@@ -7,7 +7,7 @@
                     [{$currency->name}]
                 [{/block}]
             </button>
-            <ul class="dropdown-menu dropdown-menu-md-right">
+            <ul class="dropdown-menu dropdown-menu-md-end">
                 [{block name="dd_layout_page_header_icon_menu_currencies_list"}]
                     [{foreach from=$oxcmp_cur item=_cur}]
                         [{if $_cur->selected}]

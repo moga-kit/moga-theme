@@ -48,13 +48,13 @@
                                                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'webp')}]" media="(max-width: 1599px)">
                                                             <source srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1600, 500, 'jpg')}]" media="(max-width: 1599px)">
 
-                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'webp')}]">
-                                                            <source srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'jpg')}]">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'webp')}]" media="(min-width: 1600px)">
+                                                            <source srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1800, 600, 'jpg')}]" media="(min-width: 1600px)">
                                                         [{else}]
-                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]">
-                                                            <source srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]">
+                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'webp')}]" media="(min-width: 1200px)">
+                                                            <source srcset="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 1400, 450, 'jpg')}]" media="(min-width: 1200px)">
                                                         [{/if}]
-                                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 120, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="w-100">
+                                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($sBannerPictureUrl, 375, 200, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="w-100">
                                                     </picture>
                                                 [{else}]
                                                     <img loading="lazy" src="[{$sBannerPictureUrl}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="w-100">

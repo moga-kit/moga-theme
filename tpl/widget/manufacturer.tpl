@@ -16,7 +16,7 @@
                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                         <picture>
                             <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'webp')}]">
-                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100, 'jpg')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="img-fluid">
+                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, 100,'')}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="img-fluid">
                         </picture>
                         [{else}]
                             <img loading="lazy" class="img-fluid" src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">

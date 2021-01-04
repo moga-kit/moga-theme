@@ -33,12 +33,12 @@
                                     [{block name="form_user_shipping_address_actions"}]
                                     [{if $address->isSelected()}]
                                         [{block name="form_user_shipping_address_edit_action"}]
-                                        <button class="btn btn-outline-primary btn-sm float-right dd-action dd-edit-shipping-address edit-button">
+                                        <button class="btn btn-outline-primary btn-sm float-end dd-action dd-edit-shipping-address edit-button">
                                             <i class="moga-pencil"></i>
                                         </button>
                                         [{/block}]
                                         [{block name="form_user_shipping_address_delete_action"}]
-                                        <button class="btn btn-danger btn-sm float-right dd-action dd-delete-shipping-address edit-button"
+                                        <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
                                                 data-toggle="modal"
                                                 data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
                                             <i class="moga-trash"></i>
@@ -191,7 +191,7 @@
 </div>
 [{if !$noFormSubmit}]
     <div class="mb-3">
-        <div class="col-12 col-lg-9 ml-lg-auto">
+        <div class="col-12 col-lg-9 ms-lg-auto">
              <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
             <button id="accUserSaveBottom" type="submit" class="submitButton" name="save">[{oxmultilang ident="SAVE"}]</button>
         </div>

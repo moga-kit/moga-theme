@@ -92,7 +92,7 @@
 
             [{if $oView->hasVisibleSubCats()}]
             [{assign var="iSubCategoriesCount" value=0}]
-            <div class="subcatList mb-3">
+            <div class="mb-3">
                 <div class="row g-2">
                     [{foreach from=$oView->getSubCatList() item=category name=MoreSubCat}]
                         [{if $category->getContentCats()}]

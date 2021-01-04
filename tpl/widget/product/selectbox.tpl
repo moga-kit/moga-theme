@@ -20,7 +20,7 @@
             </button>
             [{if $editable !== false}]
                 <input type="hidden" name="[{$sFieldName|default:"varselid"}][[{$iKey}]]" value="[{if $oActiveSelection}][{$oActiveSelection->getValue()}][{/if}]">
-                <ul class="dropdown-menu [{$sJsAction}][{if $sFieldName != "sel"}] vardrop[{/if}]" role="menu">
+                <ul class="dropdown-menu[{$sJsAction}][{if $sFieldName != "sel"}] vardrop[{/if}]" role="menu">
                     [{if $oActiveSelection && !$blHideDefault}]
                         <li>
                             <a href="#" rel="" class="dropdown-item">
@@ -33,7 +33,7 @@
                         </li>
                     [{/if}]
                     [{foreach from=$oSelections item=oSelection}]
-                        <li class="[{if $oSelection->isDisabled()}] disabled[{/if}]">
+                        <li[{if $oSelection->isDisabled()}] class="disabled"[{/if}]>
                             <a href="[{$oSelection->getLink()}]" data-selection-id="[{$oSelection->getValue()}]" class="dropdown-item[{if $oSelection->isActive()}] active[{/if}]">[{$oSelection->getName()}]</a>
                         </li>
                     [{/foreach}]
