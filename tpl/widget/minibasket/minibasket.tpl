@@ -106,7 +106,14 @@
                                 <li class="my-1">
                                     <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
                                         <span>
-                                            <img loading="lazy" class="minibasket-img img-fluid" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]">
+                                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                                <picture>
+                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, 'webp', true)}]">
+                                                    <img loading="lazy" class="minibasket-img" src="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, '', true)}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
+                                                </picture>
+                                             [{else}]
+                                                <img loading="lazy" class="minibasket-img img-fluid" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
+                                             [{/if}]
                                         </span>
                                         <span>
                                             [{$_product->getAmount()}] x [{$minibasketItemTitle|strip_tags}]<br>

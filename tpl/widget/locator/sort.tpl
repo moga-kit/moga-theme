@@ -5,7 +5,7 @@
         [{assign var="_artPerPage" value=$oViewConf->getArtPerPageCount()}]
         [{assign var="_sortColumnVarName" value=$oView->getSortOrderByParameterName()}]
         [{assign var="_sortDirectionVarName" value=$oView->getSortOrderParameterName()}]
-        <button type="button" class="btn btn-outline-primary dropdown-toggle" id="sort" data-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" id="sort" data-bs-toggle="dropdown" aria-expanded="false">
             <strong>[{oxmultilang ident="SORT_BY"}]:</strong>
             [{if $oView->getListOrderBy()}]
                 [{oxmultilang ident=$oView->getListOrderBy()|upper }]

@@ -1,7 +1,7 @@
 [{if $oView->isLanguageLoaded()}]
     [{if $oxcmp_lang|@count > 1}]
         <div class="btn-group" role="group">
-            <button type="button" aria-label="Language" class="btn dropdown-toggle" data-toggle="dropdown" data-display="static">
+            <button type="button" aria-label="Language" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-display="static">
                 [{assign var="sLangImg" value="lang/"|cat:$oViewConf->getActLanguageAbbr()|cat:".png"}]
                 [{block name="dd_layout_page_header_icon_menu_languages_button"}]
                     <img src="[{$oViewConf->getImageUrl($sLangImg)}]" alt="[{$sLangImg}]">

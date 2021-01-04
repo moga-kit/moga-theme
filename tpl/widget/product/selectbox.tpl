@@ -6,7 +6,7 @@
             <label class="form-label">[{$oSelectionList->getLabel()}]</label>
         [{/if}]
         <div class="dropdown">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
                 [{assign var="oActiveSelection" value=$oSelectionList->getActiveSelection()}]
                 [{if $oActiveSelection}]
                     [{$oActiveSelection->getName()}]

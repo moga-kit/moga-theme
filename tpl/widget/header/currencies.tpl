@@ -2,7 +2,7 @@
     [{if $oxcmp_cur|@count > 1}]
         [{assign var="currency" value=$oView->getActCurrency()}]
         <div class="btn-group">
-            <button type="button" aria-label="Currencys" class="btn dropdown-toggle" data-toggle="dropdown" data-display="static">
+            <button type="button" aria-label="Currencys" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-display="static">
                 [{block name="dd_layout_page_header_icon_menu_currencies_button"}]
                     [{$currency->name}]
                 [{/block}]

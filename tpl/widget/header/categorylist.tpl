@@ -22,7 +22,7 @@
                                     [{/foreach}]
 
                                     <li class="nav-item[{if $ocat->getSubCats()}] dropdown[{/if}]">
-                                        <a class="nav-link[{if $homeSelected == 'false' && $ocat->expanded}] active[{/if}][{if $ocat->getSubCats()}] dropdown-toggle[{/if}]"[{if $homeSelected == 'false' && $ocat->expanded}] aria-current="page"[{/if}][{if $ocat->getSubCats()}] href="#" data-href="[{$ocat->getLink()}]"  data-toggle="dropdown" aria-expanded="false"[{else}] href="[{$ocat->getLink()}]"[{/if}]>
+                                        <a class="nav-link[{if $homeSelected == 'false' && $ocat->expanded}] active[{/if}][{if $ocat->getSubCats()}] dropdown-toggle[{/if}]"[{if $homeSelected == 'false' && $ocat->expanded}] aria-current="page"[{/if}][{if $ocat->getSubCats()}] href="#" data-href="[{$ocat->getLink()}]"  data-bs-toggle="dropdown" aria-expanded="false"[{else}] href="[{$ocat->getLink()}]"[{/if}]>
                                             [{$ocat->oxcategories__oxtitle->value}]
                                         </a>
 

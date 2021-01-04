@@ -23,10 +23,10 @@
 
                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'webp', true)}]">
                     <source srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '300', '300', 'jpg', true)}]">
-                    <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
+                    <img loading="lazy" width="300" height="300" src="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'jpg', true)}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
                 </picture>
             [{else}]
-                <img loading="lazy" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
+                <img loading="lazy" width="300" height="300" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
             [{/if}]
         [{/block}]
 
