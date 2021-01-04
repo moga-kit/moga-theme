@@ -11,12 +11,12 @@
         [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
         <div class="mb-3 [{if $aErrors}]oxInValid[{/if}]">
             <label for="lgn_usr">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
-            <input type="text" id="lgn_usr" name="lgn_usr" autocomplete="email" class="form-control textbox js-oxValidate js-oxValidate_notEmpty" placeholder="[{oxmultilang ident="EMAIL_ADDRESS"}]" required="required">
+            <input type="text" id="lgn_usr" name="lgn_usr" autocomplete="email" class="form-control textbox" placeholder="[{oxmultilang ident="EMAIL_ADDRESS"}]" required>
         </div>
         <div class="mb-3 [{if $aErrors}]oxInValid[{/if}]">
             <label for="lgn_pwd">[{oxmultilang ident="PASSWORD"}]</label>
             <div class="input-group">
-                <input type="password" id="lgn_pwd" name="lgn_pwd" autocomplete="current-password" class="form-control js-oxValidate js-oxValidate_notEmpty textbox stepsPasswordbox" placeholder="[{oxmultilang ident="PASSWORD"}]" required="required">
+                <input type="password" id="lgn_pwd" name="lgn_pwd" autocomplete="current-password" class="form-control textbox stepsPasswordbox" placeholder="[{oxmultilang ident="PASSWORD"}]" required>
                 <a class="btn btn-outline-primary forgotPasswordOpener" id="step2PswdOpener" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">?</a>
             </div>
         </div>

@@ -10,20 +10,17 @@
 
     <div class="mb-3[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
         <label class="form-label" for="passwordOld">[{oxmultilang ident="OLD_PASSWORD"}]</label>
-        <input type="password" id="passwordOld" name="password_old" class="js-oxValidate js-oxValidate_notEmpty form-control" required="">
+        <input type="password" id="passwordOld" name="password_old" class="form-control" required="">
         [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxpassword}]
-        <div class="help-block"></div>
     </div>
     <div class="mb-3[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
         <label class="form-label" for="passwordNew">[{oxmultilang ident="NEW_PASSWORD"}]</label>
-        <input type="password" id="passwordNew" name="password_new" class="js-oxValidate js-oxValidate_notEmpty js-oxValidate_length js-oxValidate_match form-control" required="">
+        <input type="password" id="passwordNew" name="password_new" class="form-control" required="">
         [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxpassword}]
-        <div class="help-block"></div>
     </div>
     <div class="mb-3[{if $aErrors.oxuser__oxpassword}] oxInValid[{/if}]">
         <label class="form-label" for="passwordNewConfirm">[{oxmultilang ident="CONFIRM_PASSWORD"}]</label>
-        <input type="password" id="passwordNewConfirm" name="password_new_confirm" class="js-oxValidate js-oxValidate_notEmpty js-oxValidate_length js-oxValidate_match form-control" required="" data-validation-matches-match="password_new" data-validation-matches-message="[{oxmultilang ident="ERROR_MESSAGE_PASSWORD_DO_NOT_MATCH"}]">
-        <div class="help-block"></div>
+        <input type="password" id="passwordNewConfirm" name="password_new_confirm" class="form-control" required="" data-validation-matches-match="password_new" data-validation-matches-message="[{oxmultilang ident="ERROR_MESSAGE_PASSWORD_DO_NOT_MATCH"}]">
         [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxpassword}]
     </div>
     <div class="mb-3">

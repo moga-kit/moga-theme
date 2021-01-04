@@ -25,7 +25,7 @@
 [{oxscript include="js/changeaddress.min.js" priority=10}]
 
 [{block name="user"}]
-    <form class="js-oxValidate max-600" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate>
+    <form class="max-600" action="[{$oViewConf->getSelfActionLink()}]" name="order" method="post" novalidate>
         [{block name="user_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             <div class="addressCollumns">

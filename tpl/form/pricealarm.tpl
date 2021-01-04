@@ -3,7 +3,7 @@
 
 [{assign var="currency" value=$oView->getActCurrency()}]
 <p class="alert alert-info">[{oxmultilang ident="MESSAGE_PRICE_ALARM_PRICE_CHANGE"}]</p>
-<form class="js-oxValidate max-600" name="pricealarm" action="[{$oViewConf->getSelfActionLink()}]" method="post" novalidate>
+<form class="max-600" name="pricealarm" action="[{$oViewConf->getSelfActionLink()}]" method="post" novalidate>
     <div>
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
@@ -16,14 +16,14 @@
     <div class="mb-3">
         <label class="req form-label col-lg-3">[{oxmultilang ident="YOUR_PRICE"}] ([{$currency->sign}]):</label>
         <div class="col-lg-9">
-            <input class="form-control" type="text" name="pa[price]" value="[{oxhasrights ident="SHOWARTICLEPRICE"}][{if $product}][{$product->getFPrice()}][{/if}][{/oxhasrights}]" maxlength="32" required="required">
+            <input class="form-control" type="text" name="pa[price]" value="[{oxhasrights ident="SHOWARTICLEPRICE"}][{if $product}][{$product->getFPrice()}][{/if}][{/oxhasrights}]" maxlength="32" required>
             <div class="help-block"></div>
         </div>
     </div>
     <div class="mb-3">
         <label class="req form-label col-lg-3">[{oxmultilang ident="EMAIL"}]:</label>
         <div class="col-lg-9">
-            <input class="form-control" type="email" name="pa[email]" value="[{if $oxcmp_user}][{$oxcmp_user->oxuser__oxusername->value}][{/if}]" maxlength="128" required="required">
+            <input class="form-control" type="email" name="pa[email]" value="[{if $oxcmp_user}][{$oxcmp_user->oxuser__oxusername->value}][{/if}]" maxlength="128" required>
             <div class="help-block"></div>
         </div>
     </div>

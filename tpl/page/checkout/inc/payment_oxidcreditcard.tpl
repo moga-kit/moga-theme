@@ -9,7 +9,7 @@
         <div class="mb-3">
             <label class="req form-label col-lg-3">[{oxmultilang ident="CREDITCARD"}]</label>
             <div class="col-lg-9">
-                <select name="dynvalue[kktype]" class="form-select" required="required">
+                <select name="dynvalue[kktype]" class="form-select" required>
                     <option value="mcd" [{if ($dynvalue.kktype == "mcd" || !$dynvalue.kktype)}]selected[{/if}]>[{oxmultilang ident="CARD_MASTERCARD"}]</option>
                     <option value="vis" [{if $dynvalue.kktype == "vis"}]selected[{/if}]>[{oxmultilang ident="CARD_VISA"}]</option>
                     <!--
@@ -28,14 +28,14 @@
         <div class="mb-3">
             <label class="req form-label col-lg-3">[{oxmultilang ident="NUMBER"}]</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control js-oxValidate js-oxValidate_notEmpty" size="20" maxlength="64" name="dynvalue[kknumber]" value="[{$dynvalue.kknumber}]" required="required">
+                <input type="text" class="form-control" size="20" maxlength="64" name="dynvalue[kknumber]" value="[{$dynvalue.kknumber}]" required>
             </div>
         </div>
 
         <div class="mb-3">
             <label class="req form-label col-lg-3">[{oxmultilang ident="BANK_ACCOUNT_HOLDER"}]</label>
             <div class="col-lg-9">
-                <input type="text" size="20" class="form-control js-oxValidate js-oxValidate_notEmpty" maxlength="64" name="dynvalue[kkname]" value="[{if $dynvalue.kkname}][{$dynvalue.kkname}][{else}][{$oxcmp_user->oxuser__oxfname->value}] [{$oxcmp_user->oxuser__oxlname->value}][{/if}]" required="required">
+                <input type="text" size="20" class="form-control" maxlength="64" name="dynvalue[kkname]" value="[{if $dynvalue.kkname}][{$dynvalue.kkname}][{else}][{$oxcmp_user->oxuser__oxfname->value}] [{$oxcmp_user->oxuser__oxlname->value}][{/if}]" required>
                 <span class="help-block">[{oxmultilang ident="IF_DIFFERENT_FROM_BILLING_ADDRESS"}]</span>
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="mb-3">
             <label class="req form-label col-12 col-lg-3">[{oxmultilang ident="VALID_UNTIL"}]</label>
             <div class="col-6 col-lg-2">
-                <select name="dynvalue[kkmonth]" class="form-select" required="required">
+                <select name="dynvalue[kkmonth]" class="form-select" required>
                     <option [{if $dynvalue.kkmonth == "01"}]selected[{/if}]>01</option>
                     <option [{if $dynvalue.kkmonth == "02"}]selected[{/if}]>02</option>
                     <option [{if $dynvalue.kkmonth == "03"}]selected[{/if}]>03</option>
@@ -71,7 +71,7 @@
         <div class="mb-3">
             <label class="req form-label col-lg-3">[{oxmultilang ident="CARD_SECURITY_CODE"}]</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control js-oxValidate js-oxValidate_notEmpty" size="20" maxlength="64" name="dynvalue[kkpruef]" value="[{$dynvalue.kkpruef}]" required="required">
+                <input type="text" class="form-control" size="20" maxlength="64" name="dynvalue[kkpruef]" value="[{$dynvalue.kkpruef}]" required>
                 <span class="help-block">[{oxmultilang ident="CARD_SECURITY_CODE_DESCRIPTION"}]</span>
             </div>
         </div>

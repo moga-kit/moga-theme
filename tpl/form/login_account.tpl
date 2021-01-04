@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-header">[{oxmultilang ident="LOGIN"}]</div>
         <div class="card-body">
-            <form name="login" class="js-oxValidate" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
+            <form name="login" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
                     [{$oViewConf->getHiddenSid()}]
                     [{$oViewConf->getNavFormParams()}]
                     <input type="hidden" name="fnc" value="login_noredirect">

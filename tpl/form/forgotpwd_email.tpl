@@ -19,7 +19,7 @@
                 <label class="req">[{oxmultilang ident="YOUR_EMAIL_ADDRESS"}]</label>
 
                 <input id="forgotPasswordUserLoginName[{$idPrefix}]" type="email" name="lgn_usr"
-                       value="[{$oView->getActiveUsername()}]" class="form-control" required="required">
+                       value="[{$oView->getActiveUsername()}]" class="form-control" required>
                 <p class="help-block"></p>
             </div>
             <div class="mb-3">
