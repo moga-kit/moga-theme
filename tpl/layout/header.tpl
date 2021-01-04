@@ -10,7 +10,7 @@
         <div class="header-box">
             <div class="container[{if $headerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}] px-2 header-container">
                 [{block name="dd_widget_header_categorylist_navbar_header"}]
-                    <button class="btn btn-toggle d-lg-none collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="btn btn-toggle d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="moga-bars"></i>
                     </button>
                 [{/block}]
@@ -66,7 +66,7 @@ V2.9c0,0,0-0.1,0-0.1C30.5,2.4,30.3,2,30,1.7z"/>
                                 [{oxid_include_widget cl="oxwCurrencyList" cur=$oViewConf->getActCurrency() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
                             [{/block}]
                         </div>
-                        <button class="btn search-toggler collapsed" data-toggle="collapse" data-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]"  aria-expanded="false" aria-controls="searchCollapse">
+                        <button class="btn search-toggler collapsed" data-bs-toggle="collapse" data-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]"  aria-expanded="false" aria-controls="searchCollapse">
                             <i class="moga-search"></i>
                         </button>
                         [{block name="dd_layout_page_header_icon_menu_account"}]

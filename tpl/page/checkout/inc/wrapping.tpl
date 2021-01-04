@@ -10,7 +10,7 @@
                 <span class="h4 modal-title float-start" id="giftoptions_modal_label">[{oxmultilang ident="GIFT_OPTION"}]</span>
                 [{/block}]
 
-                <button type="button" class="close float-end" data-dismiss="modal" aria-hidden="true"></button>
+                <button type="button" class="close float-end" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -170,7 +170,7 @@
             </div>
             <div class="modal-footer">
                 [{block name="checkout_wrapping_submit"}]
-                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">[{oxmultilang ident="CANCEL"}]</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">[{oxmultilang ident="CANCEL"}]</button>
                     <button type="submit" class="btn btn-primary" onclick="window.giftoptions_modal_form.submit();return false;">[{oxmultilang ident="APPLY"}]</button>
                 [{/block}]
             </div>

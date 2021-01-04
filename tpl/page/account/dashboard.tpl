@@ -90,7 +90,7 @@
             [{if $oView->isUserAllowedToDeleteOwnAccount()}]
             <button
                     class="btn btn-danger"
-                    data-toggle="modal"
+                    data-bs-toggle="modal"
                     data-target="#delete_my_account_confirmation"
             >
                 <i class="moga-trash"></i>

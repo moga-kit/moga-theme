@@ -4,7 +4,7 @@
 [{block name="details_relatedproducts_accessoires"}]
     [{if $oView->getAccessoires()}]
         [{capture append="reltabs"}]
-            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#accessoires" data-toggle="tab">[{oxmultilang ident="ACCESSORIES"}]</a>
+            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#accessoires" data-bs-toggle="tab">[{oxmultilang ident="ACCESSORIES"}]</a>
         [{/capture}]
         [{capture append="reltabsContent"}]
             <div id="accessoires" class="tab-pane[{if $blFirstTab}] active[{/if}]">
@@ -20,7 +20,7 @@
 [{block name="details_relatedproducts_also_bought"}]
     [{if $oView->getAlsoBoughtTheseProducts()}]
         [{capture append="reltabs"}]
-            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#also" data-toggle="tab">[{oxmultilang ident="CUSTOMERS_ALSO_BOUGHT"}]</a>
+            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#also" data-bs-toggle="tab">[{oxmultilang ident="CUSTOMERS_ALSO_BOUGHT"}]</a>
         [{/capture}]
         [{capture append="reltabsContent"}]
             <div id="also" class="tab-pane[{if $blFirstTab}] active[{/if}]">
@@ -36,7 +36,7 @@
 [{block name="details_relatedproducts_similarproducts"}]
     [{if $oView->getSimilarProducts()}]
         [{capture append="reltabs"}]
-            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#similars" data-toggle="tab">[{oxmultilang ident="SIMILAR_PRODUCTS"}]</a>
+            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#similars" data-bs-toggle="tab">[{oxmultilang ident="SIMILAR_PRODUCTS"}]</a>
         [{/capture}]
         [{capture append="reltabsContent"}]
             <div id="similars" class="tab-pane[{if $blFirstTab}] active[{/if}]">
@@ -52,7 +52,7 @@
 [{block name="details_relatedproducts_crossselling"}]
     [{if $oView->getCrossSelling()}]
         [{capture append="reltabs"}]
-            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#cross" data-toggle="tab">[{oxmultilang ident="HAVE_YOU_SEEN"}]</a>
+            <a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#cross" data-bs-toggle="tab">[{oxmultilang ident="HAVE_YOU_SEEN"}]</a>
         [{/capture}]
         [{capture append="reltabsContent"}]
         <div id="cross" class="tab-pane[{if $blFirstTab}] active[{/if}]">

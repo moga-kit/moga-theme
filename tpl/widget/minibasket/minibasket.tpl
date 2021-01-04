@@ -14,7 +14,7 @@
                             [{block name="widget_minibasket_modal_header"}]
                             <div class="modal-header">
                                 <h4 class="modal-title" id="basketModalLabel">[{$oxcmp_basket->getItemsCount()}] [{oxmultilang ident="ITEMS_IN_BASKET"}]</h4>
-                                <button type="button" class="btn-close" data-dismiss="modal">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal">
                                     <span aria-hidden="true"></span>
                                     <span class="visually-hidden-focusable">[{oxmultilang ident="CLOSE"}]</span>
                                 </button>
@@ -81,8 +81,8 @@
                             [{/block}]
                             [{block name="widget_minibasket_modal_footer"}]
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">[{oxmultilang ident="DD_MINIBASKET_CONTINUE_SHOPPING"}]</button>
-                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="[{oxmultilang ident="DISPLAY_BASKET"}]">
+                                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">[{oxmultilang ident="DD_MINIBASKET_CONTINUE_SHOPPING"}]</button>
+                                <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-primary" data-bs-toggle="tooltip" data-placement="top" title="[{oxmultilang ident="DISPLAY_BASKET"}]">
                                     <i class="moga-bag"></i>
                                 </a>
                             </div>

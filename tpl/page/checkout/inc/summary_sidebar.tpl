@@ -2,7 +2,7 @@
     [{if $oViewConf->getShowVouchers() && $oViewConf->getActiveClassName() == 'basket'}]
         [{block name="checkout_basket_vouchers"}]
             <div class="card mb-3">
-                <h4 class="card-header card-title collapsed card-collapse" data-toggle="collapse" href="#voucherCollapse" aria-expanded="false" aria-controls="voucherCollapse">
+                <h4 class="card-header card-title collapsed card-collapse" data-bs-toggle="collapse" href="#voucherCollapse" aria-expanded="false" aria-controls="voucherCollapse">
                     [{oxmultilang ident="COUPON"}]
                 </h4>
                 <div class="collapse" id="voucherCollapse">

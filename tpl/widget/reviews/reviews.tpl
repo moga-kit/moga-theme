@@ -5,7 +5,7 @@
 <div id="review">
     <div class="h2 mb-3">
         [{if $oxcmp_user}]
-        <a class="btn btn-link px-0 float-end" id="writeNewReview" data-toggle="collapse" href="#review_form">
+        <a class="btn btn-link px-0 float-end" id="writeNewReview" data-bs-toggle="collapse" href="#review_form">
             [{oxmultilang ident="WRITE_REVIEW"}]
         </a>
         [{else}]

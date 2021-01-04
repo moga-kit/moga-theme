@@ -23,12 +23,12 @@
                     <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
                     [{oxifcontent ident="oxagb" object="oCont"}]
                         [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
-                            <a href="#" data-toggle="modal" data-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
+                            <a href="#" data-bs-toggle="modal" data-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
                         [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
                     [{/oxifcontent}]
                     [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
                         [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
-                            <a href="#" data-toggle="modal" data-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
+                            <a href="#" data-bs-toggle="modal" data-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
                         [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
                     [{/oxifcontent}]
                 </label>
@@ -46,11 +46,11 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="h4 modal-title" id="popup1Label">[{$oContent->oxcontents__oxtitle->value}]</span>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">[{$oContent->oxcontents__oxcontent->value}]</div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">[{oxmultilang ident="CLOSE"}]</button>
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">[{oxmultilang ident="CLOSE"}]</button>
                     </div>
                 </div>
             </div>
@@ -63,11 +63,11 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="h4 modal-title" id="popup2Label">[{$oContent->oxcontents__oxtitle->value}]</span>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">[{$oContent->oxcontents__oxcontent->value}]</div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">[{oxmultilang ident="CLOSE"}]</button>
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">[{oxmultilang ident="CLOSE"}]</button>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@
             [{oxscript add="$( '.dd-edit-shipping-address' ).click(function(){ $( '#shippingAddressForm' ).show(); $( 'html, body' ).animate( { scrollTop: $( '#shippingAddressForm' ).offset().top - 80 }, 600 ); } );"}]
 
             [{block name="form_user_shipping_address_select"}]
-                <div class="row dd-available-addresses" data-toggle="buttons">
+                <div class="row dd-available-addresses" data-bs-toggle="buttons">
                     [{foreach from=$aUserAddresses item=address name="shippingAdresses"}]
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="card">
@@ -39,7 +39,7 @@
                                         [{/block}]
                                         [{block name="form_user_shipping_address_delete_action"}]
                                         <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
-                                                data-toggle="modal"
+                                                data-bs-toggle="modal"
                                                 data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
                                             <i class="moga-trash"></i>
                                         </button>
