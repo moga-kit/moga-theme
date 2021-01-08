@@ -63,6 +63,7 @@
       transition: opacity 150ms;
       object-fit: contain;
       margin: 0 auto;
+      max-width: 100%;
 
       &:hover {
         opacity: 0.8;

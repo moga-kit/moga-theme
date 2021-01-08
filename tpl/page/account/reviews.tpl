@@ -43,7 +43,7 @@
                                                                 type="submit"
                                                                 class="btn btn-danger btn-block"
                                                                 data-bs-toggle="modal"
-                                                                data-target="#delete_review_[{$smarty.foreach.ReviewsCounter.iteration}]"
+                                                                data-bs-target="#delete_review_[{$smarty.foreach.ReviewsCounter.iteration}]"
                                                         >
                                                             <i class="moga-trash"></i>
                                                         </button>

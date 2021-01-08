@@ -23,12 +23,12 @@
                     <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
                     [{oxifcontent ident="oxagb" object="oCont"}]
                         [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
-                            <a href="#" data-bs-toggle="modal" data-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
                         [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
                     [{/oxifcontent}]
                     [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
                         [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
-                            <a href="#" data-bs-toggle="modal" data-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
                         [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
                     [{/oxifcontent}]
                 </label>

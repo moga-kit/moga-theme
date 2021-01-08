@@ -52,20 +52,34 @@ $aTheme = array(
             'value'       => 'grid',
             'constraints' => 'line|grid',
         ),
-        array(
-            'group'       => 'display',
-            'name'        => 'sHeaderWidth',
-            'type'        => 'select',
-            'value'       => 'w100cContainer',
-            'constraints' => 'w100cContainer|w100c100|container',
-        ),
-         array(
-            'group'       => 'display',
-            'name'        => 'sFooterWidth',
-            'type'        => 'select',
-            'value'       => 'w100cContainer',
-            'constraints' => 'w100cContainer|w100c100|container',
-        ),
+
+//HEADER
+       array(
+           'group'       => 'header',
+           'name'        => 'sHeaderWidth',
+           'type'        => 'select',
+           'value'       => 'w100cContainer',
+           'constraints' => 'w100cContainer|w100c100|container',
+       ),
+       array(
+         'group' => 'header',
+         'name'  => 'sHeaderSticky',
+         'type'  => 'bool',
+         'value' => 1,
+       ),
+       array(
+           'group' => 'header',
+           'name'  => 'sHeaderShowSearch',
+           'type'  => 'bool',
+           'value' => 1,
+       ),
+       array(
+          'group' => 'header',
+          'name'  => 'sHeaderMenu',
+          'type'        => 'select',
+          'value'       => 'Dropdowns',
+          'constraints' => 'Dropdowns|MegaMenu',
+       ),
 
 //STARTSEITE
          array(
@@ -307,6 +321,13 @@ $aTheme = array(
         ),
 
 //FOOTER
+        array(
+            'group'       => 'footer',
+            'name'        => 'sFooterWidth',
+            'type'        => 'select',
+            'value'       => 'w100cContainer',
+            'constraints' => 'w100cContainer|w100c100|container',
+        ),
         array(
             'group' => 'footer',
             'name'  => 'blFooterShowHelp',

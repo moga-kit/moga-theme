@@ -78,7 +78,7 @@
                                                     [{if $wrapping->oxwrapping__oxpic->value}]
                                                     <div class="row">
                                                         <div class="col-3">
-                                                            <img data-target="wrapping_[{$wrapping->oxwrapping__oxid->value}]"  src="[{$wrapping->getPictureUrl()}]" alt="[{$wrapping->oxwrapping__oxname->value}]" class="img-thumbnail wrappingTargetImg">
+                                                            <img data-bs-target="wrapping_[{$wrapping->oxwrapping__oxid->value}]"  src="[{$wrapping->getPictureUrl()}]" alt="[{$wrapping->oxwrapping__oxname->value}]" class="img-thumbnail wrappingTargetImg">
                                                         </div>
                                                         <div class="col-9">
                                                     [{else}]

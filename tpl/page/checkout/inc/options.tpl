@@ -37,7 +37,7 @@
 			</form>
 			[{/block}]
 
-			<button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+			<button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 				Einloggen
 			</button>
 		</div>
@@ -47,7 +47,7 @@
 			[{include file="form/login.tpl"}]
 			[{/block}]
 
-			<button class="btn btn-outline-primary my-2 btn-block collapsed" type="button" data-bs-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+			<button class="btn btn-outline-primary my-2 btn-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 				Zurück
 			</button>
 		</div>

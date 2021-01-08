@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "c&c concepts and creations gmbh",
   "devDependencies": {
+    "@popperjs/core": "^2.6.0",
     "ajv": "^5.2.5",
     "bootstrap": "^5.0.0-beta1",
     "fontsource-barlow-condensed": "^3.0.9",

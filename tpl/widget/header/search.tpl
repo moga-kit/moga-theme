@@ -1,6 +1,6 @@
 [{block name="widget_header_search_form"}]
     [{if $oView->showSearch()}]
-        <form class="search collapse order-xl-1" id="searchCollapse"  action="[{$oViewConf->getSelfActionLink()}]" method="get" name="search">
+        <form class="search collapse order-xl-1" id="searchCollapse" action="[{$oViewConf->getSelfActionLink()}]" method="get" name="search">
             [{$oViewConf->getHiddenSid()}]
             <input type="hidden" name="cl" value="search">
 

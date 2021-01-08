@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             dev: './',
             out: './../../../out/',
             tmp: './../../../tmp/',
-            modules: './../../../modules/',
+            modules: './../../../modules/'
         },
         /**
          * Clean tmp folders
@@ -64,10 +64,18 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
-                        '<%= project.dev %>build/js/bootstrap.bundle.js'
+                        '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.min.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
-                        '<%= project.dev %>build/js/pages/details.js',
+                        '<%= project.dev %>build/js/pages/details.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
                         '<%= project.dev %>build/js/pages/compare.js'

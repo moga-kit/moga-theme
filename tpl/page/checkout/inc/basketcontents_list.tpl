@@ -182,14 +182,14 @@
                                 <div class="wrapping">
                                     [{if !$basketitem->getWrappingId()}]
                                     [{if $editable}]
-                                    <a href="#" class="btn btn-outline-primary btn-sm" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-target="#giftoptions">[{oxmultilang ident="WRAPPING"}] [{oxmultilang ident="ADD"}]</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">[{oxmultilang ident="WRAPPING"}] [{oxmultilang ident="ADD"}]</a>
                                     [{else}]
                                     <small>[{oxmultilang ident="WRAPPING"}]: [{oxmultilang ident="NONE"}]</small>
                                     [{/if}]
                                     [{else}]
                                     [{assign var="oWrap" value=$basketitem->getWrapping()}]
                                     [{if $editable}]
-                                    <small>[{oxmultilang ident="WRAPPING"}]:</small> <a class="btn btn-outline-primary btn-sm" href="#" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-target="#giftoptions"><i class="moga-pencil"></i> [{$oWrap->oxwrapping__oxname->value}]</a>
+                                    <small>[{oxmultilang ident="WRAPPING"}]:</small> <a class="btn btn-outline-primary btn-sm" href="#" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions"><i class="moga-pencil"></i> [{$oWrap->oxwrapping__oxname->value}]</a>
                                     [{else}]
                                     <small>[{oxmultilang ident="WRAPPING"}]: [{$oWrap->oxwrapping__oxname->value}]</small>
                                     [{/if}]

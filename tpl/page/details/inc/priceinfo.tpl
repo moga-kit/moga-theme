@@ -1,5 +1,5 @@
 [{assign var="currency" value=$oView->getActCurrency()}]
-    <button type="button" data-target="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-bs-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</button>
+    <button type="button" data-bs-target="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-bs-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</button>
 
 <div class="modal fade" id="modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]">
     <div class="modal-dialog">

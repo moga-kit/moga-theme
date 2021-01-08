@@ -14,7 +14,7 @@
                         <div id="promoCarousel" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 [{foreach from=$oBanners key="iPicNr" item="oBanner" name="promoslider"}]
-                                    <li data-target="#promoCarousel" data-slide-to="[{$smarty.foreach.promoslider.iteration-1}]"[{if $smarty.foreach.promoslider.first}] class="active"[{/if}]></li>
+                                    <li data-bs-target="#promoCarousel" data-bs-slide-to="[{$smarty.foreach.promoslider.iteration-1}]"[{if $smarty.foreach.promoslider.first}] class="active"[{/if}]></li>
                                 [{/foreach}]
                             </ol>
                             <div class="carousel-inner">
@@ -84,11 +84,11 @@
                                     [{/foreach}]
                                 [{/block}]
                             </div>
-                            <a class="carousel-control-prev" href="#promoCarousel" data-slide="prev">
+                            <a class="carousel-control-prev" href="#promoCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden-focusable">[{oxmultilang ident="PREVIOUS"}]</span>
                             </a>
-                            <a class="carousel-control-next" href="#promoCarousel" data-slide="next">
+                            <a class="carousel-control-next" href="#promoCarousel" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden-focusable">[{oxmultilang ident="NEXT"}]</span>
                             </a>

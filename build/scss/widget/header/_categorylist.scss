@@ -76,12 +76,7 @@
 
 @include media-breakpoint-up(lg) {
   .navbar {
-    position: absolute;
-    left: 50%;
-    width: 600px;
-    margin-left: -300px;
-    z-index: 1;
-    top: 10px;
+    position: static;
 
     &-collapse {
       justify-content: center;
@@ -101,5 +96,112 @@
   }
 }
 
+.navbar-mega {
+  .navbar-collapse {
+    left: 0;
+  }
+}
 
 
+.navbar-nav-mega {
+  @include media-breakpoint-up(lg) {
+    padding: 0 15px;
+
+    .nav-link-1 {
+      border: 3px solid transparent;
+    }
+
+    .nav-level-2 {
+      display: none;
+      border: 3px solid #f1f1f1;
+      padding: 25px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: #fff;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .columns {
+      column-count: 3;
+      column-gap: 20px;
+    }
+
+    .nav-item-2 {
+      break-inside: avoid-column;
+      text-align: left;
+
+      .nav-link {
+        color: #333;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .nav-level-3 {
+      .nav-link {
+        font-size: 90%;
+        color: #999;
+        padding: 4px 8px;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+
+    .nav-level-4 {
+      break-inside: avoid-column;
+
+      .nav-link {
+        padding-left: 16px;
+        font-size: 80%;
+
+        &:before {
+          content: '- ';
+        }
+      }
+    }
+
+    .nav-item {
+      &:hover {
+        .nav-link-1 {
+          border: 3px solid #f1f1f1;
+          background: #fff;
+          color: $body-color;
+          position: relative;
+        }
+      }
+    }
+
+    .nav-item.has-subs {
+      &:hover {
+        .nav-link-1 {
+          &:after {
+            content: '';
+            position: absolute;
+            z-index: 10;
+            bottom: -7px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: #fff;
+          }
+        }
+
+        .nav-level-2 {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .columns {
+      column-count: 4;
+    }
+  }
+}

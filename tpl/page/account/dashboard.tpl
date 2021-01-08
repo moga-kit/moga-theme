@@ -91,7 +91,7 @@
             <button
                     class="btn btn-danger"
                     data-bs-toggle="modal"
-                    data-target="#delete_my_account_confirmation"
+                    data-bs-target="#delete_my_account_confirmation"
             >
                 <i class="moga-trash"></i>
                 [{oxmultilang ident="DD_DELETE_MY_ACCOUNT"}]

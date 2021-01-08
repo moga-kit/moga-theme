@@ -39,7 +39,7 @@
         [{if !$oxcmp_user}]
             href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:"&amp;sourcecl="|cat:$oViewConf->getTopActiveClassName()|cat:$oViewConf->getNavUrlParams()}]"
         [{elseif $oView->canRate()}]
-            href="#review" data-bs-toggle="collapse" data-target="#review_form"
+            href="#review" data-bs-toggle="collapse" data-bs-target="#review_form"
         [{/if}]
        title="[{$_star_title}]">
         <small>([{$oView->getRatingCount()}] [{oxmultilang ident="DD_RATING_CUSTOMERRATINGS"}])</small>

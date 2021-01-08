@@ -62,7 +62,7 @@
                         [{if $smarty.foreach.sMorePics.iteration > 2}]
                             [{assign var="colClass" value='col-6 col-md-3'}]
                         [{/if}]
-                        <div data-target="#details-slider" data-slide-to="[{$iPicNr-1}]" class="[{$colClass}] d-none d-md-block details-thumb">
+                        <div data-bs-target="#details-slider" data-bs-slide-to="[{$iPicNr-1}]" class="[{$colClass}] d-none d-md-block details-thumb">
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                             <picture>
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oPictureProduct->getMasterZoomPictureUrl($iPicNr), 375, 375, 'webp', true)}]" media="(max-width: 375px)">
@@ -101,7 +101,7 @@
                     <div class="carousel-inner">
                         <ol class="carousel-indicators">
                             [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
-                            <li data-target="#details-slider" data-slide-to="[{$iPicNr-1}]"[{if $smarty.foreach.sMorePics.first}] class="active"[{/if}]></li>
+                            <li data-bs-target="#details-slider" data-bs-slide-to="[{$iPicNr-1}]"[{if $smarty.foreach.sMorePics.first}] class="active"[{/if}]></li>
                             [{/foreach}]
                         </ol>
                         [{foreach from=$oView->getIcons() key="iPicNr" item="oArtIcon" name="sMorePics"}]
@@ -135,11 +135,11 @@
                         [{/foreach}]
                     </div>
                     [{if $imageCount > 1}]
-                    <a class="carousel-control-prev" href="#details-slider" data-slide="prev">
+                    <a class="carousel-control-prev" href="#details-slider" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden-focusable">[{oxmultilang ident="PREVIOUS"}]</span>
                     </a>
-                    <a class="carousel-control-next" href="#details-slider" data-slide="next">
+                    <a class="carousel-control-next" href="#details-slider" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden-focusable">[{oxmultilang ident="NEXT"}]</span>
                     </a>
