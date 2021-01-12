@@ -324,4 +324,8 @@ $aLang = array(
 
     'SHOP_THEME_blEmailsShowProductPictures'        => 'Produktbilder in E-Mails anzeigen',
 
+    'SHOP_THEME_sImageStyle'                    => 'Bild-Style',
+    'SHOP_THEME_sImageStyle_grid'               => 'Raster',
+    'SHOP_THEME_sImageStyle_carousel'           => 'Karussel',
+
 );

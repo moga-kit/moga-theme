@@ -250,6 +250,7 @@ $aTheme = array(
             'name'  => 'sShowTop',
             'type'  => 'bool',
             'value' => 1,
+            'value' => 1,
             'position' => 50,
         ),
          array(
@@ -259,6 +260,15 @@ $aTheme = array(
             'value'       => 'w100cContainer',
             'constraints' => 'w100cContainer|w100c100|container',
             'position' => 51,
+        ),
+//DETAIL
+        array(
+            'group'       => 'pdp',
+            'name'        => 'sImageStyle',
+            'type'        => 'select',
+            'value'       => 'grid',
+            'constraints' => 'grid|carousel',
+            'position' => 1,
         ),
 
 //KATEGORIEN

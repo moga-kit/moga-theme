@@ -19,7 +19,9 @@
     }
 
     @include media-breakpoint-up(md) {
-      display: none;
+      &.carousel-desktop-zoom {
+        display: none;
+      }
 
       &.fullsize {
         display: block;
@@ -48,6 +50,22 @@
             background: #000;
           }
         }
+      }
+    }
+
+    &.slide-only {
+      .carousel-indicators li {
+        background-color: #555;
+      }
+      img {
+        max-height: 80vh;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-image: none;
+        color: $body-color;
+        font-size: 40px;
       }
     }
   }

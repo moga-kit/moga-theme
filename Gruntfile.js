@@ -72,7 +72,8 @@ module.exports = function (grunt) {
                         '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
                         '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
                         '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js'
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/tab.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
                         '<%= project.dev %>build/js/pages/details.js'
