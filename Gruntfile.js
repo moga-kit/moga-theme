@@ -105,6 +105,25 @@ module.exports = function (grunt) {
                 }
             }
         },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            my_target: {
+                files: {
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/details.min.js': ['<%= project.out %><%= project.theme %>/src/js/details.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/start.min.js': ['<%= project.out %><%= project.theme %>/src/js/start.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/compare.min.js': ['<%= project.out %><%= project.theme %>/src/js/compare.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/agb.min.js': ['<%= project.out %><%= project.theme %>/src/js/agb.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/payment.min.js': ['<%= project.out %><%= project.theme %>/src/js/payment.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/listremovebutton.min.js': ['<%= project.out %><%= project.theme %>/src/js/listremovebutton.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/changeaddress.min.js': ['<%= project.out %><%= project.theme %>/src/js/changeaddress.min.js']
+                }
+            }
+        },
         webfont: {
             icons: {
                 src: '<%= project.dev %>/build/icons/*.svg',
@@ -166,7 +185,7 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/*.js'
                 ],
                 tasks:
-                    ['concat:js'],
+                    ['concat:js', 'uglify'],
                 options:
                     {
                         spawn: false,
@@ -210,6 +229,7 @@ module.exports = function (grunt) {
         'combine_mq',
         'cssmin',
         'concat:js',
+        'uglify',
         'clean',
         'watch'
     ]);
