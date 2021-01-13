@@ -4,3 +4,12 @@
 .article-list {
   background: $ox-list-bg;
 }
+
+.manufacturer-item {
+  .card-img {
+    margin-top: 40px;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+  }
+}

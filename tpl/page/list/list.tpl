@@ -110,18 +110,27 @@
                         [{if $category->getIsVisible()}]
                             [{assign var="iSubCategoriesCount" value=$iSubCategoriesCount+1}]
                             [{assign var="iconUrl" value=$category->getIconUrl()}]
-                            <div class="col-12 col-sm-4 col-md-3">
-                                <a href="[{$category->getLink()}]" class="card bg-dark text-white">
+                            <div class="
+                            [{if $listType=='manufacturer'}]
+                                col-12 col-sm-4 col-md-3 col-lg-2 manufacturer-item
+                            [{else}]
+                                col-12 col-sm-4 col-md-3
+                            [{/if}]">
+                                <a href="[{$category->getLink()}]" class="card bg-light text-dark">
 
                                     [{if $iconUrl}]
-                                        <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
+                                        [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                            <img loading="lazy" src="[{$oViewConf->getDynamicImage($category->getIconUrl(), 100, 100, 'webp', false)}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
+                                        [{else}]
+                                            <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
+                                        [{/if}]
                                     [{else}]
                                         [{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]
                                     [{/if}]
 
 
                                     <div class="card-img-overlay">
-                                        <h5 class="card-title">[{$category->oxcategories__oxtitle->value}]</h5>
+                                        <div class="card-title">[{$category->oxcategories__oxtitle->value}]</div>
                                         [{*if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
                                         [{if $category->getHasVisibleSubCats()}]
                                         <ul class="list-unstyled">

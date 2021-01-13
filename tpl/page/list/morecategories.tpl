@@ -27,65 +27,40 @@
                             [{/if}]
                             [{assign var="iSubCategoriesCount" value=$iSubCategoriesCount+1}]
                             [{assign var="iconUrl" value=$category->getIconUrl()}]
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <div class="card h-100">
-                                    <div class="card-header">
-                                        <h3 class="card-title">
-                                            <a id="moreSubCat_[{$smarty.foreach.MoreSubCat.iteration}]" href="[{$category->getLink()}]">
-                                                [{$category->oxcategories__oxtitle->value}][{if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
-                                            </a>
-                                        </h3>
-                                    </div>
-                                    [{* Top categories subcategories *}]
+                            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                                <div class="list-group">
+                                    <a href="[{$category->getLink()}]" class="list-group-item list-group-item-action list-group-item-primary">
+                                        [{$category->oxcategories__oxtitle->value}][{if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
+                                    </a>
                                     [{if $category->getHasVisibleSubCats()}]
-                                        <div class="card-body">
-                                            [{if $iconUrl}]
-                                                <div class="text-center">
-                                                    <a href="[{$category->getLink()}]">
-                                                        <img src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-thumbnail" height="100" width="168">
-                                                    </a>
-                                                </div>
-                                            [{/if}]
-                                            <ul class="content">
-                                                [{foreach from=$category->getSubCats() item=subcategory}]
-                                                    [{if $subcategory->getIsVisible()}]
-                                                        [{* CMS subcategories  *}]
-                                                        [{foreach from=$subcategory->getContentCats() item=ocont name=MoreCms}]
-                                                            <li>
-                                                                <a href="[{$ocont->getLink()}]"><strong>[{$ocont->oxcontents__oxtitle->value}]</strong></a>
-                                                            </li>
-                                                        [{/foreach}]
-                                                        <li>
-                                                            <a href="[{$subcategory->getLink()}]">
-                                                                <strong>[{$subcategory->oxcategories__oxtitle->value}]</strong>[{if $oView->showCategoryArticlesCount() && ($subcategory->getNrOfArticles() > 0)}] ([{$subcategory->getNrOfArticles()}])[{/if}]
-                                                            </a>
 
-                                                            [{foreach from=$subcategory->getSubCats() item=subsubcategory}]
-                                                                [{if $subsubcategory->getIsVisible()}]
-                                                                <li>
-                                                                    <a href="[{$subsubcategory->getLink()}]">
-                                                                        <strong>[{$subsubcategory->oxcategories__oxtitle->value}]</strong>[{if $oView->showCategoryArticlesCount() && ($subsubcategory->getNrOfArticles() > 0)}] ([{$subsubcategory->getNrOfArticles()}])[{/if}]
-                                                                    </a>
-                                                                </li>
-                                                                [{/if}]
-                                                            [{/foreach}]
-                                                        </li>
+                                        [{foreach from=$category->getSubCats() item=subcategory}]
+                                            [{if $subcategory->getIsVisible()}]
+                                                [{* CMS subcategories  *}]
+                                                [{foreach from=$subcategory->getContentCats() item=ocont name=MoreCms}]
+                                                    <a href="[{$ocont->getLink()}]" class="list-group-item list-group-item-action">[{$ocont->oxcontents__oxtitle->value}]</a>
+                                                [{/foreach}]
+                                                <a href="[{$subcategory->getLink()}]" class="list-group-item list-group-item-action">
+                                                    [{$subcategory->oxcategories__oxtitle->value}]
+
+                                                    [{if $oView->showCategoryArticlesCount() && ($subcategory->getNrOfArticles() > 0)}]
+                                                        <span class="badge bg-primary rounded-pill">[{$subcategory->getNrOfArticles()}]</span>
+                                                    [{/if}]
+                                                </a>
+
+
+                                                [{foreach from=$subcategory->getSubCats() item=subsubcategory}]
+                                                    [{if $subsubcategory->getIsVisible()}]
+                                                        <a href="[{$subsubcategory->getLink()}]" class="list-group-item list-group-item-action ps-5">
+                                                            [{$subsubcategory->oxcategories__oxtitle->value}]
+                                                            [{if $oView->showCategoryArticlesCount() && ($subsubcategory->getNrOfArticles() > 0)}]
+                                                                <span class="badge bg-primary rounded-pill">[{$subsubcategory->getNrOfArticles()}]</span>
+                                                            [{/if}]
+                                                        </a>
                                                     [{/if}]
                                                 [{/foreach}]
-                                            </ul>
-                                        </div>
-                                    [{elseif $iconUrl}]
-                                        <div class="card-body catPicOnly">
-                                            <div class="subcatPic text-center">
-                                                [{if $iconUrl}]
-                                                    <a href="[{$category->getLink()}]">
-                                                        <img src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="img-thumbnail" height="100" width="168">
-                                                    </a>
-                                                [{/if}]
-                                            </div>
-                                        </div>
-                                    [{else}]
-                                        <div class="content"></div>
+                                            [{/if}]
+                                        [{/foreach}]
                                     [{/if}]
                                 </div>
                             </div>
