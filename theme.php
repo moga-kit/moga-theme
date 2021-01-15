@@ -280,6 +280,14 @@ $aTheme = array(
             'constraints' => 'w100c100|container',
             'position' => 1,
         ),
+        array(
+            'group'       => 'pop',
+            'name'        => 'sHeaderImageHeight',
+            'type'        => 'select',
+            'value'       => 'small',
+            'constraints' => 'small|medium',
+            'position' => 1,
+        ),
          array(
             'group' => 'pop',
             'name'  => 'sShowPopBreadcrump',

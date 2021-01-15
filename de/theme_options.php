@@ -199,6 +199,10 @@ $aLang = array(
     'SHOP_THEME_sHeaderMenu_Dropdowns'                  => 'Dropdowns',
     'SHOP_THEME_sHeaderMenu_MegaMenu'                   => 'Megamenu',
 
+     'SHOP_THEME_sHeaderImageHeight'                       => 'Kategoriebild Höhe',
+     'SHOP_THEME_sHeaderImageWidth_small'        => 'schmal',
+     'SHOP_THEME_sHeaderImageWidth_medium'        => 'medium',
+
     'SHOP_THEME_sCategoryWidth'                        => 'Produktliste',
     'SHOP_THEME_sCategoryWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
     'SHOP_THEME_sCategoryWidth_w100c100'              => 'Alles 100%',
@@ -327,5 +331,6 @@ $aLang = array(
     'SHOP_THEME_sImageStyle'                    => 'Bild-Style',
     'SHOP_THEME_sImageStyle_grid'               => 'Raster',
     'SHOP_THEME_sImageStyle_carousel'           => 'Karussel',
+    'SORT'           => 'Sortieren',
 
 );

@@ -13,7 +13,7 @@
             <footer class="footer text-center text-md-start small py-5">
                 <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                     <div class="row mb-4">
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12[{if $oView->showNewsletter()}] col-lg-8[{/if}]">
                             <div class="row">
                                 [{block name="dd_footer_servicelist"}]
                                 <section class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] mb-3">
@@ -60,8 +60,8 @@
                                 [{/if}]
                             </div>
                         </div>
+                        [{if $oView->showNewsletter()}]
                         <div class="col-12 col-lg-4">
-                            [{if $oView->showNewsletter()}]
                             <section class="mb-3 footer-newsletter">
                                 <div class="h4 text-uppercase">[{oxmultilang ident="NEWSLETTER"}]</div>
                                 <div class="footer-content">
@@ -71,10 +71,9 @@
                                     [{/block}]
                                 </div>
                             </section>
-                            [{/if}]
-
                             [{block name="footer_social"}][{/block}]
                         </div>
+                        [{/if}]
                     </div>
 
                     [{* <<START>> Social Links *}]
@@ -129,24 +128,23 @@
                 </div>
 
                 [{if $oView->isPriceCalculated()}]
-                [{block name="layout_page_vatinclude"}]
-                [{block name="footer_deliveryinfo"}]
-                [{oxifcontent ident="oxdeliveryinfo" object="oCont"}]
-                <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                    <div class="text-end">
-                        [{if $oView->isVatIncluded()}]
-                        <span class="vat-info-text">* [{oxmultilang ident="PLUS_SHIPPING"}]<a
-                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
-                        [{else}]
-                        <span class="vat-info-text">* [{oxmultilang ident="PLUS"}]<a
-                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
-                        [{/if}]
-                    </div>
-                </div>
-
-                [{/oxifcontent}]
-                [{/block}]
-                [{/block}]
+                    [{block name="layout_page_vatinclude"}]
+                        [{block name="footer_deliveryinfo"}]
+                            [{oxifcontent ident="oxdeliveryinfo" object="oCont"}]
+                                <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                                    <div class="text-end">
+                                        [{if $oView->isVatIncluded()}]
+                                        <span class="vat-info-text">* [{oxmultilang ident="PLUS_SHIPPING"}]<a
+                                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
+                                        [{else}]
+                                        <span class="vat-info-text">* [{oxmultilang ident="PLUS"}]<a
+                                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
+                                        [{/if}]
+                                    </div>
+                                </div>
+                            [{/oxifcontent}]
+                        [{/block}]
+                    [{/block}]
                 [{/if}]
             </footer>
     [{if $footerWidth == 'container'}]

@@ -5,12 +5,15 @@
         [{assign var="_artPerPage" value=$oViewConf->getArtPerPageCount()}]
         [{assign var="_sortColumnVarName" value=$oView->getSortOrderByParameterName()}]
         [{assign var="_sortDirectionVarName" value=$oView->getSortOrderParameterName()}]
-        <button type="button" class="btn btn-outline-primary dropdown-toggle" id="sort" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>[{oxmultilang ident="SORT_BY"}]:</strong>
+        <button type="button" class="btn btn-outline-primary btn-icon dropdown-toggle" id="sort" data-bs-toggle="dropdown" aria-expanded="false">
             [{if $oView->getListOrderBy()}]
-                [{oxmultilang ident=$oView->getListOrderBy()|upper }]
+                [{if $oView->getListOrderBy()=='oxtitle' || $oView->getListOrderBy()=='oxvarminprice'}]
+                    <i class="moga-[{$oView->getListOrderBy()}][{if $oView->getListOrderDirection() == 'asc'}]-up[{else}]-down[{/if}]"></i>
+                [{else}]
+                    [{oxmultilang ident=$oView->getListOrderBy()|upper }]
+                [{/if}]
             [{else}]
-                [{oxmultilang ident="CHOOSE"}]
+                [{oxmultilang ident="SORT"}]
             [{/if}]
         </button>
         <ul class="dropdown-menu" aria-labelledby="sort" role="menu">

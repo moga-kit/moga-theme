@@ -62,8 +62,8 @@
 
 @font-face {
   font-family:"icons";
-  src:url($icons-font-path + "icons.woff2?f03900294a16a977481164d1ce19d0ae") format("woff2"),
-		url($icons-font-path + "icons.woff?f03900294a16a977481164d1ce19d0ae") format("woff");
+  src:url($icons-font-path + "icons.woff2?133e5182ac744b14e2c2deec8f534a1e") format("woff2"),
+		url($icons-font-path + "icons.woff?133e5182ac744b14e2c2deec8f534a1e") format("woff");
   font-weight:normal;
   font-style:normal;
   font-display: fallback;
@@ -127,86 +127,128 @@
 
 
       
-           .moga-heart-fill:before {
+           .moga-grid-fill:before {
         content:"\f107";
       }
 
 
       
-           .moga-left:before {
+           .moga-heart-fill:before {
         content:"\f108";
       }
 
 
       
-           .moga-pencil:before {
+           .moga-left:before {
         content:"\f109";
       }
 
 
       
-           .moga-person:before {
+           .moga-list-ul:before {
         content:"\f10a";
       }
 
 
       
-           .moga-plus-circle:before {
+           .moga-pencil:before {
         content:"\f10b";
       }
 
 
       
-           .moga-right:before {
+           .moga-person:before {
         content:"\f10c";
       }
 
 
       
-           .moga-rss:before {
+           .moga-plus-circle:before {
         content:"\f10d";
       }
 
 
       
-           .moga-search:before {
+           .moga-right:before {
         content:"\f10e";
       }
 
 
       
-           .moga-star-half-o:before {
+           .moga-rss:before {
         content:"\f10f";
       }
 
 
       
-           .moga-star:before {
+           .moga-search:before {
         content:"\f110";
       }
 
 
       
-           .moga-sync:before {
+           .moga-sliders:before {
         content:"\f111";
       }
 
 
       
-           .moga-times:before {
+           .moga-sort-alpha-down:before {
         content:"\f112";
       }
 
 
       
-           .moga-trash:before {
+           .moga-sort-alpha-up:before {
         content:"\f113";
       }
 
 
       
-           .moga-up:before {
+           .moga-sort-numeric-down:before {
         content:"\f114";
+      }
+
+
+      
+           .moga-sort-numeric-up:before {
+        content:"\f115";
+      }
+
+
+      
+           .moga-star-half-o:before {
+        content:"\f116";
+      }
+
+
+      
+           .moga-star:before {
+        content:"\f117";
+      }
+
+
+      
+           .moga-sync:before {
+        content:"\f118";
+      }
+
+
+      
+           .moga-times:before {
+        content:"\f119";
+      }
+
+
+      
+           .moga-trash:before {
+        content:"\f11a";
+      }
+
+
+      
+           .moga-up:before {
+        content:"\f11b";
       }
 
 
@@ -219,20 +261,27 @@ $icons: (
   compare: "\f104",
   down: "\f105",
   download: "\f106",
-  heart-fill: "\f107",
-  left: "\f108",
-  pencil: "\f109",
-  person: "\f10a",
-  plus-circle: "\f10b",
-  right: "\f10c",
-  rss: "\f10d",
-  search: "\f10e",
-  star-half-o: "\f10f",
-  star: "\f110",
-  sync: "\f111",
-  times: "\f112",
-  trash: "\f113",
-  up: "\f114",
+  grid-fill: "\f107",
+  heart-fill: "\f108",
+  left: "\f109",
+  list-ul: "\f10a",
+  pencil: "\f10b",
+  person: "\f10c",
+  plus-circle: "\f10d",
+  right: "\f10e",
+  rss: "\f10f",
+  search: "\f110",
+  sliders: "\f111",
+  sort-alpha-down: "\f112",
+  sort-alpha-up: "\f113",
+  sort-numeric-down: "\f114",
+  sort-numeric-up: "\f115",
+  star-half-o: "\f116",
+  star: "\f117",
+  sync: "\f118",
+  times: "\f119",
+  trash: "\f11a",
+  up: "\f11b",
 );
 
 
@@ -255,9 +304,13 @@ $icons: (
 			
 				<div class="icons__item" data-name="download"><i class=" moga-download"></i> moga-download</div>
 			
+				<div class="icons__item" data-name="grid-fill"><i class=" moga-grid-fill"></i> moga-grid-fill</div>
+			
 				<div class="icons__item" data-name="heart-fill"><i class=" moga-heart-fill"></i> moga-heart-fill</div>
 			
 				<div class="icons__item" data-name="left"><i class=" moga-left"></i> moga-left</div>
+			
+				<div class="icons__item" data-name="list-ul"><i class=" moga-list-ul"></i> moga-list-ul</div>
 			
 				<div class="icons__item" data-name="pencil"><i class=" moga-pencil"></i> moga-pencil</div>
 			
@@ -270,6 +323,16 @@ $icons: (
 				<div class="icons__item" data-name="rss"><i class=" moga-rss"></i> moga-rss</div>
 			
 				<div class="icons__item" data-name="search"><i class=" moga-search"></i> moga-search</div>
+			
+				<div class="icons__item" data-name="sliders"><i class=" moga-sliders"></i> moga-sliders</div>
+			
+				<div class="icons__item" data-name="sort-alpha-down"><i class=" moga-sort-alpha-down"></i> moga-sort-alpha-down</div>
+			
+				<div class="icons__item" data-name="sort-alpha-up"><i class=" moga-sort-alpha-up"></i> moga-sort-alpha-up</div>
+			
+				<div class="icons__item" data-name="sort-numeric-down"><i class=" moga-sort-numeric-down"></i> moga-sort-numeric-down</div>
+			
+				<div class="icons__item" data-name="sort-numeric-up"><i class=" moga-sort-numeric-up"></i> moga-sort-numeric-up</div>
 			
 				<div class="icons__item" data-name="star-half-o"><i class=" moga-star-half-o"></i> moga-star-half-o</div>
 			

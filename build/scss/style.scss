@@ -22,3 +22,36 @@
 @import 'widget/reviews/rating';
 @import 'widget/minibasket/minibasket';
 
+.moga-oxtitle-down {
+  @extend .moga-sort-alpha-down;
+}
+
+.moga-oxtitle-up {
+  @extend .moga-sort-alpha-up;
+}
+
+.moga-oxvarminprice-down {
+  @extend .moga-sort-numeric-down;
+}
+
+.moga-oxvarminprice-up {
+  @extend .moga-sort-numeric-up;
+}
+
+.btn-icon {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 43px;
+  height: 45px;
+
+  i {
+    font-size: 24px;
+  }
+}
+
+.btn-reset {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 43px;
+  height: 45px;
+}

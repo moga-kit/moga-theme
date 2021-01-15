@@ -6,7 +6,7 @@
         </div>
     </div>
 [{else}]
-    <div class="d-md-flex mb-5">
+    <div class="d-md-flex mb-5 position-relative">
         [{include file="widget/locator/attributes.tpl"}]
         <div class="ms-auto">
             [{if $listDisplayType}]

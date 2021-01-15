@@ -11,6 +11,7 @@
   color: $ox-header-color;
   padding: 5px 0;
   z-index: 1010;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 
   @include media-breakpoint-up(lg) {
     padding: 10px 0;
