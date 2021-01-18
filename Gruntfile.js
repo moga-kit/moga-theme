@@ -75,11 +75,8 @@ module.exports = function (grunt) {
                         '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
                         '<%= project.dev %>node_modules/bootstrap/js/dist/tab.js'
                     ],
-                    '<%= project.out %><%= project.theme %>/src/js/details.min.js': [
-                        '<%= project.dev %>build/js/pages/details.js'
-                    ],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
-                        '<%= project.dev %>build/js/pages/variants.js',
+                        '<%= project.dev %>build/js/pages/variants.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
                         '<%= project.dev %>build/js/pages/compare.js'
@@ -115,9 +112,9 @@ module.exports = function (grunt) {
             my_target: {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
-                    '<%= project.out %><%= project.theme %>/src/js/details.min.js': ['<%= project.out %><%= project.theme %>/src/js/details.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/start.min.js': ['<%= project.out %><%= project.theme %>/src/js/start.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/compare.min.js': ['<%= project.out %><%= project.theme %>/src/js/compare.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/variants.min.js': ['<%= project.out %><%= project.theme %>/src/js/variants.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/agb.min.js': ['<%= project.out %><%= project.theme %>/src/js/agb.min.js'],
