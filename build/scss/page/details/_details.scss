@@ -57,8 +57,10 @@
       .carousel-indicators li {
         background-color: #555;
       }
+
       img {
         max-height: 80vh;
+        max-width: 100%;
       }
 
       .carousel-control-prev-icon,
@@ -75,6 +77,10 @@
   }
 
   @include media-breakpoint-up(md) {
+    .sticky-md-top {
+      top: 62px;
+    }
+
     &-thumb-img {
       display: block;
       cursor: zoom-in;

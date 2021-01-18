@@ -1,17 +1,21 @@
 /**
  * Script for Variantselection
  */
-
 addDropdownLinksEventListeners = () => {
     var aVariantDropdownLinks = document.querySelectorAll('#variants .dropDown a');
-    aVariantDropdownLinks.forEach((a) => a.addEventListener('click', handleDropdownLinkClick));
+
+    if (aVariantDropdownLinks) {
+        aVariantDropdownLinks.forEach((a) => a.addEventListener('click', handleVariantDropdownLinkClick));
+    }
 
     var ajaxArticleToBasketButton = document.querySelector('.js-oxProductForm #toBasket');
-    ajaxArticleToBasketButton.addEventListener('click', handleVariantAddToBasket);
 
+    if (ajaxArticleToBasketButton) {
+        ajaxArticleToBasketButton.addEventListener('click', handleVariantAddToBasket);
+    }
 };
 
-handleDropdownLinkClick = (e) => {
+handleVariantDropdownLinkClick = (e) => {
     e.preventDefault();
 
     // update clicked value to input
