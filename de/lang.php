@@ -144,6 +144,8 @@ $aLang = array(
     'COMPLETE_MARKED_FIELDS'                                => 'Pflichtfelder bitte ausfüllen',
     'WRITE_REVIEW'                                          => 'Bewertung schreiben',
     'PRODUCT_REVIEW'                                        => 'Kundenmeinungen',
+    'SORT'                                      => 'Sortieren',
+    'HELLO'                                       => 'Hallo',
 );
 
 /*

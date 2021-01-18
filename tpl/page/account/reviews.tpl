@@ -1,12 +1,16 @@
 [{capture append="oxidBlock_content"}]
 
     [{oxscript include="js/widgets/oxlistremovebutton.min.js" priority=10}]
-
-    [{block name="account_reviewlist_header"}]
-        [{assign var="template_title" value="MY_REVIEWS"|oxmultilangassign}]
-        <h1 class="h2">[{oxmultilang ident="MY_REVIEWS"}]</h1>
-    [{/block}]
-
+    <div class="container-xxl py-5">
+        <div class="row">
+            [{block name="account_reviewlist_header"}]
+            [{assign var="template_title" value="MY_REVIEWS"|oxmultilangassign}]
+            <h3 class="page-header col pl-0 ml-3">[{oxmultilang ident="MY_REVIEWS"}]</h3>
+            [{/block}]
+            <div class="col-12 col-sm-3 button-col">
+                [{include file="page/account/inc/account_menu.tpl" active_link="reviewlist"}]
+            </div>
+        </div>
     [{block name="account_reviewlist_list"}]
         <div id="review">
             [{if $oView->getReviewAndRatingItemsCount() }]
@@ -80,10 +84,7 @@
         [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigation() place="bottom"}]
     [{/block}]
 
-
-
+    </div>
 [{/capture}]
-[{capture append="oxidBlock_sidebar"}]
-    [{include file="page/account/inc/account_menu.tpl" active_link="reviewlist"}]
-[{/capture}]
-[{include file="layout/page.tpl" sidebar="Left"}]
+
+[{include file="layout/page.tpl"}]

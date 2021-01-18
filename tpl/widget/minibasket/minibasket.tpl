@@ -93,17 +93,23 @@
                 [{oxscript add="var basketModal = new bootstrap.Modal(document.getElementById('basketModal')); basketModal.show()"}]
             [{else}]
                 [{block name="dd_layout_page_header_icon_menu_minibasket_title"}]
-                    <li class="title">
-                        <strong>[{$oxcmp_basket->getItemsCount()}] [{oxmultilang ident="ITEMS_IN_BASKET"}]</strong>
-                    </li>
+                    <div class="h4">
+                        [{$oxcmp_basket->getItemsCount()}] [{oxmultilang ident="ITEMS_IN_BASKET"}]
+                    </div>
                 [{/block}]
-
+                [{block name="minibasket_top_functions"}]
+                    [{if $oxcmp_user}]
+                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=payment"}]" class="btn btn-primary btn-lg w-100 mb-2">[{oxmultilang ident="CHECKOUT"}]</a>
+                    [{else}]
+                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-primary btn-lg w-100 mb-2">[{oxmultilang ident="CHECKOUT"}]</a>
+                    [{/if}]
+                [{/block}]
                     [{block name="dd_layout_page_header_icon_menu_minibasket_table"}]
-
+                        <div class="minibasket-items">
                         [{foreach from=$oxcmp_basket->getContents() name=miniBasketList item=_product}]
                             [{block name="widget_minibasket_product"}]
                                 [{assign var="minibasketItemTitle" value=$_product->getTitle()}]
-                                <li class="my-1">
+                                <div class="my-1">
                                     <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
                                         <span>
                                              [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
@@ -120,23 +126,22 @@
                                             [{oxprice price=$_product->getPrice() currency=$currency}]
                                         </span>
                                     </a>
-                                </li>
+                                </div>
                             [{/block}]
                         [{/foreach}]
-                        <li class="row minibasket-total-row mb-3">
-                            <div class="col-8 minibasket-total-col">
-                                <strong>[{oxmultilang ident="TOTAL"}]</strong>
+                        </div>
+                        <div class="row minibasket-total-row my-3">
+                            <div class="col-8 minibasket-total-col h5">
+                                [{oxmultilang ident="TOTAL"}]
                             </div>
-                            <div class="col-4 minibasket-total-col text-end">
-                                <strong>
-                                    [{if $oxcmp_basket->isPriceViewModeNetto()}]
-                                        [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
-                                    [{else}]
-                                        [{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]
-                                    [{/if}]
-                                </strong>
+                            <div class="col-4 minibasket-total-col text-end  h5">
+                                [{if $oxcmp_basket->isPriceViewModeNetto()}]
+                                    [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
+                                [{else}]
+                                    [{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]
+                                [{/if}]
                             </div>
-                        </li>
+                        </div>
 
                             [{block name="widget_minibasket_total"}][{/block}]
                     [{/block}]
@@ -144,14 +149,7 @@
                 [{include file="widget/minibasket/countdown.tpl"}]
 
                 [{block name="dd_layout_page_header_icon_menu_minibasket_functions"}]
-                    <li class="d-flex">
-                        [{if $oxcmp_user}]
-                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=payment"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
-                        [{else}]
-                            <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=user"}]" class="btn btn-primary">[{oxmultilang ident="CHECKOUT"}]</a>
-                        [{/if}]
-                        <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary ms-auto">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
-                    </li>
+                    <a href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=basket"}]" class="btn btn-outline-primary w-100">[{oxmultilang ident="DISPLAY_BASKET"}]</a>
                 [{/block}]
             [{/if}]
         [{/oxhasrights}]

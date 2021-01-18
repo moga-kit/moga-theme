@@ -66,7 +66,7 @@
                                 <div class="h4 text-uppercase">[{oxmultilang ident="NEWSLETTER"}]</div>
                                 <div class="footer-content">
                                     [{block name="dd_footer_newsletter"}]
-                                    <p class="small">[{oxmultilang ident="FOOTER_NEWSLETTER_INFO"}]</p>
+                                    <p>[{oxmultilang ident="FOOTER_NEWSLETTER_INFO"}]</p>
                                     [{include file="widget/footer/newsletter.tpl"}]
                                     [{/block}]
                                 </div>
@@ -134,11 +134,15 @@
                                 <div class="container[{if $footerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                                     <div class="text-end">
                                         [{if $oView->isVatIncluded()}]
-                                        <span class="vat-info-text">* [{oxmultilang ident="PLUS_SHIPPING"}]<a
-                                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
+                                            <span class="vat-info-text">
+                                                * [{oxmultilang ident="PLUS_SHIPPING"}]
+                                                <a href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a>
+                                            </span>
                                         [{else}]
-                                        <span class="vat-info-text">* [{oxmultilang ident="PLUS"}]<a
-                                                href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a></span>
+                                            <span class="vat-info-text">
+                                                * [{oxmultilang ident="PLUS"}]
+                                                <a href="[{$oCont->getLink()}]">[{oxmultilang ident="PLUS_SHIPPING2"}]</a>
+                                            </span>
                                         [{/if}]
                                     </div>
                                 </div>

@@ -37,13 +37,13 @@
                     <input type="hidden" name="blshowshipaddress" value="1">
 
                 [{* Rechnungsadresse *}]
-                <div class="card">
-                    <div class="card-header">
+                <div class="card mb-3">
+                    <div class="card-header bg-light">
                         [{block name="user_billing_address_head"}]
-                            [{oxmultilang ident="BILLING_ADDRESS"}]
                             <button id="userChangeAddress" class="btn btn-outline-primary btn-sm float-end edit-button" name="changeBillAddress" type="button">
                                 <i class="moga-pencil"></i>
                             </button>
+                            <h4>[{oxmultilang ident="BILLING_ADDRESS"}]</h4>
                         [{/block}]
                     </div>
                     <div class="card-body">
@@ -68,25 +68,28 @@
                 [{* Lieferadresse *}]
                 [{block name="user_shipping_address"}]
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-light">
                             [{block name="user_shipping_address_head"}]
-                                [{oxmultilang ident="SHIPPING_ADDRESSES"}]
+                            <h4>[{oxmultilang ident="SHIPPING_ADDRESSES"}]</h4>
                             [{/block}]
                         </div>
                         <div class="card-body">
                             <div class="checkbox">
                                 [{block name="user_shipping_address_choice"}]
-                                    <label>
-                                        <input type="checkbox" name="blshowshipaddress" id="showShipAddress" [{if !$oView->showShipAddress()}]checked[{/if}] value="0"> [{oxmultilang ident="USE_BILLINGADDRESS_FOR_SHIPPINGADDRESS"}]
-                                    </label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="blshowshipaddress" id="showShipAddress"[{if !$oView->showShipAddress()}] checked[{/if}] value="0">
+                                        <label class="form-check-label" for="showShipAddress">
+                                            [{oxmultilang ident="USE_BILLINGADDRESS_FOR_SHIPPINGADDRESS"}]
+                                        </label>
+                                    </div>
                                 [{/block}]
                             </div>
-                            [{block name="user_shipping_address_form"}]
-                                <div id="shippingAddress" [{if !$oView->showShipAddress()}] style="display: none;" [{/if}]>
-                                    [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]
-                                </div>
-                            [{/block}]
                         </div>
+                        [{block name="user_shipping_address_form"}]
+                            <div class="list-group list-group-flush" id="shippingAddress"[{if !$oView->showShipAddress()}] style="display: none;"[{/if}]>
+                                [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]
+                            </div>
+                        [{/block}]
                     </div>
                 [{/block}]
             </div>

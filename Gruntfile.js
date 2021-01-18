@@ -64,28 +64,10 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
-                        '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.min.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/tab.js'
+                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
                         '<%= project.dev %>build/js/pages/variants.js'
-                    ],
-                    '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
-                        '<%= project.dev %>build/js/pages/variants.js',
-                    ],
-                    '<%= project.out %><%= project.theme %>/src/js/compare.min.js': [
-                        '<%= project.dev %>build/js/pages/compare.js'
-                    ],
-                    '<%= project.out %><%= project.theme %>/src/js/start.min.js': [
-                        '<%= project.dev %>build/js/pages/start.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': [
                         '<%= project.dev %>build/js/pages/checkout/basket/wrapping.js'
@@ -115,8 +97,6 @@ module.exports = function (grunt) {
             my_target: {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
-                    '<%= project.out %><%= project.theme %>/src/js/start.min.js': ['<%= project.out %><%= project.theme %>/src/js/start.min.js'],
-                    '<%= project.out %><%= project.theme %>/src/js/compare.min.js': ['<%= project.out %><%= project.theme %>/src/js/compare.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': ['<%= project.out %><%= project.theme %>/src/js/variants.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],

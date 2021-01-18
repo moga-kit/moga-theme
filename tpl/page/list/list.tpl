@@ -91,7 +91,11 @@
 
                 [{assign var="showPopBreadcrump" value=$oViewConf->getViewThemeParam('sShowPopBreadcrump')}]
                 [{if $showPopBreadcrump}]
-                    [{include file="widget/breadcrumb.tpl"}]
+                    <div class="breadcrumb-wrapper">
+                        <div class="container-xxl pt-3">
+                            [{include file="widget/breadcrumb.tpl"}]
+                        </div>
+                    </div>
                 [{/if}]
             </div>
         </div>
@@ -128,7 +132,7 @@
                             [{else}]
                                 col-12 col-sm-4 col-md-3
                             [{/if}]">
-                                <a href="[{$category->getLink()}]" class="card bg-light text-dark">
+                                <a href="[{$category->getLink()}]" class="card bg-dark text-white">
 
                                     [{if $iconUrl}]
                                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
@@ -142,7 +146,7 @@
 
 
                                     <div class="card-img-overlay">
-                                        <div class="card-title">[{$category->oxcategories__oxtitle->value}]</div>
+                                        <div class="h5 card-title">[{$category->oxcategories__oxtitle->value}]</div>
                                         [{*if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
                                         [{if $category->getHasVisibleSubCats()}]
                                         <ul class="list-unstyled">

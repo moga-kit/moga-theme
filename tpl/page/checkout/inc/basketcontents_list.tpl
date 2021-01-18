@@ -13,19 +13,27 @@
                     [{assign var="oArticle" value=$basketitem->getArticle()}]
                     [{assign var="oAttributes" value=$oArticle->getAttributesDisplayableInBasket()}]
                     <div class="row" id="list_cartItem_[{$smarty.foreach.basketContents.iteration}]">
-                        <div class="col-md-5 col-lg-3 col-xl-3">
+                        <div class="col-md-5 col-lg-2">
                             [{block name="checkout_basketcontents_basketitem_image"}]
                             [{assign var="oBasketitemArticle" value=$basketitem->getArticle()}]
 
-                            [{* product image *}]
-                            [{*if $editable}]<a href="[{$basketitem->getLink()}]">[{/if*}]
+                            [{if $editable}]<a class="d-block text-center" href="[{$basketitem->getLink()}]">[{/if}]
 
-                            <img class="cart-img" loading="lazy" src="[{$oBasketitemArticle->getIconUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}]">
-                            [{*if $editable}]</a>[{/if*}]
+                                [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                    <picture>
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oBasketitemArticle->getIconUrl(), 100, 100, 'webp', true)}]">
+                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($oBasketitemArticle->getIconUrl(), 100, 100, '', true)}]" alt="[{$basketitem->getTitle()|strip_tags}]" class="cart-img img-fluid">
+                                    </picture>
+                                [{else}]
+                                    <img loading="lazy" src="[{$oBasketitemArticle->getIconUrl()}]" alt="[{$basketitem->getTitle()|strip_tags}] [{$product->oxarticles__oxvarselect->value}]" class="cart-img img-fluid">
+                                [{/if}]
+
+                            [{if $editable}]</a>[{/if}]
+
                             [{/block}]
                         </div>
 
-                        <div class="col-md-7 col-lg-9 col-xl-9">
+                        <div class="col-md-7 col-lg-10">
                             <div class="d-flex justify-content-between">
                                 <div>
                                     [{block name="checkout_basketcontents_basketitem_titlenumber"}]
@@ -176,31 +184,36 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
+                                <div>
                                 [{block name="checkout_basketcontents_basketitem_wrapping"}]
                                 [{* product wrapping *}]
                                 [{if $oView->isWrapping()}]
-                                <div class="wrapping">
-                                    [{if !$basketitem->getWrappingId()}]
-                                    [{if $editable}]
-                                    <a href="#" class="btn btn-outline-primary btn-sm" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">[{oxmultilang ident="WRAPPING"}] [{oxmultilang ident="ADD"}]</a>
-                                    [{else}]
-                                    <small>[{oxmultilang ident="WRAPPING"}]: [{oxmultilang ident="NONE"}]</small>
-                                    [{/if}]
-                                    [{else}]
-                                    [{assign var="oWrap" value=$basketitem->getWrapping()}]
-                                    [{if $editable}]
-                                    <small>[{oxmultilang ident="WRAPPING"}]:</small> <a class="btn btn-outline-primary btn-sm" href="#" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions"><i class="moga-pencil"></i> [{$oWrap->oxwrapping__oxname->value}]</a>
-                                    [{else}]
-                                    <small>[{oxmultilang ident="WRAPPING"}]: [{$oWrap->oxwrapping__oxname->value}]</small>
-                                    [{/if}]
-                                    [{/if}]
-                                </div>
+                                    <div class="wrapping">
+                                        [{if !$basketitem->getWrappingId()}]
+                                            [{if $editable}]
+                                                <a href="#" class="btn btn-remove btn-sm" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">
+                                                    <i class="moga-gift"></i> [{oxmultilang ident="WRAPPING"}] [{oxmultilang ident="ADD"}]
+                                                </a>
+                                            [{else}]
+                                                <small>[{oxmultilang ident="WRAPPING"}]: [{oxmultilang ident="NONE"}]</small>
+                                            [{/if}]
+                                        [{else}]
+                                            [{assign var="oWrap" value=$basketitem->getWrapping()}]
+                                            [{if $editable}]
+                                                <small>[{oxmultilang ident="WRAPPING"}]:</small>
+                                                <a class="btn btn-remove" href="#" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">
+                                                    <i class="moga-pencil"></i> [{$oWrap->oxwrapping__oxname->value}]
+                                                </a>
+                                            [{else}]
+                                                <small>[{oxmultilang ident="WRAPPING"}]: [{$oWrap->oxwrapping__oxname->value}]</small>
+                                            [{/if}]
+                                        [{/if}]
+                                    </div>
                                 [{/if}]
                                 [{/block}]
 
                                 [{block name="checkout_basketcontents_basketitem_removecheckbox"}]
-                                [{if $editable}]
-                                    <div>
+                                    [{if $editable}]
                                         <input type="hidden" name="aproducts[[{$basketindex}]][remove]" id="aproducts_[{$basketindex}]_remove" value="0">
                                         <button type="submit" name="removeBtn" class="btn btn-remove me-3" onclick="document.getElementById( 'aproducts_[{$basketindex}]_remove' ).value = '1';">
                                             <i class="moga-trash"></i> [{oxmultilang ident="REMOVE"}]
@@ -211,14 +224,13 @@
                                                 <i class="moga-heart-fill"></i> [{oxmultilang ident="MOVE_TO_WISH_LIST"}]
                                             </button>
                                         [{/if}]
-                                    </div>
-                                [{/if}]
+                                    [{/if}]
                                 [{/block}]
-
+                                </div>
                                 [{block name="checkout_basketcontents_basketitem_totalprice"}]
                                 [{* product quantity * price *}]
                                 <div class="totalPrice text-end">
-                                    <strong>[{oxprice price=$basketitem->getPrice() currency=$currency}]</strong>
+                                    <strong class="text-nowrap h5">[{oxprice price=$basketitem->getPrice() currency=$currency}]</strong>
                                 </div>
                                 [{/block}]
                             </div>

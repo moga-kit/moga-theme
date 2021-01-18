@@ -43,7 +43,7 @@
 
             [{block name="user_checkout_billing"}]
                 [{block name="user_checkout_billing_head"}]
-                    <h3>
+                    <h3 class="h4">
                         [{oxmultilang ident="BILLING_ADDRESS"}]
                         <button id="userChangeAddress" class="btn btn-sm btn-outline-primary float-end edit-button" name="changeBillAddress" type="submit" title="[{oxmultilang ident="CHANGE"}]">
                             <i class="moga-pencil"></i>
@@ -68,7 +68,7 @@
 
             [{block name="user_checkout_shipping"}]
                 [{block name="user_checkout_shipping_head"}]
-                    <h3>
+                    <h3 class="h4">
                         [{oxmultilang ident="SHIPPING_ADDRESS"}]
                         [{if $oView->showShipAddress() and $oxcmp_user->getSelectedAddress()}]
                             <button id="userChangeShippingAddress" class="btn btn-sm btn-outline-primary float-end edit-button" name="changeShippingAddress" type="submit" [{if !$oView->showShipAddress() and $oxcmp_user->getSelectedAddress()}] style="display: none;" [{/if}] title="[{oxmultilang ident="CHANGE"}]">

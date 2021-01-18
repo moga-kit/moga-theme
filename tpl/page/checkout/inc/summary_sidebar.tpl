@@ -244,7 +244,7 @@
                 [{/block}]
 
                 [{block name="checkout_basketcontents_grandtotal"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0 mb-0 mt-3 h3">
+                <div class="list-group-item d-flex justify-content-between align-items-center px-0 mb-0 mt-3 h4">
                     [{oxmultilang ident="GRAND_TOTAL"}]
                     <span>[{oxprice price=$oxcmp_basket->getPrice() currency=$currency}]</span>
                 </div>
@@ -259,4 +259,16 @@
         </div>
     </div>
     [{/block}]
+
+    [{if !$oView->isLowOrderPrice() && $btn}]
+        [{block name="basket_btn_next_bottom"}]
+        <form action="[{$oViewConf->getSslSelfLink()}]" method="post">
+            [{$oViewConf->getHiddenSid()}]
+            <input type="hidden" name="cl" value="user">
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+                [{oxmultilang ident="CHECKOUT"}]
+            </button>
+        </form>
+        [{/block}]
+    [{/if}]
 </div>

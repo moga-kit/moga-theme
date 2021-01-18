@@ -7,14 +7,19 @@
             <div class="alert alert-success">[{oxmultilang ident="MESSAGE_NEWSLETTER_SUBSCRIPTION_CANCELED"}]</div>
         [{/if}]
     [{/if}]
+    <div class="container-xxl py-5">
+        <div class="row">
+            <h3 class="page-header col pl-0 ml-3">
+                [{oxmultilang ident="NEWSLETTER_SETTINGS"}]
+            </h3>
+            <div class="col-12 col-sm-3 button-col">
+                [{include file="page/account/inc/account_menu.tpl" active_link="newsletter"}]
+            </div>
+        </div>
 
-    <h1 class="h2">[{oxmultilang ident="NEWSLETTER_SETTINGS"}]</h1>
-
-    [{include file="form/account_newsletter.tpl"}]
-
+        [{include file="form/account_newsletter.tpl"}]
+    </div>
 
 [{/capture}]
-[{capture append="oxidBlock_sidebar"}]
-    [{include file="page/account/inc/account_menu.tpl" active_link="newsletter"}]
-[{/capture}]
-[{include file="layout/page.tpl" sidebar="Left"}]
+
+[{include file="layout/page.tpl"}]

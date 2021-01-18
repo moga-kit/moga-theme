@@ -1,7 +1,14 @@
 [{assign var="template_title" value="MY_ACCOUNT"|oxmultilangassign}]
 [{capture append="oxidBlock_content"}]
-    <h1 class="h2">[{oxmultilang ident="MY_ACCOUNT"}]
-        "[{$oxcmp_user->oxuser__oxusername->value}]"</h1>
+<div class="container-xxl py-5">
+    <div class="row">
+        <h3 class="page-header col pl-0 ml-3">
+            [{oxmultilang ident="HELLO"}] [{$oxcmp_user->oxuser__oxfname->value}]
+        </h3>
+        <div class="col-12 col-sm-3 button-col">
+            [{include file="page/account/inc/account_menu.tpl" active_link="dashboard"}]
+        </div>
+    </div>
 
     [{if $oView->getAccountDeletionStatus() === false}]
     [{assign var="statusMessage" value="DD_DELETE_MY_ACCOUNT_ERROR"|oxmultilangassign}]
@@ -105,12 +112,12 @@
                 [{oxmultilang ident="LOGOUT"}]
             </a>
         </div>
-        <p>&nbsp;</p>
     </div>
+</div>
 [{/capture}]
 
 
 [{capture append="oxidBlock_sidebar"}]
     [{include file="page/account/inc/account_menu.tpl"}]
 [{/capture}]
-[{include file="layout/page.tpl" sidebar="Left"}]
+[{include file="layout/page.tpl"}]

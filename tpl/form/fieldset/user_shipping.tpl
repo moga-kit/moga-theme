@@ -11,71 +11,56 @@
     [{assign var="aUserAddresses" value=$oxcmp_user->getUserAddresses()}]
 
     [{if $aUserAddresses|@count > 0}]
-        [{if $onChangeClass == 'user'}]
-            <div class="col-lg-9 offset-lg-3">
-        [{/if}]
+
 
             <input type="hidden" name="changeClass" value="[{$onChangeClass|default:'account_user'}]">
 
-            [{oxscript include="js/widgets/oxusershipingaddressselect.min.js" priority=10}]
+            [{*oxscript include="js/widgets/oxusershipingaddressselect.min.js" priority=10}]
             [{oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
             [{oxscript add="$( '.dd-add-delivery-address' ).click( function() {  $('.dd-available-addresses .dd-action').remove(); $( this ).find( 'label.btn' ).button('toggle'); } );"}]
             [{oxscript add="$( 'input[name=\"oxaddressid\"]' ).oxUserShipingAddressSelect();"}]
             [{oxscript add="$( window ).load( function() { if( !isMobileDevice() ) { oxEqualizer.equalHeight( $( '.dd-available-addresses .panel .card-body' ) ); } } );"}]
-            [{oxscript add="$( '.dd-edit-shipping-address' ).click(function(){ $( '#shippingAddressForm' ).show(); $( 'html, body' ).animate( { scrollTop: $( '#shippingAddressForm' ).offset().top - 80 }, 600 ); } );"}]
+            [{oxscript add="$( '.dd-edit-shipping-address' ).click(function(){ $( '#shippingAddressForm' ).show(); $( 'html, body' ).animate( { scrollTop: $( '#shippingAddressForm' ).offset().top - 80 }, 600 ); } );"*}]
 
             [{block name="form_user_shipping_address_select"}]
-                <div class="row dd-available-addresses" data-bs-toggle="buttons">
-                    [{foreach from=$aUserAddresses item=address name="shippingAdresses"}]
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    [{block name="form_user_shipping_address_actions"}]
-                                    [{if $address->isSelected()}]
-                                        [{block name="form_user_shipping_address_edit_action"}]
-                                        <button class="btn btn-outline-primary btn-sm float-end dd-action dd-edit-shipping-address edit-button">
-                                            <i class="moga-pencil"></i>
-                                        </button>
-                                        [{/block}]
-                                        [{block name="form_user_shipping_address_delete_action"}]
-                                        <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
-                                                data-bs-toggle="modal"
-                                                data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
-                                            <i class="moga-trash"></i>
-                                        </button>
-                                        [{/block}]
-                                    [{/if}]
-                                    [{/block}]
-                                    [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
-                                </div>
-                                <div class="card-footer">
-                                    <label class="btn btn-outline-primary btn-block[{if $address->isSelected()}] active[{/if}]">
-                                        <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    [{/foreach}]
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card dd-add-delivery-address">
-                            <div class="card-body text-center">
-                                <i class="moga-plus-circle"></i><br/>
-                                [{oxmultilang ident="DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS"}]
-                            </div>
-                            <div class="card-footer" >
-                                <label class="btn btn-outline-primary btn-block">
-                                    <input type="radio" name="oxaddressid" value="-1" autocomplete="off"><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
-                                </label>
-                            </div>
-                        </div>
+                [{foreach from=$aUserAddresses item=address name="shippingAdresses"}]
+                    <div class="list-group-item" data-bs-toggle="buttons">
+                        [{block name="form_user_shipping_address_actions"}]
+                        [{if $address->isSelected()}]
+                            [{block name="form_user_shipping_address_edit_action"}]
+                            <button class="btn btn-outline-primary btn-sm float-end dd-action dd-edit-shipping-address edit-button">
+                                <i class="moga-pencil"></i>
+                            </button>
+                            [{/block}]
+                            [{block name="form_user_shipping_address_delete_action"}]
+                            <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
+                                    data-bs-toggle="modal"
+                                    data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
+                                <i class="moga-trash"></i>
+                            </button>
+                            [{/block}]
+                        [{/if}]
+                        [{/block}]
+                        [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
+
+                        <label class="btn btn-outline-primary btn-block[{if $address->isSelected()}] active[{/if}]">
+                            <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
+                        </label>
+                    </div>
+                [{/foreach}]
+
+                <div class="list-group-item" data-bs-toggle="buttons">
+                    <div class=" dd-add-delivery-address">
+                        <i class="moga-plus-circle"></i><br/>
+                        [{oxmultilang ident="DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS"}]
+
+                        <label class="btn btn-outline-primary btn-block">
+                            <input type="radio" name="oxaddressid" value="-1" autocomplete="off"><i class="moga-check"></i> [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
+                        </label>
                     </div>
                 </div>
-            [{/block}]
-
-        [{if $onChangeClass == 'user'}]
-            </div>
-        [{/if}]
+        [{/block}]
     [{/if}]
 [{/if}]
 

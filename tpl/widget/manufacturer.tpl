@@ -5,7 +5,7 @@
 
     <div id="manufacturer" class="text-center py-5 bg-light">
         <div class="container[{if $manufacturerWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-            <h3>[{oxmultilang ident="OUR_BRANDS"}]</h3>
+            <h2>[{oxmultilang ident="OUR_BRANDS"}]</h2>
             <span class="subhead">[{oxmultilang ident="MANUFACTURERSLIDER_SUBHEAD"}]</span>
 
             <div class="row justify-content-center">

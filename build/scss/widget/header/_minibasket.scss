@@ -13,4 +13,21 @@
 .minibasket-link {
   display: flex;
   text-decoration: none;
+  background: #fff;
+}
+
+.minibasket-items {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+  }
 }

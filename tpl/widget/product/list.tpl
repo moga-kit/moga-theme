@@ -3,7 +3,7 @@
 [{/if}]
 
 [{if $head}]
-    <h2 class="h2">
+    <h2>
         [{$head}]
         [{if $rsslink}]
             <a class="rss" id="[{$rssId}]" aria-label="RSS" href="[{$rsslink.link}]" target="_blank">

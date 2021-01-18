@@ -1,6 +1,14 @@
 [{capture append="oxidBlock_content"}]
     [{assign var="template_title" value="ORDER_HISTORY"|oxmultilangassign}]
-    <h1 class="h2">[{oxmultilang ident="ORDER_HISTORY"}]</h1>
+    <div class="container-xxl py-5">
+        <div class="row">
+            <h3 class="page-header col pl-0 ml-3">
+                [{oxmultilang ident="ORDER_HISTORY"}]
+            </h3>
+            <div class="col-12 col-sm-3 button-col">
+                [{include file="page/account/inc/account_menu.tpl" active_link="orderhistory"}]
+            </div>
+        </div>
 
     [{assign var=oOrders value=$oView->getOrderList()}]
 
@@ -99,10 +107,7 @@
             [{oxmultilang ident="ORDER_EMPTY_HISTORY"}]
         [{/if}]
     [{/block}]
-
+    </div>
 [{/capture}]
 
-[{capture append="oxidBlock_sidebar"}]
-    [{include file="page/account/inc/account_menu.tpl" active_link="orderhistory"}]
-[{/capture}]
-[{include file="layout/page.tpl" sidebar="Left"}]
+[{include file="layout/page.tpl"}]

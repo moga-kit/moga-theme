@@ -20,6 +20,14 @@
             [{block name="content_main"}]
                 [{include file="message/errors.tpl"}]
 
+                [{if $oView->getClassName() == "details" || $oView->getClassName() == "content" && !$blHideBreadcrumb}]
+                    [{block name="layout_breadcrumb"}]
+                        <div class="container-xxl d-none d-md-block pt-3">
+                            [{include file="widget/breadcrumb.tpl"}]
+                        </div>
+                    [{/block}]
+                [{/if}]
+
                 [{foreach from=$oxidBlock_content item="_block"}]
                     [{$_block}]
                 [{/foreach}]

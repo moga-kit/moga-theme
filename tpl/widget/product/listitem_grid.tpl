@@ -32,12 +32,12 @@
 
         <div class="card-body">
             [{block name="widget_product_listitem_infogrid_titlebox"}]
-                <div class="card-title">
+                <div class="h5 card-title">
                     [{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]
                 </div>
             [{/block}]
 
-            <div class="price[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
+            <div class="price h5[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
                 [{block name="widget_product_listitem_grid_price"}]
                     [{oxhasrights ident="SHOWARTICLEPRICE"}]
                         [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
@@ -52,7 +52,7 @@
 
                         [{block name="widget_product_listitem_grid_price_value"}]
                             [{if $product->getFPrice()}]
-                                <span class="text-nowrap">
+                                <span class="text-nowrap[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">
                                     [{if $product->isRangePrice()}]
                                         [{oxmultilang ident="PRICE_FROM"}]
                                         [{if !$product->isParentNotBuyable()}]

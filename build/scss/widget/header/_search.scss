@@ -3,13 +3,14 @@
   top: 0;
   left: 0;
   right: 125px;
-  z-index: 100;
   padding: 5px;
   background: #fff;
+  z-index: 140;
 
   @include media-breakpoint-up(lg) {
-    padding: 0 8px 0;
+    padding: 10px 8px;
     left: 120px;
+    top: -10px;
   }
 
   &-toggler {
