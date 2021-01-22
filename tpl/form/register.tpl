@@ -11,33 +11,36 @@
         <input type="hidden" id="reloadAddress" name="reloadaddress" value="">
         <input type="hidden" name="option" value="3">
 
-    <h3 class="blockHead">[{oxmultilang ident="ACCOUNT_INFORMATION"}]</h3>
-    [{include file="form/fieldset/user_account.tpl"}]
+    <fieldset>
+        <legend>[{oxmultilang ident="ACCOUNT_INFORMATION"}]</legend>
+        [{include file="form/fieldset/user_account.tpl"}]
 
-    [{if $oView->isActive('PsLogin')}]
-        <div class="mb-3 row">
-            <label>[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
-            <input type="hidden" name="ord_agb" value="0">
-            <div class="checkbox">
-                <label>
-                    <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
-                    [{oxifcontent ident="oxagb" object="oCont"}]
-                        [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
-                        [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
-                    [{/oxifcontent}]
-                    [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
-                        [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
-                        [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
-                    [{/oxifcontent}]
-                </label>
+        [{if $oView->isActive('PsLogin')}]
+            <div class="mb-3 row">
+                <label>[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
+                <input type="hidden" name="ord_agb" value="0">
+                <div class="checkbox">
+                    <label>
+                        <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
+                        [{oxifcontent ident="oxagb" object="oCont"}]
+                            [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>
+                            [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS3"}],&nbsp;
+                        [{/oxifcontent}]
+                        [{oxifcontent ident="oxrightofwithdrawal" object="oCont"}]
+                            [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL1"}]
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#popup2">[{$oCont->oxcontents__oxtitle->value}]</a>
+                            [{oxmultilang ident="FORM_REGISTER_IAGREETORIGHTOFWITHDRAWAL3"}]
+                        [{/oxifcontent}]
+                    </label>
+                </div>
             </div>
-        </div>
-    [{/if}]
-
-    <h3 class="blockHead">[{oxmultilang ident="BILLING_ADDRESS"}]</h3>
-    [{include file="form/fieldset/user_billing.tpl"}]
+        [{/if}]
+    </fieldset>
+    <fieldset>
+        <legend>[{oxmultilang ident="BILLING_ADDRESS"}]</legend>
+        [{include file="form/fieldset/user_billing.tpl"}]
+    </fieldset>
 </form>
 [{if $oView->isActive('PsLogin')}]
     [{oxifcontent ident="oxagb" object="oContent"}]

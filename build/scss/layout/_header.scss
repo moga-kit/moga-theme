@@ -40,6 +40,7 @@
 
   .btn {
     padding: 4px 8px;
+    border: 3px solid #fff;
 
     .count {
       position: absolute;
@@ -49,10 +50,35 @@
       text-align: center;
       top: 18px;
     }
+
+    &:hover {
+      border: 3px solid #f1f1f1;
+    }
+
+    &.show,
+    &.show:hover {
+      border: 3px solid #f1f1f1;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        height: 10px;
+        z-index: 1010;
+      }
+    }
   }
 
   .dropdown-toggle {
     color: $ox-header-color;
+  }
+
+  .dropdown-menu {
+    border: 3px solid #f1f1f1;
+    background: #fff;
   }
 
   i {

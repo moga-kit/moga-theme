@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 125px;
+  right: 140px;
   padding: 5px;
   background: #fff;
   z-index: 140;
@@ -11,6 +11,15 @@
     padding: 10px 8px;
     left: 120px;
     top: -10px;
+  }
+
+  .input-group {
+    height: 46px;
+  }
+
+  .btn.btn-primary,
+  .btn.btn-primary:hover {
+    border: none;
   }
 
   &-toggler {

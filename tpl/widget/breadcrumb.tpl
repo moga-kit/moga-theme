@@ -10,12 +10,21 @@
                         </a>
                     </li>
                     [{foreach from=$oView->getBreadCrumb() item="sCrum" name="breadcrumb"}]
-                        <li class="breadcrumb-item[{if $smarty.foreach.breadcrumb.last}] active[{/if}]">
-                            <a href="[{if $sCrum.link}][{$sCrum.link}][{else}]#[{/if}]" class="breadcrumb-link" title="[{$sCrum.title|escape:'html'}]">
+                        <li class="breadcrumb-item[{if $smarty.foreach.breadcrumb.last && $oView->getClassName() != "details"}] active[{/if}]">
+                            [{if $smarty.foreach.breadcrumb.last && $oView->getClassName() != "details"}]
                                 [{$sCrum.title}]
-                            </a>
+                            [{else}]
+                                <a href="[{if $sCrum.link}][{$sCrum.link}][{else}]#[{/if}]" class="breadcrumb-link" title="[{$sCrum.title|escape:'html'}]">
+                                    [{$sCrum.title}]
+                                </a>
+                            [{/if}]
                         </li>
                     [{/foreach}]
+                    [{if $oView->getClassName() == "details"}]
+                    <li class="breadcrumb-item active">
+                        [{$oDetailsProduct->oxarticles__oxtitle->value}]
+                    </li>
+                    [{/if}]
                 [{/block}]
             </ol>
         </nav>

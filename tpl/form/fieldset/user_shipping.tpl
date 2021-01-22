@@ -65,13 +65,13 @@
 [{/if}]
 
 <div id="shippingAddressForm" [{if $delivadr}]style="display: none;"[{/if}]>
-    <div class="row g-2">
+    <div class="row gx-2">
         <div class="col-md-6 mb-3">
             <label class="form-label[{if $oView->isFieldRequired(oxaddress__oxsal)}] req[{/if}]" for="deladr_oxaddress__oxsal">[{oxmultilang ident="TITLE"}]</label>
             [{include file="form/fieldset/salutation.tpl" name="deladr[oxaddress__oxsal]" value=$delivadr->oxaddress__oxsal->value value2=$deladr.oxaddress__oxsal class="form-control" id="deladr_oxaddress__oxsal"}]
         </div>
     </div>
-    <div class="row g-2">
+    <div class="row gx-2">
         <div class="col-md-6 mb-3[{if $aErrors.oxaddress__oxfname}] oxInValid[{/if}]">
             <label class="form-label[{if $oView->isFieldRequired(oxaddress__oxfname)}] req[{/if}]">[{oxmultilang ident="FIRST_NAME"}]</label>
             <input class="form-control[{if $oView->isFieldRequired(oxaddress__oxfname)}] js-oxValidate js-oxValidate_notEmpty[{/if}]" type="text" maxlength="255" name="deladr[oxaddress__oxfname]" value="[{if isset( $deladr.oxaddress__oxfname )}][{$deladr.oxaddress__oxfname}][{else}][{$delivadr->oxaddress__oxfname->value}][{/if}]"[{if $oView->isFieldRequired(oxaddress__oxfname)}] required=""[{/if}]>
@@ -104,7 +104,7 @@
     </div>
     <div class="mb-3[{if $aErrors.oxaddress__oxstreet}] oxInValid[{/if}]">
         <label class="form-label[{if $oView->isFieldRequired(oxaddress__oxstreet) || $oView->isFieldRequired(oxaddress__oxstreetnr)}] req[{/if}]">[{oxmultilang ident="STREET_AND_STREETNO"}]</label>
-        <div class="row g-2">
+        <div class="row gx-2">
             <div class="col-8">
                 <input class="form-control[{if $oView->isFieldRequired(oxaddress__oxstreet)}] js-oxValidate js-oxValidate_notEmpty[{/if}]" type="text" data-fieldsize="pair-xsmall" maxlength="255" name="deladr[oxaddress__oxstreet]" value="[{if isset( $deladr.oxaddress__oxstreet )}][{$deladr.oxaddress__oxstreet}][{else}][{$delivadr->oxaddress__oxstreet->value}][{/if}]"[{if $oView->isFieldRequired(oxaddress__oxstreet)}] required=""[{/if}]>
             </div>
@@ -119,7 +119,7 @@
 
     <div class="mb-3[{if $aErrors.oxaddress__oxzip || $aErrors.oxaddress__oxcity}] oxInValid[{/if}]">
         <label class="form-label col-12[{if $oView->isFieldRequired(oxaddress__oxzip) || $oView->isFieldRequired(oxaddress__oxcity)}] req[{/if}]">[{oxmultilang ident="POSTAL_CODE_AND_CITY"}]</label>
-        <div class="row g-2">
+        <div class="row gx-2">
             <div class="col-5">
                 <input class="form-control[{if $oView->isFieldRequired(oxaddress__oxzip)}] js-oxValidate js-oxValidate_notEmpty[{/if}]" type="text" data-fieldsize="small" maxlength="50" name="deladr[oxaddress__oxzip]" value="[{if isset( $deladr.oxaddress__oxzip )}][{$deladr.oxaddress__oxzip}][{else}][{$delivadr->oxaddress__oxzip->value}][{/if}]"[{if $oView->isFieldRequired(oxaddress__oxzip)}] required=""[{/if}]>
                 [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxaddress__oxzip}]
@@ -157,7 +157,7 @@
             [{/if}]
         </div>
     [{/block}]
-    <div class="row g-2">
+    <div class="row gx-2">
         <div class="col-md-6 mb-3[{if $aErrors.oxaddress__oxfon}] oxInValid[{/if}]">
             <label class="form-label[{if $oView->isFieldRequired(oxaddress__oxfon)}] req[{/if}]">[{oxmultilang ident="PHONE"}]</label>
             <input class="form-control[{if $oView->isFieldRequired(oxaddress__oxfon)}] js-oxValidate js-oxValidate_notEmpty[{/if}]" type="text" size="37" maxlength="128" name="deladr[oxaddress__oxfon]" value="[{if isset( $deladr.oxaddress__oxfon )}][{$deladr.oxaddress__oxfon}][{else}][{$delivadr->oxaddress__oxfon->value}][{/if}]"[{if $oView->isFieldRequired(oxaddress__oxfon)}] required=""[{/if}]>

@@ -5,7 +5,7 @@
 [{/capture}]
 
 [{capture append="oxidBlock_content"}]
-    <div class="container-xxl">
+    <div class="container-xxl py-5">
         [{if $oView->isActive('PsLogin')}]
             [{include file="message/errors.tpl"}]
         [{/if}]
@@ -18,5 +18,5 @@
 [{if $oView->isActive('PsLogin')}]
     [{include file="layout/popup.tpl"}]
 [{else}]
-    [{include file="layout/page.tpl" sidebar="Right"}]
+    [{include file="layout/page.tpl"}]
 [{/if}]

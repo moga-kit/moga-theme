@@ -187,7 +187,7 @@
                                                 <i class="moga-bag"></i>
                                             </button>
                                             [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
-                                            <button data-triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger removeButton listRemoveButton">
+                                            <button data-triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-light removeButton listRemoveButton">
                                                 <i class="moga-times"></i>
                                             </button>
                                             [{/if}]

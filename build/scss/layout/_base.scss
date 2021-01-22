@@ -61,3 +61,15 @@
     z-index: 10;
   }
 }
+@include media-breakpoint-up(lg) {
+  .header,
+  .wrapper,
+  .footer {
+    transition: filter 150ms;
+
+    .modal-open & {
+      filter: blur(2px);
+    }
+  }
+}
+
