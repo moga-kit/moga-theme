@@ -1,6 +1,6 @@
 [{block name="widget_locator_attributes"}]
     [{if $attributes}]
-        <button type="button" class="btn btn-outline-primary btn-icon"  data-bs-toggle="collapse" href="#filter">
+        <button type="button" class="btn btn-outline-primary btn-icon" data-bs-toggle="collapse" data-bs-target="#filter">
             <i class="moga-sliders"></i>
         </button>
 

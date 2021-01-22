@@ -1,13 +1,13 @@
 [{if $editable}]
-<div id="basket_list" class="card [{if $oViewConf->getActiveClassName() == 'order'}] orderBasketItems[{/if}]">
+<div id="basket_list" class="basket card[{if $oViewConf->getActiveClassName() == 'order'}] orderBasketItems[{/if}]">
 
-        <h4 class="card-header card-title">[{oxmultilang ident="CART"}]</h4>
-        <div class="card-body">
+    <h4 class="card-header card-title">[{oxmultilang ident="CART"}]</h4>
+    <div class="list-group list-group-flush">
     [{/if}]
         [{* basket items *}]
         [{assign var="basketitemlist" value=$oView->getBasketArticles()}]
         [{foreach key=basketindex from=$oxcmp_basket->getContents() item=basketitem name=basketContents}]
-            <div class="py-2">
+            <div class="list-group-item">
                 [{block name="checkout_basketcontents_basketitem"}]
                     [{assign var="basketproduct" value=$basketitemlist.$basketindex}]
                     [{assign var="oArticle" value=$basketitem->getArticle()}]
@@ -93,7 +93,7 @@
                                                 <p class="persparamBox">
                                                     <small>
                                                         [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
-                                                            [{if !$smarty.foreach.persparams.first}]<br />[{/if}]
+                                                            [{if !$smarty.foreach.persparams.first}]<br>[{/if}]
                                                             [{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}]
                                                                 [{oxmultilang ident="LABEL"}]
                                                             [{else}]
@@ -106,7 +106,7 @@
                                             [{else}]
                                                 [{if $basketproduct->oxarticles__oxisconfigurable->value}]
                                                     [{if $basketitem->getPersParams()}]
-                                                        <br />
+                                                        <br>
                                                         [{foreach key=sVar from=$basketitem->getPersParams() item=aParam name=persparams}]
                                                             <p>
                                                                 <input class="textbox persParam form-control" type="text" name="aproducts[[{$basketindex}]][persparam][[{$sVar}]]" value="[{$aParam}]" placeholder="[{if $smarty.foreach.persparams.first && $smarty.foreach.persparams.last}][{oxmultilang ident="LABEL"}][{else}][{$sVar}][{/if}]">
@@ -202,7 +202,12 @@
                                             [{if $editable}]
                                                 <small>[{oxmultilang ident="WRAPPING"}]:</small>
                                                 <a class="btn btn-remove" href="#" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">
-                                                    <i class="moga-pencil"></i> [{$oWrap->oxwrapping__oxname->value}]
+                                                    <i class="moga-pencil"></i>
+                                                    [{if $oWrap->oxwrapping__oxname}]
+                                                        [{$oWrap->oxwrapping__oxname->value}]
+                                                    [{else}]
+                                                        [{oxmultilang ident="NONE"}]
+                                                    [{/if}]
                                                 </a>
                                             [{else}]
                                                 <small>[{oxmultilang ident="WRAPPING"}]: [{$oWrap->oxwrapping__oxname->value}]</small>
@@ -277,24 +282,46 @@
             [{if $oViewConf->getShowGiftWrapping()}]
                 [{assign var="oCard" value=$oxcmp_basket->getCard()}]
                 [{if $oCard}]
-                    <tr>
-                        [{if $editable}]<td></td>[{/if}]
-                        <td id="orderCardTitle" colspan="3">[{oxmultilang ident="GREETING_CARD"}] "[{$oCard->oxwrapping__oxname->value}]"
-                            <br>
-                            <b>[{oxmultilang ident="YOUR_MESSAGE"}]</b>
-                            <br>
-                            <div id="orderCardText">[{$oxcmp_basket->getCardMessage()|nl2br}]</div>
-                        </td>
-                        <td id="orderCardPrice">[{$oCard->getFPrice()}]&nbsp;[{$currency->sign}]</td>
-                        <td>
-                            [{if $oxcmp_basket->isProportionalCalculationOn()}]
-                                [{oxmultilang ident="PROPORTIONALLY_CALCULATED"}]
-                            [{else}]
-                                [{if $oxcmp_basket->getGiftCardCostVat()}][{$oxcmp_basket->getGiftCardCostVatPercent()}]%[{/if}]
-                            [{/if}]
-                        </td>
-                        <td id="orderCardTotalPrice" align="right">[{$oCard->getFPrice()}]&nbsp;[{$currency->sign}]</td>
-                    </tr>
+                    <div class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-2">
+                                [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                    <picture>
+                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oCard->getPictureUrl(), 80, 100, 'webp', false)}]">
+                                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($oCard->getPictureUrl(), 80, 100, '', false)}]" alt="[{$oCard->oxwrapping__oxname->value}]">
+                                    </picture>
+                                [{else}]
+                                    <img loading="lazy" src="[{$card->getPictureUrl()}]" alt="[{$card->oxwrapping__oxname->value}]">
+                                [{/if}]
+                            </div>
+                            <div class="col-md-7 col-lg-10">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="h4">[{oxmultilang ident="GREETING_CARD"}] "[{$oCard->oxwrapping__oxname->value}]"</div>
+                                        <div class="small">
+                                            [{oxmultilang ident="YOUR_MESSAGE"}]<br>
+                                            [{$oxcmp_basket->getCardMessage()|nl2br}]
+                                        </div>
+
+                                        [{if $editable}]
+                                        <a href="#" class="btn btn-remove btn-sm" title="[{oxmultilang ident="ADD"}]" data-bs-toggle="modal" data-bs-target="#giftoptions">
+                                            <i class="moga-pencil"></i> [{oxmultilang ident="EDIT"}]
+                                        </a>
+                                        [{/if}]
+
+                                        [{if $oxcmp_basket->isProportionalCalculationOn()}]
+                                        [{oxmultilang ident="PROPORTIONALLY_CALCULATED"}]
+                                        [{else}]
+                                        [{if $oxcmp_basket->getGiftCardCostVat()}][{$oxcmp_basket->getGiftCardCostVatPercent()}]%[{/if}]
+                                        [{/if}]
+                                    </div>
+                                    <div class="totalPrice text-end">
+                                        <strong class="text-nowrap h5">[{$oCard->getFPrice()}]&nbsp;[{$currency->sign}]</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 [{/if}]
             [{/if}]
         [{/block}]

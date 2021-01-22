@@ -16,17 +16,17 @@
                         <div class="col-12[{if $oView->showNewsletter()}] col-lg-8[{/if}]">
                             <div class="row">
                                 [{block name="dd_footer_servicelist"}]
-                                <section class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] mb-3">
+                                <div class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] mb-3">
                                     <div class="h4 text-uppercase">[{oxmultilang ident="SERVICES"}]</div>
                                     <div class="footer-content">
                                         [{block name="dd_footer_servicelist_inner"}]
                                         [{oxid_include_widget cl="oxwServiceList" noscript=1 nocookie=1 force_sid=$force_sid}]
                                         [{/block}]
                                     </div>
-                                </section>
+                                </div>
                                 [{/block}]
                                 [{block name="dd_footer_information"}]
-                                <section
+                                <div
                                         class="col-12 [{if $blShowFullFooter}]col-md-6 col-lg-3[{else}]col-lg-6[{/if}] mb-3 footer-information">
                                     <div class="h4 text-uppercase">[{oxmultilang ident="INFORMATION"}]</div>
                                     <div class="footer-content">
@@ -34,35 +34,35 @@
                                         [{oxid_include_widget cl="oxwInformation" noscript=1 nocookie=1 force_sid=$force_sid}]
                                         [{/block}]
                                     </div>
-                                </section>
+                                </div>
                                 [{/block}]
                                 [{if $blShowFullFooter}]
                                 [{block name="dd_footer_manufacturerlist"}]
-                                <section class="col-12 col-md-6 col-lg-3 mb-3">
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
                                     <div class="h4 text-uppercase">[{oxmultilang ident="OUR_BRANDS"}]</div>
                                     <div class="footer-content">
                                         [{block name="dd_footer_manufacturerlist_inner"}]
                                         [{oxid_include_widget cl="oxwManufacturerList" _parent=$oView->getClassName() noscript=1 nocookie=1}]
                                         [{/block}]
                                     </div>
-                                </section>
+                                </div>
                                 [{/block}]
                                 [{block name="dd_footer_categorytree"}]
-                                <section class="col-12 col-md-6 col-lg-3 mb-3">
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
                                     <div class="h4 text-uppercase">[{oxmultilang ident="CATEGORIES"}]</div>
                                     <div class="footer-content">
                                         [{block name="dd_footer_categorytree_inner"}]
                                         [{oxid_include_widget cl="oxwCategoryTree" _parent=$oView->getClassName() sWidgetType="footer" noscript=1 nocookie=1}]
                                         [{/block}]
                                     </div>
-                                </section>
+                                </div>
                                 [{/block}]
                                 [{/if}]
                             </div>
                         </div>
                         [{if $oView->showNewsletter()}]
                         <div class="col-12 col-lg-4">
-                            <section class="mb-3 footer-newsletter">
+                            <div class="mb-3 footer-newsletter">
                                 <div class="h4 text-uppercase">[{oxmultilang ident="NEWSLETTER"}]</div>
                                 <div class="footer-content">
                                     [{block name="dd_footer_newsletter"}]
@@ -70,7 +70,7 @@
                                     [{include file="widget/footer/newsletter.tpl"}]
                                     [{/block}]
                                 </div>
-                            </section>
+                            </div>
                             [{block name="footer_social"}][{/block}]
                         </div>
                         [{/if}]

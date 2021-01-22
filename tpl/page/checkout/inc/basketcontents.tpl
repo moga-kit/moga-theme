@@ -11,9 +11,7 @@
     <input type="hidden" name="fnc" value="changebasket">
     <input type="hidden" name="CustomError" value="basket">
 
-    <div class="basket" id="basketcontents_list">
-        [{include file="page/checkout/inc/basketcontents_list.tpl"}]
-    </div>
+    [{include file="page/checkout/inc/basketcontents_list.tpl"}]
 </form>
 
 

@@ -6,15 +6,13 @@
     [{block name="sidebar_categoriestree"}]
         [{if $oView->getClassName() == 'alist' }]
             <div class="box card categorytree">
-                <section>
-                    <div class="page-header h3">
-                        <div class="visible-sm">
-                            <i class="moga-down toggleTree"></i>
-                        </div>
-                        [{oxmultilang ident="CATEGORIES"}]
+                <div class="page-header h3">
+                    <div class="visible-sm">
+                        <i class="moga-down toggleTree"></i>
                     </div>
-                    [{oxid_include_widget cl="oxwCategoryTree" cnid=$oView->getCategoryId() deepLevel=0 noscript=1 nocookie=1}]
-                </section>
+                    [{oxmultilang ident="CATEGORIES"}]
+                </div>
+                [{oxid_include_widget cl="oxwCategoryTree" cnid=$oView->getCategoryId() deepLevel=0 noscript=1 nocookie=1}]
             </div>
         [{/if}]
     [{/block}]

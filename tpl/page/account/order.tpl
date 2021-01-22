@@ -80,7 +80,7 @@
                                             [{/if}]
                                             [{foreach key=sVar from=$orderitem->getPersParams() item=aParam}]
                                                 [{if $aParam}]
-                                                    <br />[{oxmultilang ident="DETAILS"}]: [{$aParam}]
+                                                    <br>[{oxmultilang ident="DETAILS"}]: [{$aParam}]
                                                 [{/if}]
                                             [{/foreach}]
                                             [{* Commented due to Trusted Shops precertification. Enable if needed *}]

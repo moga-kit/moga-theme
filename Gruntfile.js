@@ -64,7 +64,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
-                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                        '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
                         '<%= project.dev %>build/js/pages/variants.js'

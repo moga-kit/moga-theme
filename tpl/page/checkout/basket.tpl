@@ -23,24 +23,24 @@
                 [{block name="checkout_basket_next_step_top"}]
                 [{/block}]
 
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-10 col-xl-9">
-                <div class="row">
-                    <div class="col-lg-8">
-                [{include file="page/checkout/inc/basketcontents.tpl" editable=true}]
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-10 col-xl-9">
+                            <div class="row">
+                                <div class="col-lg-8">
+                            [{include file="page/checkout/inc/basketcontents.tpl" editable=true}]
+                                </div>
+                                <div class="col-lg-4">
+                                    [{include file="page/checkout/inc/summary_sidebar.tpl" btn=true}]
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        [{include file="page/checkout/inc/summary_sidebar.tpl" btn=true}]
-                    </div>
-                </div>
-            </div>
-        </div>
-            [{/if}]
-            [{if $oView->isWrapping()}]
-               [{include file="page/checkout/inc/wrapping.tpl"}]
             [{/if}]
         [{/block}]
     </div>
+    [{if $oView->isWrapping()}]
+    [{include file="page/checkout/inc/wrapping.tpl"}]
+    [{/if}]
 [{/capture}]
 
 [{include file="layout/page.tpl"}]

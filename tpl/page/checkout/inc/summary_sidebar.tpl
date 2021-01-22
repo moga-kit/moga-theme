@@ -35,15 +35,14 @@
     [{/if}]
 
     [{block name="checkout_basketcontents_summary"}]
-    <div class="card mb-2">
+    <div class="card mb-3">
         <h4 class="card-header card-title">[{oxmultilang ident="SUMMARY"}]</h4>
 
-        <div class="card-body">
-            <div class="list-group mb-2 list-group-flush">
+        <div class="list-group mb-3 list-group-flush">
                 [{block name="checkout_basketcontents_summary_table_inner"}]
                 [{if !$oxcmp_basket->getDiscounts()}]
                 [{block name="checkout_basketcontents_nodiscounttotalnet"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_NET"}]
                     <span>[{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]</span>
                 </div>
@@ -51,7 +50,7 @@
 
                 [{block name="checkout_basketcontents_nodiscountproductvats"}]
                 [{foreach from=$oxcmp_basket->getProductVats(false) item=VATitem key=key}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="VAT_PLUS_PERCENT_AMOUNT" args=$key}]
                     <span>[{oxprice price=$VATitem currency=$currency}]</span>
                 </div>
@@ -59,7 +58,7 @@
                 [{/block}]
 
                 [{block name="checkout_basketcontents_nodiscounttotalgross"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_GROSS"}]
                     <span>[{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]</span>
                 </div>
@@ -67,14 +66,14 @@
                 [{else}]
                 [{if $oxcmp_basket->isPriceViewModeNetto()}]
                 [{block name="checkout_basketcontents_discounttotalnet"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_NET"}]
                     <span>[{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]</span>
                 </div>
                 [{/block}]
                 [{else}]
                 [{block name="checkout_basketcontents_discounttotalgross"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_GROSS"}]
                     <span>[{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]</span>
                 </div>
@@ -83,7 +82,7 @@
 
                 [{block name="checkout_basketcontents_discounts"}]
                 [{foreach from=$oxcmp_basket->getDiscounts() item=oDiscount name=test_Discounts}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
 
                     <b>[{if $oDiscount->dDiscount < 0}][{oxmultilang ident="SURCHARGE"}][{else}][{oxmultilang ident="DISCOUNT"}][{/if}]&nbsp;</b>
                     [{$oDiscount->sDiscount}]
@@ -97,7 +96,7 @@
 
                 [{if !$oxcmp_basket->isPriceViewModeNetto()}]
                 [{block name="checkout_basketcontents_totalnet"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_NET"}]
                     <span>[{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]</span>
                 </div>
@@ -106,7 +105,7 @@
 
                 [{block name="checkout_basketcontents_productvats"}]
                 [{foreach from=$oxcmp_basket->getProductVats(false) item=VATitem key=key}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="VAT_PLUS_PERCENT_AMOUNT" args=$key}]
                     <span>[{oxprice price=$VATitem currency=$currency}]</span>
                 </div>
@@ -115,7 +114,7 @@
 
                 [{if $oxcmp_basket->isPriceViewModeNetto()}]
                 [{block name="checkout_basketcontents_totalgross"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="TOTAL_GROSS"}]
                     <span>[{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]</span>
                 </div>
@@ -127,7 +126,7 @@
                 [{block name="checkout_basketcontents_voucherdiscount"}]
                 [{if $oViewConf->getShowVouchers() && $oxcmp_basket->getVoucherDiscValue()}]
                 [{foreach from=$oxcmp_basket->getVouchers() item=sVoucher key=key name=Voucher}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                                         <span>
                                             [{oxmultilang ident="COUPON"}]&nbsp;([{$sVoucher->sVoucherNr}])
                                             [{if $editable}]
@@ -144,12 +143,12 @@
                 [{assign var="deliveryCost" value=$oxcmp_basket->getDeliveryCost()}]
                 [{if $deliveryCost && ($oxcmp_basket->getBasketUser() || $oViewConf->isFunctionalityEnabled('blCalculateDelCostIfNotLoggedIn') ) }]
                 [{if $oViewConf->isFunctionalityEnabled('blShowVATForDelivery') }]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{oxmultilang ident="SHIPPING_NET"}]
                     <span>[{oxprice price=$deliveryCost->getNettoPrice() currency=$currency }]</span>
                 </div>
                 [{if $deliveryCost->getVatValue()}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{if $oxcmp_basket->isProportionalCalculationOn() }]
                     [{oxmultilang ident="BASKET_TOTAL_PLUS_PROPORTIONAL_VAT"}]
                     [{else}]
@@ -159,7 +158,7 @@
                 </div>
                 [{/if}]
                 [{else}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="SHIPPING_COST" }]
                     <span>[{oxprice price=$deliveryCost->getBruttoPrice() currency=$currency}]</span>
                 </div>
@@ -171,12 +170,12 @@
                 [{assign var="paymentCost" value=$oxcmp_basket->getPaymentCost()}]
                 [{if $paymentCost && $paymentCost->getPrice() }]
                 [{if $oViewConf->isFunctionalityEnabled('blShowVATForPayCharge') }]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{if $paymentCost->getPrice() >= 0}][{ oxmultilang ident="SURCHARGE" }][{else}][{ oxmultilang ident="DEDUCTION" }][{/if}] [{ oxmultilang ident="PAYMENT_METHOD"}]
                     <span>[{oxprice price=$paymentCost->getNettoPrice() currency=$currency }]</span>
                 </div>
                 [{if $paymentCost->getVatValue()}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{if $oxcmp_basket->isProportionalCalculationOn() }]
                     [{ oxmultilang ident="BASKET_TOTAL_PLUS_PROPORTIONAL_VAT" }]
                     [{else}]
@@ -186,7 +185,7 @@
                 </div>
                 [{/if}]
                 [{else}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{if $paymentCost->getPrice() >= 0}][{ oxmultilang ident="SURCHARGE" }][{else}][{ oxmultilang ident="DEDUCTION" }][{/if}] [{ oxmultilang ident="PAYMENT_METHOD" }]
                     <span>[{oxprice price=$paymentCost->getBruttoPrice() currency=$currency }]</span>
                 </div>
@@ -200,18 +199,18 @@
                 [{assign var="wrappingCost" value=$oxcmp_basket->getWrappingCost()}]
                 [{if $wrappingCost && $wrappingCost->getPrice() > 0 }]
                 [{if $oViewConf->isFunctionalityEnabled('blShowVATForWrapping') }]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="BASKET_TOTAL_WRAPPING_COSTS_NET" }]
                     <span>[{oxprice price=$wrappingCost->getNettoPrice() currency=$currency}]</span>
                 </div>
                 [{if $oxcmp_basket->getWrappCostVat() }]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="PLUS_VAT" }]
                     <span>[{oxprice price=$wrappingCost->getVatValue() currency=$currency}]</span>
                 </div>
                 [{/if}]
                 [{else}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="GIFT_WRAPPING" }]
                     <span>[{oxprice price=$wrappingCost->getBruttoPrice() currency=$currency }]</span>
                 </div>
@@ -221,11 +220,11 @@
                 [{assign var="giftCardCost" value=$oxcmp_basket->getGiftCardCost()}]
                 [{if $giftCardCost && $giftCardCost->getPrice() > 0 }]
                 [{if $oViewConf->isFunctionalityEnabled('blShowVATForWrapping') }]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="BASKET_TOTAL_GIFTCARD_COSTS_NET" }]
                     <span>[{oxprice price=$giftCardCost->getNettoPrice() currency=$currency }]</span>
                 </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{if $oxcmp_basket->isProportionalCalculationOn() }]
                     [{ oxmultilang ident="BASKET_TOTAL_PLUS_PROPORTIONAL_VAT" }]
                     [{else}]
@@ -234,7 +233,7 @@
                     <span>[{oxprice price=$giftCardCost->getVatValue() currency=$currency}]</span>
                 </div>
                 [{else}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     [{ oxmultilang ident="GREETING_CARD" }]
                     <span>[{oxprice price=$giftCardCost->getBruttoPrice() currency=$currency}]</span>
                 </div>
@@ -244,19 +243,18 @@
                 [{/block}]
 
                 [{block name="checkout_basketcontents_grandtotal"}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0 mb-0 mt-3 h4">
+                <div class="list-group-item d-flex justify-content-between align-items-center mb-0 mt-2 h4">
                     [{oxmultilang ident="GRAND_TOTAL"}]
                     <span>[{oxprice price=$oxcmp_basket->getPrice() currency=$currency}]</span>
                 </div>
                 [{/block}]
 
                 [{if $oxcmp_basket->hasSkipedDiscount()}]
-                <div class="list-group-item d-flex justify-content-between align-items-center px-0">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
                     <span class="note">**</span> [{oxmultilang ident="MESSAGE_COUPON_NOT_APPLIED_FOR_ARTICLES"}]</span>
                 </div>
                 [{/if}]
             </div>
-        </div>
     </div>
     [{/block}]
 

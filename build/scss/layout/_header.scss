@@ -48,7 +48,7 @@
       left: 0;
       right: 1px;
       text-align: center;
-      top: 18px;
+      top: 14px;
     }
 
     &:hover {
@@ -56,7 +56,9 @@
     }
 
     &.show,
-    &.show:hover {
+    &.show:hover,
+    &.show:focus,
+    &.show:active {
       border: 3px solid #f1f1f1;
 
       &:after {

@@ -18,7 +18,11 @@
     }
   }
 
-  .breadcrumb-item+.breadcrumb-item::before {
+  .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
     color: #fff;
   }
 }
