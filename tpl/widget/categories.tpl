@@ -43,14 +43,11 @@
                                                 <picture>
                                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 375, 220, 'webp')}]" media="(max-width: 375px)">
 
-                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 750, 350, 'webp')}]" media="(max-width: 767px)">
-                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 750, 350, 'jpg')}]" media="(max-width: 767px)">
+                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 320, 200, 'webp')}]" media="(max-width: 767px)">
+                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 320, 200, 'jpg')}]" media="(max-width: 767px)">
 
-                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 970, 400, 'webp')}]" media="(max-width: 991px)">
-                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 970, 400, 'jpg')}]" media="(max-width: 991px)">
-
-                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 1170, 400, 'webp')}]" media="(min-width: 992px)">
-                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 1170, 400, 'jpg')}]" media="(min-width: 992px)">
+                                                    <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($image, 320, 200, 'webp')}]" media="(min-width: 992px)">
+                                                    <source srcset="[{$oViewConf->getDynamicImage($image, 320, 200, 'jpg')}]" media="(min-width: 992px)">
 
                                                     <img loading="lazy" src="[{$oViewConf->getDynamicImage($image, 375, 220, 'jpg')}]" alt="[{$_cat->oxcategories__oxtitle->value}]" class="card-img">
                                                 </picture>

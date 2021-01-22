@@ -6,6 +6,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
+        <link rel="preload" href="/out/moga/src/fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/out/moga/src/fonts/barlow-condensed-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/out/moga/src/css/styles.min.css" as="style" crossorigin>
+        <link rel="preload" href="/out/moga/src/js/scripts.min.js" as="script" crossorigin>
+
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
 
@@ -58,9 +63,9 @@
                 [{assign var="oConfig" value=$oViewConf->getConfig()}]
                 [{foreach from=$oxcmp_lang item=_lng}]
                     [{if $_lng->id == $oConfig->getConfigParam('sDefaultLang')}]
-                        <link rel="alternate" hreflang="x-default" href="[{$_lng->link}]"/>
+                        <link rel="alternate" hreflang="x-default" href="[{$_lng->link}]">
                     [{/if}]
-                    <link rel="alternate" hreflang="[{$_lng->abbr}]" href="[{$_lng->link|oxaddparams:$oView->getDynUrlParams()}]"/>
+                    <link rel="alternate" hreflang="[{$_lng->abbr}]" href="[{$_lng->link|oxaddparams:$oView->getDynUrlParams()}]">
                 [{/foreach}]
             [{/if}]
         [{/block}]
@@ -103,7 +108,7 @@
             [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
                 [{oxstyle include="css/preview.css?"|cat:$smarty.now}]
             [{else}]
-                [{oxstyle include="css/styles.min.css"}]
+                <link rel="stylesheet" href="/out/moga/src/css/styles.min.css">
             [{/if}]
         [{/block}]
 
@@ -174,8 +179,7 @@
 
     [{block name="base_js"}]
         [{*include file="i18n/js_vars.tpl"*}]
-        [{oxscript include="js/scripts.min.js"}]
-
+        <script src="/out/moga/src/js/scripts.min.js"></script>
     [{/block}]
 
     [{if $oViewConf->isTplBlocksDebugMode()}]

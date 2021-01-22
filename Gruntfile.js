@@ -118,10 +118,10 @@ module.exports = function (grunt) {
                     fontPathVariables: true,
                     stylesheet: 'scss',
                     fontFamilyName: 'icons',
-                    hash: false,
+                    hashes: false,
                     normalize: false,
                     fontFilename: 'icons',
-                    types: 'woff2,woff',
+                    types: 'woff,woff2',
                     template: 'build/tasks/templates/custom_webfont.scss'
                 }
             }
