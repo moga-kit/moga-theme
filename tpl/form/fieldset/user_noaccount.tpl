@@ -1,4 +1,4 @@
-<div class="mb-3[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
+<div class="mb-3 form-floating[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
     [{block name="user_noaccount_email"}]
         <label class="form-label req">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         <input id="userLoginName" class="form-control" type="email" name="lgn_usr" value="[{$oView->getActiveUsername()}]">
@@ -8,7 +8,7 @@
     [{/block}]
 </div>
 [{*block name="user_noaccount_newsletter"}]
-<div class="mb-3">
+<div class="mb-3 form-floating">
 
         <div class="col-lg-9 offset-lg-3">
             <input type="hidden" name="blnewssubscribed" value="0">

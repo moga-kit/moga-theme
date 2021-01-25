@@ -1,4 +1,4 @@
-<div class="mb-3[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
+<div class="mb-3 form-floating[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
     <label class="req form-label col-lg-3">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
     <div class="col-lg-9">
         <input class="form-control" type="text" name="invadr[oxuser__oxusername]" value="[{if isset( $invadr.oxuser__oxusername )}][{$invadr.oxuser__oxusername}][{else}][{$oxcmp_user->oxuser__oxusername->value}][{/if}]" size="37">

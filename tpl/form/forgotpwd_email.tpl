@@ -9,18 +9,16 @@
 <form action="[{$oViewConf->getSelfActionLink()}]" name="forgotpwd" method="post" novalidate>
     <div class="row">
         <div class="col-md-6">
-                [{$oViewConf->getHiddenSid()}]
-                [{$oViewConf->getNavFormParams()}]
-                <input type="hidden" name="fnc" value="forgotpassword">
-                <input type="hidden" name="cl" value="forgotpwd">
-                <input type="hidden" name="actcontrol" value="forgotpwd">
+            [{$oViewConf->getHiddenSid()}]
+            [{$oViewConf->getNavFormParams()}]
+            <input type="hidden" name="fnc" value="forgotpassword">
+            <input type="hidden" name="cl" value="forgotpwd">
+            <input type="hidden" name="actcontrol" value="forgotpwd">
 
-            <div class="mb-3">
-                <label class="req">[{oxmultilang ident="YOUR_EMAIL_ADDRESS"}]</label>
-
-                <input id="forgotPasswordUserLoginName[{$idPrefix}]" type="email" name="lgn_usr"
-                       value="[{$oView->getActiveUsername()}]" class="form-control" required>
-                <p class="help-block"></p>
+            <div class="mb-3 form-floating">
+                <input id="forgotPasswordUserLoginName[{$idPrefix}]" placeholder=" " type="email" name="lgn_usr"
+                value="[{$oView->getActiveUsername()}]" class="form-control" required>
+                <label for="forgotPasswordUserLoginName[{$idPrefix}]" class="req">[{oxmultilang ident="YOUR_EMAIL_ADDRESS"}]</label>
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary submitButton" type="submit">[{oxmultilang ident="REQUEST_PASSWORD"}]</button>

@@ -146,6 +146,10 @@ $aLang = array(
     'PRODUCT_REVIEW'                                        => 'Kundenmeinungen',
     'SORT'                                      => 'Sortieren',
     'HELLO'                                       => 'Hallo',
+    'STREET'                                       => 'Straße',
+    'STREETNO'                                       => 'Nr.',
+    'POSTAL_CODE'                                       => 'PLZ',
+    'CITY'                                       => 'Ort',
 );
 
 /*

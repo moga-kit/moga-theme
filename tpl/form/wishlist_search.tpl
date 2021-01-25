@@ -3,7 +3,7 @@
         <input type="hidden" name="cl" value="[{$searchClass}]">
         <input type="hidden" name="fnc" value="searchforwishlist">
 
-    <div class="mb-3">
+    <div class="mb-3 form-floating">
         <label class="form-label col-lg-3" for="input_[{$searchClass}]">[{oxmultilang ident="SEARCH_GIFT_REGISTRY"}]</label>
         <div class="col-lg-9">
             <div class="input-group">

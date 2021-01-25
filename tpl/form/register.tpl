@@ -2,14 +2,14 @@
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate>
-        [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
-        [{$oViewConf->getHiddenSid()}]
-        [{$oViewConf->getNavFormParams()}]
-        <input type="hidden" name="fnc" value="registeruser">
-        <input type="hidden" name="cl" value="register">
-        <input type="hidden" name="lgn_cook" value="0">
-        <input type="hidden" id="reloadAddress" name="reloadaddress" value="">
-        <input type="hidden" name="option" value="3">
+    [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
+    [{$oViewConf->getHiddenSid()}]
+    [{$oViewConf->getNavFormParams()}]
+    <input type="hidden" name="fnc" value="registeruser">
+    <input type="hidden" name="cl" value="register">
+    <input type="hidden" name="lgn_cook" value="0">
+    <input type="hidden" id="reloadAddress" name="reloadaddress" value="">
+    <input type="hidden" name="option" value="3">
 
     <fieldset>
         <legend>[{oxmultilang ident="ACCOUNT_INFORMATION"}]</legend>

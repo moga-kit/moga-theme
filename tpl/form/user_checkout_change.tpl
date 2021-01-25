@@ -80,7 +80,7 @@
             [{/block}]
 
             [{block name="user_checkout_shipping_change"}]
-                <div class="mb-3">
+                <div class="mb-3 form-floating">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" name="blshowshipaddress" id="showShipAddress" [{if !$oView->showShipAddress()}]checked[{/if}] value="0">
                         <label for="showShipAddress" class="form-check-label">

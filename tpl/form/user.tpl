@@ -93,7 +93,7 @@
                     </div>
                 [{/block}]
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-floating">
                 <div class="col-lg-12">
                     <button id="accUserSaveTop" class="btn btn-primary" name="userform" type="submit">[{oxmultilang ident="SAVE"}]</button>
                 </div>
