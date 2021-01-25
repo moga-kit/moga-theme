@@ -4,7 +4,6 @@
 [{oxmultilang ident="MESSAGE_BASKET_EXCLUDE_INFO"}]<br><br>
 </div>
 <form action="[{$oViewConf->getCurrentHomeDir()}]index.php" method="post">
-    <div>
         [{$oViewConf->getHiddenSid()}]
         [{$oViewConf->getNavFormParams()}]
         <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
@@ -22,6 +21,5 @@
         <button name="tobasket" value="1" class="submitButton" type="submit">[{oxmultilang ident="CHECKOUT"}]</button>
         [{/oxhasrights}]
         <button class="submitButton" type="submit">[{oxmultilang ident="CONTINUE_SHOPPING"}]</button>
-    </div>
 </form>
 

@@ -437,7 +437,7 @@
                             [{oxhasrights ident="TOBASKET"}]
                                 [{if !$oDetailsProduct->isNotBuyable()}]
                                     <input id="amountToBasket" type="hidden" name="am" value="1">
-                                    <button id="toBasket" type="submit" [{if !$blCanBuy}]disabled="disabled"[{/if}] class="btn btn-primary btn-lg">[{oxmultilang ident="TO_CART"}]</button>
+                                    <button id="toBasket" type="submit"[{if !$blCanBuy}] disabled[{/if}] class="btn btn-primary btn-lg">[{oxmultilang ident="TO_CART"}]</button>
                                 [{/if}]
                             [{/oxhasrights}]
                         </div>

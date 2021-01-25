@@ -70,6 +70,9 @@ module.exports = function (grunt) {
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
                         '<%= project.dev %>build/js/pages/variants.js'
                     ],
+                    '<%= project.out %><%= project.theme %>/src/js/private_sales.min.js': [
+                        '<%= project.dev %>build/js/form/private_sales.js'
+                    ],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': [
                         '<%= project.dev %>build/js/pages/checkout/basket/wrapping.js'
                     ],

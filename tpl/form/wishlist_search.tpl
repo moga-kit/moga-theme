@@ -1,22 +1,21 @@
 <form name="wishlist_searchbox" action="[{$oViewConf->getSelfActionLink()}]" method="post" class="max-600">
-        [{$oViewConf->getHiddenSid()}]
-        <input type="hidden" name="cl" value="[{$searchClass}]">
-        <input type="hidden" name="fnc" value="searchforwishlist">
+    [{$oViewConf->getHiddenSid()}]
+    <input type="hidden" name="cl" value="[{$searchClass}]">
+    <input type="hidden" name="fnc" value="searchforwishlist">
 
-    <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3" for="input_[{$searchClass}]">[{oxmultilang ident="SEARCH_GIFT_REGISTRY"}]</label>
-        <div class="col-lg-9">
-            <div class="input-group">
+    <div class="mb-3">
+        <div class="input-group">
+            <div class="form-floating">
                 <input type="text" name="search" id="input_[{$searchClass}]" value="[{$oView->getWishListSearchParam()}]" class="form-control" placeholder="[{oxmultilang ident="ENTER_EMAIL_OR_NAME"}]">
-                <button class="btn btn-primary" type="submit">[{oxmultilang ident="SEARCH"}]</button>
+                <label for="input_[{$searchClass}]">[{oxmultilang ident="SEARCH_GIFT_REGISTRY"}]</label>
             </div>
+            <button class="btn btn-primary" type="submit">[{oxmultilang ident="SEARCH"}]</button>
         </div>
     </div>
 </form>
 
 [{if $oView->getWishListUsers()}]
     <hr>
-
     <p class="lead">[{oxmultilang ident="GIFT_REGISTRY_SEARCH_RESULTS"}]</p>
     <ul class="wishlistResults">
         [{foreach from=$oView->getWishListUsers() item=wishres}]

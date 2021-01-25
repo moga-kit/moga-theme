@@ -19,9 +19,9 @@
             <div class="mb-3 row">
                 <label>[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</label>
                 <input type="hidden" name="ord_agb" value="0">
-                <div class="checkbox">
-                    <label>
-                        <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
+                <div class="form-check">
+                    <input id="orderConfirmAgbBottom" type="checkbox" class="checkbox" name="ord_agb" value="1">
+                    <label for="orderConfirmAgbBottom">
                         [{oxifcontent ident="oxagb" object="oCont"}]
                             [{oxmultilang ident="FORM_REGISTER_IAGREETOTERMS1"}]
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#popup1">[{oxmultilang ident="TERMS_AND_CONDITIONS"}]</a>

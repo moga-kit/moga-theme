@@ -4,12 +4,12 @@
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
 <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
-        [{$oViewConf->getHiddenSid()}]
-        [{$oViewConf->getNavFormParams()}]
-        <input type="hidden" name="fnc" value="send">
-        <input type="hidden" name="cl" value="suggest">
-        <input type="hidden" name="anid" value="[{$_oProduct->oxarticles__oxnid->value}]">
-        <input type="hidden" name="CustomError" value='suggest'>
+    [{$oViewConf->getHiddenSid()}]
+    [{$oViewConf->getNavFormParams()}]
+    <input type="hidden" name="fnc" value="send">
+    <input type="hidden" name="cl" value="suggest">
+    <input type="hidden" name="anid" value="[{$_oProduct->oxarticles__oxnid->value}]">
+    <input type="hidden" name="CustomError" value='suggest'>
 
     <h3>[{oxmultilang ident="CARD_TO" suffix="COLON"}]</h3>
     <div class="mb-3 form-floating">

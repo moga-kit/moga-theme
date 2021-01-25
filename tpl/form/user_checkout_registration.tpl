@@ -1,28 +1,4 @@
 [{block name="user_checkout_registration"}]
-    [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-
-    [{capture assign="sValidationJS"}]
-        [{strip}]
-        $('input,select,textarea').not('[type=submit]').jqBootstrapValidation(
-            {
-                filter: function()
-                {
-                    if( $( '#shippingAddress' ).css( 'display' ) == 'block' )
-                    {
-                        return $(this).is(':visible, .selectpicker');
-                    }
-                    else
-                    {
-                        return $(this).is(':visible, #addressForm .selectpicker');
-                    }
-                }
-            }
-        );
-        [{/strip}]
-    [{/capture}]
-
-    [{oxscript add=$sValidationJS*}]
-
     [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
 
     <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate>
@@ -43,27 +19,22 @@
             [{block name="user_checkout_registration_next_step_top"}]
             [{/block}]
 
-
             <h3>[{oxmultilang ident="ACCOUNT_INFORMATION"}]</h3>
-
             [{include file="form/fieldset/user_account.tpl"}]
 
 
             <h3>[{oxmultilang ident="BILLING_ADDRESS"}]</h3>
-
             [{include file="form/fieldset/user_billing.tpl" noFormSubmit=true blSubscribeNews=false blOrderRemark=true}]
-
-
 
             <h3>[{oxmultilang ident="SHIPPING_ADDRESS"}]</h3>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="blshowshipaddress" id="showShipAddress" [{if !$oView->showShipAddress()}]checked[{/if}] value="0">
+                <input class="form-check-input" type="checkbox" name="blshowshipaddress" id="showShipAddress"[{if !$oView->showShipAddress()}] checked[{/if}] value="0">
                 <label class="form-check-label" for="showShipAddress">
                      [{oxmultilang ident="USE_BILLINGADDRESS_FOR_SHIPPINGADDRESS"}]
                 </label>
             </div>
 
-        [{oxscript include="js/changeaddress.min.js" priority=10}]
+            [{oxscript include="js/changeaddress.min.js" priority=10}]
 
             <div id="shippingAddress" [{if !$oView->showShipAddress()}]style="display: none;"[{/if}]>
                 [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]
@@ -79,7 +50,6 @@
                 <a href="[{oxgetseourl ident=$oViewConf->getBasketLink()}]" class="btn btn-outline-primary float-left prevStep submitButton largeButton" id="userBackStepBottom">[{oxmultilang ident="PREVIOUS_STEP"}]</a>
                 [{*}]
                 <button id="userNextStepBottom" class="btn btn-primary btn-lg btn-block" name="userform" type="submit">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
-
             [{/block}]
         [{/block}]
     </form>

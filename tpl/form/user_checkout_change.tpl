@@ -37,7 +37,6 @@
             <input type="hidden" name="blshowshipaddress" value="1">
 
             [{block name="user_checkout_change_next_step_top"}]
-
             [{/block}]
 
 
@@ -71,7 +70,7 @@
                     <h3 class="h4">
                         [{oxmultilang ident="SHIPPING_ADDRESS"}]
                         [{if $oView->showShipAddress() and $oxcmp_user->getSelectedAddress()}]
-                            <button id="userChangeShippingAddress" class="btn btn-sm btn-outline-primary float-end edit-button" name="changeShippingAddress" type="submit" [{if !$oView->showShipAddress() and $oxcmp_user->getSelectedAddress()}] style="display: none;" [{/if}] title="[{oxmultilang ident="CHANGE"}]">
+                            <button id="userChangeShippingAddress" class="btn btn-sm btn-outline-primary float-end edit-button" name="changeShippingAddress" type="submit"[{if !$oView->showShipAddress() and $oxcmp_user->getSelectedAddress()}] style="display: none;" [{/if}] title="[{oxmultilang ident="CHANGE"}]">
                                 <i class="moga-pencil"></i>
                             </button>
                         [{/if}]
@@ -80,9 +79,9 @@
             [{/block}]
 
             [{block name="user_checkout_shipping_change"}]
-                <div class="mb-3 form-floating">
+                <div class="mb-3">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="blshowshipaddress" id="showShipAddress" [{if !$oView->showShipAddress()}]checked[{/if}] value="0">
+                        <input type="checkbox" class="form-check-input" name="blshowshipaddress" id="showShipAddress"[{if !$oView->showShipAddress()}] checked[{/if}] value="0">
                         <label for="showShipAddress" class="form-check-label">
                             [{oxmultilang ident="USE_BILLINGADDRESS_FOR_SHIPPINGADDRESS"}]
                         </label>

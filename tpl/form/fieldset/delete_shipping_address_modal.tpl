@@ -38,11 +38,10 @@
                     </div>
                     <div class="modal-footer">
                         [{block name="delete_shipping_address_modal_footer"}]
-                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">[{oxmultilang ident="CANCEL"}]
+                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
+                                [{oxmultilang ident="CANCEL"}]
                             </button>
-                            <button type="button"
-                                    class="btn btn-danger"
-                                    onclick="window.delete_shipping_address_modal_form_[{$shippingAddressNumber}].submit();return false;">
+                            <button type="button" class="btn btn-danger" onclick="window.delete_shipping_address_modal_form_[{$shippingAddressNumber}].submit();return false;">
                                 [{oxmultilang ident="DD_DELETE"}]
                             </button>
                         [{/block}]

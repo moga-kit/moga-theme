@@ -11,19 +11,19 @@
         <div class="card-header">[{oxmultilang ident="LOGIN"}]</div>
         <div class="card-body">
             <form name="login" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
-                    [{$oViewConf->getHiddenSid()}]
-                    [{$oViewConf->getNavFormParams()}]
-                    <input type="hidden" name="fnc" value="login_noredirect">
-                    <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
-                    <input type="hidden" name="tpl" value="[{$oViewConf->getActTplName()}]">
-                    <input type="hidden" name="oxloadid" value="[{$oViewConf->getActContentLoadId()}]">
-                    [{if $oView->getArticleId()}]
-                        <input type="hidden" name="aid" value="[{$oView->getArticleId()}]">
-                    [{/if}]
-                    [{if $oView->getProduct()}]
-                        [{assign var="product" value=$oView->getProduct()}]
-                        <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
-                    [{/if}]
+                [{$oViewConf->getHiddenSid()}]
+                [{$oViewConf->getNavFormParams()}]
+                <input type="hidden" name="fnc" value="login_noredirect">
+                <input type="hidden" name="cl" value="[{$oViewConf->getActiveClassName()}]">
+                <input type="hidden" name="tpl" value="[{$oViewConf->getActTplName()}]">
+                <input type="hidden" name="oxloadid" value="[{$oViewConf->getActContentLoadId()}]">
+                [{if $oView->getArticleId()}]
+                    <input type="hidden" name="aid" value="[{$oView->getArticleId()}]">
+                [{/if}]
+                [{if $oView->getProduct()}]
+                    [{assign var="product" value=$oView->getProduct()}]
+                    <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                [{/if}]
 
                 <p>[{oxmultilang ident="LOGIN_ALREADY_CUSTOMER"}]</p>
 

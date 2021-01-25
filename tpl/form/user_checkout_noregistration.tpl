@@ -1,31 +1,7 @@
 [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
 
 [{block name="user_checkout_noregistration"}]
-    [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-
-    [{capture assign="sValidationJS"}]
-        [{strip}]
-        $('input,select,textarea').not('[type=submit]').jqBootstrapValidation(
-            {
-                filter: function()
-                {
-                    if( $( '#shippingAddress' ).css( 'display' ) == 'block' )
-                    {
-                        return $(this).is(':visible, .selectpicker');
-                    }
-                    else
-                    {
-                        return $(this).is(':visible, #addressForm .selectpicker');
-                    }
-                }
-            }
-        );
-        [{/strip}]
-    [{/capture}]
-
-    [{oxscript add=$sValidationJS*}]
-
-    <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post"  novalidate>
+    <form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" name="order" method="post" novalidate>
         [{block name="user_checkout_noregistration_form"}]
             [{$oViewConf->getHiddenSid()}]
             [{$oViewConf->getNavFormParams()}]
@@ -43,9 +19,7 @@
             [{block name="user_checkout_noregistration_next_step_top"}]
             [{/block}]
 
-
             <h3>[{oxmultilang ident="NOTREGISTERED_ACCOUNTINFO"}]</h3>
-
             [{include file="form/fieldset/user_noaccount.tpl"}]
 
             <h3>[{oxmultilang ident="BILLING_ADDRESS"}]</h3>
@@ -53,15 +27,15 @@
 
             <h3>[{oxmultilang ident="SHIPPING_ADDRESS"}]</h3>
 
-            <div class="mb-3 form-floating">
+            <div class="mb-3">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="blshowshipaddress" id="showShipAddress" [{if !$oView->showShipAddress()}]checked[{/if}] value="0">
+                    <input type="checkbox" class="form-check-input" name="blshowshipaddress" id="showShipAddress"[{if !$oView->showShipAddress()}] checked[{/if}] value="0">
                     <label for="showShipAddress" class="form-check-label">
                          [{oxmultilang ident="USE_BILLINGADDRESS_FOR_SHIPPINGADDRESS"}]
                     </label>
                 </div>
             </div>
-        [{oxscript include="js/changeaddress.min.js" priority=10}]
+            [{oxscript include="js/changeaddress.min.js" priority=10}]
 
             <div id="shippingAddress"[{if !$oView->showShipAddress()}] style="display: none;"[{/if}]>
                 [{include file="form/fieldset/user_shipping.tpl" noFormSubmit=true}]

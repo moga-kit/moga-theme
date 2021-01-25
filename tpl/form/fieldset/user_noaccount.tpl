@@ -1,7 +1,7 @@
 <div class="mb-3 form-floating[{if $aErrors.oxuser__oxusername}] oxInValid[{/if}]">
     [{block name="user_noaccount_email"}]
-        <label class="form-label req">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         <input id="userLoginName" class="form-control" type="email" name="lgn_usr" value="[{$oView->getActiveUsername()}]">
+        <label for="userLoginName" class="req">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         <div class="help-block">
             [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxusername}]
         </div>

@@ -2,9 +2,9 @@
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 [{assign var="editval" value=$oView->getUserData()}]
 <form class="max-600 needs-validation" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
-        [{$oViewConf->getHiddenSid()}]
-        <input type="hidden" name="fnc" value="send"/>
-        <input type="hidden" name="cl" value="contact"/>
+    [{$oViewConf->getHiddenSid()}]
+    <input type="hidden" name="fnc" value="send">
+    <input type="hidden" name="cl" value="contact">
 
     [{include file="message/inputvalidation.tpl" aErrors=$aErrors.oxuser__oxfname}]
 
@@ -64,7 +64,7 @@
                value="[{$oView->getContactSubject()}]"
                class="form-control"
             [{if $contactFormFields.subject.isRequired}] required[{/if}]>
-            <label class="[{if $contactFormFields.subject.isRequired}]req [{/if}]" for="c_subject">
+            <label class="[{if $contactFormFields.subject.isRequired}]req[{/if}]" for="c_subject">
                 [{oxmultilang ident="SUBJECT"}]
             </label>
         </div>
@@ -85,13 +85,11 @@
     [{block name="captcha_form"}][{/block}]
 
     [{block name="contact_form_buttons"}]
-        <div class="mb-3 form-floating">
-            <div class="col-lg-offset-2 col-lg-10">
-                 <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
-                <button class="btn btn-primary" type="submit">
-                    [{oxmultilang ident="SEND"}]
-                </button>
-            </div>
+        <div class="mb-3">
+            <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+            <button class="btn btn-primary" type="submit">
+                [{oxmultilang ident="SEND"}]
+            </button>
         </div>
     [{/block}]
 </form>

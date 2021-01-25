@@ -1,27 +1,3 @@
-[{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
-
-[{capture assign="sValidationJS"}]
-    [{strip}]
-        $('input,select,textarea').not('[type=submit]').jqBootstrapValidation(
-            {
-                filter: function()
-                {
-                    if( $( '#shippingAddress' ).css( 'display' ) == 'block' )
-                    {
-                        return $(this).is(':visible, .selectpicker[required]');
-                    }
-                    else
-                    {
-                        return $(this).is(':visible, #addressForm .selectpicker[required]');
-                    }
-                }
-            }
-        );
-    [{/strip}]
-[{/capture}]
-
-[{oxscript add=$sValidationJS*}]
-
 [{oxscript include="js/changeaddress.min.js" priority=10}]
 
 [{block name="user"}]
@@ -29,12 +5,12 @@
         [{block name="user_form"}]
             [{assign var="aErrors" value=$oView->getFieldValidationErrors()}]
             <div class="addressCollumns">
-                    [{$oViewConf->getHiddenSid()}]
-                    [{$oViewConf->getNavFormParams()}]
-                    <input type="hidden" name="fnc" value="changeuser_testvalues">
-                    <input type="hidden" name="cl" value="account_user">
-                    <input type="hidden" name="CustomError" value='user'>
-                    <input type="hidden" name="blshowshipaddress" value="1">
+                [{$oViewConf->getHiddenSid()}]
+                [{$oViewConf->getNavFormParams()}]
+                <input type="hidden" name="fnc" value="changeuser_testvalues">
+                <input type="hidden" name="cl" value="account_user">
+                <input type="hidden" name="CustomError" value='user'>
+                <input type="hidden" name="blshowshipaddress" value="1">
 
                 [{* Rechnungsadresse *}]
                 <div class="card mb-3">
