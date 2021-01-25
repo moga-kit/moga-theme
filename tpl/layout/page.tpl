@@ -42,7 +42,9 @@
     </div>
 
     [{include file="layout/footer.tpl"}]
-
+    [{block name="dd_layout_page_header_icon_menu_minibasket_list"}]
+    [{oxid_include_dynamic file="widget/minibasket/minibasket.tpl"}]
+    [{/block}]
     [{block name="layout_init_social"}]
     [{/block}]
 [{/capture}]

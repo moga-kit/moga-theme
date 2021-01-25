@@ -1,5 +1,5 @@
 [{capture append="oxidBlock_content"}]
-    <div class="container-xxl">
+    <div class="container-xxl py-5">
         <h1 class="list-heading">[{oxmultilang ident="CATEGORY_OVERVIEW"}]</h1>
 
         [{assign var="_navcategorytree" value=$oView->getCategoryTree()}]

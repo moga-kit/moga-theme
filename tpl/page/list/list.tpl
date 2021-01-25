@@ -220,19 +220,21 @@
             [{/if}]
                     <div class="article-list py-5">
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                            [{if $oView->getArticleList()|count}]
-                                [{block name="page_list_upperlocator"}]
-                                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=true sort=true}]
-                                [{/block}]
+                            <div class="row">
+                                [{if $oView->getArticleList()|count}]
+                                    [{block name="page_list_upperlocator"}]
+                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=true sort=true}]
+                                    [{/block}]
 
-                                [{* List types: grid|line *}]
-                                [{block name="page_list_productlist"}]
-                                    [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="productList" products=$oView->getArticleList()}]
-                                [{/block}]
-                                [{block name="page_list_bottomlocator"}]
-                                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedBottom() place="bottom"}]
-                                [{/block}]
-                            [{/if}]
+                                    [{* List types: grid|line *}]
+                                    [{block name="page_list_productlist"}]
+                                        [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="productList" products=$oView->getArticleList()}]
+                                    [{/block}]
+                                    [{block name="page_list_bottomlocator"}]
+                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedBottom() place="bottom"}]
+                                    [{/block}]
+                                [{/if}]
+                            </div>
                         </div>
                     </div>
 

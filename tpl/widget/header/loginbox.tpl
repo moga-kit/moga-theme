@@ -20,17 +20,15 @@
             <input type="hidden" name="anid" value="[{$oViewConf->getActArticleId()}]">
         [{/if}]
 
-        <div class="mb-3">
-            <label for="loginEmail" class="form-label">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
-            <input id="loginEmail" type="email" name="lgn_usr" autocomplete="email" class="form-control">
+        <div class="mb-3 form-floating">
+            <input id="loginEmail" type="email" name="lgn_usr" autocomplete="email" class="form-control" placeholder=" ">
+            <label for="loginEmail">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         </div>
 
-        <div class="mb-3">
-            <label for="loginPasword" class="form-label">[{oxmultilang ident="PASSWORD"}]</label>
-            <div class="input-group">
-                <input id="loginPasword" type="password" name="lgn_pwd" autocomplete="current-password" class="form-control">
-                <a class="forgotPasswordOpener btn btn-outline-primary" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">?</a>
-            </div>
+        <div class="mb-3 form-floating">
+            <input id="loginPasword" type="password" name="lgn_pwd" autocomplete="current-password" class="form-control">
+            <label for="loginPasword">[{oxmultilang ident="PASSWORD"}]</label>
+            <a class="small forgotPasswordOpener" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
         </div>
 
         [{if $oViewConf->isFunctionalityEnabled( "blShowRememberMe" )}]

@@ -64,6 +64,7 @@
 @include media-breakpoint-up(lg) {
   .header,
   .wrapper .content > .container-xxl,
+  #details_container,
   .footer {
     transition: filter 150ms;
 

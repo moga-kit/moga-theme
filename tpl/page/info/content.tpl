@@ -4,14 +4,14 @@
     [{assign var="oxloadid" value=$oViewConf->getActContentLoadId()}]
     [{assign var="template_title" value=$oView->getTitle()}]
 
-    [{if !$oContent->oxcontents__ddhidetitle->value}]
-        <h1>[{$template_title}]</h1>
-    [{/if}]
-
-    <article class="cmsContent pb-5">
-        [{$oView->getParsedContent()}]
-    </article>
-
+    <div class="container-xxl">
+        [{if !$oContent->oxcontents__ddhidetitle->value}]
+            <h1>[{$template_title}]</h1>
+        [{/if}]
+        <article class="cmsContent pb-5">
+            [{$oView->getParsedContent()}]
+        </article>
+    </div>
 
 [{/capture}]
 [{include file="layout/page.tpl"}]
