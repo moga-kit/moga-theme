@@ -14,9 +14,10 @@
 
             [{if !$oxcmp_basket->getProductsCount()}]
                 [{block name="checkout_basket_emptyshippingcart"}]
-                    <div class="alert alert-danger" id="empty-basket-warning">
+                    <div id="empty-basket-warning">
+                        <div class="h1 mb-3">[{oxmultilang ident="BASKET_EMPTY"}] 😢</div>
                         <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="btn btn-outline-primary"><i class="moga-left"></i> [{oxmultilang ident="DD_BASKET_BACK_TO_SHOP"}]</a>
-                        [{oxmultilang ident="BASKET_EMPTY"}]
+
                     </div>
                 [{/block}]
             [{else}]
