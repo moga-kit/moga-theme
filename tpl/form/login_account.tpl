@@ -45,7 +45,7 @@
                     </div>
                 [{/if}]
 
-                <div class="mb-3 form-floating">
+                <div class="mb-3">
                     <button id="loginButton" type="submit" class="btn btn-primary">[{oxmultilang ident="LOGIN"}]</button>
                 </div>
             </form>

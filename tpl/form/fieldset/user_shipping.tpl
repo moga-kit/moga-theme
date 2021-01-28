@@ -40,7 +40,7 @@
                     [{/block}]
                     [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
 
-                    <label class="btn btn-outline-primary btn-block[{if $address->isSelected()}] active[{/if}]">
+                    <label class="btn btn-outline-primary w-100[{if $address->isSelected()}] active[{/if}]">
                         <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]>
                         <i class="moga-check"></i>
                         [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
@@ -53,7 +53,7 @@
                     <i class="moga-plus-circle"></i>
                     [{oxmultilang ident="DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS"}]
 
-                    <label class="btn btn-outline-primary btn-block">
+                    <label class="btn btn-outline-primary w-100">
                         <input type="radio" name="oxaddressid" value="-1" autocomplete="off">
                         <i class="moga-check"></i>
                         [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
@@ -194,7 +194,7 @@
     </div>
 </div>
 [{if !$noFormSubmit}]
-    <div class="mb-3 form-floating">
+    <div class="mb-3">
         <div class="col-12 col-lg-9 ms-lg-auto">
              <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
             <button id="accUserSaveBottom" type="submit" class="submitButton" name="save">[{oxmultilang ident="SAVE"}]</button>

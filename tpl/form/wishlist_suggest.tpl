@@ -27,7 +27,7 @@
                 <textarea rows="6" class="form-control" id="editval[send_message]" name="editval[send_message]">[{if $editval->send_message}][{$editval->send_message}][{else}][{oxmultilang ident="SHOP_SUGGEST_BUY_FOR_ME" args=$oxcmp_shop->oxshops__oxname->value}][{/if}]</textarea>
                 <label for="editval[send_message]">[{oxmultilang ident="MESSAGE"}]</label>
             </div>
-            <div class="mb-3 form-floating">
+            <div class="mb-3">
                 <button class="btn btn-primary" type="submit">[{oxmultilang ident="SUBMIT"}]</button>
             </div>
         </form>

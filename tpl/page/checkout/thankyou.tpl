@@ -1,13 +1,8 @@
 [{capture append="oxidBlock_content"}]
-
-    [{* ordering steps *}]
-    [{include file="page/checkout/inc/steps.tpl" active=5}]
-
     [{block name="checkout_thankyou_main"}]
         [{assign var="order" value=$oView->getOrder()}]
         [{assign var="basket" value=$oView->getBasket()}]
-
-        <div id="thankyouPage">
+        <div class="container-xxl py-5" id="thankyouPage">
             <h3 class="blockHead">[{oxmultilang ident="THANK_YOU"}]</h3>
 
             [{block name="checkout_thankyou_info"}]

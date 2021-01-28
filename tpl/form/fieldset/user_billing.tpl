@@ -211,12 +211,12 @@
     </div>
 [{/if}]
 
-<div class="mb-3 form-floating">
+<div class="mb-3">
     <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
 </div>
 
 [{if !$noFormSubmit}]
-    <div class="mb-3 form-floating">
+    <div class="mb-3">
         <button id="accUserSaveTop" type="submit" name="save" class="btn btn-primary">[{oxmultilang ident="SAVE"}]</button>
     </div>
 [{/if}]

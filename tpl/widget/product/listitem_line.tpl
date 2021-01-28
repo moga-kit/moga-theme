@@ -198,7 +198,7 @@
                                     <a class="btn btn-primary" href="[{$_productLink}]">[{oxmultilang ident="MORE_INFO"}]</a>
 
                                     [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
-                                    <button triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger btn-block removeButton">
+                                    <button triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger w-100 removeButton">
                                         <i class="moga-times"></i> [{oxmultilang ident="REMOVE"}]
                                     </button>
                                     [{/if}]

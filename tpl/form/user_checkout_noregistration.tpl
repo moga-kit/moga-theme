@@ -50,7 +50,7 @@
                 [{*}]
                 <a href="[{oxgetseourl ident=$oViewConf->getBasketLink()}]" class="btn btn-outline-primary float-left prevStep submitButton largeButton" id="userBackStepBottom">[{oxmultilang ident="PREVIOUS_STEP"}]</a>
                 [{*}]
-                <button id="userNextStepBottom" class="btn btn-primary btn-lg btn-block" name="userform" type="submit">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
+                <button id="userNextStepBottom" class="btn btn-primary btn-lg w-100" name="userform" type="submit">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
 
             [{/block}]
         [{/block}]

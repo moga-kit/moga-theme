@@ -19,5 +19,5 @@
     </div>
     <a class="btn btn-link px-0 forgotPasswordOpener" id="step2PswdOpener" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
 
-    <button type="submit" class="btn btn-primary btn-block">[{oxmultilang ident="LOGIN"}]</button>
+    <button type="submit" class="btn btn-primary w-100">[{oxmultilang ident="LOGIN"}]</button>
 </form>

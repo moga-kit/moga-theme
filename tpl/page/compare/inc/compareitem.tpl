@@ -98,7 +98,7 @@
                     [{/oxhasrights}]
                 [{else}]
                     <span >
-                        <a id="variantMoreInfo_[{$testid}]" class="btn btn-primary btn-block" href="[{$_productLink}]" onclick="oxid.mdVariants.getMdVariantUrl('mdVariant_[{$testid}]'); return false;">[{oxmultilang ident="MORE_INFO"}]</a>
+                        <a id="variantMoreInfo_[{$testid}]" class="btn btn-primary w-100" href="[{$_productLink}]" onclick="oxid.mdVariants.getMdVariantUrl('mdVariant_[{$testid}]'); return false;">[{oxmultilang ident="MORE_INFO"}]</a>
                     </span>
                 [{/if}]
             </div>

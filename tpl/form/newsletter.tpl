@@ -8,8 +8,8 @@
     <input type="hidden" name="editval[oxuser__oxcountryid]" value="[{$oView->getHomeCountryId()}]">
 
     <div class="mb-3 form-floating">
-        [{include file="form/fieldset/salutation.tpl" name="editval[oxuser__oxsal]" value=$aRegParams.oxuser__oxsal}]
-        <label>[{oxmultilang ident="TITLE"}]</label>
+        [{include file="form/fieldset/salutation.tpl" id="editval[oxuser__oxsal]" name="editval[oxuser__oxsal]" value=$aRegParams.oxuser__oxsal}]
+        <label for="editval[oxuser__oxsal]">[{oxmultilang ident="TITLE"}]</label>
     </div>
     <div class="mb-3 form-floating">
         <input class="form-control" id="newsletterFname" placeholder=" " type="text" name="editval[oxuser__oxfname]" maxlength="40" value="[{if $aRegParams.oxuser__oxfname}][{$aRegParams.oxuser__oxfname}][{/if}]">

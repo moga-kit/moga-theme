@@ -45,7 +45,7 @@
                                                     <div class="btn-group">
                                                         <button
                                                                 type="submit"
-                                                                class="btn btn-danger btn-block"
+                                                                class="btn btn-danger w-100"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#delete_review_[{$smarty.foreach.ReviewsCounter.iteration}]"
                                                         >

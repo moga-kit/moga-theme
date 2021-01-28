@@ -100,7 +100,7 @@
 
 
             [{block name="user_checkout_change_next_step_bottom"}]
-                <button id="userNextStepBottom" class="btn btn-primary btn-block btn-lg" name="userform" type="submit">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
+                <button id="userNextStepBottom" class="btn btn-primary w-100 btn-lg" name="userform" type="submit">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
             [{/block}]
         [{/block}]
     </form>

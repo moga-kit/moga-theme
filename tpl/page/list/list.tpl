@@ -28,6 +28,7 @@
         <div class="bg-light position-relative manufacturer-header">
             <div class="container-xxl">
                 <div class="d-flex justify-content-between py-5">
+                    <div>
                     <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
                     [{$actCategory->getTitle()}]
                     </h1>
@@ -36,6 +37,7 @@
                         [{$actCategory->oxcategories__oxdesc->rawValue}]
                     </p>
                     [{/if}]
+                    </div>
                     [{if $actCategory->getIconUrl()}]
                         <img src="[{$actCategory->getIconUrl()}]">
                     [{/if}]
