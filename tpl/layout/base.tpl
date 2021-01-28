@@ -33,20 +33,24 @@
                 <meta name="keywords" content="[{$oView->getMetaKeywords()}]">
             [{/if}]
         [{/block}]
-
+        [{assign var="actCategory" value=$oView->getActiveCategory()}]
         [{block name="head_meta_open_graph"}]
             <meta property="og:site_name" content="[{$oViewConf->getBaseDir()}]">
             <meta property="og:title" content="[{$sPageTitle}]">
             <meta property="og:description" content="[{$oView->getMetaDescription()}]">
+
             [{if $oViewConf->getActiveClassName() == 'details'}]
                 <meta property="og:type" content="product">
                 <meta property="og:image" content="[{$oView->getActPicture()}]">
+                <meta property="og:url" content="[{$oView->getCanonicalUrl()}]">
+            [{elseif $oViewConf->getActiveClassName() == 'manufacturerlist' && $actCategory->getIconUrl()}]
+                <meta property="og:type" content="website">
+                <meta property="og:image" content="[{$actCategory->getIconUrl()}]">
                 <meta property="og:url" content="[{$oView->getCanonicalUrl()}]">
             [{else}]
                 [{assign var="aOGImage"    value=$oViewConf->getViewThemeParam('aOGImage')}]
                 <meta property="og:type" content="website">
                 <meta property="og:image" content="[{$oViewConf->getImageUrl($aOGImage)}]">
-
                 <meta property="og:url" content="[{$oViewConf->getCurrentHomeDir()}]">
             [{/if}]
         [{/block}]
