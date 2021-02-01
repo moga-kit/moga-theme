@@ -8,7 +8,7 @@
             [{assign var="currency" value=$oView->getActCurrency()}]
 
 
-            <div class="modal fade basketFlyout" id="basketModal" tabindex="-1" role="dialog" aria-labelledby="basketModalLabel" aria-hidden="true">
+            <div class="modal fade basketFlyout modal-sidebar-right" id="basketModal" tabindex="-1" role="dialog" aria-labelledby="basketModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         [{block name="widget_minibasket_modal_header"}]
@@ -42,45 +42,45 @@
                                         [{/if}]
                                         [{/block}]
                                         [{block name="dd_layout_page_header_icon_menu_minibasket_table"}]
-                                        <div class="minibasket-items">
-                                            [{foreach from=$oxcmp_basket->getContents() name=miniBasketList item=_product}]
-                                            [{block name="widget_minibasket_product"}]
-                                            [{assign var="minibasketItemTitle" value=$_product->getTitle()}]
-                                            <div class="my-1">
-                                                <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
-                                                <span>
-                                                     [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
-                                                        <picture>
-                                                            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, 'webp', true)}]">
-                                                            <img loading="lazy" class="minibasket-img" src="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, '', true)}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
-                                                        </picture>
-                                                     [{else}]
-                                                        <img loading="lazy" class="minibasket-img img-fluid" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
-                                                     [{/if}]
-                                                </span>
-                                                    <span>
-                                                    [{$_product->getAmount()}] x [{$minibasketItemTitle|strip_tags}]<br>
-                                                    [{oxprice price=$_product->getPrice() currency=$currency}]
-                                                </span>
-                                                </a>
+                                            <div class="minibasket-items">
+                                                [{foreach from=$oxcmp_basket->getContents() name=miniBasketList item=_product}]
+                                                    [{block name="widget_minibasket_product"}]
+                                                        [{assign var="minibasketItemTitle" value=$_product->getTitle()}]
+                                                        <div class="my-1">
+                                                            <a class="minibasket-link" href="[{$_product->getLink()}]" title="[{$minibasketItemTitle|strip_tags}]">
+                                                            <span>
+                                                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                                                                    <picture>
+                                                                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, 'webp', true)}]">
+                                                                        <img loading="lazy" class="minibasket-img" src="[{$oViewConf->getDynamicImage($_product->getIconUrl(), 40, 40, '', true)}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
+                                                                    </picture>
+                                                                 [{else}]
+                                                                    <img loading="lazy" class="minibasket-img img-fluid" src="[{$_product->getIconUrl()}]" alt="[{$minibasketItemTitle|strip_tags}]" width="40" height="40">
+                                                                 [{/if}]
+                                                            </span>
+                                                                <span>
+                                                                [{$_product->getAmount()}] x [{$minibasketItemTitle|strip_tags}]<br>
+                                                                [{oxprice price=$_product->getPrice() currency=$currency}]
+                                                            </span>
+                                                            </a>
+                                                        </div>
+                                                    [{/block}]
+                                                [{/foreach}]
                                             </div>
-                                            [{/block}]
-                                            [{/foreach}]
-                                        </div>
-                                        <div class="row minibasket-total-row my-3">
-                                            <div class="col-8 minibasket-total-col h5">
-                                                [{oxmultilang ident="TOTAL"}]
+                                            <div class="row minibasket-total-row my-3">
+                                                <div class="col-8 minibasket-total-col h5">
+                                                    [{oxmultilang ident="TOTAL"}]
+                                                </div>
+                                                <div class="col-4 minibasket-total-col text-end  h5">
+                                                    [{if $oxcmp_basket->isPriceViewModeNetto()}]
+                                                    [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
+                                                    [{else}]
+                                                    [{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]
+                                                    [{/if}]
+                                                </div>
                                             </div>
-                                            <div class="col-4 minibasket-total-col text-end  h5">
-                                                [{if $oxcmp_basket->isPriceViewModeNetto()}]
-                                                [{oxprice price=$oxcmp_basket->getNettoSum() currency=$currency}]
-                                                [{else}]
-                                                [{oxprice price=$oxcmp_basket->getBruttoSum() currency=$currency}]
-                                                [{/if}]
-                                            </div>
-                                        </div>
 
-                                        [{block name="widget_minibasket_total"}][{/block}]
+                                            [{block name="widget_minibasket_total"}][{/block}]
                                         [{/block}]
 
                                         [{include file="widget/minibasket/countdown.tpl"}]

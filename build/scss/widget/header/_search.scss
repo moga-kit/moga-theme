@@ -1,11 +1,16 @@
 .search {
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   right: 140px;
   padding: 5px;
   background: #fff;
   z-index: 140;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 10px;
+
+  }
 
   @include media-breakpoint-up(lg) {
     padding: 10px 8px;

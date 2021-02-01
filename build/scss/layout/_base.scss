@@ -61,16 +61,32 @@
     z-index: 10;
   }
 }
-@include media-breakpoint-up(lg) {
-  .header,
-  .wrapper .content > .container-xxl,
-  #details_container,
-  .footer {
-    transition: filter 150ms;
 
-    .modal-open & {
-      filter: blur(2px);
+.modal.fade.modal-sidebar-right,
+.modal.fade.modal-sidebar-left {
+  .modal-dialog {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate(50px, 0);
+    width: 300px;
+
+    .modal-content {
+      height: 100%;
     }
+  }
+
+  &.show .modal-dialog {
+    transform: none;
   }
 }
 
+.modal.fade.modal-sidebar-left {
+  .modal-dialog {
+    right: auto;
+    left: 0;
+    transform: translate(-50px, 0);
+  }
+}

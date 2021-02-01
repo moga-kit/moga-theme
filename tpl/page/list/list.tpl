@@ -27,10 +27,10 @@
     [{if $listType=='manufacturer'}]
         <div class="bg-light position-relative manufacturer-header">
             <div class="container-xxl">
-                <div class="d-flex justify-content-between py-5">
-                    <div>
-                    <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
-                    [{$actCategory->getTitle()}]
+                <div class="d-flex justify-content-between py-3 py-md-5">
+                    <div class="d-flex align-items-center">
+                        <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
+                        [{$actCategory->getTitle()}]
                     </h1>
                     [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1}]
                     <p id="catDescLocator" class="categoryDescription">
@@ -55,57 +55,58 @@
 
     [{else}]
         [{if $headerImageWidth == 'container'}]
-        <div class="container-xxl">
+            <div class="container-xxl">
         [{/if}]
+
         <div class="position-relative[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] bg-dark pop-img[{else}] no-img[{/if}]">
             [{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}]
-            [{assign var="headerImageWidth" value=$oViewConf->getViewThemeParam('sHeaderImageWidth')}]
-            [{assign var="headerImageheight" value=$oViewConf->getViewThemeParam('sHeaderImageHeight')}]
-            [{assign var="height" value=1}]
+                [{assign var="headerImageWidth" value=$oViewConf->getViewThemeParam('sHeaderImageWidth')}]
+                [{assign var="headerImageheight" value=$oViewConf->getViewThemeParam('sHeaderImageHeight')}]
+                [{assign var="height" value=1}]
 
-            [{if $headerImageheight == 'small'}]
-            [{assign var="height" value=0.5}]
-            [{/if}]
-
-            [{assign var='height375' value=$height*220}]
-            [{assign var='height750' value=$height*350}]
-            [{assign var='height970' value=$height*400}]
-            [{assign var='height1170' value=$height*400}]
-            [{assign var='height1400' value=$height*450}]
-            [{assign var='height1600' value=$height*500}]
-            [{assign var='height1800' value=$height*600}]
-
-            [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
-            <picture class="d-block">
-                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, $height375, 'webp', false)}]" media="(max-width: 375px)">
-
-                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, $height750, 'webp', false)}]" media="(max-width: 767px)">
-                <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, $height750, 'jpg', false)}]" media="(max-width: 767px)">
-
-                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, $height970, 'webp', false)}]" media="(max-width: 991px)">
-                <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, $height970, 'jpg', false)}]" media="(max-width: 991px)">
-
-                <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, $height1170, 'webp', false)}]" media="(max-width: 1199px)">
-                <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, $height1170, 'jpg', false)}]" media="(max-width: 1199px)">
-
-                [{if $headerImageWidth == 'w100c100'}]
-            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'webp', false)}]" media="(max-width: 1399px)">
-            <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'jpg', false)}]" media="(max-width: 1399px)">
-
-            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, $height1600, 'webp', false)}]" media="(max-width: 1599px)">
-            <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, $height1600, 'jpg', false)}]" media="(max-width: 1599px)">
-
-            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, $height1800, 'webp', false)}]" media="(min-width: 1600px)">
-            <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, $height1800, 'jpg', false)}]" media="(min-width: 1600px)">
-                [{else}]
-            <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'webp', false)}]">
-            <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'jpg', false)}]">
+                [{if $headerImageheight == 'small'}]
+                    [{assign var="height" value=0.5}]
                 [{/if}]
-                <img loading="lazy" src="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, $height375, 'jpg', false)}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
-            </picture>
-            [{else}]
-        <img loading="lazy" src="[{$actCategory->getThumbUrl()}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
-            [{/if}]
+
+                [{assign var='height375' value=$height*220}]
+                [{assign var='height750' value=$height*350}]
+                [{assign var='height970' value=$height*400}]
+                [{assign var='height1170' value=$height*400}]
+                [{assign var='height1400' value=$height*450}]
+                [{assign var='height1600' value=$height*500}]
+                [{assign var='height1800' value=$height*600}]
+
+                [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                    <picture class="d-block">
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, $height375, 'webp', false)}]" media="(max-width: 375px)">
+
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, $height750, 'webp', false)}]" media="(max-width: 767px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 750, $height750, 'jpg', false)}]" media="(max-width: 767px)">
+
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, $height970, 'webp', false)}]" media="(max-width: 991px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 970, $height970, 'jpg', false)}]" media="(max-width: 991px)">
+
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, $height1170, 'webp', false)}]" media="(max-width: 1199px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1170, $height1170, 'jpg', false)}]" media="(max-width: 1199px)">
+
+                        [{if $headerImageWidth == 'w100c100'}]
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'webp', false)}]" media="(max-width: 1399px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'jpg', false)}]" media="(max-width: 1399px)">
+
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, $height1600, 'webp', false)}]" media="(max-width: 1599px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1600, $height1600, 'jpg', false)}]" media="(max-width: 1599px)">
+
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, $height1800, 'webp', false)}]" media="(min-width: 1600px)">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1800, $height1800, 'jpg', false)}]" media="(min-width: 1600px)">
+                        [{else}]
+                        <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'webp', false)}]">
+                        <source srcset="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 1400, $height1400, 'jpg', false)}]">
+                        [{/if}]
+                        <img loading="lazy" src="[{$oViewConf->getDynamicImage($actCategory->getThumbUrl(), 375, $height375, 'jpg', false)}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
+                    </picture>
+                [{else}]
+                    <img loading="lazy" src="[{$actCategory->getThumbUrl()}]" alt="[{$actCategory->oxcategories__oxtitle->value}]" class="w-100 img-fluid">
+                [{/if}]
             [{/if}]
 
             <div class="pop-header">
@@ -119,7 +120,7 @@
                 [{/if}]
                 </h1>
                 [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1}]
-                <p id="catDescLocator" class="categoryDescription">
+                <p id="catDescLocator" class="categoryDescription[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] text-white[{/if}]">
                     [{$actCategory->oxcategories__oxdesc->rawValue}]
                 </p>
                 [{/if}]
@@ -133,15 +134,14 @@
                 [{/if}]
             </div>
         </div>
+
         [{if $headerImageWidth == 'container'}]
         </div>
         [{/if}]
     [{/if}]
 
-
+    [{if $oView->hasVisibleSubCats()}]
         <div class="container-[{if $headerImageWidth == 'container'}]fluid[{else}]xxl[{/if}]">
-
-            [{if $oView->hasVisibleSubCats()}]
             [{assign var="iSubCategoriesCount" value=0}]
             <div class="my-3">
                 <div class="row g-2">
@@ -208,8 +208,9 @@
                     [{/foreach}]
                 </div>
             </div>
-            [{/if}]
         </div>
+    [{/if}]
+
     [{/block}]
 
 
@@ -220,14 +221,23 @@
             [{if $categoryWidth == 'container'}]
                 <div class="container-xxl">
             [{/if}]
-                    <div class="article-list py-5">
+                    <div class="article-list pb-5">
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                            [{if $oView->getArticleList()|count}]
+                                <div class="d-flex py-3">
+                                    <button type="button" class="btn btn-outline-primary btn-icon" data-bs-toggle="modal" data-bs-target="#filter">
+                                        <i class="moga-sliders"></i>
+                                    </button>
+
+                                    <div class="sidebar-display ms-auto">
+                                        [{block name="page_list_upperlocator"}]
+                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=false listDisplayType=true sort=true}]
+                                        [{/block}]
+                                    </div>
+                                </div>
+                            [{/if}]
                             <div class="row">
                                 [{if $oView->getArticleList()|count}]
-                                    [{block name="page_list_upperlocator"}]
-                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=true sort=true}]
-                                    [{/block}]
-
                                     [{* List types: grid|line *}]
                                     [{block name="page_list_productlist"}]
                                         [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="productList" products=$oView->getArticleList()}]
@@ -249,5 +259,21 @@
     [{if $actCategory->oxcategories__oxlongdesc->value && $oPageNavigation->actPage == 1}]
     <p class="list-long-desc">[{oxeval var=$actCategory->oxcategories__oxlongdesc}]</p>
     [{/if}]
+
+    <div class="modal fade modal-sidebar-left" id="filter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    [{if $oView->getArticleList()|count}]
+                    [{block name="page_list_upperlocator"}]
+                    [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=false sort=false}]
+                    [{/block}]
+                    [{/if}]
+
+                    [{oxid_include_widget cl="oxwCategoryTree" cnid=$oView->getCategoryId() deepLevel=0 noscript=1 nocookie=1}]
+                </div>
+            </div>
+        </div>
+    </div>
 [{/capture}]
 [{include file="layout/page.tpl" tree_path=$oView->getTreePath()}]

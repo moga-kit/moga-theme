@@ -150,6 +150,7 @@ $aLang = array(
     'STREETNO'                                       => 'Nr.',
     'POSTAL_CODE'                                       => 'PLZ',
     'CITY'                                       => 'Ort',
+    'DISPLAY'                                       => 'Anzeige',
 );
 
 /*

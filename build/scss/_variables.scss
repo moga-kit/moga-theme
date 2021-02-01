@@ -18,6 +18,7 @@ $danger: #dc3545 !default;
 $warning: #ffc107 !default;
 $info: #17a2b8 !default;
 
+
 $body-color: #333 !default;
 $body-bg: #fff !default;
 $row-padding: 3rem !default;
@@ -38,7 +39,7 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 $zindex-sticky: 999 !default;
-
+$light: $gray-200 !default;
 $gray-dark: $gray-800 !default;
 $ox-header-bg: #fff !default;
 $ox-header-color: $primary !default;
@@ -148,7 +149,7 @@ $enable-transitions: true !default;
 $enable-reduced-motion: true !default;
 $enable-grid-classes: true !default;
 $enable-button-pointers: true !default;
-$enable-rfs: false !default;
+$enable-rfs: true !default;
 $enable-validation-icons: true !default;
 $enable-negative-margins: true !default;
 $enable-deprecation-messages: false !default;

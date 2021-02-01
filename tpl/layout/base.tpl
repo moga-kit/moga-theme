@@ -6,10 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
-        <link rel="preload" href="/out/moga/src/fonts/icons.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/out/moga/src/fonts/barlow-condensed-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/out/moga/src/css/styles.min.css" as="style" crossorigin>
-        <link rel="preload" href="/out/moga/src/js/scripts.min.js" as="script" crossorigin>
+        <link rel="preload" href="/out/moga/src/css/styles.min.css" as="style">
+        <link rel="preload" href="/out/moga/src/js/scripts.min.js" as="script">
 
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>

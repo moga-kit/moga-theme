@@ -42,13 +42,14 @@
     padding: 4px 8px;
     border: 3px solid #fff;
 
-    .count {
+    .badge {
       position: absolute;
       font-size: 10px;
       left: 0;
       right: 1px;
       text-align: center;
       top: 14px;
+      color: $primary;
     }
 
     &:hover {

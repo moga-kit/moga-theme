@@ -28,7 +28,6 @@
         [{/oxifcontent}]
     [{/block}]
 
-
     [{block name="start_bargain_articles"}]
         [{assign var="oBargainArticles" value=$oView->getBargainArticleList()}]
         [{assign var="bargainWidth" value=$oViewConf->getViewThemeParam('sBargainWidth')}]

@@ -5,6 +5,7 @@
         [{if $categories}]
             [{assign var="deepLevel" value=$oView->getDeepLevel()}]
             <div class="categoryBox hidden-sm">
+                <div class="sidebar-header"><strong>[{oxmultilang ident="CATEGORIES"}]</strong></div>
                 [{block name="dd_widget_sidebar_categorytree_inner"}]
                     <ol class="nav flex-column">
                         [{block name="dd_widget_sidebar_categorytree_list"}]
