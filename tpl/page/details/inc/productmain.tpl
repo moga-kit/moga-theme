@@ -347,7 +347,7 @@
                     [{/if}]
                 [{/block}]
 
-                <div class="price-wrapper h4">
+                <div class="price-wrapper h4 mb-3">
                     [{block name="details_productmain_tprice"}]
                         [{oxhasrights ident="SHOWARTICLEPRICE"}]
                             [{if $oDetailsProduct->getTPrice()}]
@@ -380,13 +380,14 @@
                                         </span>
                                     </div>
                                 [{/if}]
-                                [{if $oDetailsProduct->loadAmountPriceInfo()}]
-                                    [{include file="page/details/inc/priceinfo.tpl"}]
-                                [{/if}]
                             [{/block}]
                         [{/oxhasrights}]
                     [{/block}]
                 </div>
+
+                [{if $oDetailsProduct->loadAmountPriceInfo()}]
+                <button type="button" data-bs-target="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-bs-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</button>
+                [{/if}]
 
                 <div class="tobasket">
                     [{* pers params *}]
@@ -491,7 +492,9 @@
         </div>
     </div>
 </div>
-
+        [{if $oDetailsProduct->loadAmountPriceInfo()}]
+        [{include file="page/details/inc/priceinfo.tpl"}]
+        [{/if}]
 [{oxhasrights ident="TOBASKET"}]
     </form>
 [{/oxhasrights}]

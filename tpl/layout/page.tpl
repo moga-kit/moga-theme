@@ -7,7 +7,7 @@
         [{include file="layout/header.tpl"}]
     [{/block}]
 
-    <div class="wrapper[{if $sidebar}] sidebar[{$sidebar}][{/if}]">
+    <div id="wrapper" class="wrapper[{if $sidebar}] sidebar[{$sidebar}][{/if}]">
         [{$smarty.capture.loginErrors}]
 
         [{if $sidebar && $sidebar != "Right"}]
