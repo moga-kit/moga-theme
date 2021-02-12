@@ -30,7 +30,7 @@
             [{/if}]
         [{/block}]
 
-        <div class="card-body">
+        <div class="card-body position-relative">
             [{block name="widget_product_listitem_infogrid_titlebox"}]
                 <div class="h5 card-title">
                     [{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]
@@ -88,7 +88,56 @@
                 [{/block}]
             </div>
             <a href="[{$_productLink}]" class="stretched-link"></a>
-            [{block name="widget_product_listitem_grid_tobasket"}][{/block}]
+        </div>
+        <div class="card-footer">
+            [{block name="widget_product_listitem_grid_tobasket"}]
+                <div class="actions text-center">
+                    <div class="btn-group">
+                        [{if $blShowToBasket}]
+                        [{oxhasrights ident="TOBASKET"}]
+                        <form name="tobasket[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
+                            <div class="hidden">
+                                [{$oViewConf->getNavFormParams()}]
+                                [{$oViewConf->getHiddenSid()}]
+                                <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
+                                [{if $recommid}]
+                            <input type="hidden" name="recommid" value="[{$recommid}]">
+                                [{/if}]
+                                [{if $blShowToBasket}]
+                                [{oxhasrights ident="TOBASKET"}]
+                            <input type="hidden" name="cl" value="[{$oViewConf->getTopActiveClassName()}]">
+                                [{if $owishid}]
+                            <input type="hidden" name="owishid" value="[{$owishid}]">
+                                [{/if}]
+                                [{if $toBasketFunction}]
+                            <input type="hidden" name="fnc" value="[{$toBasketFunction}]">
+                                [{else}]
+                            <input type="hidden" name="fnc" value="tobasket">
+                                [{/if}]
+                            <input type="hidden" name="aid" value="[{$product->oxarticles__oxid->value}]">
+                                [{if $altproduct}]
+                            <input type="hidden" name="anid" value="[{$altproduct}]">
+                                [{else}]
+                            <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                                [{/if}]
+                            <input type="hidden" name="am" value="1">
+                                [{/oxhasrights}]
+                                [{else}]
+                            <input type="hidden" name="cl" value="details">
+                            <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                                [{/if}]
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="moga-bag"></i>
+                            </button>
+                        </form>
+                        [{/oxhasrights}]
+                        [{else}]
+                        <a class="btn btn-outline-primary" href="[{$_productLink}]" >[{oxmultilang ident="DETAILS"}]</a>
+                        [{/if}]
+                    </div>
+                </div>
+            [{/block}]
         </div>
     </div>
 [{/block}]
