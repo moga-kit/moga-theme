@@ -386,7 +386,7 @@
                 </div>
 
                 [{if $oDetailsProduct->loadAmountPriceInfo()}]
-                <button type="button" data-bs-target="#modal_priceinfo_[{$oDetailsProduct->oxarticles__oxid->value|regex_replace:"/[^a-zA-Z0-9]/":""}]"  class="btn btn-outline-primary btn-staffel" data-bs-toggle="modal" title="[{oxmultilang ident="BLOCK_PRICE"}]">[{oxmultilang ident="BLOCK_PRICE"}]</button>
+                [{include file="page/details/inc/priceinfo.tpl"}]
                 [{/if}]
 
                 <div class="tobasket">
@@ -492,9 +492,6 @@
         </div>
     </div>
 </div>
-        [{if $oDetailsProduct->loadAmountPriceInfo()}]
-        [{include file="page/details/inc/priceinfo.tpl"}]
-        [{/if}]
 [{oxhasrights ident="TOBASKET"}]
     </form>
 [{/oxhasrights}]

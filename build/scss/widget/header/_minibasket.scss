@@ -36,6 +36,10 @@
     bottom: 0;
     transform: translate(50px, 0);
 
+    @include media-breakpoint-up(md) {
+      width: 400px;
+    }
+
     .modal-content {
       height: 100%;
     }

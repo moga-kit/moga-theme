@@ -22,7 +22,7 @@
         [{if $oView->getCompareItemsCnt() >= 1}]
             <div id="comparePlayground" class="compare">
                 <div id="compareLandscape" class="table-responsive">
-                    <table class="table-bordered">
+                    <table class="table table-sm">
                         <tbody>
                             <tr class="compare-products">
                                 [{foreach from=$articleList key=iProdNr item="product" name="compareArticles"}]
@@ -31,17 +31,6 @@
                                     [{/if}]
 
                                     <td class="item-wrapper text-center compare-item-wrapper">
-                                        <div class="move-controls btn-group">
-                                            [{if !$product->hidePrev}]
-                                                <a id="compareLeft_[{$product->oxarticles__oxid->value}]" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl="|cat:$oViewConf->getActiveClassName() params="fnc=moveleft&amp;aid=`$product->oxarticles__oxnid->value`&amp;pgNr="|cat:$oView->getActPage()}]" class="btn btn-outline-primary movePrev">&laquo;</a>
-                                            [{/if}]
-
-                                            <a href="javascript:;" class="btn btn-outline-primary disabled">[{oxmultilang ident="MOVE"}]</a>
-
-                                            [{if !$product->hideNext}]
-                                                <a id="compareRight_[{$product->oxarticles__oxid->value}]" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl="|cat:$oViewConf->getActiveClassName() params="fnc=moveright&amp;aid=`$product->oxarticles__oxnid->value`&amp;pgNr="|cat:$oView->getActPage()}]" class="btn btn-outline-primary moveNext">&raquo;</a>
-                                            [{/if}]
-                                        </div>
                                         [{include file="page/compare/inc/compareitem.tpl" product=$product testid=$smarty.foreach.comparelist.iteration}]
                                     </td>
                                 [{/foreach}]

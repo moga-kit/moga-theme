@@ -11,7 +11,7 @@ $legend-font-size: 1.2rem !default;
 
 $font-family-price: $headings-font-family !default;
 
-$primary: #7952b3 !default;
+$primary: #e0281c !default;
 $secondary: #6c757d !default;
 $success: #28a745 !default;
 $danger: #dc3545 !default;
@@ -61,7 +61,7 @@ $ox-start-manufacturer-bg: #F2F2F2 !default;
 
 //== Lists
 
-$ox-list-bg: #f1f1f1 !default;
+$ox-list-bg: $light !default;
 
 //== Details page
 

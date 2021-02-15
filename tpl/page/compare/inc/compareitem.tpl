@@ -16,7 +16,8 @@
 
     <strong class="title">
         <a class="fn" href="[{$_productLink}]" [{if $oView->noIndex()}]rel="nofollow"[{/if}]>[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]</a>
-    </strong><br/>
+    </strong>
+
     <span class="identifier">
         [{if $product->oxarticles__oxweight->value}]
             <div>
@@ -68,29 +69,63 @@
         </div>
 
         <div class="tobasket add-to-basket">
-            [{oxhasrights ident="SHOWARTICLEPRICE"}]
-                [{assign var=tprice value=$product->getTPrice()}]
-                [{assign var=price  value=$product->getPrice()}]
-                <p class="oldPrice">
-                    [{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}]
-                        <strong>[{oxmultilang ident="REDUCED_FROM"}] <del>[{$product->getFTPrice()}] [{$currency->sign}]</del></strong>
-                    [{else}]
-                        &nbsp;
-                    [{/if}]
-                </p>
-            [{/oxhasrights}]
+
             <div class="tobasketFunction">
-                [{oxhasrights ident="SHOWARTICLEPRICE"}]
-                    <span id="productPrice_[{$testid}]" class="price lead[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">[{$product->getFPrice()}] [{$currency->sign}] [{if $blShowToBasket}]*[{/if}]</span>
-                    [{if $product->loadAmountPriceInfo()}]
-                        [{include file="page/details/inc/priceinfo.tpl" oDetailsProduct=$product}]
+                <div class="price h5[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
+                    [{block name="widget_product_listitem_grid_price"}]
+                    [{oxhasrights ident="SHOWARTICLEPRICE"}]
+                    [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
+                    [{assign var="tprice"     value=$product->getTPrice()}]
+                    [{assign var="price"      value=$product->getPrice()}]
+
+                    [{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}]
+                    <span class="oldPrice text-muted">
+                                <del>[{$product->getFTPrice()}] [{$currency->sign}]</del>
+                            </span>
                     [{/if}]
 
-                [{/oxhasrights}]
+                    [{block name="widget_product_listitem_grid_price_value"}]
+                    [{if $product->getFPrice()}]
+                    <span class="text-nowrap[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">
+                                    [{if $product->isRangePrice()}]
+                                        [{oxmultilang ident="PRICE_FROM"}]
+                                        [{if !$product->isParentNotBuyable()}]
+                                            [{$product->getFMinPrice()}]
+                                        [{else}]
+                                            [{$product->getFVarMinPrice()}]
+                                        [{/if}]
+                                    [{else}]
+                                        [{if !$product->isParentNotBuyable()}]
+                                            [{$product->getFPrice()}]
+                                        [{else}]
+                                            [{$product->getFVarMinPrice()}]
+                                        [{/if}]
+                                    [{/if}]
+                                    [{$currency->sign}]
+                                    [{if $oView->isVatIncluded()}]
+                                         [{if !($product->hasMdVariants() || ($oViewConf->showSelectListsInList() && $product->getSelections(1)) || $product->getVariants())}]*[{/if}]
+                                    [{/if}]
+                                </span>
+                    [{/if}]
+                    [{/block}]
+                    [{if $oUnitPrice}]
+                    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
+                                [{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]
+                            </span>
+                    [{elseif $product->oxarticles__oxweight->value }]
+                    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
+                                <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
+                                <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
+                            </span>
+                    [{/if}]
+                    [{/oxhasrights}]
+                    [{/block}]
+                </div>
+
                 [{if $blShowToBasket}]
                     [{oxhasrights ident="TOBASKET"}]
                         <div class="input-group">
-                            <input type="text" name="am" value="1" size="3" autocomplete="off" class="form-control" title="[{oxmultilang ident="QUANTITY"}]">
+                            <input type="hidden" name="am">
                             <button type="submit" class="btn btn-primary" title="[{oxmultilang ident="TO_CART"}]">
                                 <i class="moga-bag"></i>
                             </button>
@@ -110,7 +145,7 @@
                     <span id="productPriceUnit">[{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]</span>
                 [{/if}]
 
-                [{if $product->getStockStatus() == -1}]
+                [{*if $product->getStockStatus() == -1}]
                     <span class="stockFlag notOnStock">
                         [{if $product->oxarticles__oxnostocktext->value}]
                             [{$product->oxarticles__oxnostocktext->value}]
@@ -133,7 +168,7 @@
                             <span class="text-success">[{oxmultilang ident="READY_FOR_SHIPPING"}]</span>
                         [{/if}]
                     </span>
-                [{/if}]
+                [{/if*}]
             </div>
 
         </div>

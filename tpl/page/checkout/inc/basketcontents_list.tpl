@@ -168,9 +168,11 @@
                                             [{if !$basketitem->isBundle() || !$basketitem->isDiscountArticle()}]
                                                 <div class="input-group justify-content-end">
                                                     <input id="am_[{$smarty.foreach.basketContents.iteration}]" type="number" class="form-control text-center" name="aproducts[[{$basketindex}]][am]" value="[{$basketitem->getAmount()}]" size="3" min="0" style="width:60px;float:right;"[{if $oConfig->getConfigParam('blAllowUnevenAmounts')}] step="any"[{/if}]>
+                                                    [{if !$oViewConf->isModuleActive('cnc/dynamicshopping')}]
                                                     <button class="btn btn-outline-primary" id="basketUpdate-[{$smarty.foreach.basketContents.iteration}]" type="submit" name="updateBtn" title="[{oxmultilang ident="UPDATE"}]">
                                                         <i class="moga-sync"></i>
                                                     </button>
+                                                    [{/if}]
                                                 </div>
                                             [{/if}]
                                         [{else}]

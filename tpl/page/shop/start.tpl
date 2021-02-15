@@ -33,17 +33,19 @@
         [{assign var="bargainWidth" value=$oViewConf->getViewThemeParam('sBargainWidth')}]
         [{assign var="showBargain" value=$oViewConf->getViewThemeParam('sShowBargain')}]
         [{if $showBargain}]
-            [{if $oBargainArticles && $oBargainArticles->count()}]
-                [{if $bargainWidth == 'container'}]
-                    <div class="container-xxl">
-                [{/if}]
-                        <div class="py-3 py-lg-5 text-center container[{if $bargainWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                            [{include file="widget/product/list.tpl" type=$oViewConf->getViewThemeParam('sStartPageListDisplayType') head="START_BARGAIN_HEADER"|oxmultilangassign subhead="START_BARGAIN_SUBHEADER"|oxmultilangassign listId="bargainItems" products=$oBargainArticles rsslink=$rsslinks.bargainArticles rssId="rssBargainProducts" showMainLink=true iProductsPerLine=4}]
+            <div class="article-list">
+                [{if $oBargainArticles && $oBargainArticles->count()}]
+                    [{if $bargainWidth == 'container'}]
+                        <div class="container-xxl">
+                    [{/if}]
+                            <div class="py-3 py-lg-5 text-center container[{if $bargainWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                                [{include file="widget/product/list.tpl" type=$oViewConf->getViewThemeParam('sStartPageListDisplayType') head="START_BARGAIN_HEADER"|oxmultilangassign subhead="START_BARGAIN_SUBHEADER"|oxmultilangassign listId="bargainItems" products=$oBargainArticles rsslink=$rsslinks.bargainArticles rssId="rssBargainProducts" showMainLink=true iProductsPerLine=4}]
+                            </div>
+                    [{if $bargainWidth == 'container'}]
                         </div>
-                [{if $bargainWidth == 'container'}]
-                    </div>
+                    [{/if}]
                 [{/if}]
-            [{/if}]
+            </div>
         [{/if}]
     [{/block}]
 
@@ -58,17 +60,19 @@
         [{assign var="newestWidth" value=$oViewConf->getViewThemeParam('sNewestWidth')}]
         [{assign var="showNewest" value=$oViewConf->getViewThemeParam('sShowNewest')}]
         [{if $showNewest}]
-            [{if $oNewestArticles && $oNewestArticles->count()}]
-                [{if $newestWidth == 'container'}]
-                    <div class="container-xxl">
-                [{/if}]
-                        <div class="py-5 text-center container[{if $newestWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                            [{include file="widget/product/list.tpl" type=$oViewConf->getViewThemeParam('sStartPageListDisplayType') head="START_NEWEST_HEADER"|oxmultilangassign subhead="START_NEWEST_SUBHEADER"|oxmultilangassign listId="newItems" products=$oNewestArticles rsslink=$rsslinks.newestArticles rssId="rssNewestProducts" showMainLink=true iProductsPerLine=4}]
+            <div class="article-list">
+                [{if $oNewestArticles && $oNewestArticles->count()}]
+                    [{if $newestWidth == 'container'}]
+                        <div class="container-xxl">
+                    [{/if}]
+                            <div class="py-5 text-center container[{if $newestWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                                [{include file="widget/product/list.tpl" type=$oViewConf->getViewThemeParam('sStartPageListDisplayType') head="START_NEWEST_HEADER"|oxmultilangassign subhead="START_NEWEST_SUBHEADER"|oxmultilangassign listId="newItems" products=$oNewestArticles rsslink=$rsslinks.newestArticles rssId="rssNewestProducts" showMainLink=true iProductsPerLine=4}]
+                            </div>
+                    [{if $newestWidth == 'container'}]
                         </div>
-                [{if $newestWidth == 'container'}]
-                    </div>
+                    [{/if}]
                 [{/if}]
-            [{/if}]
+            </div>
         [{/if}]
     [{/block}]
 
@@ -77,17 +81,19 @@
         [{assign var="topWidth" value=$oViewConf->getViewThemeParam('sTopWidth')}]
         [{assign var="showTop" value=$oViewConf->getViewThemeParam('sShowTop')}]
         [{if $showTop}]
-            [{if $oTopArticles && $oTopArticles->count()}]
-                [{if $topWidth == 'container'}]
-                    <div class="container-xxl">
-                [{/if}]
-                        <div class="py-5 text-center container[{if $topWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                            [{include file="widget/product/list.tpl" type="grid" head="START_TOP_PRODUCTS_HEADER"|oxmultilangassign subhead="START_TOP_PRODUCTS_SUBHEADER"|oxmultilangassign:$oTopArticles->count() listId="topBox" products=$oTopArticles rsslink=$rsslinks.topArticles rssId="rssTopProducts" showMainLink=true iProductsPerLine=2}]
+            <div class="article-list">
+                [{if $oTopArticles && $oTopArticles->count()}]
+                    [{if $topWidth == 'container'}]
+                        <div class="container-xxl">
+                    [{/if}]
+                            <div class="py-5 text-center container[{if $topWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
+                                [{include file="widget/product/list.tpl" type="grid" head="START_TOP_PRODUCTS_HEADER"|oxmultilangassign subhead="START_TOP_PRODUCTS_SUBHEADER"|oxmultilangassign:$oTopArticles->count() listId="topBox" products=$oTopArticles rsslink=$rsslinks.topArticles rssId="rssTopProducts" showMainLink=true iProductsPerLine=2}]
+                            </div>
+                    [{if $topWidth == 'container'}]
                         </div>
-                [{if $topWidth == 'container'}]
-                    </div>
+                    [{/if}]
                 [{/if}]
-            [{/if}]
+            </div>
         [{/if}]
     [{/block}]
 [{/capture}]

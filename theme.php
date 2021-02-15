@@ -266,7 +266,7 @@ $aTheme = array(
             'group'       => 'pdp',
             'name'        => 'sImageStyle',
             'type'        => 'select',
-            'value'       => 'grid',
+            'value'       => 'carousel',
             'constraints' => 'grid|carousel',
             'position' => 1,
         ),
