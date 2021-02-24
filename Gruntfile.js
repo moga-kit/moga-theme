@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
 
     'use strict';
@@ -30,11 +32,11 @@ module.exports = function (grunt) {
          * Sass (compile & minify)
          */
         sass: {
-            dist: {
-                options: {
-                    update: true,
-                    style: 'compressed' /* compressed */
-                },
+            options: {
+                implementation: sass,
+                sourceMap: true
+            },
+            compile: {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/css/styles.min.css': [
                         '<%= project.dev %>/build/scss/style.scss'
