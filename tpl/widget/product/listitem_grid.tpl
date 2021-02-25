@@ -1,9 +1,10 @@
 [{block name="widget_product_listitem_grid"}]
+    [{assign var="oConfig"         value=$oViewConf->getConfig()}]
     [{assign var="product"         value=$oView->getProduct()}]
     [{assign var="blDisableToCart" value=$oView->getDisableToCart()}]
     [{assign var="iIndex"          value=$oView->getIndex()}]
     [{assign var="showMainLink"    value=$oView->getShowMainLink()}]
-    [{assign var="currency" value=$oView->getActCurrency()}]
+    [{assign var="currency"        value=$oView->getActCurrency()}]
     [{if $showMainLink}]
         [{assign var='_productLink' value=$product->getMainLink()}]
     [{else}]
@@ -82,13 +83,13 @@
                         [{/if}]
                         [{/block}]
                         [{if $oUnitPrice}]
-                        <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
-                                [{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]
+                            <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
+                                    [{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]
                             </span>
-                        [{elseif $product->oxarticles__oxweight->value }]
-                        <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
-                                <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
-                                <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
+                        [{elseif $product->oxarticles__oxweight->value and $oConfig->getConfigParam('blShowWeightInList') }]
+                            <span id="productPricePerUnit_Weight_[{$testid}]" class="pricePerUnit">
+                                    <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
+                                    <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
                             </span>
                         [{/if}]
                         [{/oxhasrights}]
