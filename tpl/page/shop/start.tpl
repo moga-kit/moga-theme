@@ -24,7 +24,10 @@
 
     [{block name="start_welcome_text"}]
         [{oxifcontent ident="oxstartwelcome" object="oCont"}]
-            <div class="welcome-teaser">[{$oCont->oxcontents__oxcontent->value}]</div>
+            [{assign var="welcomeTextWidth" value=$oViewConf->getViewThemeParam('sWelcomeTextWidth')}]
+            <div class="container[{if $welcomeTextWidth == 'container'}]-xxl [{else}]-fluid [{/if}]welcome-teaser">
+                [{$oCont->oxcontents__oxcontent->value}]
+            </div>
         [{/oxifcontent}]
     [{/block}]
 

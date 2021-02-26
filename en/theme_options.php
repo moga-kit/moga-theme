@@ -99,6 +99,10 @@ $aLang = array(
     'SHOP_THEME_aNrofCatArticlesInGrid'             => 'Grid view: Number of products which can be shown in a product lists (category pages, search results)<br><br>Attention: A large number of products per page (above 100) can cause performance loss!',
     'SHOP_THEME_aNrofCatArticles'                   => 'Number of products which can be shown in a product lists (category pages, search results)<br><br>Attention: A large number of products per page (above 100) can cause performance loss!',
 
+    'SHOP_THEME_sWelcomeTextWidth'                 => 'Welcome text width',
+    'SHOP_THEME_sWelcomeTextWidth_w100c100'        => '100%',
+    'SHOP_THEME_sWelcomeTextWidth_container'       => 'Centered',
+
     'SHOP_THEME_sFacebookUrl'                       => 'Facebook Page-URL',
     'HELP_SHOP_THEME_sFacebookUrl'                  => 'E.g.: https://www.facebook.com/oxidesales',
     'SHOP_THEME_sTwitterUrl'                        => 'Twitter Profile-URL',
