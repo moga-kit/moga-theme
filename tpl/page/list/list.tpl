@@ -1,6 +1,7 @@
 [{assign var="actCategory" value=$oView->getActiveCategory()}]
 [{assign var="showPopBreadcrump" value=$oViewConf->getViewThemeParam('sShowPopBreadcrump')}]
 [{assign var="oPageNavigation" value=$oView->getPageNavigation()}]
+[{assign var="sCategoryDescPosition" value=$oViewConf->getViewThemeParam('sCategoryDescPosition')}]
 
 [{capture append="oxidBlock_sidebar"}]
     [{assign var="listType" value=$oView->getListType()}]
@@ -52,7 +53,6 @@
             </div>
             [{/if}]
         </div>
-
     [{else}]
         [{if $headerImageWidth == 'container'}]
             <div class="container-xxl">
@@ -138,6 +138,14 @@
         [{if $headerImageWidth == 'container'}]
         </div>
         [{/if}]
+    [{/if}]
+
+    [{if $actCategory->oxcategories__oxlongdesc->value && $oPageNavigation->actPage == 1 && $sCategoryDescPosition == 'top'}]
+        [{block name="page_list_long_desc"}]
+        <div id="catLongDescLocator" class="container-[{if $headerImageWidth == 'container'}]fluid[{else}]xxl[{/if}] categoryDescription">
+            [{oxeval var=$actCategory->oxcategories__oxlongdesc}]
+        </div>
+        [{/block}]
     [{/if}]
 
     [{if $oView->hasVisibleSubCats()}]
@@ -256,8 +264,12 @@
         [{/if}]
     [{/block}]
 
-    [{if $actCategory->oxcategories__oxlongdesc->value && $oPageNavigation->actPage == 1}]
-    <p class="list-long-desc">[{oxeval var=$actCategory->oxcategories__oxlongdesc}]</p>
+    [{if $actCategory->oxcategories__oxlongdesc->value && $oPageNavigation->actPage == 1 && $sCategoryDescPosition == 'bottom'}]
+        [{block name="page_list_long_desc"}]
+            <div id="catLongDescLocator" class="container-[{if $headerImageWidth == 'container'}]fluid[{else}]xxl[{/if}] categoryDescription">
+                [{oxeval var=$actCategory->oxcategories__oxlongdesc}]
+            </div>
+        [{/block}]
     [{/if}]
 
     <div class="modal fade modal-sidebar-left" id="filter">

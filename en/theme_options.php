@@ -205,4 +205,8 @@ $aLang = array(
     'SHOP_THEME_blFullwidthLayout'                      => 'Activate full width layout',
 
     'SHOP_THEME_blEmailsShowProductPictures'        => 'Show product pictures in emails',
+
+    'SHOP_THEME_sCategoryDescPosition'                => 'Category description position',
+    'SHOP_THEME_sCategoryDescPosition_bottom'         => 'bottom',
+    'SHOP_THEME_sCategoryDescPosition_top'            => 'top',
 );
