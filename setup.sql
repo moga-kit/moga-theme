@@ -18,6 +18,7 @@ INSERT INTO `oxconfig` (`OXID`, `OXSHOPID`, `OXMODULE`, `OXVARNAME`, `OXVARTYPE`
 (uuid(), 1, 'theme:wave', 'sDefaultListDisplayType', 'select', 0x83cd10b7f09064ed, NOW()),
 (uuid(), 1, 'theme:wave', 'sStartPageListDisplayType', 'select', 0x25f9f804, NOW()),
 (uuid(), 1, 'theme:wave', 'blShowListDisplayType', 'bool', 0x07, NOW()),
+(uuid(), 1, 'theme:wave', 'blShowWeightInList', 'bool', 0x07, NOW()),
 (uuid(), 1, 'theme:wave', 'iNewBasketItemMessage', 'select', 0xb6, NOW()),
 (uuid(), 1, 'theme:wave', 'aNrofCatArticles', 'arr', 0x4dbace2972e14bf2cbd3a9a4113b83ad1c8f7b704f710ba39fd1ecd29b438b41809712e316c6f4fdc92741f7876cc6fca127d78994e604dcc99519, NOW()),
 (uuid(), 1, 'theme:wave', 'aNrofCatArticlesInGrid', 'arr', 0x4dbace2972e14bf2cbd3a9a4113b83c51e8d79724d7309a19dd3ee6153448c46879015e411c1f3fa250245f38368c2f8a523d58c91546b92cdf6, NOW()),

@@ -1,6 +1,7 @@
 [{oxscript include="js/listremovebutton.min.js" priority=10}]
 
 [{block name="widget_product_listitem_line"}]
+    [{assign var="oConfig"         value=$oViewConf->getConfig()}]
     [{assign var="product"         value=$oView->getProduct()}]
     [{assign var="blDisableToCart" value=$oView->getDisableToCart()}]
     [{assign var="iIndex"          value=$oView->getIndex()}]
@@ -142,8 +143,8 @@
 
                                             [{if $oUnitPrice}]
                                                 <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap">[{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]</span>
-                                            [{elseif $product->oxarticles__oxweight->value }]
-                                                <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit text-nowrap">
+                                            [{elseif $product->oxarticles__oxweight->value and $oConfig->getConfigParam('blShowWeightInList') }]
+                                                <span id="productPricePerUnit_Weight_[{$testid}]" class="pricePerUnit text-nowrap">
                                                     <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
                                                     <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
                                                 </span>

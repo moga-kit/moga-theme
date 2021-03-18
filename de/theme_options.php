@@ -98,6 +98,7 @@ $aLang = array(
     'SHOP_THEME_sStartPageListDisplayType_grid'     => 'Galerie',
     'SHOP_THEME_sStartPageListDisplayType_line'     => 'Liste',
     'SHOP_THEME_sStartPageListDisplayType_infogrid' => 'Galerie zweispaltig',
+    'SHOP_THEME_blShowWeightInList'                 => 'Gewicht in Produktlisten anzeigen',
 
     'SHOP_THEME_sHeaderWidth'                       => 'Header Breite',
     'SHOP_THEME_sHeaderWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',

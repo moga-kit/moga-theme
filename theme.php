@@ -39,6 +39,12 @@ $aTheme = array(
             'value' => 1,
         ),
         array(
+            'group' => 'display',
+            'name'  => 'blShowWeightInList',
+            'type'  => 'bool',
+            'value' => 1,
+        ),
+        array(
             'group'       => 'display',
             'name'        => 'iNewBasketItemMessage',
             'type'        => 'select',
