@@ -161,14 +161,8 @@
                         [{if $category->getIsVisible()}]
                             [{assign var="iSubCategoriesCount" value=$iSubCategoriesCount+1}]
                             [{assign var="iconUrl" value=$category->getIconUrl()}]
-                            <div class="
-                            [{if $listType=='manufacturer'}]
-                                col-12 col-sm-4 col-md-3 col-lg-2 manufacturer-item
-                            [{else}]
-                                col-12 col-sm-4 col-md-3
-                            [{/if}]">
+                            <div class="col-12 col-sm-4 col-md-3[{if $listType=='manufacturer'}] col-lg-2 manufacturer-item[{/if}]">
                                 <a href="[{$category->getLink()}]" class="card [{if $listType=='manufacturer'}]bg-light[{else}]bg-dark text-white[{/if}]">
-
                                     [{if $iconUrl}]
                                         [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                                             <img loading="lazy" src="[{$oViewConf->getDynamicImage($category->getIconUrl(), 400, 200, 'webp', false)}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
@@ -176,10 +170,8 @@
                                             <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
                                         [{/if}]
                                     [{else}]
-                                        [{oxmultilang ident="DD_LIST_SHOW_MORE" suffix="ELLIPSIS"}]
+                                        <img loading="lazy" src="[{$oViewConf->getImageUrl('subcat-placeholder.png')}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
                                     [{/if}]
-
-
                                     <div class="card-img-overlay">
                                         <div class="h5 card-title">[{$category->oxcategories__oxtitle->value}]</div>
                                         [{*if $oView->showCategoryArticlesCount() && ($category->getNrOfArticles() > 0)}] ([{$category->getNrOfArticles()}])[{/if}]
