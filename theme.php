@@ -302,7 +302,14 @@ $aTheme = array(
             'constraints' => 'w100cContainer|w100c100|container',
             'position' => 2,
         ),
-
+        array(
+            'group'       => 'pop',
+            'name'        => 'sCategoryDescPosition',
+            'type'        => 'select',
+            'value'       => 'bottom',
+            'constraints' => 'bottom|top',
+            'position' => 3,
+        ),
 
 //FUNKTIONEN
         array(
