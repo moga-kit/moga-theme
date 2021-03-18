@@ -158,18 +158,22 @@ $aLang = array(
     'SHOP_THEME_sPromoTilesRowPadding'             => 'Banner-Kachel-Zeile Innenabstand',
 
     'SHOP_THEME_sCategoryTilesSpacing'             => 'Kachel-Abstand',
-    'SHOP_THEME_sCategoryTilesSpacing_0'             => '0',
-    'SHOP_THEME_sCategoryTilesSpacing_1'             => '1',
-    'SHOP_THEME_sCategoryTilesSpacing_2'             => '2',
-    'SHOP_THEME_sCategoryTilesSpacing_3'             => '3',
-    'SHOP_THEME_sCategoryTilesSpacing_4'             => '4',
-    'SHOP_THEME_sCategoryTilesSpacing_5'             => '5',
+    'SHOP_THEME_sCategoryTilesSpacing_0'           => '0',
+    'SHOP_THEME_sCategoryTilesSpacing_1'           => '1',
+    'SHOP_THEME_sCategoryTilesSpacing_2'           => '2',
+    'SHOP_THEME_sCategoryTilesSpacing_3'           => '3',
+    'SHOP_THEME_sCategoryTilesSpacing_4'           => '4',
+    'SHOP_THEME_sCategoryTilesSpacing_5'           => '5',
 
     'SHOP_THEME_sCategoryTilesBg'                  => 'Kategorie-Kacheln Hintergrund',
     'SHOP_THEME_sCategoryTilesBg_white'            => 'weiß',
     'SHOP_THEME_sCategoryTilesBg_light'            => 'grau',
     'SHOP_THEME_sCategoryTilesBg_dark'             => 'dunkel',
     'SHOP_THEME_sCategoryTilesBg_primary'          => 'primärfarbe',
+
+    'SHOP_THEME_sWelcomeTextWidth'                 => 'Willkommen Text Breite',
+    'SHOP_THEME_sWelcomeTextWidth_w100c100'        => 'Alles 100%',
+    'SHOP_THEME_sWelcomeTextWidth_container'       => 'Alles mittig',
 
     'SHOP_THEME_sShowBargain'                        => 'Angebote der Woche anzeigen',
     'SHOP_THEME_sBargainWidth'                       => 'Angebote der Woche Breite',

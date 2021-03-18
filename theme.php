@@ -81,7 +81,7 @@ $aTheme = array(
           'constraints' => 'Dropdowns|MegaMenu',
        ),
 
-//STARTSEITE
+//STARTPAGE
          array(
             'group'       => 'startpage',
             'name'        => 'sStartPageListDisplayType',
@@ -214,7 +214,14 @@ $aTheme = array(
             'constraints' => 'white|light|dark|primary',
             'position' => 27,
         ),
-
+        array(
+            'group'       => 'startpage',
+            'name'        => 'sWelcomeTextWidth',
+            'type'        => 'select',
+            'value'       => 'w100cContainer',
+            'constraints' => 'w100c100|container',
+            'position'    => 29,
+        ),
         array(
             'group' => 'startpage',
             'name'  => 'sShowBargain',
