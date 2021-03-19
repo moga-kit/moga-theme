@@ -425,34 +425,34 @@
                     </small>
                     [{/block}]
 
-                    [{oxhasrights ident="TOBASKET"}]
-                    [{if $oDetailsProduct->isBuyable()}]
                     [{block name="details_productmain_deliverytime"}]
-                    [{include file="page/details/inc/deliverytime.tpl"}]
+                        [{oxhasrights ident="TOBASKET"}]
+                        [{if $oDetailsProduct->isBuyable()}]
+                        [{include file="page/details/inc/deliverytime.tpl"}]
+                        [{/if}]
+                        [{/oxhasrights}]
                     [{/block}]
-                    [{/if}]
-                    [{/oxhasrights}]
 
                     [{block name="details_productmain_tobasket"}]
-                        <div class="tobasket-function my-3 my-lg-5 d-grid">
-                            [{oxhasrights ident="TOBASKET"}]
-                                [{if !$oDetailsProduct->isNotBuyable()}]
-                                    <input id="amountToBasket" type="hidden" name="am" value="1">
-                                    <button id="toBasket" type="submit"[{if !$blCanBuy}] disabled[{/if}] class="btn btn-primary btn-lg">[{oxmultilang ident="TO_CART"}]</button>
-                                [{/if}]
-                            [{/oxhasrights}]
-                        </div>
+                        [{oxhasrights ident="TOBASKET"}]
+                        [{if !$oDetailsProduct->isNotBuyable()}]
+                            <div class="tobasket-function my-3 my-lg-5 d-grid">
+                                <input id="amountToBasket" type="hidden" name="am" value="1">
+                                <button id="toBasket" type="submit"[{if !$blCanBuy}] disabled[{/if}] class="btn btn-primary btn-lg">[{oxmultilang ident="TO_CART"}]</button>
+                            </div>
+                        [{/if}]
+                        [{/oxhasrights}]
+                    [{/block}]
 
                     [{block name="details_productmain_productlinksselector"}]
                     [{block name="details_productmain_productlinks"}]
-                    <div class="row g-1">
+                    <div class="row g-1 product-links">
 
                         [{if $oViewConf->getShowCompareList()}]
                         <div class="col-md-6">
                             [{oxid_include_dynamic file="page/details/inc/compare_links.tpl" testid="" type="compare" aid=$oDetailsProduct->oxarticles__oxid->value anid=$oDetailsProduct->oxarticles__oxnid->value in_list=$oDetailsProduct->isOnComparisonList() page=$oView->getActPage() text_to_id="COMPARE" text_from_id="REMOVE_FROM_COMPARE_LIST"}]
                         </div>
                         [{/if}]
-
 
                         [{if $oViewConf->getShowSuggest()}]
                         <div class="col-md-6">
@@ -467,6 +467,7 @@
                             <a class="btn btn-sm btn-light w-100" id="loginToNotice" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account" params="anid=`$oDetailsProduct->oxarticles__oxnid->value`"|cat:"&amp;sourcecl="|cat:$oViewConf->getTopActiveClassName()|cat:$oViewConf->getNavUrlParams()}]">[{oxmultilang ident="ADD_TO_WISH_LIST"}]</a>
                             [{/if}]
                         </div>
+
                         [{if $oViewConf->getShowWishlist()}]
                             <div class="col-md-6">
                                 [{if $oxcmp_user}]
@@ -483,10 +484,8 @@
                     </div>
                     [{/block}]
                     [{/block}]
-                    [{/block}]
 
-                    [{block name="details_productmain_social"}]
-                    [{/block}]
+                    [{block name="details_productmain_social"}][{/block}]
                 </div>
             </div>
         </div>

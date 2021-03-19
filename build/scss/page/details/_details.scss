@@ -94,4 +94,13 @@
       }
     }
   }
+
+  .product-links {
+    margin-top: 10px;
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }
