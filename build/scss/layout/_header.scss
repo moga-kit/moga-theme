@@ -22,9 +22,16 @@
   }
 
   .logo-img {
-    width: 100px;
-    height: 37px;
-    fill: $primary;
+    max-width: 140px;
+    height: auto;
+    @include media-breakpoint-up(sm) {
+      max-width: unset;
+    }
+    &.default {
+      width: 100px;
+      height: 37px;
+      fill: $primary;
+    }
   }
 
   .menu-dropdowns {

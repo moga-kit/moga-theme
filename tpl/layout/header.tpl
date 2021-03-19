@@ -21,18 +21,18 @@
                     [{assign var="slogoImg" value=$oViewConf->getViewThemeParam('sLogoFile')}]
                     [{assign var="sLogoWidth" value=$oViewConf->getViewThemeParam('sLogoWidth')}]
                     [{assign var="sLogoHeight" value=$oViewConf->getViewThemeParam('sLogoHeight')}]
-                    <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-link d-flex order-lg-1">
+                    <a href="[{$oViewConf->getHomeLink()}]" title="[{$oxcmp_shop->oxshops__oxname->value}]" class="logo-link d-flex order-lg-1">
                         [{if $slogoImg}]
                             [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
                             <picture>
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'webp')}]">
-                                <img  src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
+                                <img src="[{$oViewConf->getDynamicImage($oViewConf->getImageUrl($slogoImg), 200, '', 'png')}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
                             </picture>
                             [{else}]
-                                <img  src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxtitleprefix->value}]" class="logo-img">
+                                <img src="[{$oViewConf->getImageUrl($slogoImg)}]" alt="[{$oxcmp_shop->oxshops__oxname->value}]" width="[{$sLogoWidth}]" height="[{$sLogoHeight}]" class="logo-img">
                             [{/if}]
                         [{else}]
-                        <svg version="1.1" class="logo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.4 113.4" style="enable-background:new 0 0 113.4 113.4;" xml:space="preserve">
+                        <svg version="1.1" class="logo-img default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.4 113.4" style="enable-background:new 0 0 113.4 113.4;" xml:space="preserve">
                             <style type="text/css">
                                 .st0{fill:#E1251B;}
                                 .st1{fill:#FFFFFF;}
