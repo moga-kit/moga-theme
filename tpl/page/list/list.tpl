@@ -33,10 +33,10 @@
                         <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
                         [{$actCategory->getTitle()}]
                     </h1>
-                    [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1}]
-                    <p id="catDescLocator" class="categoryDescription">
+                    [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1 && $actCategory->oxcategories__oxdesc->rawValue}]
+                    <div id="catDescLocator" class="categoryDescription">
                         [{$actCategory->oxcategories__oxdesc->rawValue}]
-                    </p>
+                    </div>
                     [{/if}]
                     </div>
                     [{if $actCategory->getIconUrl()}]
@@ -112,17 +112,17 @@
             <div class="pop-header">
                 [{assign var='rsslinks' value=$oView->getRssLinks()}]
                 <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
-                [{$actCategory->getTitle()}]
-                [{if $rsslinks.activeCategory}]
-                <a class="rss" id="rssActiveCategory" aria-label="[{$rsslinks.activeCategory.title}]" href="[{$rsslinks.activeCategory.link}]" title="[{$rsslinks.activeCategory.title}]" target="_blank">
-                    <i class="moga-rss"></i>
-                </a>
-                [{/if}]
+                    [{$oView->getTitle()}]
+                    [{if $rsslinks.activeCategory}]
+                        <a class="rss" id="rssActiveCategory" aria-label="[{$rsslinks.activeCategory.title}]" href="[{$rsslinks.activeCategory.link}]" title="[{$rsslinks.activeCategory.title}]" target="_blank">
+                            <i class="moga-rss"></i>
+                        </a>
+                    [{/if}]
                 </h1>
-                [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1}]
-                <p id="catDescLocator" class="categoryDescription[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] text-white[{/if}]">
+                [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1 && $actCategory->oxcategories__oxdesc->rawValue}]
+                <div id="catDescLocator" class="categoryDescription[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] text-white[{/if}]">
                     [{$actCategory->oxcategories__oxdesc->rawValue}]
-                </p>
+                </div>
                 [{/if}]
 
                 [{if $showPopBreadcrump}]
@@ -178,7 +178,7 @@
                                             <img loading="lazy" src="[{$category->getIconUrl()}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
                                         [{/if}]
                                     [{else}]
-                                        <img loading="lazy" src="[{$oViewConf->getImageUrl('subcat-placeholder.png')}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
+                                            <img loading="lazy" src="[{$oViewConf->getImageUrl('subcat-placeholder.png')}]" alt="[{$category->oxcategories__oxtitle->value}]" class="card-img">
                                     [{/if}]
                                     <div class="card-img-overlay">
                                         <div class="h5 card-title">[{$category->oxcategories__oxtitle->value}]</div>
