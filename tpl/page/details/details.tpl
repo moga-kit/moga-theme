@@ -11,6 +11,7 @@
     [{assign var="oPictureProduct" value=$oView->getPicturesProduct()}]
     [{assign var="currency" value=$oView->getActCurrency()}]
     [{assign var="sPageHeadTitle" value=$oDetailsProduct->oxarticles__oxtitle->value|cat:' '|cat:$oDetailsProduct->oxarticles__oxvarselect->value}]
+    [{assign var="headerImageWidth" value=$oViewConf->getViewThemeParam('sHeaderImageWidth')}]
 
     [{if $oView->getPriceAlarmStatus() == 1}]
         [{assign var="_statusMessage1" value="PAGE_DETAILS_THANKYOUMESSAGE1"|oxmultilangassign|cat:" "|cat:$oxcmp_shop->oxshops__oxname->value}]
@@ -27,8 +28,8 @@
         [{include file="message/error.tpl" statusMessage=`$_statusMessage1``$_statusMessage2`}]
     [{/if}]
 
-    <div id="details_container" class="details">
-        [{* details locator}]
+    <div id="details_container" class="details container-[{if $headerImageWidth == 'container'}]fluid[{else}]xxl[{/if}]">
+        [{* details locator *}]
         [{if $oView->getSearchTitle()}]
             [{assign var="detailsLocation" value=$oView->getSearchTitle()}]
         [{else}]
@@ -46,7 +47,7 @@
                     <i class="moga-bars"></i> [{oxmultilang ident="BACK_TO_OVERVIEW"}]
                 </a>
             </div>
-            <div class="col-3  details-pager-prev">
+            <div class="col-3 details-pager-prev">
                 [{if $actCategory->prevProductLink}]
                 <a id="linkPrevArticle" class="details-pager-link" href="[{$actCategory->prevProductLink}]">
                     <i class="moga-left"></i>
@@ -59,16 +60,15 @@
                     [{oxmultilang ident="PRODUCT"}] [{$actCategory->iProductPos}] [{oxmultilang ident="OF"}] [{$actCategory->iCntOfProd}]
                 [{/if}]
             </div>
-            <div class="col-3 text-right  details-pager-next">
+            <div class="col-3 text-end details-pager-next">
                 [{if $actCategory->nextProductLink}]
                     <a id="linkNextArticle" class="details-pager-link" href="[{$actCategory->nextProductLink}]">
-                        [{oxmultilang ident="NEXT_PRODUCT"}] <i class="fa-chevron-right"></i>
+                        [{oxmultilang ident="NEXT_PRODUCT"}] <i class="moga-right"></i>
                     </a>
                 [{/if}]
             </div>
         </div>
-        [{details locator *}]
-        [{* RDFa offering*}]
+        [{* details locator *}]
         [{include file="page/details/inc/fullproductinfo.tpl"}]
     </div>
 [{/if}]
