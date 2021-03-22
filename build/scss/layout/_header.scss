@@ -48,15 +48,20 @@
   .btn {
     padding: 4px 8px;
     border: 3px solid #fff;
+    min-height: 50px;
 
-    .badge {
-      position: absolute;
-      font-size: 10px;
-      left: 0;
-      right: 1px;
-      text-align: center;
-      top: 14px;
-      color: $primary;
+    .moga-bag {
+      position: relative;
+      display: block;
+      .badge {
+        position: absolute;
+        font-size: 10px;
+        left: -5px;
+        right: 0;
+        text-align: center;
+        top: 13px;
+        color: $primary;
+      }
     }
 
     &:hover {
