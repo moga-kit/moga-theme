@@ -3,9 +3,11 @@
         'use strict'
 
         var myCollapsible = document.getElementById('searchCollapse');
-        myCollapsible.addEventListener('shown.bs.collapse', function () {
-            document.getElementById('searchParam').focus();
-        })
+        if(myCollapsible) {
+            myCollapsible.addEventListener('shown.bs.collapse', function () {
+                document.getElementById('searchParam').focus();
+            })
+        }
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.querySelectorAll('.needs-validation')
