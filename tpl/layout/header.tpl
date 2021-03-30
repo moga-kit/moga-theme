@@ -64,8 +64,8 @@
                                 [{oxid_include_widget cl="oxwCurrencyList" cur=$oViewConf->getActCurrency() _parent=$oView->getClassName() nocookie=1 _navurlparams=$oViewConf->getNavUrlParams() anid=$oViewConf->getActArticleId()}]
                             [{/block}]
                         </div>
-                        [{if $showSearch}]
-                        <button class="btn search-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]"  aria-expanded="false" aria-controls="searchCollapse">
+                        [{if $showSearch && $oView->showSearch()}]
+                        <button class="btn search-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-label="[{oxmultilang ident="SEARCH"}]" aria-expanded="false" aria-controls="searchCollapse">
                             <i class="moga-search"></i>
                         </button>
                         [{/if}]
