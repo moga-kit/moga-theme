@@ -19,7 +19,6 @@
         [{assign var="blShowToBasket" value=false}]
     [{/if}]
 
-    <form name="tobasket.[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
         [{$oViewConf->getNavFormParams()}]
         [{$oViewConf->getHiddenSid()}]
         <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
@@ -161,11 +160,13 @@
 
                                     [{block name="widget_product_listitem_line_selections"}]
                                     [{if $aVariantSelections && $aVariantSelections.selections }]
-                                    <div id="variantselector_[{$iIndex}]" class="selectorsBox variant-dropdown">
-                                        [{foreach from=$aVariantSelections.selections item=oSelectionList key=iKey}]
-                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oSelectionList blHideLabel=true}]
-                                        [{/foreach}]
-                                    </div>
+                                        <form name="tobasket.[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
+                                            <div id="variantselector_[{$iIndex}]" class="selectorsBox variant-dropdown">
+                                                [{foreach from=$aVariantSelections.selections item=oSelectionList key=iKey}]
+                                                [{include file="widget/product/selectbox.tpl" oSelectionList=$oSelectionList blSubmitOnChange=true blHideLabel=true}]
+                                                [{/foreach}]
+                                            </div>
+                                        </form>
                                     [{elseif $oViewConf->showSelectListsInList()}]
                                     [{assign var="oSelections" value=$product->getSelections(1)}]
                                     [{if $oSelections}]
@@ -212,7 +213,6 @@
                 </div>
             </div>
         </div>
-    </form>
 
     [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
         <form action="[{$oViewConf->getSelfActionLink()}]" method="post" id="remove_[{$removeFunction}][{$testid}]">
