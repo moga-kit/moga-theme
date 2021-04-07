@@ -1,8 +1,8 @@
-<div class="payment-option-toggle">
-    <div class="form-check">
+<dl>
+    <dt>
         <input class="form-check-input" id="payment_[{$sPaymentID}]" type="radio" name="paymentid" value="[{$sPaymentID}]"[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] checked[{/if}]>
         <label class="form-check-label" for="payment_[{$sPaymentID}]">[{$paymentmethod->oxpayments__oxdesc->value}]</label>
-    </div>
+    </dt>
     <div class="payment-option[{if $oView->getCheckedPaymentId() == $paymentmethod->oxpayments__oxid->value}] activePayment[{/if}]">
         [{if $paymentmethod->getPrice()}]
             [{assign var="oPaymentPrice" value=$paymentmethod->getPrice() }]
@@ -35,4 +35,4 @@
             [{/if}]
         [{/block}]
     </div>
-</div>
+</dl>
