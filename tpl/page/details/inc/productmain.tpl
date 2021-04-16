@@ -226,9 +226,9 @@
 
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="sticky-md-top">
+                [{block name="details_productmain_manufacturersicon"}]
                 [{if $oManufacturer}]
                 <div class="brandLogo d-none d-md-block">
-                    [{block name="details_productmain_manufacturersicon"}]
                     <a href="[{$oManufacturer->getLink()}]" title="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                         [{if $oManufacturer->oxmanufacturers__oxicon->value}]
                             <picture>
@@ -243,9 +243,9 @@
                             </picture>
                         [{/if}]
                     </a>
-                    [{/block}]
                 </div>
                 [{/if}]
+                [{/block}]
 
                 [{block name="details_productmain_title"}]
                     <h1 class="details-title">
