@@ -28,7 +28,7 @@
       max-width: unset;
     }
     &.default {
-      width: 100px;
+      width: auto;
       height: 37px;
       fill: $primary;
     }
@@ -50,13 +50,13 @@
     border: 3px solid #fff;
     min-height: 50px;
 
-    .moga-bag {
+    &-minibasket {
       position: relative;
-      display: block;
+
       .badge {
         position: absolute;
         font-size: 10px;
-        left: -5px;
+        left: 0;
         right: 0;
         text-align: center;
         top: 13px;

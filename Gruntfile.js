@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
-                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
@@ -102,7 +102,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
+                    //'<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': ['<%= project.out %><%= project.theme %>/src/js/variants.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],
