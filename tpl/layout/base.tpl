@@ -6,8 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
-        <link rel="preload" href="/out/moga/src/css/styles.min.css" as="style">
-        <link rel="preload" href="/out/moga/src/js/scripts.min.js" as="script">
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('css/styles.min.css')}]" as="style">
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('js/scripts.min.js')}]" as="script">
 
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
@@ -110,7 +110,7 @@
             [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
                 [{oxstyle include="css/preview.css?"|cat:$smarty.now}]
             [{else}]
-                <link rel="stylesheet" href="/out/moga/src/css/styles.min.css">
+                <link rel="stylesheet" href="[{$oViewConf->getImageUrl('../src/css/styles.min.css')}]">
             [{/if}]
         [{/block}]
 
@@ -135,29 +135,6 @@
 [{/capture}]
 
 [{assign var="blIsCheckout"     value=$oView->getIsOrderStep()}]
-[{assign var="blFullwidth"      value=$oViewConf->getViewThemeParam('blFullwidthLayout')}]
-[{assign var="sBackgroundColor" value=$oViewConf->getViewThemeParam('sBackgroundColor')}]
-
-[{* Fullpage Background *}]
-[{if $oViewConf->getViewThemeParam('blUseBackground')}]
-
-    [{if $sBackgroundUrl}]
-        [{assign var="sStyle" value="background:`$sBackgroundColor` url(`$sBackgroundUrl`) `$sBackgroundRepeat` `$sBackgroundPosHorizontal` `$sBackgroundPosVertical`;"}]
-
-        [{if $sBackgroundSize}]
-            [{assign var="sStyle" value=$sStyle|cat:"background-size:`$sBackgroundSize`;"}]
-        [{/if}]
-
-        [{if $blBackgroundAttachment}]
-            [{assign var="sStyle" value=$sStyle|cat:"background-attachment:fixed;"}]
-        [{/if}]
-    [{else}]
-        [{assign var="sStyle" value="background:`$sBackgroundColor`;"}]
-    [{/if}]
-[{elseif $sBackgroundColor}]
-    [{assign var="sStyle" value="background:`$sBackgroundColor`;"}]
-[{/if}]
-
 <!DOCTYPE html>
 <html lang="[{$oView->getActiveLangAbbr()}]" [{block name="head_html_namespace"}][{/block}]>
     <head>
@@ -168,22 +145,22 @@
     </head>
 
     <body class="cl-[{$oView->getClassName()}][{if $smarty.get.plain == '1'}] popup[{/if}][{if $blIsCheckout}] is-checkout[{/if}][{if $oxcmp_user && $oxcmp_user->oxuser__oxpassword->value}] is-logged-in[{/if}]">
+
     [{* Theme SVG icons block *}]
     [{block name="theme_svg_icons"}][{/block}]
 
     [{foreach from=$oxidBlock_pageBody item="_block"}]
         [{$_block}]
     [{/foreach}]
-
     [{*if $oViewConf->getTopActiveClassName() == 'details' && $oView->showZoomPics()}]
         [{include file="page/details/inc/photoswipe.tpl"}]
     [{/if*}]
 
     [{block name="base_js"}]
         [{*include file="i18n/js_vars.tpl"*}]
-        <script src="/out/moga/src/js/scripts.min.js"></script>
-    [{/block}]
+        <script src="[{$oViewConf->getResourceUrl('js/scripts.min.js')}]"></script>
 
+    [{/block}]
     [{if $oViewConf->isTplBlocksDebugMode()}]
         [{oxscript include="js/widgets/oxblockdebug.min.js"}]
         [{oxscript add="$( 'body' ).oxBlockDebug();"}]

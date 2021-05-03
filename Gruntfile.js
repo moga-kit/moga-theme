@@ -1,4 +1,4 @@
-const sass = require('node-sass');
+const sass = require('dart-sass');
 
 module.exports = function (grunt) {
 
@@ -131,7 +131,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        combine_mq: {
+        cmq: {
             new_filename: {
                 options: {
                     beautify: false,
@@ -160,7 +160,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= project.dev %>build/scss/**/*.scss','<%= project.dev %>tpl/**/*.tpl'],
                 tasks:
-                    ['sass', 'combine_mq', 'cssmin', 'clean'],
+                    ['sass', 'cmq', 'cssmin', 'clean'],
                 options:
                     {
                         spawn: false,
@@ -215,7 +215,7 @@ module.exports = function (grunt) {
         'webfont',
         'copy',
         'sass',
-        'combine_mq',
+        'cmq',
         'cssmin',
         'concat:js',
         'uglify',
