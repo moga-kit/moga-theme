@@ -30,7 +30,7 @@
             [{else}]
                 <img loading="lazy" width="300" height="300" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="product-img">
             [{/if}]
-            <a href="[{$_productLink}]" class="stretched-link"></a>
+            <a href="[{$_productLink}]" class="stretched-link" title="[{oxmultilang ident="DETAILS"}]"></a>
         </div>
         [{/block}]
 
@@ -40,7 +40,7 @@
                     [{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]
                 </div>
             [{/block}]
-            <a href="[{$_productLink}]" class="stretched-link"></a>
+            <a href="[{$_productLink}]" class="stretched-link" title="[{oxmultilang ident="DETAILS"}]"></a>
         </div>
         <div class="card-footer p-0 ps-3 border-0">
             [{block name="widget_product_listitem_grid_selections"}]
@@ -151,13 +151,13 @@
                             <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
                                 [{/if}]
                             </div>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" aria-label="[{oxmultilang ident="TO_CART"}]">
                                 <i class="moga-bag"></i>
                             </button>
                         </form>
                         [{/oxhasrights}]
                         [{else}]
-                        <a class="btn btn-outline-primary" href="[{$_productLink}]" >[{oxmultilang ident="DETAILS"}]</a>
+                        <a class="btn btn-outline-primary" href="[{$_productLink}]">[{oxmultilang ident="DETAILS"}]</a>
                         [{/if}]
                     </div>
                 </div>

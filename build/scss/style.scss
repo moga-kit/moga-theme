@@ -17,6 +17,7 @@
 @import 'page/checkout/order';
 @import 'page/compare/compare';
 @import 'page/account/inc/account_menu';
+@import 'page/shop/start';
 @import 'widget/breadcrumb';
 @import 'widget/product/list';
 @import 'widget/locator/paging';
@@ -56,4 +57,8 @@
   padding-bottom: 0;
   line-height: 43px;
   height: 45px;
+}
+
+.btn-outline-primary {
+  background: #fff;
 }

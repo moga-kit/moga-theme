@@ -225,7 +225,7 @@
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
                             [{if $oView->getArticleList()|count}]
                                 <div class="d-flex py-3">
-                                    <button type="button" class="btn btn-outline-primary btn-icon" data-bs-toggle="modal" data-bs-target="#filter">
+                                    <button type="button" class="btn btn-outline-primary btn-icon" data-bs-toggle="modal" data-bs-target="#filter" aria-label="[{oxmultilang ident="DD_LISTLOCATOR_FILTER_ATTRIBUTES"}]">
                                         <i class="moga-sliders"></i>
                                     </button>
 

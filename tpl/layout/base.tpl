@@ -6,6 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/icons.woff2')}]" as="font" crossorigin type="font/woff2">
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/barlow-condensed-latin-600-normal.woff2')}]" as="font" crossorigin type="font/woff2">
         <link rel="preload" href="[{$oViewConf->getResourceUrl('css/styles.min.css')}]" as="style">
         <link rel="preload" href="[{$oViewConf->getResourceUrl('js/scripts.min.js')}]" as="script">
 

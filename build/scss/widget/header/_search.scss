@@ -9,12 +9,10 @@
 
   @include media-breakpoint-up(md) {
     padding-left: 10px;
-
   }
 
   @include media-breakpoint-up(lg) {
     padding: 10px 8px;
-    left: 120px;
     top: -10px;
   }
 

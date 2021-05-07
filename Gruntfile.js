@@ -102,7 +102,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    //'<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': ['<%= project.out %><%= project.theme %>/src/js/variants.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],
