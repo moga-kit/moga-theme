@@ -43,7 +43,7 @@
             <a href="[{$_productLink}]" class="stretched-link" title="[{oxmultilang ident="DETAILS"}]"></a>
         </div>
         <div class="card-footer p-0 ps-3 border-0">
-            [{block name="widget_product_listitem_grid_selections"}]
+            [{*block name="widget_product_listitem_grid_selections"}]
                 [{if $aVariantSelections && $aVariantSelections.selections }]
                     <form name="tobasket.[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
                         <div id="variantselector_[{$iIndex}]" class="selectorsBox variant-dropdown">
@@ -62,7 +62,7 @@
                         </div>
                     [{/if}]
                 [{/if}]
-            [{/block}]
+            [{/block*}]
             [{block name="widget_product_listitem_grid_tobasket"}]
                 <div class="actions d-flex justify-content-between">
                     <div class="price h5[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
