@@ -113,7 +113,7 @@
             [{/block}]
         </nav>
         [{else}]
-            <nav id="mainnav" class="navbar navbar-expand-lg p-0">
+            <nav id="mainnav" class="navbar navbar-expand-lg p-0 order-lg-2">
                 [{block name="dd_widget_header_categorylist_navbar"}]
 
                     <div class="navbar-collapse collapse" id="navbarSupportedContent">

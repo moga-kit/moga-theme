@@ -19,7 +19,7 @@
     <div class="card">
         [{block name="widget_product_listitem_grid_gridpicture"}]
         <div class="position-relative">
-            [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+            [{if $oViewConf->isModuleActive('cnc/imagebutler') && $product->getMasterZoomPictureUrl(1)}]
                 <picture class="card-picture">
                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getMasterZoomPictureUrl(1), '160', '160', 'webp', true)}]" media="(max-width: 375px)">
 

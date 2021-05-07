@@ -21,15 +21,15 @@
         [{/if}]
 
         <div class="mb-3 form-floating">
-            <input id="loginEmail" type="email" name="lgn_usr" autocomplete="email" class="form-control" placeholder=" ">
+            <input id="loginEmail" type="email" name="lgn_usr" autocomplete="email" class="form-control" placeholder="[{oxmultilang ident="EMAIL_ADDRESS"}]">
             <label for="loginEmail">[{oxmultilang ident="EMAIL_ADDRESS"}]</label>
         </div>
 
         <div class="mb-3 form-floating">
-            <input id="loginPasword" type="password" name="lgn_pwd" autocomplete="current-password" class="form-control">
+            <input id="loginPasword" type="password" name="lgn_pwd" autocomplete="current-password" class="form-control" placeholder="[{oxmultilang ident="PASSWORD"}]">
             <label for="loginPasword">[{oxmultilang ident="PASSWORD"}]</label>
-            <a class="small forgotPasswordOpener" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
         </div>
+        <a class="small forgotPasswordOpener" href="[{oxgetseourl ident=$oViewConf->getSslSelfLink()|cat:"cl=forgotpwd"}]" title="[{oxmultilang ident="FORGOT_PASSWORD"}]">[{oxmultilang ident="FORGOT_PASSWORD"}]</a>
 
         [{if $oViewConf->isFunctionalityEnabled( "blShowRememberMe" )}]
             <div class="form-check mb-3">

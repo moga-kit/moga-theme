@@ -115,15 +115,10 @@ $aLang = array(
     'SHOP_THEME_sManufacturerWidth_w100c100'              => 'Alles 100%',
     'SHOP_THEME_sManufacturerWidth_container'             => 'Alles mittig',
 
-    'SHOP_THEME_sPromosliderWidth'                       => 'Promoslider Breite',
-    'SHOP_THEME_sPromosliderWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
-    'SHOP_THEME_sPromosliderWidth_w100c100'              => 'Alles 100%',
-    'SHOP_THEME_sPromosliderWidth_container'             => 'Alles mittig',
-
-    'SHOP_THEME_sPromoTilesWidth'                       => 'Banner-Kachel-Zeile Breite',
-    'SHOP_THEME_sPromoTilesWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
-    'SHOP_THEME_sPromoTilesWidth_w100c100'              => 'Alles 100%',
-    'SHOP_THEME_sPromoTilesWidth_container'             => 'Alles mittig',
+    'SHOP_THEME_sPromoWidth'                       => 'Promo-Banner Breite',
+    'SHOP_THEME_sPromoWidth_w100cContainer'        => 'Hintergrund 100%, Inhalt mittig',
+    'SHOP_THEME_sPromoWidth_w100c100'              => 'Alles 100%',
+    'SHOP_THEME_sPromoWidth_container'             => 'Alles mittig',
 
     'SHOP_THEME_sPromoTilesGrid'                => 'Banner-Kachel Breite',
     'SHOP_THEME_sPromoTilesGrid_100_33'         => '1. 100%, Rest 33% auf Desktop',
@@ -131,11 +126,11 @@ $aLang = array(
     'SHOP_THEME_sPromoTilesGrid_33'             => 'Alle 33% auf Desktop',
     'SHOP_THEME_sPromoTilesGrid_25'             => 'Alle 25% auf Desktop',
 
-    'SHOP_THEME_sPromoTilesBg'                  => 'Banner-Kacheln Hintergrund',
-    'SHOP_THEME_sPromoTilesBg_white'            => 'weiß',
-    'SHOP_THEME_sPromoTilesBg_light'            => 'grau',
-    'SHOP_THEME_sPromoTilesBg_dark'             => 'dunkel',
-    'SHOP_THEME_sPromoTilesBg_primary'          => 'primärfarbe',
+    'SHOP_THEME_sPromoBg'                  => 'Promo-Banner Hintergrund',
+    'SHOP_THEME_sPromoBg_white'            => 'weiß',
+    'SHOP_THEME_sPromoBg_light'            => 'grau',
+    'SHOP_THEME_sPromoBg_dark'             => 'dunkel',
+    'SHOP_THEME_sPromoBg_primary'          => 'primärfarbe',
 
     'SHOP_THEME_sPromoTilesSpacing'             => 'Kachel-Abstand',
     'SHOP_THEME_sPromoTilesSpacing_0'             => '0',
@@ -156,7 +151,7 @@ $aLang = array(
     'SHOP_THEME_sCategoryTilesGrid_25'             => '25% auf Desktop',
 
     'SHOP_THEME_sCategoryTilesRowPadding'          => 'Kategorie-Kachel-Zeile Innenabstand',
-    'SHOP_THEME_sPromoTilesRowPadding'             => 'Banner-Kachel-Zeile Innenabstand',
+    'SHOP_THEME_sPromoRowPadding'                  => 'Promo-Banner-Zeile Innenabstand',
 
     'SHOP_THEME_sCategoryTilesSpacing'             => 'Kachel-Abstand',
     'SHOP_THEME_sCategoryTilesSpacing_0'           => '0',
@@ -237,8 +232,10 @@ $aLang = array(
     'HELP_SHOP_THEME_sGoogleMapsAddr'               => 'Bsp.: OXID eSales AG, Bertoldstraße 48, 79098 Freiburg‎',
 
     'SHOP_THEME_bl_showManufacturer'                => 'Hersteller auf Startseite anzeigen‎',
-    'SHOP_THEME_bl_showPromoslider'                 => 'Promoslider anzeigen',
-    'SHOP_THEME_bl_showPromoTiles'                  => 'Banner-Kacheln anzeigen',
+    'SHOP_THEME_bl_showPromo'                       => 'Promo-Banner Optionen',
+    'SHOP_THEME_bl_showPromo_Tiles'                 => 'Als Kacheln anzeigen',
+    'SHOP_THEME_bl_showPromo_Slider'                => 'Als Karussell anzeigen',
+    'SHOP_THEME_bl_showPromo_None'                  => 'nicht anzeigen',
     'SHOP_THEME_bl_showCategoryTiles'               => 'Kategorie-Kacheln anzeigen',
 
     'SHOP_THEME_blUseGAPageTracker'                 => 'Google Analytics PageTracker benutzen',

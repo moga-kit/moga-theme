@@ -3,11 +3,14 @@
     [{assign var="currency" value=$oView->getActCurrency()}]
 
     [{if $oBanners|@count}]
-        [{assign var="promosliderWidth" value=$oViewConf->getViewThemeParam('sPromosliderWidth')}]
+        [{assign var="promosliderWidth" value=$oViewConf->getViewThemeParam('sPromoWidth')}]
+        [{assign var="promoSliderBg" value=$oViewConf->getViewThemeParam('sPromoBg')}]
+        [{assign var="promoSliderRowPadding" value=$oViewConf->getViewThemeParam('sPromoRowPadding')}]
+
         [{if $promosliderWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]
-                <div class="promoslider">
+                <div class="promoslider [{if $promoSliderRowPadding}] py-3 py-lg-5[{/if}] bg-[{$promoSliderBg}]">
                     [{if $promosliderWidth == 'w100cContainer'}]
                     <div class="container-xxl">
                     [{/if}]

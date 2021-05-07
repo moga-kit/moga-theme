@@ -2,11 +2,11 @@
     [{assign var="oBanners" value=$oView->getBanners()}]
 
     [{if $oBanners|@count}]
-        [{assign var="promoTilesWidth" value=$oViewConf->getViewThemeParam('sPromoTilesWidth')}]
+        [{assign var="promoTilesWidth" value=$oViewConf->getViewThemeParam('sPromoWidth')}]
         [{assign var="promoTilesGrid" value=$oViewConf->getViewThemeParam('sPromoTilesGrid')}]
-        [{assign var="promoTilesBg" value=$oViewConf->getViewThemeParam('sPromoTilesBg')}]
+        [{assign var="promoTilesBg" value=$oViewConf->getViewThemeParam('sPromoBg')}]
         [{assign var="promoTilesSpacing" value=$oViewConf->getViewThemeParam('sPromoTilesSpacing')}]
-        [{assign var="promoTilesRowPadding" value=$oViewConf->getViewThemeParam('sPromoTilesRowPadding')}]
+        [{assign var="promoTilesRowPadding" value=$oViewConf->getViewThemeParam('sPromoRowPadding')}]
         [{if $promoTilesWidth == 'container'}]
             <div class="container-xxl">
         [{/if}]

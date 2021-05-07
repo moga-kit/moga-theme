@@ -151,6 +151,7 @@ $aLang = array(
     'POSTAL_CODE'                                       => 'PLZ',
     'CITY'                                       => 'Ort',
     'DISPLAY'                                       => 'Anzeige',
+    'NOT_SPECIFIED'                                       => 'Keine Angabe',
 );
 
 /*

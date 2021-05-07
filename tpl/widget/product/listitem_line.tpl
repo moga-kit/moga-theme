@@ -54,7 +54,7 @@
                 <div class="col-3 col-lg-1">
                     [{block name="widget_product_listitem_line_picturebox"}]
                         <a class="d-block text-center py-2" href="[{$_productLink}]" title="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]">
-                            [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                            [{if $oViewConf->isModuleActive('cnc/imagebutler') && $product->getMasterZoomPictureUrl(1)}]
                             <picture>
                                 <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 80, 80, 'webp', true)}]">
                                 <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 80, 80, '', true)}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="card-img">

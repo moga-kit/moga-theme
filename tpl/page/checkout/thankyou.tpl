@@ -29,11 +29,11 @@
             [{block name="checkout_thankyou_partners"}]
             [{/block}]
 
-            [{if $oView->getAlsoBoughtTheseProducts()}]
+            [{*if $oView->getAlsoBoughtTheseProducts()}]
                 <br><br>
                 <h1>[{oxmultilang ident="WHO_BOUGHT_ALSO_BOUGHT"}]</h1>
                 [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="alsoBoughtThankyou" products=$oView->getAlsoBoughtTheseProducts() blDisableToCart=true}]
-            [{/if}]
+            [{/if*}]
         </div>
     [{/block}]
 

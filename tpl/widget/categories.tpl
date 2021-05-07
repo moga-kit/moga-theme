@@ -9,7 +9,6 @@
     <div class="container-xxl">
     [{/if}]
         <div class="categories-tiles[{if $categoriesTilesRowPadding}] py-3 py-lg-5[{/if}] bg-[{$categoriesTilesBg}]">
-
             <h2 class="text-center mb-4[{if $categoriesTilesBg == "dark" || $categoriesTilesBg == "primary"}] text-white[{/if}]">[{oxmultilang ident="CATEGORIES"}]</h2>
             [{if $categoriesTilesWidth == 'w100cContainer'}]
             <div class="container-xxl p-0">

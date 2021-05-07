@@ -3,21 +3,20 @@
     [{assign var='rsslinks' value=$oView->getRssLinks()}]
 
     [{block name="start_promoslider"}]
-        [{assign var="promoslider" value=$oViewConf->getViewThemeParam('bl_showPromoslider')}]
-        [{assign var="promotiles" value=$oViewConf->getViewThemeParam('bl_showPromoTiles')}]
-        [{assign var="categories" value=$oViewConf->getViewThemeParam('bl_showCategoryTiles')}]
+        [{assign var="promo" value=$oViewConf->getViewThemeParam('bl_showPromo')}]
 
         [{if $oView->getBanners() && !empty($oView->getBanners())}]
-            [{if $promoslider}]
+            [{if $promo == "Slider"}]
                 [{include file="widget/promoslider.tpl"}]
             [{/if}]
 
-            [{if $promotiles}]
+            [{if $promo == "Tiles"}]
                 [{include file="widget/promotiles.tpl"}]
             [{/if}]
         [{/if}]
     [{/block}]
 
+    [{assign var="categories" value=$oViewConf->getViewThemeParam('bl_showCategoryTiles')}]
     [{if $categories}]
         [{include file="widget/categories.tpl"}]
     [{/if}]
@@ -25,17 +24,17 @@
     [{block name="start_welcome_text"}]
         [{oxifcontent ident="oxstartwelcome" object="oCont"}]
             [{assign var="welcomeTextWidth" value=$oViewConf->getViewThemeParam('sWelcomeTextWidth')}]
-            <div class="container[{if $welcomeTextWidth == 'container'}]-xxl [{else}]-fluid [{/if}]welcome-teaser">
+            <div class="container[{if $welcomeTextWidth == 'container'}]-xxl [{else}]-fluid [{/if}]welcome-teaser py-5">
                 [{$oCont->oxcontents__oxcontent->value}]
             </div>
         [{/oxifcontent}]
     [{/block}]
 
     [{block name="start_bargain_articles"}]
-        [{assign var="oBargainArticles" value=$oView->getBargainArticleList()}]
-        [{assign var="bargainWidth" value=$oViewConf->getViewThemeParam('sBargainWidth')}]
         [{assign var="showBargain" value=$oViewConf->getViewThemeParam('sShowBargain')}]
         [{if $showBargain}]
+            [{assign var="oBargainArticles" value=$oView->getBargainArticleList()}]
+            [{assign var="bargainWidth" value=$oViewConf->getViewThemeParam('sBargainWidth')}]
             <div class="article-list">
                 [{if $oBargainArticles && $oBargainArticles->count()}]
                     [{if $bargainWidth == 'container'}]
