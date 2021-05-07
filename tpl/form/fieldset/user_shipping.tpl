@@ -32,7 +32,8 @@
                         [{block name="form_user_shipping_address_delete_action"}]
                         <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
                                 data-bs-toggle="modal"
-                                data-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]">
+                                data-bs-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]"
+                                type="button">
                             <i class="moga-trash"></i>
                         </button>
                         [{/block}]
@@ -40,7 +41,7 @@
                     [{/block}]
                     [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
 
-                    <label class="btn btn-outline-primary w-100[{if $address->isSelected()}] active[{/if}]">
+                    <label class="btn btn-outline-primary w-100 setToThisShippingAddress[{if $address->isSelected()}] active[{/if}]">
                         <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]>
                         <i class="moga-check"></i>
                         [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
