@@ -29,15 +29,15 @@
         <div class="bg-light position-relative manufacturer-header">
             <div class="container-xxl">
                 <div class="d-flex justify-content-between py-3 py-md-5">
-                    <div class="d-flex align-items-center">
+                    <div class="manufacturer-infos pe-5">
                         <h1[{if $actCategory->oxcategories__oxthumb->value && $actCategory->getThumbUrl()}] class="text-white"[{/if}]>
-                        [{$actCategory->getTitle()}]
-                    </h1>
-                    [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1 && $actCategory->oxcategories__oxdesc->rawValue}]
-                    <div id="catDescLocator" class="categoryDescription">
-                        [{$actCategory->oxcategories__oxdesc->rawValue}]
-                    </div>
-                    [{/if}]
+                            [{$actCategory->getTitle()}]
+                        </h1>
+                        [{if $actCategory && $actCategory->getShortDescription() && $oPageNavigation->actPage == 1 && $actCategory->oxcategories__oxdesc->rawValue}]
+                        <div id="catDescLocator" class="categoryDescription">
+                            [{$actCategory->oxcategories__oxdesc->rawValue}]
+                        </div>
+                        [{/if}]
                     </div>
                     [{if $actCategory->getIconUrl()}]
                         <img src="[{$actCategory->getIconUrl()}]">

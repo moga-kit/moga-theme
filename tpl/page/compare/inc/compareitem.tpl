@@ -69,56 +69,56 @@
         </div>
 
         <div class="tobasket add-to-basket">
-
             <div class="tobasketFunction">
                 <div class="price h5[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] sale[{/if}]">
                     [{block name="widget_product_listitem_grid_price"}]
-                    [{oxhasrights ident="SHOWARTICLEPRICE"}]
-                    [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
-                    [{assign var="tprice"     value=$product->getTPrice()}]
-                    [{assign var="price"      value=$product->getPrice()}]
+                        [{oxhasrights ident="SHOWARTICLEPRICE"}]
+                            [{assign var="oUnitPrice" value=$product->getUnitPrice()}]
+                            [{assign var="tprice"     value=$product->getTPrice()}]
+                            [{assign var="price"      value=$product->getPrice()}]
 
-                    [{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}]
-                    <span class="oldPrice text-muted">
-                                <del>[{$product->getFTPrice()}] [{$currency->sign}]</del>
-                            </span>
-                    [{/if}]
-
-                    [{block name="widget_product_listitem_grid_price_value"}]
-                    [{if $product->getFPrice()}]
-                    <span class="text-nowrap[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">
-                                    [{if $product->isRangePrice()}]
-                                        [{oxmultilang ident="PRICE_FROM"}]
-                                        [{if !$product->isParentNotBuyable()}]
-                                            [{$product->getFMinPrice()}]
-                                        [{else}]
-                                            [{$product->getFVarMinPrice()}]
-                                        [{/if}]
-                                    [{else}]
-                                        [{if !$product->isParentNotBuyable()}]
-                                            [{$product->getFPrice()}]
-                                        [{else}]
-                                            [{$product->getFVarMinPrice()}]
-                                        [{/if}]
-                                    [{/if}]
-                                    [{$currency->sign}]
-                                    [{if $oView->isVatIncluded()}]
-                                         [{if !($product->hasMdVariants() || ($oViewConf->showSelectListsInList() && $product->getSelections(1)) || $product->getVariants())}]*[{/if}]
-                                    [{/if}]
+                            [{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}]
+                                <span class="oldPrice text-muted">
+                                    <del>[{$product->getFTPrice()}] [{$currency->sign}]</del>
                                 </span>
-                    [{/if}]
-                    [{/block}]
-                    [{if $oUnitPrice}]
-                    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
-                                [{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]
-                            </span>
-                    [{elseif $product->oxarticles__oxweight->value }]
-                    <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
-                                <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
-                                <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
-                            </span>
-                    [{/if}]
-                    [{/oxhasrights}]
+                            [{/if}]
+
+                            [{block name="widget_product_listitem_grid_price_value"}]
+                                [{if $product->getFPrice()}]
+                                    <span class="text-nowrap[{if $tprice && $tprice->getBruttoPrice() > $price->getBruttoPrice()}] text-danger[{/if}]">
+                                        [{if $product->isRangePrice()}]
+                                            [{oxmultilang ident="PRICE_FROM"}]
+                                            [{if !$product->isParentNotBuyable()}]
+                                                [{$product->getFMinPrice()}]
+                                            [{else}]
+                                                [{$product->getFVarMinPrice()}]
+                                            [{/if}]
+                                        [{else}]
+                                            [{if !$product->isParentNotBuyable()}]
+                                                [{$product->getFPrice()}]
+                                            [{else}]
+                                                [{$product->getFVarMinPrice()}]
+                                            [{/if}]
+                                        [{/if}]
+                                        [{$currency->sign}]
+                                        [{if $oView->isVatIncluded()}]
+                                             [{if !($product->hasMdVariants() || ($oViewConf->showSelectListsInList() && $product->getSelections(1)) || $product->getVariants())}]*[{/if}]
+                                        [{/if}]
+                                    </span>
+                                [{/if}]
+                            [{/block}]
+
+                            [{if $oUnitPrice}]
+                                <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
+                                    [{$product->oxarticles__oxunitquantity->value}] [{$product->getUnitName()}] | [{oxprice price=$oUnitPrice currency=$currency}]/[{$product->getUnitName()}]
+                                </span>
+                            [{elseif $product->oxarticles__oxweight->value }]
+                                <span id="productPricePerUnit_[{$testid}]" class="pricePerUnit">
+                                    <span title="weight">[{oxmultilang ident="WEIGHT"}]</span>
+                                    <span class="value">[{$product->oxarticles__oxweight->value}] [{oxmultilang ident="KG"}]</span>
+                                </span>
+                            [{/if}]
+                        [{/oxhasrights}]
                     [{/block}]
                 </div>
 
@@ -186,7 +186,7 @@
             <input type="hidden" name="am" value="1">
             <input type="hidden" name="removecompare" value="1">
         [{oxhasrights ident="TOBASKET"}]
-            <button class="btn btn-danger btn-sm" id="remove_cmp_[{$product->oxarticles__oxid->value}]" type="submit" title="[{oxmultilang ident="REMOVE"}]" name="send">
+            <button class="btn btn-outline-dark btn-sm" id="remove_cmp_[{$product->oxarticles__oxid->value}]" type="submit" title="[{oxmultilang ident="REMOVE"}]" name="send">
                 <i class="moga-trash"></i> [{oxmultilang ident="REMOVE"}]
             </button>
         [{/oxhasrights}]

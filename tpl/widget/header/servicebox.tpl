@@ -6,7 +6,10 @@
             </li>
             [{if $oViewConf->getShowCompareList()}]
                 <li>
-                    <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=compare"}]">[{oxmultilang ident="MY_PRODUCT_COMPARISON"}]</a> [{if $oView->getCompareItemsCnt()}]<span class="badge bg-secondary">[{$oView->getCompareItemsCnt()}]</span>[{/if}]
+                    <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=compare"}]">
+                        [{oxmultilang ident="MY_PRODUCT_COMPARISON"}]
+                        [{if $oView->getCompareItemsCnt()}]<span class="badge bg-secondary">[{$oView->getCompareItemsCnt()}]</span>[{/if}]
+                    </a>
                 </li>
             [{/if}]
             <li>

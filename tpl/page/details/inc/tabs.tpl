@@ -40,7 +40,7 @@
     [{/if}]
 [{/block}]
 
-[{block name="details_tabs_pricealarm"}]
+[{*block name="details_tabs_pricealarm"}]
     [{if $oView->isPriceAlarm() && !$oDetailsProduct->isParentNotBuyable()}]
         [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#pricealarm" data-bs-toggle="tab">[{oxmultilang ident="PRICE_ALERT"}]</a>[{/capture}]
         [{capture append="tabsContent"}]
@@ -52,7 +52,24 @@
             [{assign var="blFirstTab" value=false}]
         [{/capture}]
     [{/if}]
-[{/block}]
+[{/block*}]
+[{assign var="oManufacturer" value=$oView->getManufacturer()}]
+[{if $oManufacturer && $oManufacturer->oxmanufacturers__oxshortdesc->value}]
+    [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#manufacturer-tab" data-bs-toggle="tab">[{oxmultilang ident="MORE_ABOUT"}] [{$oManufacturer->oxmanufacturers__oxtitle->value}]</a>[{/capture}]
+    [{capture append="tabsContent"}]
+    <div id="manufacturer-tab" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+        <div class="container-xxl">
+            <p>
+                [{$oManufacturer->oxmanufacturers__oxshortdesc->value}]
+            </p>
+            <a href="[{$oManufacturer->getLink()}]" title="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
+                [{oxmultilang ident="SHOW_ME_MORE"}]
+            </a>
+        </div>
+    </div>
+    [{assign var="blFirstTab" value=false}]
+    [{/capture}]
+[{/if}]
 
 [{block name="details_tabs_tags"}]
 [{/block}]

@@ -8,7 +8,7 @@
             <h2>[{oxmultilang ident="OUR_BRANDS"}]</h2>
             <span class="subhead">[{oxmultilang ident="MANUFACTURERSLIDER_SUBHEAD"}]</span>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center py-5">
                 [{foreach from=$oView->getManufacturerForSlider() item=oManufacturer}]
                 [{if $oManufacturer->oxmanufacturers__oxicon->value}]
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
