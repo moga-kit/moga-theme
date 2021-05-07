@@ -8,3 +8,34 @@
     }
   }
 }
+
+.cnc-blogdetail.cnc-blogdetail .blogdetail-image,
+.cnc-authorpage.cnc-authorpage .blogdetail-image {
+  height: auto;
+}
+
+.cnc-blogdetail.cnc-blogdetail .blogdetail-content,
+.cnc-authorpage.cnc-authorpage .blogdetail-content {
+  margin: 0;
+}
+
+.blogcategory-entry {
+  > .mb-3 {
+    height: 100%;
+  }
+
+  .blogarticle-link {
+    height: 100%;
+    text-decoration: none;
+  }
+}
+
+.cl-cncblogdetail .text-image {
+  .text-image_image {
+    background: #000;
+
+    .text-image-picture {
+      opacity: .8;
+    }
+  }
+}
