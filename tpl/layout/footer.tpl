@@ -4,7 +4,7 @@
     [{$oView->setShowNewsletter($oViewConf->getViewThemeParam('blFooterShowNewsletterForm'))}]
 
     [{if $oxcmp_user}]
-    [{assign var="force_sid" value=$oView->getSidForWidget()}]
+        [{assign var="force_sid" value=$oView->getSidForWidget()}]
     [{/if}]
     [{assign var="footerWidth" value=$oViewConf->getViewThemeParam('sFooterWidth')}]
     [{if $footerWidth == 'container'}]
