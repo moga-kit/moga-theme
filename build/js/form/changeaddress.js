@@ -1,4 +1,8 @@
-document.getElementById('showShipAddress').addEventListener('change', showShipAddressAction);
+var showShipAddress = document.getElementById('showShipAddress');
+
+if (showShipAddress) {
+    showShipAddress.addEventListener('change', showShipAddressAction);
+}
 
 function showShipAddressAction(evt) {
     evt.preventDefault();
@@ -6,13 +10,18 @@ function showShipAddressAction(evt) {
 }
 
 
-document.getElementById('userChangeAddress').addEventListener('click', userChangeAddressAction);
+var userChangeAddress = document.getElementById('userChangeAddress');
+
+if (userChangeAddress) {
+    userChangeAddress.addEventListener('click', userChangeAddressAction);
+}
 
 function userChangeAddressAction(evt) {
     evt.preventDefault();
     document.querySelectorAll('#addressForm, #addressText').forEach((item) => {item.style.display = item.style.display === 'none' ? 'block' : 'none'});
     return false;
 }
+
 
 var userChangeShippingAddress = document.getElementById('userChangeShippingAddress')
 
@@ -26,6 +35,7 @@ function userChangeShippingAddressAction(evt) {
     showShipAddressCheckbox.checked = false;
     showShipAddressCheckbox.dispatchEvent(new Event('change'));
 }
+
 
 /* CHANGE SHIPPING ADDRESS */
 
@@ -46,7 +56,6 @@ function userEditShippingAddressButtonAction(evt) {
         scrollToShippingAddressForm();
     }
 }
-
 
 
 /* CREATE NEW SHIPPING ADDRESS */
