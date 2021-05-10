@@ -154,6 +154,10 @@ $aLang = array(
     'NOT_SPECIFIED'                                         => 'Keine Angabe',
     'MORE_ABOUT'                                            => 'Mehr über',
     'SHOW_ME_MORE'                                          => 'Zeig mir mehr',
+    'USER_SHIPPING_SELECTED'                                => 'ausgewählt',
+    'ADDRESSES'                                             => 'Adressen',
+    'DELIVERY_PAYMENT'                                      => 'Versand & Zahlung',
+    'CHECK_ORDER'                                           => 'Überprüfen',
 );
 
 /*

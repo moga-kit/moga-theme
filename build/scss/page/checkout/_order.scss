@@ -19,6 +19,11 @@
       background: lighten($primary, 30%);
       color: #fff;
 
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
       &:after {
         font-family: "icons";
         content: map-get($icons, 'check');

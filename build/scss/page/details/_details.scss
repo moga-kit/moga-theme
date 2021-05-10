@@ -77,10 +77,6 @@
   }
 
   @include media-breakpoint-up(md) {
-    .sticky-md-top {
-      top: 66px;
-    }
-
     &-thumb-img {
       display: block;
       cursor: zoom-in;
@@ -102,5 +98,11 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .sticky-md-top {
+    top: 66px;
   }
 }

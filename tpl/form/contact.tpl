@@ -14,7 +14,6 @@
             file="form/fieldset/salutation.tpl"
             name="editval[oxuser__oxsal]"
             value=$editval.oxuser__oxsal
-            class="form-select"
             required=$contactFormFields.salutation.isRequired
             }]
             <label class="form-label[{if $contactFormFields.salutation.isRequired}] req[{/if}]">

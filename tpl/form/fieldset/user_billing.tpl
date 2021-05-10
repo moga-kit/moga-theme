@@ -32,7 +32,7 @@
 <div class="row gx-2">
     <div class="col-6 mb-3">
         <div class="form-floating">
-            [{include file="form/fieldset/salutation.tpl" name="invadr[oxuser__oxsal]" value=$oxuser__oxsal class="form-control" id="invadr_oxuser__oxfname"}]
+            [{include file="form/fieldset/salutation.tpl" name="invadr[oxuser__oxsal]" value=$oxuser__oxsal id="invadr_oxuser__oxfname"}]
             <label class="[{if $oView->isFieldRequired(oxuser__oxsal)}] req[{/if}]" for="invadr_oxuser__oxfname">[{oxmultilang ident="TITLE"}]</label>
         </div>
     </div>

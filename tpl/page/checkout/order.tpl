@@ -16,22 +16,22 @@
                     <div class="col-lg-8">
                         <div class="card done done-1">
                             <h4 class="card-header card-title">
-                                [{oxmultilang ident="MY_ACCOUNT"}]
+                                <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">[{oxmultilang ident="MY_ACCOUNT"}]</a>
                             </h4>
                         </div>
                         <div class="card mt-n2 done done-2">
                             <h4 class="card-header card-title">
-                                Adressen
+                                <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">[{oxmultilang ident="ADDRESSES"}]</a>
                             </h4>
                         </div>
                         <div class="card mt-n2 done done-3">
                             <h4 class="card-header card-title">
-                                Versand & Zahlung
+                                <a [{if $oViewConf->getActiveClassName() == "user"}]id="paymentStep"[{/if}] href="[{oxgetseourl ident=$oViewConf->getPaymentLink()}]">[{oxmultilang ident="DELIVERY_PAYMENT"}]</a>
                             </h4>
                         </div>
                         <div class="card mt-n2 active mb-3">
                             <h4 class="card-header card-title">
-                                Überprüfen
+                                [{oxmultilang ident="CHECK_ORDER"}]
                             </h4>
                         </div>
                         <div class="px-3">

@@ -16,7 +16,7 @@
                 <div class="card mb-3">
                     <div class="card-header bg-light">
                         [{block name="user_billing_address_head"}]
-                            <button id="userChangeAddress" class="btn btn-outline-primary btn-sm float-end edit-button" name="changeBillAddress" type="button">
+                            <button id="userChangeAddress" class="btn btn-outline-dark btn-sm float-end edit-button" name="changeBillAddress" type="button">
                                 <i class="moga-pencil"></i>
                             </button>
                             <h4>[{oxmultilang ident="BILLING_ADDRESS"}]</h4>
@@ -69,8 +69,8 @@
                     </div>
                 [{/block}]
             </div>
-            <div class="mb-3">
-                <button id="accUserSaveTop" class="btn btn-primary" name="userform" type="submit">[{oxmultilang ident="SAVE"}]</button>
+            <div class="my-3 d-lg-flex">
+                <button id="accUserSaveTop" class="btn btn-primary ms-lg-auto" name="userform" type="submit">[{oxmultilang ident="SAVE"}]</button>
             </div>
         [{/block}]
     </form>

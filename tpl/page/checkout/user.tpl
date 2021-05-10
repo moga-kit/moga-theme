@@ -19,17 +19,17 @@
 
                             <div class="card mt-n2">
                                 <h4 class="card-header card-title disabled">
-                                    Adressen
+                                    [{oxmultilang ident="ADDRESSES"}]
                                 </h4>
                             </div>
                             <div class="card mt-n2">
                                 <h4 class="card-header card-title disabled">
-                                    Versand & Zahlung
+                                    [{oxmultilang ident="DELIVERY_PAYMENT"}]
                                 </h4>
                             </div>
                             <div class="card mt-n2">
                                 <h4 class="card-header card-title disabled">
-                                    Überprüfen
+                                    [{oxmultilang ident="CHECK_ORDER"}]
                                 </h4>
                             </div>
                         </div>

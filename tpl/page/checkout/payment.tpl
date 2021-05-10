@@ -7,17 +7,17 @@
                 <div class="col-lg-8">
                     <div class="card done done-1">
                         <h4 class="card-header card-title disabled">
-                            [{oxmultilang ident="MY_ACCOUNT"}]
+                            <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">[{oxmultilang ident="MY_ACCOUNT"}]</a>
                         </h4>
                     </div>
                     <div class="card mt-n2 done done-2">
                         <h4 class="card-header card-title disabled">
-                            Adressen
+                            <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">[{oxmultilang ident="ADDRESSES"}]</a>
                         </h4>
                     </div>
                     <div class="card mt-n2 active">
                         <h4 class="card-header card-title">
-                            Versand & Zahlung
+                            [{oxmultilang ident="DELIVERY_PAYMENT"}]
                         </h4>
                         <div class="card-body">
                             [{block name="checkout_payment_main"}]
@@ -165,7 +165,7 @@
 
                     <div class="card mt-n2">
                         <h4 class="card-header card-title disabled">
-                            Überprüfen
+                            [{oxmultilang ident="CHECK_ORDER"}]
                         </h4>
                     </div>
 

@@ -22,43 +22,54 @@
         [{block name="form_user_shipping_address_select"}]
             [{foreach from=$aUserAddresses item=address name="shippingAdresses"}]
                 <div class="list-group-item" data-bs-toggle="buttons">
-                    [{block name="form_user_shipping_address_actions"}]
-                    [{if $address->isSelected()}]
-                        [{block name="form_user_shipping_address_edit_action"}]
-                        <button class="btn btn-outline-primary btn-sm float-end dd-action dd-edit-shipping-address edit-button">
-                            <i class="moga-pencil"></i>
-                        </button>
-                        [{/block}]
-                        [{block name="form_user_shipping_address_delete_action"}]
-                        <button class="btn btn-danger btn-sm float-end dd-action dd-delete-shipping-address edit-button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]"
-                                type="button">
-                            <i class="moga-trash"></i>
-                        </button>
-                        [{/block}]
-                    [{/if}]
-                    [{/block}]
-                    [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
+                    <div class="d-flex">
+                        <div class="select-address">
+                            <label class="btn btn-outline-primary setToThisShippingAddress[{if $address->isSelected()}] active[{/if}]">
+                                <input type="radio" class="btn-check" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]>
 
-                    <label class="btn btn-outline-primary w-100 setToThisShippingAddress[{if $address->isSelected()}] active[{/if}]">
-                        <input type="radio" name="oxaddressid" value="[{$address->oxaddress__oxid->value}]" autocomplete="off" [{if $address->isSelected()}]checked[{/if}]>
-                        <i class="moga-check"></i>
-                        [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
-                    </label>
+                                [{if $address->isSelected()}]
+                                <span class="invisible"><i class="moga-check"></i> [{oxmultilang ident="USER_SHIPPING_SELECTED"}]</span>
+                                [{else}]
+                                <span class="invisible">[{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]</span>
+                                [{/if}]
+                            </label>
+                        </div>
+                        <div class="address-info">
+                            [{block name="form_user_shipping_address_actions"}]
+                            [{if $address->isSelected()}]
+                                [{block name="form_user_shipping_address_edit_action"}]
+                                <button class="btn btn-outline-dark btn-sm float-end dd-action dd-edit-shipping-address edit-button">
+                                    <i class="moga-pencil"></i>
+                                </button>
+                                [{/block}]
+                                [{block name="form_user_shipping_address_delete_action"}]
+                                <button class="btn btn-outline-dark btn-sm float-end dd-action dd-delete-shipping-address edit-button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#delete_shipping_address_[{$smarty.foreach.shippingAdresses.iteration}]"
+                                        type="button">
+                                    <i class="moga-trash"></i>
+                                </button>
+                                [{/block}]
+                            [{/if}]
+                            [{/block}]
+                            [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
+                        </div>
+                    </div>
                 </div>
             [{/foreach}]
 
             <div class="list-group-item" data-bs-toggle="buttons">
-                <div class="dd-add-delivery-address">
-                    <i class="moga-plus-circle"></i>
-                    [{oxmultilang ident="DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS"}]
-
-                    <label class="btn btn-outline-primary w-100">
-                        <input type="radio" name="oxaddressid" value="-1" autocomplete="off">
-                        <i class="moga-check"></i>
-                        [{oxmultilang ident="DD_USER_SHIPPING_SELECT_ADDRESS"}]
-                    </label>
+                <div class="d-flex">
+                    <div class="select-address">
+                        <div class="dd-add-delivery-address">
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" class="btn-check" name="oxaddressid" value="-1" autocomplete="off">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="address-info">
+                        [{oxmultilang ident="DD_USER_SHIPPING_ADD_DELIVERY_ADDRESS"}]
+                    </div>
                 </div>
             </div>
         [{/block}]
@@ -69,7 +80,7 @@
     <div class="row gx-2">
         <div class="col-md-6 mb-3">
             <div class="form-floating">
-                [{include file="form/fieldset/salutation.tpl" name="deladr[oxaddress__oxsal]" value=$delivadr->oxaddress__oxsal->value value2=$deladr.oxaddress__oxsal class="form-control" id="deladr_oxaddress__oxsal"}]
+                [{include file="form/fieldset/salutation.tpl" name="deladr[oxaddress__oxsal]" value=$delivadr->oxaddress__oxsal->value value2=$deladr.oxaddress__oxsal id="deladr_oxaddress__oxsal"}]
                 <label class="[{if $oView->isFieldRequired(oxaddress__oxsal)}] req[{/if}]" for="deladr_oxaddress__oxsal">[{oxmultilang ident="TITLE"}]</label>
             </div>
         </div>
@@ -197,7 +208,7 @@
     </div>
 </div>
 [{if !$noFormSubmit}]
-    <div class="mb-3">
+    <div class="my-3">
         <div class="col-12 col-lg-9 ms-lg-auto">
              <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
             <button id="accUserSaveBottom" type="submit" class="submitButton" name="save">[{oxmultilang ident="SAVE"}]</button>
