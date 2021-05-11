@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'custom_variables';
+@import 'vendor/bootstrap-opt';
+@import 'icons';
+@import 'webfont';
+
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+
+@import 'form/fieldset/user_shipping';
+@import 'form/wishlist_publish';
+@import 'form/recommendation_add';
+
+@import 'page/details/details';
+@import 'page/checkout/order';
+@import 'page/compare/compare';
+@import 'page/account/inc/account_menu';
+@import 'page/account/user';
+@import 'page/shop/start';
+@import 'widget/breadcrumb';
+@import 'widget/product/list';
+@import 'widget/locator/paging';
+@import 'widget/locator/attributes';
+@import 'widget/reviews/rating';
+@import 'widget/minibasket/minibasket';
+
+.moga-oxtitle-down {
+  @extend .moga-sort-alpha-down;
+}
+
+.moga-oxtitle-up {
+  @extend .moga-sort-alpha-up;
+}
+
+.moga-oxvarminprice-down {
+  @extend .moga-sort-numeric-down;
+}
+
+.moga-oxvarminprice-up {
+  @extend .moga-sort-numeric-up;
+}
+
+.btn-icon {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 43px;
+  height: 45px;
+
+  i {
+    font-size: 24px;
+  }
+}
+
+.btn-reset {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 43px;
+  height: 45px;
+}
+
+.btn-outline-primary {
+  background: #fff;
+}
+
+.bg-lighter {
+  background: #fbfbfb;
+}

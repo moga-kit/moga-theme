@@ -34,11 +34,14 @@ module.exports = function (grunt) {
         sass: {
             options: {
                 implementation: sass,
-                sourceMap: true
+                sourceMap: false
             },
             compile: {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/css/styles.min.css': [
+                        '<%= project.dev %>/build/scss/style-opt.scss'
+                    ],
+                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': [
                         '<%= project.dev %>/build/scss/style.scss'
                     ],
                     '<%= project.out %><%= project.theme %>/src/css/promoslider.min.css': [
@@ -49,12 +52,13 @@ module.exports = function (grunt) {
         },
         cssmin: {
             options: {
-                mergeIntoShorthands: false,
+                mergeIntoShorthands: true,
                 roundingPrecision: -1
             },
             target: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css']
+                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css'],
+                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles-all.min.css']
                 }
             }
         },
@@ -66,6 +70,42 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
+                        '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/base-component.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/alert.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/button.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
+                        '<%= project.dev %>build/js/main.js'
+                    ],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.jq.min.js': [
+                        '<%= project.dev %>node_modules/jquery/dist/jquery.slim.js',
+                        '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/base-component.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/alert.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/button.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
+                        '<%= project.dev %>build/js/main.js'
+                    ],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.bs.min.js': [
+                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        '<%= project.dev %>build/js/main.js'
+                    ],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.bs.jq.min.js': [
+                        '<%= project.dev %>node_modules/jquery/dist/jquery.slim.js',
                         '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
@@ -103,6 +143,9 @@ module.exports = function (grunt) {
             my_target: {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.jq.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.jq.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.bs.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.bs.min.js'],
+                    '<%= project.out %><%= project.theme %>/src/js/scripts.bs.jq.min.js': ['<%= project.out %><%= project.theme %>/src/js/scripts.bs.jq.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': ['<%= project.out %><%= project.theme %>/src/js/variants.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/wrapping.min.js': ['<%= project.out %><%= project.theme %>/src/js/wrapping.min.js'],
                     '<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js': ['<%= project.out %><%= project.theme %>/src/js/movetonoticelist.min.js'],

@@ -59,9 +59,9 @@
                                             </div>
                                         [{/if}]
                                         <div class="card-img-overlay">
-                                            <h5 class="card-title">
+                                            <h3 class="card-title">
                                                 [{$_cat->oxcategories__oxtitle->value}] [{if $oView->showCategoryArticlesCount() && ( $_cat->getNrOfArticles() > 0 )}] ([{$_cat->getNrOfArticles()}])[{/if}]
-                                            </h5>
+                                            </h3>
                                         </div>
                                     </a>
                                 </div>

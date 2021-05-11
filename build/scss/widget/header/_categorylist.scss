@@ -74,9 +74,13 @@
   }
 }
 
-@include media-breakpoint-up(lg) {
-  .navbar {
+.navbar {
+  position: absolute;
+  margin-left: -$grid-gutter-width/2;
+
+  @include media-breakpoint-up(lg) {
     position: static;
+    margin-left: 0;
 
     &-collapse {
       justify-content: center;

@@ -41,7 +41,7 @@
         [{/if}]
 
         [{assign var="actCategory" value=$oView->getActiveCategory()}]
-        <div class="row details-pager mb-4" id="detailsItemsPager">
+        <div class="row details-pager d-none d-md-flex" id="detailsItemsPager">
             <div class="col-3 details-pager-overview">
                 <a href="[{$actCategory->toListLink}]" class="details-pager-link">
                     <i class="moga-bars"></i> [{oxmultilang ident="BACK_TO_OVERVIEW"}]

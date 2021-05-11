@@ -89,7 +89,7 @@
     [{if $oView->getReviews()}]
         <div class="reviews-landscape">
             [{foreach from=$oView->getReviews() item=review name=ReviewsCounter}]
-                <div class="card mb-3[{if $smarty.foreach.ReviewsCounter.iteration is odd}] bg-light[{/if}]" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]">
+                <div class="card mb-3[{if $smarty.foreach.ReviewsCounter.iteration is odd}] bg-lighter[{/if}]" id="reviewName_[{$smarty.foreach.ReviewsCounter.iteration}]">
                     <div class="card-body">
                         [{block name="widget_reviews_record"}]
                             <div class="rating float-end">

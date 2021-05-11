@@ -1,4 +1,4 @@
-<div id="detailsMain">
+<div id="detailsMain" class="mt-4">
     [{include file="page/details/inc/productmain.tpl"}]
 </div>
 
