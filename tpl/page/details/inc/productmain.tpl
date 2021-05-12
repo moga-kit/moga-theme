@@ -242,12 +242,10 @@
                         [{if $oManufacturer->oxmanufacturers__oxicon->value}]
                             <picture>
                                 [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
-                                    <source srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', '')}]" media="(min-width: 768px)">
                                     <source type="image/webp" srcset="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', 'webp')}]" media="(min-width: 768px)">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
+                                    <img class="d-none d-md-block" loading="lazy" src="[{$oViewConf->getDynamicImage($oManufacturer->getIconUrl(), 100, '', '')}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                                 [{else}]
-                                    <source srcset="[{$oManufacturer->getIconUrl()}]" media="(min-width: 768px)">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
+                                    <img class="d-none d-md-block" loading="lazy" src="[{$oManufacturer->getIconUrl()}]" alt="[{$oManufacturer->oxmanufacturers__oxtitle->value}]">
                                 [{/if}]
                             </picture>
                         [{/if}]
