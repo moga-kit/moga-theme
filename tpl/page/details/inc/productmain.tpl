@@ -263,9 +263,11 @@
                 [{/block}]
 
                 [{* article number *}]
-                [{block name="details_productmain_artnumber"}]
-                    <span class="small text-muted">[{oxmultilang ident="ARTNUM" suffix="COLON"}] [{$oDetailsProduct->oxarticles__oxartnum->value}]</span>
-                [{/block}]
+                [{if $oDetailsProduct->oxarticles__oxartnum->value}]
+                    [{block name="details_productmain_artnumber"}]
+                        <span class="small text-muted">[{oxmultilang ident="ARTNUM" suffix="COLON"}] [{$oDetailsProduct->oxarticles__oxartnum->value}]</span>
+                    [{/block}]
+                [{/if}]
 
                 [{* ratings *}]
                 [{if $oView->ratingIsActive()}]

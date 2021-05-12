@@ -97,7 +97,7 @@
 [{block name="details_tabs_main"}]
     [{if $tabs}]
         <div class="details-tabs my-5">
-            <ul class="nav nav-tabs justify-content-center">
+            <ul class="nav nav-tabs">
                 [{foreach from=$tabs item="tab" name="tabs"}]
                     <li class="nav-item">[{$tab}]</li>
                 [{/foreach}]

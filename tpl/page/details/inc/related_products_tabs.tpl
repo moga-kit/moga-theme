@@ -65,9 +65,9 @@
     [{/if}]
 [{/block}]
 
-
+[{if $reltabs|@count > 0}]
 <div class="related-tabs">
-    <ul class="nav nav-tabs justify-content-center">
+    <ul class="nav nav-tabs">
         [{foreach from=$reltabs item="reltab" name="reltabs"}]
             <li class="nav-item">[{$reltab}]</li>
         [{/foreach}]
@@ -78,3 +78,4 @@
         [{/foreach}]
     </div>
 </div>
+[{/if}]

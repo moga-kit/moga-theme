@@ -16,8 +16,7 @@
         [{/if}]
     [{/block}]
 
-    [{assign var="categories" value=$oViewConf->getViewThemeParam('bl_showCategoryTiles')}]
-    [{if $categories}]
+    [{if $oViewConf->getViewThemeParam('showCategoryTiles')}]
         [{include file="widget/categories.tpl"}]
     [{/if}]
 
@@ -31,7 +30,7 @@
     [{/block}]
 
     [{block name="start_bargain_articles"}]
-        [{assign var="showBargain" value=$oViewConf->getViewThemeParam('sShowBargain')}]
+        [{assign var="showBargain" value=$oViewConf->getViewThemeParam('sShowBargainArticles')}]
         [{if $showBargain}]
             [{assign var="oBargainArticles" value=$oView->getBargainArticleList()}]
             [{assign var="bargainWidth" value=$oViewConf->getViewThemeParam('sBargainWidth')}]
@@ -58,10 +57,10 @@
     [{/block}]
 
     [{block name="start_newest_articles"}]
-        [{assign var="oNewestArticles" value=$oView->getNewestArticles()}]
-        [{assign var="newestWidth" value=$oViewConf->getViewThemeParam('sNewestWidth')}]
-        [{assign var="showNewest" value=$oViewConf->getViewThemeParam('sShowNewest')}]
+        [{assign var="showNewest" value=$oViewConf->getViewThemeParam('sShowNewestArticles')}]
         [{if $showNewest}]
+            [{assign var="oNewestArticles" value=$oView->getNewestArticles()}]
+            [{assign var="newestWidth" value=$oViewConf->getViewThemeParam('sNewestWidth')}]
             <div class="article-list">
                 [{if $oNewestArticles && $oNewestArticles->count()}]
                     [{if $newestWidth == 'container'}]
@@ -79,10 +78,10 @@
     [{/block}]
 
     [{block name="start_top_articles"}]
-        [{assign var="oTopArticles" value=$oView->getTop5ArticleList()}]
-        [{assign var="topWidth" value=$oViewConf->getViewThemeParam('sTopWidth')}]
-        [{assign var="showTop" value=$oViewConf->getViewThemeParam('sShowTop')}]
+        [{assign var="showTop" value=$oViewConf->getViewThemeParam('sShowTopArticles')}]
         [{if $showTop}]
+            [{assign var="topWidth" value=$oViewConf->getViewThemeParam('sTopWidth')}]
+            [{assign var="oTopArticles" value=$oView->getTop5ArticleList()}]
             <div class="article-list">
                 [{if $oTopArticles && $oTopArticles->count()}]
                     [{if $topWidth == 'container'}]

@@ -1,4 +1,16 @@
 .details {
+  &-pager {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+
+  &-top {
+    padding-top: 20px;
+  }
+
   .carousel {
     text-align: center;
     margin: 0 (-$grid-gutter-width);
@@ -93,10 +105,22 @@
 
   .product-links {
     margin-top: 10px;
+
     a {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+  }
+
+  .nav-tabs {
+    overflow-y: hidden;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(md) {
+      justify-content: center;
     }
   }
 }

@@ -1,9 +1,9 @@
 [{if $oxcmp_categories}]
-    [{assign var="categoriesTilesWidth" value=$oViewConf->getViewThemeParam('sCategoryTilesWidth')}]
-    [{assign var="categoriesTilesGrid" value=$oViewConf->getViewThemeParam('sCategoryTilesGrid')}]
-    [{assign var="categoriesTilesBg" value=$oViewConf->getViewThemeParam('sCategoryTilesBg')}]
-    [{assign var="categoriesTilesSpacing" value=$oViewConf->getViewThemeParam('sCategoryTilesSpacing')}]
-    [{assign var="categoriesTilesRowPadding" value=$oViewConf->getViewThemeParam('sCategoryTilesRowPadding')}]
+    [{assign var="categoriesTilesWidth" value=$oViewConf->getViewThemeParam('showCategoryTilesWidth')}]
+    [{assign var="categoriesTilesGrid" value=$oViewConf->getViewThemeParam('showCategoryTilesGrid')}]
+    [{assign var="categoriesTilesBg" value=$oViewConf->getViewThemeParam('showCategoryTilesBg')}]
+    [{assign var="categoriesTilesSpacing" value=$oViewConf->getViewThemeParam('showCategoryTilesSpacing')}]
+    [{assign var="categoriesTilesRowPadding" value=$oViewConf->getViewThemeParam('showCategoryTilesRowPadding')}]
 
     [{if $categoriesTilesWidth == 'container'}]
     <div class="container-xxl">
