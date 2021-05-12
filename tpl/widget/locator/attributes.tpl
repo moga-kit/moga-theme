@@ -1,4 +1,4 @@
-    [{block name="widget_locator_attributes"}]
+[{block name="widget_locator_attributes"}]
     [{if $attributes}]
         <div class="sidebar-filter mb-3">
             <div class="sidebar-header"><strong>[{oxmultilang ident="DD_LISTLOCATOR_FILTER_ATTRIBUTES"}]</strong></div>
