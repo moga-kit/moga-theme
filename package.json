@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.0.0",
+    "bootstrap": "^5.0.1",
     "dart-sass": "^1.25.0",
     "fontsource-barlow-condensed": "^3.0.9",
     "grunt": "^1.4.0",
