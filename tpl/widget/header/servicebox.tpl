@@ -8,21 +8,21 @@
                 <li>
                     <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=compare"}]">
                         [{oxmultilang ident="MY_PRODUCT_COMPARISON"}]
-                        [{if $oView->getCompareItemsCnt()}]<span class="badge bg-secondary">[{$oView->getCompareItemsCnt()}]</span>[{/if}]
+                        [{if $oView->getCompareItemsCnt()}]<span class="badge bg-secondary rounded-pill">[{$oView->getCompareItemsCnt()}]</span>[{/if}]
                     </a>
                 </li>
             [{/if}]
             <li>
                 <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_noticelist"}]">
                     [{oxmultilang ident="MY_WISH_LIST"}]
-                    [{if $oxcmp_user && $oxcmp_user->getNoticeListArtCnt()}] <span class="badge bg-secondary">[{$oxcmp_user->getNoticeListArtCnt()}]</span>[{/if}]
+                    [{if $oxcmp_user && $oxcmp_user->getNoticeListArtCnt()}] <span class="badge bg-secondary rounded-pill">[{$oxcmp_user->getNoticeListArtCnt()}]</span>[{/if}]
                 </a>
             </li>
             [{if $oViewConf->getShowWishlist()}]
                 <li>
                     <a class="dropdown-item" href="[{oxgetseourl ident=$oViewConf->getSelfLink()|cat:"cl=account_wishlist"}]">
                         [{oxmultilang ident="MY_GIFT_REGISTRY"}]
-                        [{if $oxcmp_user && $oxcmp_user->getWishListArtCnt()}] <span class="badge bg-secondary">[{$oxcmp_user->getWishListArtCnt()}]</span>[{/if}]
+                        [{if $oxcmp_user && $oxcmp_user->getWishListArtCnt()}] <span class="badge bg-secondary rounded-pill">[{$oxcmp_user->getWishListArtCnt()}]</span>[{/if}]
                     </a>
                 </li>
             [{/if}]
