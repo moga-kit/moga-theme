@@ -94,7 +94,7 @@
                 </div>
             [{/block}]
             [{block name="user_checkout_shipping_feedback"}]
-                [{*include file="form/fieldset/order_newsletter.tpl" blSubscribeNews=true*}]
+                [{include file="form/fieldset/order_newsletter.tpl" blSubscribeNews=true}]
                 [{include file="form/fieldset/order_remark.tpl" blOrderRemark=true}]
             [{/block}]
 
