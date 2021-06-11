@@ -17,14 +17,13 @@
         <label class="req" for="userPasswordConfirm">[{oxmultilang ident="CONFIRM_PASSWORD"}]</label>
     [{/block}]
 </div>
-[{*block name="user_account_newsletter"}]
+[{block name="user_account_newsletter"}]
     <input type="hidden" name="blnewssubscribed" value="0">
-    <div class="mb-3 form-floating form-check">
+    <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="blnewssubscribed" name="blnewssubscribed" value="1" [{if $oView->isNewsSubscribed()}]checked[{/if}]>
-
         <label class="form-check-label" for="blnewssubscribed">
             [{oxmultilang ident="NEWSLETTER_SUBSCRIPTION"}]
         </label>
         <p class="text-muted">[{oxmultilang ident="MESSAGE_NEWSLETTER_SUBSCRIPTION"}]</p>
     </div>
-[{/block*}]
+[{/block}]
