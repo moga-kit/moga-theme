@@ -233,7 +233,10 @@ module.exports = function (grunt) {
                         src: [
                             '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
                             '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*'
+                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
+                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-200-normal.woff*',
+                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-400-normal.woff*',
+                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-700-normal.woff*'
                         ],
                         flatten: true,
                         dest: '<%= project.out %><%= project.theme %>/src/fonts/'
