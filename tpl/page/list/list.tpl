@@ -223,7 +223,7 @@
             [{/if}]
                     <div class="article-list pb-5">
                         <div class="container[{if $categoryWidth == 'w100cContainer'}]-xxl[{else}]-fluid[{/if}]">
-                            [{if $oView->getArticleList()|count}]
+                            [{if $oView->getArticleList()}]
                                 <div class="d-flex py-3">
                                     <button type="button" class="btn btn-outline-primary btn-icon" data-bs-toggle="modal" data-bs-target="#filter" aria-label="[{oxmultilang ident="DD_LISTLOCATOR_FILTER_ATTRIBUTES"}]">
                                         <i class="moga-sliders"></i>
@@ -237,7 +237,7 @@
                                 </div>
                             [{/if}]
                             <div class="row">
-                                [{if $oView->getArticleList()|count}]
+                                [{if $oView->getArticleList()}]
                                     [{* List types: grid|line *}]
                                     [{block name="page_list_productlist"}]
                                         [{include file="widget/product/list.tpl" type=$oView->getListDisplayType() listId="productList" products=$oView->getArticleList()}]
@@ -268,7 +268,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    [{if $oView->getArticleList()|count}]
+                    [{if $oView->getArticleList()}]
                     [{block name="page_list_upperlocator"}]
                     [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=$oView->getAttributes() listDisplayType=false sort=false}]
                     [{/block}]

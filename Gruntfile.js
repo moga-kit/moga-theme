@@ -82,6 +82,7 @@ module.exports = function (grunt) {
                         '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
                         '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
                         '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
+                        '<%= project.dev %>node_modules/bootstrap/js/dist/tab.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/scripts.jq.min.js': [

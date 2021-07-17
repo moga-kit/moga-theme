@@ -9,7 +9,7 @@
                 [{include file="page/account/inc/account_menu.tpl" active_link="downloads"}]
             </div>
         </div>
-        [{if $oView->getOrderFilesList()|count}]
+        [{if $oView->getOrderFilesList()}]
         <ol class="list-unstyled downloadList">
             [{foreach from=$oView->getOrderFilesList() item="oOrderArticle"}]
                 <li>

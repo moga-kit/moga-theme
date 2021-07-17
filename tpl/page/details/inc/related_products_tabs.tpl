@@ -65,7 +65,7 @@
     [{/if}]
 [{/block}]
 
-[{if $reltabs|@count > 0}]
+[{if $reltabs}]
 <div class="related-tabs">
     <ul class="nav nav-tabs">
         [{foreach from=$reltabs item="reltab" name="reltabs"}]

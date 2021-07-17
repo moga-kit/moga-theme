@@ -5,7 +5,7 @@
         [{assign var="_navcategorytree" value=$oView->getCategoryTree()}]
         [{assign var="_iCategoriesPerRow"  value=3}]
         [{assign var="iSubCategoriesCount" value=0}]
-        [{if $_navcategorytree|count}]
+        [{if $_navcategorytree}]
             [{*oxscript include="js/widgets/oxequalizer.min.js" priority=10}]
             [{oxscript add="$(window).on('load', function(){ if( !isMobileDevice() ) { oxEqualizer.equalHeight( $( '.subcatList .row .panel' ) ); } });"*}]
             <div class="mb-3">
