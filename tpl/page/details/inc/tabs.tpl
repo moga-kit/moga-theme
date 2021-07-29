@@ -4,9 +4,13 @@
     [{oxhasrights ident="SHOWLONGDESCRIPTION"}]
         [{assign var="oLongdesc" value=$oDetailsProduct->getLongDescription()}]
         [{if $oLongdesc->value}]
-            [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#description" data-bs-toggle="tab">[{oxmultilang ident="DESCRIPTION"}]</a>[{/capture}]
+            [{capture append="tabs"}]
+                <a id="description-tab" class="nav-link[{if $blFirstTab}] active[{/if}]" href="#description" data-bs-toggle="tab" role="tab" aria-controls="description" aria-selected="true">
+                [{oxmultilang ident="DESCRIPTION"}]
+                </a>
+            [{/capture}]
             [{capture append="tabsContent"}]
-                <div id="description" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+                <div id="description" class="tab-pane[{if $blFirstTab}] active[{/if}]" role="tabpanel" aria-labelledby="description-tab">
                     <div class="container-xxl">
                         [{oxeval var=$oLongdesc}]
                         [{if $oDetailsProduct->oxarticles__oxexturl->value}]
@@ -28,9 +32,13 @@
 
 [{block name="details_tabs_attributes"}]
     [{if $oView->getAttributes()}]
-        [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#attributes" data-bs-toggle="tab">[{oxmultilang ident="SPECIFICATION"}]</a>[{/capture}]
+        [{capture append="tabs"}]
+            <a id="attributes-tab" class="nav-link[{if $blFirstTab}] active[{/if}]" href="#attributes" data-bs-toggle="tab" role="tab" aria-controls="attributes" aria-selected="false">
+            [{oxmultilang ident="SPECIFICATION"}]
+            </a>
+        [{/capture}]
         [{capture append="tabsContent"}]
-            <div id="attributes" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+            <div id="attributes" class="tab-pane[{if $blFirstTab}] active[{/if}]" role="tabpanel" aria-labelledby="attributes-tab">
                 <div class="container-xxl">
                     [{include file="page/details/inc/attributes.tpl"}]
                 </div>
@@ -42,9 +50,13 @@
 
 [{*block name="details_tabs_pricealarm"}]
     [{if $oView->isPriceAlarm() && !$oDetailsProduct->isParentNotBuyable()}]
-        [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#pricealarm" data-bs-toggle="tab">[{oxmultilang ident="PRICE_ALERT"}]</a>[{/capture}]
+        [{capture append="tabs"}]
+            <a id="pricealarm-tab" class="nav-link[{if $blFirstTab}] active[{/if}]" href="#pricealarm" data-bs-toggle="tab" role="tab" aria-controls="pricealarm" aria-selected="false">
+                [{oxmultilang ident="PRICE_ALERT"}]
+            </a>
+        [{/capture}]
         [{capture append="tabsContent"}]
-            <div id="pricealarm" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+            <div id="pricealarm" class="tab-pane[{if $blFirstTab}] active[{/if}]" role="tabpanel" aria-labelledby="pricealarm-tab">
                 <div class="container-xxl">
                     [{include file="form/pricealarm.tpl"}]
                 </div>
@@ -53,6 +65,7 @@
         [{/capture}]
     [{/if}]
 [{/block*}]
+
 [{assign var="oManufacturer" value=$oView->getManufacturer()}]
 [{if $oManufacturer && $oManufacturer->oxmanufacturers__oxshortdesc->value}]
     [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#manufacturer-tab" data-bs-toggle="tab">[{oxmultilang ident="MORE_ABOUT"}] [{$oManufacturer->oxmanufacturers__oxtitle->value}]</a>[{/capture}]
@@ -76,9 +89,13 @@
 
 [{block name="details_tabs_media"}]
     [{if $oView->getMediaFiles() || $oDetailsProduct->oxarticles__oxfile->value}]
-        [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#media" data-bs-toggle="tab">[{oxmultilang ident="MEDIA"}]</a>[{/capture}]
+        [{capture append="tabs"}]
+            <a id="media-tab" class="nav-link[{if $blFirstTab}] active[{/if}]" href="#media" data-bs-toggle="tab" role="tab" aria-controls="media" aria-selected="false">
+                [{oxmultilang ident="MEDIA"}]
+            </a>
+        [{/capture}]
         [{capture append="tabsContent"}]
-            <div id="media" class="tab-pane[{if $blFirstTab}] active[{/if}]">
+            <div id="media" class="tab-pane[{if $blFirstTab}] active[{/if}]" role="tabpanel" aria-labelledby="media-tab">
                 <div class="container-xxl">
                     [{include file="page/details/inc/media.tpl"}]
                 </div>
@@ -97,9 +114,9 @@
 [{block name="details_tabs_main"}]
     [{if $tabs}]
         <div class="details-tabs my-5">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs" role="tablist">
                 [{foreach from=$tabs item="tab" name="tabs"}]
-                    <li class="nav-item">[{$tab}]</li>
+                    <li class="nav-item" role="presentation">[{$tab}]</li>
                 [{/foreach}]
                 [{block name="details_tabs_social_navigation"}][{/block}]
             </ul>
