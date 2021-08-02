@@ -120,7 +120,7 @@
             [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
                 [{oxstyle include="css/preview.css?"|cat:$smarty.now}]
             [{else}]
-                <link rel="stylesheet" href="[{$oViewConf->getImageUrl('../src/css/styles.min.css')}]">
+                [{oxstyle include="css/styles.min.css"}]
             [{/if}]
         [{/block}]
 
