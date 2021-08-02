@@ -16,6 +16,7 @@ module.exports = function (grunt) {
             theme: 'moga',
             dev: './',
             out: './../../../out/',
+            maintenanceout: './out/',
             tmp: './../../../tmp/',
             modules: './../../../modules/'
         },
@@ -38,10 +39,10 @@ module.exports = function (grunt) {
             },
             compile: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': [
+                    '<%= project.out %><%= project.theme %>/src/css/preview.css': [
                         '<%= project.dev %>/build/scss/style-opt.scss'
                     ],
-                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': [
+                    '<%= project.out %><%= project.theme %>/src/css/preview-all.css': [
                         '<%= project.dev %>/build/scss/style.scss'
                     ],
                     '<%= project.out %><%= project.theme %>/src/css/promoslider.min.css': [
@@ -57,8 +58,8 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css'],
-                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles-all.min.css']
+                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/preview.css'],
+                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': ['<%= project.out %><%= project.theme %>/src/css/preview-all.css']
                 }
             }
         },
@@ -232,12 +233,12 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: [
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-200-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-400-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-700-normal.woff*'
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-200-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-400-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-700-normal.woff*'
                         ],
                         flatten: true,
                         dest: '<%= project.out %><%= project.theme %>/src/fonts/'
@@ -273,4 +274,18 @@ module.exports = function (grunt) {
         'clean',
         'watch'
     ]);
+    /**
+     * Theme maintenance task
+     * Run `grunt maintenance` on the command line
+     */
+    grunt.registerTask('maintenance', 'Build for theme himself', function () {
+        grunt.config.set('project.out', '<%= project.maintenanceout %>');
+        grunt.task.run('webfont');
+        grunt.task.run('copy');
+        grunt.task.run('sass');
+        grunt.task.run('cmq');
+        grunt.task.run('cssmin');
+        grunt.task.run('concat:js');
+        grunt.task.run('uglify');
+    });
 };
