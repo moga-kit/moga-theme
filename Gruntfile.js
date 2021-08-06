@@ -230,23 +230,29 @@ module.exports = function (grunt) {
             fonts: {
                 files: [
                     {
-                        expand: true,
+                        expand: false,
                         src: [
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-200-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-400-normal.woff*',
-                            '<%= project.dev %>/node_modules/fontsource-raleway/files/raleway-latin-700-normal.woff*'
+                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
+                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
+                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
+                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-200-normal.woff*',
+                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-400-normal.woff*',
+                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-700-normal.woff*'
                         ],
                         flatten: true,
-                        dest: '<%= project.out %><%= project.theme %>/src/fonts/'
+                        dest: '<%= project.out %><%= project.theme %>src/fonts/'
+                    },
+                    {
+                        expand: false,
+                        src: 'bootstrap.bundle.min.js',
+                        cwd: '<%= project.dev %>build/js/',
+                        dest: '<%= project.out %><%= project.theme %>src/js/'
                     },
                     {
                         expand: true,
-                        src: 'bootstrap.bundle.min.js',
-                        cwd: '<%= project.dev %>/build/js/',
-                        dest: '<%= project.out %><%= project.theme %>/src/js/'
+                        cwd: '<%= project.dev %>node_modules/bootstrap/scss/',
+                        src: '**',
+                        dest: '<%= project.dev %>build/vendor/bootstrap/'
                     }
                 ]
             },
