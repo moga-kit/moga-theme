@@ -3,7 +3,7 @@
 [{*oxscript include="js/libs/jqBootstrapValidation.min.js" priority=10}]
 [{oxscript add="$('input,select,textarea').not('[type=submit]').jqBootstrapValidation();"*}]
 
-<form class="max-600" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
+<form class="max-600 suggest" action="[{$oViewConf->getSslSelfLink()}]" method="post" novalidate>
     [{$oViewConf->getHiddenSid()}]
     [{$oViewConf->getNavFormParams()}]
     <input type="hidden" name="fnc" value="send">
@@ -13,58 +13,44 @@
 
     <h3>[{oxmultilang ident="CARD_TO" suffix="COLON"}]</h3>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="RECIPIENT_NAME" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" name="editval[rec_name]" size="73" maxlength="73" value="[{$editval->rec_name}]" required>
-            <div class="help-block"></div>
-        </div>
+        <input class="form-control" id="rec_name" type="text" name="editval[rec_name]" size="73" maxlength="73" value="[{$editval->rec_name}]" required>
+        <label class="form-label req" for="rec_name">[{oxmultilang ident="RECIPIENT_NAME" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="RECIPIENT_EMAIL" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="email" name="editval[rec_email]" size="73" maxlength="73" value="[{$editval->rec_email}]" required>
-            <div class="help-block"></div>
-        </div>
+        <input id="rec_mail" class="form-control" type="email" name="editval[rec_email]" size="73" maxlength="73" value="[{$editval->rec_email}]" required>
+        <label for="rec_mail" class="form-label req">[{oxmultilang ident="RECIPIENT_EMAIL" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
 
     <h3>[{oxmultilang ident="FROM" suffix="COLON"}]</h3>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="SENDER_NAME" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" name="editval[send_name]" size=73 maxlength=73 value="[{$editval->send_name}]" required>
-            <div class="help-block"></div>
-        </div>
+        <input id="send_name" class="form-control" type="text" name="editval[send_name]" size=73 maxlength=73 value="[{$editval->send_name}]" required>
+        <label for="send_name" class="form-label req">[{oxmultilang ident="SENDER_NAME" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="SENDER_EMAIL" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="email" name="editval[send_email]" size=73 maxlength=73 value="[{$editval->send_email}]" required>
-            <div class="help-block"></div>
-        </div>
+        <input id="send_email" class="form-control" type="email" name="editval[send_email]" size=73 maxlength=73 value="[{$editval->send_email}]" required>
+        <label for="send_email" class="form-label req">[{oxmultilang ident="SENDER_EMAIL" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="SUBJECT" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" name="editval[send_subject]" size=73 maxlength=73 value="[{if $editval->send_subject}][{$editval->send_subject}][{else}][{oxmultilang ident="HAVE_A_LOOK" suffix="COLON"}] [{$_oProduct->oxarticles__oxtitle->value|strip_tags}][{/if}]" required>
-            <div class="help-block"></div>
-        </div>
+        <input id="send_subject" class="form-control" type="text" name="editval[send_subject]" size=73 maxlength=73 value="[{if $editval->send_subject}][{$editval->send_subject}][{else}][{oxmultilang ident="HAVE_A_LOOK" suffix="COLON"}] [{$_oProduct->oxarticles__oxtitle->value|strip_tags}][{/if}]" required>
+        <label for="send_subject" class="form-label req">[{oxmultilang ident="SUBJECT" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
     <div class="mb-3 form-floating">
-        <label class="form-label col-lg-3 req">[{oxmultilang ident="MESSAGE" suffix="COLON"}]</label>
-        <div class="col-lg-9">
-            <textarea cols="70" rows="8" name="editval[send_message]" class="areabox form-control" required>[{if $editval->send_message}][{$editval->send_message}][{else}][{oxmultilang ident="SHOP_SUGGEST_MESSAGE" args=$oxcmp_shop->oxshops__oxname->value}][{/if}]</textarea>
-            <div class="help-block"></div>
-        </div>
+        <textarea id="send_message" cols="70" rows="15" name="editval[send_message]" class="areabox form-control" required>[{if $editval->send_message}][{$editval->send_message}][{else}][{oxmultilang ident="SHOP_SUGGEST_MESSAGE" args=$oxcmp_shop->oxshops__oxname->value}][{/if}]</textarea>
+        <label for="send_message" class="form-label req">[{oxmultilang ident="MESSAGE" suffix="COLON"}]</label>
+        <div class="help-block"></div>
     </div>
 
     [{block name="captcha_form"}][{/block}]
 
     <div class="mb-3 form-floating">
-        <div class="col-lg-offset-2 col-lg-10">
-             <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
-            <button class="btn btn-primary" type="submit">
-                [{oxmultilang ident="SEND"}]
-            </button>
-        </div>
+        <p class="req-waring">[{oxmultilang ident="COMPLETE_MARKED_FIELDS"}]</p>
+        <button class="btn btn-primary" type="submit">
+            [{oxmultilang ident="SEND"}]
+        </button>
     </div>
 </form>
