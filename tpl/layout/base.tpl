@@ -117,11 +117,9 @@
         [{/block}]
 
         [{block name="base_style"}]
-            [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
-                [{oxstyle include="css/preview.css?"|cat:$smarty.now}]
-            [{else}]
+            [{block name="base_style_overload"}]
                 [{oxstyle include="css/styles.min.css"}]
-            [{/if}]
+            [{/block}]
         [{/block}]
 
         [{block name="base_fonts"}]
