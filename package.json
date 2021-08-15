@@ -21,8 +21,8 @@
     "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-webfonts": "^4.0.0",
     "grunt-sass": "^3.1.0",
-    "grunt-webfont": "^1.7.2",
     "jquery": "^3.6.0",
     "matchdep": "^2.0.0"
   },
