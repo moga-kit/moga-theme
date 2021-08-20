@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v5.0.0 (https://getbootstrap.com/)
+ * Bootstrap v5.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -7,47 +7,47 @@
 
 // scss-docs-start import-stack
 // Configuration
-
-@import "../../vendor/bootstrap/scss/functions";
-@import "../../vendor/bootstrap/scss/variables";
-@import "../../vendor/bootstrap/scss/mixins";
-@import "../../vendor/bootstrap/scss/utilities";
+@import "../../vendor/bootstrap/functions";
+@import "../../vendor/bootstrap/variables";
+@import "../../vendor/bootstrap/mixins";
+@import "../../vendor/bootstrap/utilities";
 
 // Layout & components
-@import "../../vendor/bootstrap/scss/root";
-@import "../../vendor/bootstrap/scss/reboot";
-@import "../../vendor/bootstrap/scss/type";
-@import "../../vendor/bootstrap/scss/images";
-@import "../../vendor/bootstrap/scss/containers";
-@import "../../vendor/bootstrap/scss/grid";
-@import "../../vendor/bootstrap/scss/tables";
-@import "../../vendor/bootstrap/scss/forms";
-@import "../../vendor/bootstrap/scss/buttons";
-@import "../../vendor/bootstrap/scss/transitions";
-@import "../../vendor/bootstrap/scss/dropdown";
-@import "../../vendor/bootstrap/scss/button-group";
-@import "../../vendor/bootstrap/scss/nav";
-@import "../../vendor/bootstrap/scss/navbar";
-@import "../../vendor/bootstrap/scss/card";
-@import "../../vendor/bootstrap/scss/accordion";
-@import "../../vendor/bootstrap/scss/breadcrumb";
-@import "../../vendor/bootstrap/scss/pagination";
-@import "../../vendor/bootstrap/scss/badge";
-@import "../../vendor/bootstrap/scss/alert";
-@import "../../vendor/bootstrap/scss/progress";
-@import "../../vendor/bootstrap/scss/list-group";
-@import "../../vendor/bootstrap/scss/close";
-@import "../../vendor/bootstrap/scss/toasts";
-@import "../../vendor/bootstrap/scss/modal";
-@import "../../vendor/bootstrap/scss/tooltip";
-@import "../../vendor/bootstrap/scss/popover";
-@import "../../vendor/bootstrap/scss/carousel";
-@import "../../vendor/bootstrap/scss/spinners";
-@import "../../vendor/bootstrap/scss/offcanvas";
+@import "../../vendor/bootstrap/root";
+@import "../../vendor/bootstrap/reboot";
+@import "../../vendor/bootstrap/type";
+@import "../../vendor/bootstrap/images";
+@import "../../vendor/bootstrap/containers";
+@import "../../vendor/bootstrap/grid";
+@import "../../vendor/bootstrap/tables";
+@import "../../vendor/bootstrap/forms";
+@import "../../vendor/bootstrap/buttons";
+@import "../../vendor/bootstrap/transitions";
+@import "../../vendor/bootstrap/dropdown";
+@import "../../vendor/bootstrap/button-group";
+@import "../../vendor/bootstrap/nav";
+@import "../../vendor/bootstrap/navbar";
+@import "../../vendor/bootstrap/card";
+@import "../../vendor/bootstrap/accordion";
+@import "../../vendor/bootstrap/breadcrumb";
+@import "../../vendor/bootstrap/pagination";
+@import "../../vendor/bootstrap/badge";
+@import "../../vendor/bootstrap/alert";
+@import "../../vendor/bootstrap/progress";
+@import "../../vendor/bootstrap/list-group";
+@import "../../vendor/bootstrap/close";
+@import "../../vendor/bootstrap/toasts";
+@import "../../vendor/bootstrap/modal";
+@import "../../vendor/bootstrap/tooltip";
+@import "../../vendor/bootstrap/popover";
+@import "../../vendor/bootstrap/carousel";
+@import "../../vendor/bootstrap/spinners";
+@import "../../vendor/bootstrap/offcanvas";
+@import "../../vendor/bootstrap/placeholders";
 
 // Helpers
-@import "../../vendor/bootstrap/scss/helpers";
+@import "../../vendor/bootstrap/helpers";
 
 // Utilities
-@import "../../vendor/bootstrap/scss/utilities/api";
+@import "../../vendor/bootstrap/utilities/api";
 // scss-docs-end import-stack
