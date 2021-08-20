@@ -45,6 +45,13 @@ $table-variants: map-remove($table-variants, "success", "danger", "info", "dark"
 //@import "../vendor/bootstrap/offcanvas";
 //@import "../vendor/bootstrap/placeholders";
 
+// Helpers
+@import "../vendor/bootstrap/helpers";
+
+// Utilities
+@import "../vendor/bootstrap/utilities/api";
+// scss-docs-end import-stack
+
 @import 'icons';
 @import 'webfont';
 
