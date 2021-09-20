@@ -16,6 +16,7 @@ module.exports = function (grunt) {
             theme: 'moga',
             dev: './',
             out: './../../../out/',
+            maintenanceout: './out/',
             tmp: './../../../tmp/',
             modules: './../../../modules/'
         },
@@ -38,14 +39,11 @@ module.exports = function (grunt) {
             },
             compile: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': [
+                    '<%= project.out %><%= project.theme %>/src/css/styles.css': [
                         '<%= project.dev %>/build/scss/style-opt.scss'
                     ],
-                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': [
+                    '<%= project.out %><%= project.theme %>/src/css/styles-all.css': [
                         '<%= project.dev %>/build/scss/style.scss'
-                    ],
-                    '<%= project.out %><%= project.theme %>/src/css/promoslider.min.css': [
-                        '<%= project.dev %>/build/scss/promoslider.scss'
                     ]
                 }
             }
@@ -57,8 +55,8 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.min.css'],
-                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles-all.min.css']
+                    '<%= project.out %><%= project.theme %>/src/css/styles.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles.css'],
+                    '<%= project.out %><%= project.theme %>/src/css/styles-all.min.css': ['<%= project.out %><%= project.theme %>/src/css/styles-all.css']
                 }
             }
         },
@@ -71,43 +69,43 @@ module.exports = function (grunt) {
                 files: {
                     '<%= project.out %><%= project.theme %>/src/js/scripts.min.js': [
                         '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/base-component.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/alert.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/button.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/tab.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/data.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/event-handler.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/selector-engine.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/manipulator.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/base-component.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/alert.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/button.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/carousel.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/collapse.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dropdown.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/modal.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/tab.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/scripts.jq.min.js': [
                         '<%= project.dev %>node_modules/jquery/dist/jquery.slim.js',
                         '<%= project.dev %>node_modules/@popperjs/core/dist/umd/popper-lite.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/data.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/event-handler.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/selector-engine.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dom/manipulator.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/base-component.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/alert.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/button.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/carousel.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/collapse.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/dropdown.js',
-                        '<%= project.dev %>node_modules/bootstrap/js/dist/modal.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/data.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/event-handler.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/selector-engine.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dom/manipulator.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/base-component.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/alert.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/button.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/carousel.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/collapse.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/dropdown.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/src/modal.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/scripts.bs.min.js': [
-                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/dist/bootstrap.bundle.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/scripts.bs.jq.min.js': [
                         '<%= project.dev %>node_modules/jquery/dist/jquery.slim.js',
-                        '<%= project.dev %>node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+                        '<%= project.dev %>build/vendor/bootstrap/js/dist/bootstrap.bundle.js',
                         '<%= project.dev %>build/js/main.js'
                     ],
                     '<%= project.out %><%= project.theme %>/src/js/variants.min.js': [
@@ -161,7 +159,8 @@ module.exports = function (grunt) {
             icons: {
                 src: '<%= project.dev %>/build/icons/*.svg',
                 dest: '<%= project.out %><%= project.theme %>/src/fonts/',
-                destCss: '<%= project.dev %>/build/scss/',
+                destScss: '<%= project.dev %>/build/scss/',
+                destHtml: '<%= project.out %><%= project.theme %>/src/fonts/',
                 options: {
                     relativeFontPath: '../fonts/',
                     fontPathVariables: true,
@@ -181,8 +180,8 @@ module.exports = function (grunt) {
                     beautify: false,
                     expand: false
                 },
-                src:  '<%= project.out %><%= project.theme %>/src/css/styles.min.css',
-                dest: '<%= project.out %><%= project.theme %>/src/css/styles.min.css'
+                src:  '<%= project.out %><%= project.theme %>/src/css/styles.css',
+                dest: '<%= project.out %><%= project.theme %>/src/css/styles.css'
             }
         },
         /**
@@ -232,27 +231,37 @@ module.exports = function (grunt) {
                     {
                         expand: false,
                         src: [
-                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
-                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
-                            '<%= project.dev %>node_modules/fontsource-barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
-                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-200-normal.woff*',
-                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-400-normal.woff*',
-                            '<%= project.dev %>node_modules/fontsource-raleway/files/raleway-latin-700-normal.woff*'
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-700-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-200-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-400-normal.woff*',
+                            '<%= project.dev %>/node_modules/@fontsource/raleway/files/raleway-latin-700-normal.woff*'
                         ],
                         flatten: true,
-                        dest: '<%= project.out %><%= project.theme %>src/fonts/'
-                    },
+                        dest: '<%= project.out %><%= project.theme %>/src/fonts/'
+                    }
+                ]
+            },
+            bootstrapvendor: {
+                files: [
                     {
-                        expand: false,
-                        src: 'bootstrap.bundle.min.js',
-                        cwd: '<%= project.dev %>build/js/',
-                        dest: '<%= project.out %><%= project.theme %>src/js/'
+                        expand: true,
+                        src: '**/*',
+                        cwd: '<%= project.dev %>node_modules/bootstrap/js/src/',
+                        dest: '<%= project.dev %>build/vendor/bootstrap/js/src/'
                     },
                     {
                         expand: true,
+                        src: '**/*',
                         cwd: '<%= project.dev %>node_modules/bootstrap/scss/',
-                        src: '**',
                         dest: '<%= project.dev %>build/vendor/bootstrap/'
+                    },
+                    {
+                        expand: true,
+                        src: 'bootstrap.bundle.js',
+                        cwd: '<%= project.dev %>node_modules/bootstrap/dist/js/',
+                        dest: '<%= project.dev %>build/vendor/bootstrap/js/dist/'
                     }
                 ]
             },
@@ -262,7 +271,7 @@ module.exports = function (grunt) {
     /**
      * Load Grunt plugins
      */
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    require('matchdep').filterDev('*grunt-*').forEach(grunt.loadNpmTasks);
 
     /**
      * Default task
@@ -270,7 +279,7 @@ module.exports = function (grunt) {
      */
     grunt.registerTask('default', [
         'webfont',
-        'copy',
+        'copy:fonts',
         'sass',
         'cmq',
         'cssmin',
@@ -279,4 +288,19 @@ module.exports = function (grunt) {
         'clean',
         'watch'
     ]);
+    /**
+     * Theme maintenance task
+     * Run `grunt maintenance` on the command line
+     */
+    grunt.registerTask('maintenance', 'Build for theme himself', function () {
+        grunt.config.set('project.out', '<%= project.maintenanceout %>');
+        grunt.task.run('webfont');
+        grunt.task.run('copy:fonts');
+        grunt.task.run('copy:bootstrapvendor');
+        grunt.task.run('sass');
+        grunt.task.run('cmq');
+        grunt.task.run('cssmin');
+        grunt.task.run('concat:js');
+        grunt.task.run('uglify');
+    });
 };

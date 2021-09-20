@@ -1,15 +1,20 @@
 [{* Important ! render page head and body to collect scripts and styles *}]
 [{capture append="oxidBlock_pageHead"}]
     [{strip}]
+        [{assign var="oConfig" value=$oViewConf->getConfig()}]
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" id="Viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=[{$oView->getCharSet()}]">
         <link rel="dns-prefetch" href="[{$oViewConf->getBaseDir()}]">
         <link rel="preconnect" href="[{$oViewConf->getBaseDir()}]">
-        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/icons.woff2')}]" as="font" crossorigin type="font/woff2">
-        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/barlow-condensed-latin-600-normal.woff2')}]" as="font" crossorigin type="font/woff2">
-        <link rel="preload" href="[{$oViewConf->getResourceUrl('css/styles.min.css')}]" as="style">
-        <link rel="preload" href="[{$oViewConf->getResourceUrl('js/scripts.min.js')}]" as="script">
+        [{assign var="fileMTimeIconsWoff2" value=$oConfig->getResourcePath('fonts/icons.woff2')|filemtime}]
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/icons.woff2')|cat:"?"|cat:$fileMTimeIconsWoff2}]" as="font" crossorigin type="font/woff2">
+        [{assign var="fileMTimeBarlowWoff2" value=$oConfig->getResourcePath('fonts/barlow-condensed-latin-600-normal.woff2')|filemtime}]
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('fonts/barlow-condensed-latin-600-normal.woff2')|cat:"?"|cat:$fileMTimeBarlowWoff2}]" as="font" crossorigin type="font/woff2">
+        [{assign var="fileMTimeStylesMinSss" value=$oConfig->getResourcePath('css/styles.min.css')|filemtime}]
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('css/styles.min.css')|cat:"?"|cat:$fileMTimeStylesMinSss}]" as="style">
+        [{assign var="fileMTimeScriptsMinJs" value=$oConfig->getResourcePath('js/scripts.min.js')|filemtime}]
+        <link rel="preload" href="[{$oViewConf->getResourceUrl('js/scripts.min.js')|cat:"?"|cat:$fileMTimeScriptsMinJs}]" as="script">
 
         [{assign var=sPageTitle value=$oView->getPageTitle()}]
         <title>[{block name="head_title"}][{$sPageTitle}][{/block}]</title>
@@ -64,7 +69,6 @@
 
         [{block name="head_link_hreflang"}]
             [{if $oView->isLanguageLoaded()}]
-                [{assign var="oConfig" value=$oViewConf->getConfig()}]
                 [{foreach from=$oxcmp_lang item=_lng}]
                     [{if $_lng->id == $oConfig->getConfigParam('sDefaultLang')}]
                         <link rel="alternate" hreflang="x-default" href="[{$_lng->link}]">
@@ -109,11 +113,9 @@
         [{/block}]
 
         [{block name="base_style"}]
-            [{if $oxcmp_user && $oxcmp_user->oxuser__oxrights->value == "malladmin" && $smarty.cookies.scsspreview}]
-                [{oxstyle include="css/preview.css?"|cat:$smarty.now}]
-            [{else}]
-                <link rel="stylesheet" href="[{$oViewConf->getResourceUrl('css/styles.min.css')}]">
-            [{/if}]
+            [{block name="base_style_overload"}]
+                [{oxstyle include="css/styles.min.css"}]
+            [{/block}]
         [{/block}]
 
         [{block name="base_fonts"}]
