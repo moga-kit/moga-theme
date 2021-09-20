@@ -6,7 +6,7 @@
                     <span aria-hidden="true">×</span>
                     <span class="visually-hidden-focusable">Close</span>
                 </button>
-                <h4 class="modal-title" id="basketModalLabel">Error</h4>
+                <div class="h4 modal-title" id="basketModalLabel">Error</div>
             </div>
             <div class="modal-body">
                 <div id="modalbasketFlyout" class="basketFlyout">
