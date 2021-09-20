@@ -84,10 +84,6 @@
     }
   }
 
-  &-thumb-img {
-    display: none;
-  }
-
   @include media-breakpoint-up(md) {
     &-thumb-img {
       display: block;
