@@ -255,7 +255,7 @@ module.exports = function (grunt) {
                         expand: true,
                         src: '**/*',
                         cwd: '<%= project.dev %>node_modules/bootstrap/scss/',
-                        dest: '<%= project.dev %>build/vendor/bootstrap/scss/'
+                        dest: '<%= project.dev %>build/vendor/bootstrap/'
                     },
                     {
                         expand: true,
