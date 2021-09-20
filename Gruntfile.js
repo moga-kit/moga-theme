@@ -229,7 +229,7 @@ module.exports = function (grunt) {
             fonts: {
                 files: [
                     {
-                        expand: true,
+                        expand: false,
                         src: [
                             '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-500-normal.woff*',
                             '<%= project.dev %>/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-600-normal.woff*',

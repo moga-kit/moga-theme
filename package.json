@@ -10,8 +10,8 @@
   "devDependencies": {
     "@fontsource/barlow-condensed": "^4.5.0",
     "@fontsource/raleway": "^4.5.0",
-    "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.0.2",
+    "@popperjs/core": "^2.10.1",
+    "bootstrap": "^5.1.1",
     "dart-sass": "^1.25.0",
     "grunt": "^1.4.1",
     "grunt-combine-media-queries": "^1.0.20",
@@ -21,7 +21,7 @@
     "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-webfonts": "^4.0.0",
+    "grunt-webfonts": "^4.0.1",
     "grunt-sass": "^3.1.0",
     "jquery": "^3.6.0",
     "matchdep": "^2.0.0"

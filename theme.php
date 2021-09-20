@@ -4,7 +4,7 @@ $aTheme = array(
     'title' => 'moga',
     'description' => 'moga - Bootstrap 5 playground.',
     'thumbnail' => 'moga.png',
-    'version' => '1.0.0',
+    'version' => '1.1.0',
     'author' => '<a href="http://www.con-creat.de" title="con-creat">concepts and creations</a>',
     'settings' => array(
 //DISPLAY
