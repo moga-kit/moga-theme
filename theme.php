@@ -525,10 +525,28 @@ $aTheme = array(
         ),
         array(
             'group' => 'favicons',
+            'name' => 'sFaviconSvg',
+            'type' => 'str',
+            'value' => 'favicon.svg',
+        ),
+        array(
+            'group' => 'favicons',
             'name' => 'aOGImage',
             'type' => 'str',
             'value' => 'moga.png',
         ),
+        [
+            'group' => 'favicons',
+            'name'  => 'sSiteManifestFile',
+            'type'  => 'str',
+            'value' => '',
+        ],
+        [
+            'group' => 'favicons',
+            'name'  => 'sThemeColor',
+            'type'  => 'str',
+            'value' => '#ffffff',
+        ],
 
 //ANALYTICS
         array(

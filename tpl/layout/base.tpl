@@ -48,7 +48,7 @@
                 <meta property="og:image" content="[{$actCategory->getIconUrl()}]">
                 <meta property="og:url" content="[{$oView->getCanonicalUrl()}]">
             [{else}]
-                [{assign var="aOGImage"    value=$oViewConf->getViewThemeParam('aOGImage')}]
+                [{assign var="aOGImage" value=$oViewConf->getViewThemeParam('aOGImage')}]
                 <meta property="og:type" content="website">
                 <meta property="og:image" content="[{$oViewConf->getImageUrl($aOGImage)}]">
                 <meta property="og:url" content="[{$oViewConf->getCurrentHomeDir()}]">
@@ -86,25 +86,46 @@
 
         [{block name="head_link_favicon"}]
             [{assign var="aAppleTouchIcon" value=$oViewConf->getViewThemeParam('aAppleTouchIcon')}]
+            [{assign var="appleTouchIcon" value=$oViewConf->getImageUrl("favicons/`$aAppleTouchIcon`")}]
             [{if $aAppleTouchIcon}]
-                 <link rel="apple-touch-icon-precomposed" href="[{$oViewConf->getImageUrl("favicons/`$aAppleTouchIcon`")}]" />
-                 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="[{$oViewConf->getImageUrl("favicons/`$aAppleTouchIcon`")}]" />
-                 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="[{$oViewConf->getImageUrl("favicons/`$aAppleTouchIcon`")}]" />
+                [{assign var="appleTouchIcon72" value=$appleTouchIcon}]
+                [{assign var="appleTouchIcon144" value=$appleTouchIcon}]
+                [{if $oViewConf->isModuleActive('cnc/imagebutler')}]
+                    [{assign var="appleTouchIcon72" value=$oViewConf->getDynamicImage($appleTouchIcon, 72, 72)}]
+                    [{assign var="appleTouchIcon144" value=$oViewConf->getDynamicImage($appleTouchIcon, 144, 144)}]
+                [{/if}]
+                <link rel="apple-touch-icon-precomposed" href="[{$appleTouchIcon}]" />
+                <link rel="apple-touch-icon-precomposed" sizes="72x72" href="[{$appleTouchIcon72}]" />
+                <link rel="apple-touch-icon-precomposed" sizes="144x144" href="[{$appleTouchIcon144}]" />
             [{/if}]
 
             <!-- Shortcut Icons -->
             [{assign var="sFaviconFile"    value=$oViewConf->getViewThemeParam('sFaviconFile')}]
             [{assign var="sFavicon16File"  value=$oViewConf->getViewThemeParam('sFavicon16File')}]
             [{assign var="sFavicon32File"  value=$oViewConf->getViewThemeParam('sFavicon32File')}]
+            [{assign var="sFaviconSvg"        value=$oViewConf->getViewThemeParam('sFaviconSvg')}]
+            [{assign var="sSiteManifestFile"  value=$oViewConf->getViewThemeParam('sSiteManifestFile')}]
+            [{assign var="sThemeColor"        value=$oViewConf->getViewThemeParam('sThemeColor')}]
 
+            {*todo copy to root*}
             [{if $sFaviconFile}]
-                <link rel="shortcut icon" href="[{$oViewConf->getImageUrl("favicons/`$sFaviconFile`")}]?rand=1" type="image/x-icon" />
+                <link rel="icon" href="[{$oViewConf->getImageUrl("favicons/`$sFaviconFile`")}]" type="image/x-icon" />
             [{/if}]
             [{if $sFavicon16File}]
                 <link rel="icon" href="[{$oViewConf->getImageUrl("favicons/`$sFavicon16File`")}]" sizes="16x16" />
             [{/if}]
             [{if $sFavicon32File}]
                 <link rel="icon" href="[{$oViewConf->getImageUrl("favicons/`$sFavicon32File`")}]" sizes="32x32" />
+            [{/if}]
+            [{if $sFaviconSvg}]
+                <link rel="icon" href="[{$oViewConf->getImageUrl("favicons/`$sFaviconSvg`")}]" />
+                <link rel="mask-icon" color="[{$sThemeColor}]" href="[{$oViewConf->getImageUrl("favicons/`$sFaviconSvg`")}]">
+            [{/if}]
+            [{if $sSiteManifestFile}]
+                <link rel="manifest" href="[{$oViewConf->getImageUrl("favicons/`$sSiteManifestFile`")}]" />
+            [{/if}]
+            [{if $sThemeColor}]
+                <meta name="theme-color" content="[{$sThemeColor}]" />
             [{/if}]
         [{/block}]
 
