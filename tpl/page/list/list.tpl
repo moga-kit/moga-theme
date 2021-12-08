@@ -231,7 +231,7 @@
 
                                     <div class="sidebar-display ms-auto">
                                         [{block name="page_list_upperlocator"}]
-                                        [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=false listDisplayType=true sort=true}]
+                                            [{include file="widget/locator/listlocator.tpl" locator=$oView->getPageNavigationLimitedTop() attributes=false listDisplayType=true sort=true itemsPerPage=true}]
                                         [{/block}]
                                     </div>
                                 </div>

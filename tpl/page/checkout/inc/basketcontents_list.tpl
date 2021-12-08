@@ -293,7 +293,7 @@
                                         <img loading="lazy" src="[{$oViewConf->getDynamicImage($oCard->getPictureUrl(), 80, 100, '', false)}]" alt="[{$oCard->oxwrapping__oxname->value}]">
                                     </picture>
                                 [{else}]
-                                    <img loading="lazy" src="[{$card->getPictureUrl()}]" alt="[{$card->oxwrapping__oxname->value}]">
+                                    <img loading="lazy" src="[{$oCard->getPictureUrl()}]" alt="[{$card->oxwrapping__oxname->value}]">
                                 [{/if}]
                             </div>
                             <div class="col-md-7 col-lg-10">

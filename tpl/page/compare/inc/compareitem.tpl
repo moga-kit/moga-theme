@@ -6,11 +6,10 @@
         [{assign var='_productLink' value=$product->getLink()}]
     [{/if}]
 
-    <div class="row picture">
-        <div class="col-12">
-            <a href="[{$_productLink}]" [{if $oView->noIndex()}]rel="nofollow"[{/if}]>
-                <img src="[{if $size=='big'}][{$product->getPictureUrl(1)}][{elseif $size=='thinest'}][{$product->getIconUrl()}][{else}][{$product->getThumbnailUrl()}][{/if}]" alt="[{$product->oxarticles__oxtitle->value|strip_tags}] [{$product->oxarticles__oxvarselect->value|default:''}]" class="img-fluid">
-            </a>
+    <div class="card">
+        <div class="position-relative">
+            <img width="100%" height="300" src="[{if $size=='big'}][{$product->getPictureUrl(1)}][{elseif $size=='thinest'}][{$product->getIconUrl()}][{else}][{$product->getThumbnailUrl()}][{/if}]" alt="[{$product->oxarticles__oxtitle->value|strip_tags}] [{$product->oxarticles__oxvarselect->value|default:''}]" class="product-img">
+            <a class="stretched-link" href="[{$_productLink}]" [{if $oView->noIndex()}]rel="nofollow"[{/if}]></a>
         </div>
     </div>
 
@@ -125,7 +124,7 @@
                 [{if $blShowToBasket}]
                     [{oxhasrights ident="TOBASKET"}]
                         <div class="input-group">
-                            <input type="hidden" name="am">
+                            <input id="amountToBasket_[{$testid}]" type="text" name="am" value="1" autocomplete="off" class="form-control amount">
                             <button type="submit" class="btn btn-primary" title="[{oxmultilang ident="TO_CART"}]">
                                 <i class="moga-bag"></i>
                             </button>

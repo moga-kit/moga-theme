@@ -15,12 +15,5 @@
       "target-directory": "moga",
       "assets-directory": "out/moga"
     }
-  },
-  "require": {
-    "oxid-esales/oxideshop-ce": "^v6.2"
   }
 }
-
-
-
-

@@ -1,7 +1,7 @@
 [{assign var="_additionalParams" value=$oView->getAdditionalParams()}]
 [{assign var="listType" value=$oView->getListDisplayType()}]
 
-<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+<button type="button" class="btn btn-outline-primary btn-sm btn-icon dropdown-toggle" data-bs-toggle="dropdown">
     <strong>[{oxmultilang ident="PRODUCTS_PER_PAGE"}]</strong>
     [{if $oViewConf->getArtPerPageCount()}]
         [{$oViewConf->getArtPerPageCount()}]
