@@ -64,6 +64,8 @@ $table-variants: map-remove($table-variants, "success", "danger", "info", "dark"
 @import 'form/wishlist_publish';
 @import 'form/recommendation_add';
 
+@import 'message/err-404';
+
 @import 'page/details/details';
 @import 'page/checkout/order';
 @import 'page/compare/compare';
