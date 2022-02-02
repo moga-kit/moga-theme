@@ -64,6 +64,7 @@
 
 .modal.fade.modal-sidebar-right,
 .modal.fade.modal-sidebar-left {
+  z-index: 9999;
   .modal-dialog {
     margin: 0;
     position: absolute;

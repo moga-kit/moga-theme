@@ -128,7 +128,7 @@
 
                                                     [{*}]<a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]" class="btn btn-outline-primary float-left prevStep submitButton largeButton" id="paymentBackStepBottom"><i class="moga-left"></i> [{oxmultilang ident="PREVIOUS_STEP"}]</a>[{*}]
 
-                                                    <button type="submit" name="userform" class="btn btn-primary btn-lg w-100 mt-3">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
+                                                    <button type="submit" name="userform" class="btn btn-primary btn-lg w-100 mt-3" id="paymentNextStepBottom">[{oxmultilang ident="CONTINUE_TO_NEXT_STEP"}]</button>
 
                                                 [{/if}]
                                             [{/block}]

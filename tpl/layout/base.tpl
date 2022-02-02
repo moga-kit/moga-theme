@@ -51,7 +51,7 @@
                 [{assign var="aOGImage" value=$oViewConf->getViewThemeParam('aOGImage')}]
                 <meta property="og:type" content="website">
                 <meta property="og:image" content="[{$oViewConf->getImageUrl($aOGImage)}]">
-                <meta property="og:url" content="[{$oViewConf->getCurrentHomeDir()}]">
+                <meta property="og:url" content="[{$oView->getCanonicalUrl()}]">
             [{/if}]
         [{/block}]
 
@@ -107,7 +107,6 @@
             [{assign var="sSiteManifestFile"  value=$oViewConf->getViewThemeParam('sSiteManifestFile')}]
             [{assign var="sThemeColor"        value=$oViewConf->getViewThemeParam('sThemeColor')}]
 
-            {*todo copy to root*}
             [{if $sFaviconFile}]
                 <link rel="icon" href="[{$oViewConf->getImageUrl("favicons/`$sFaviconFile`")}]" type="image/x-icon" />
             [{/if}]
