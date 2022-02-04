@@ -7,8 +7,8 @@
     [{/if}]
 
     <div class="card">
-        <div class="position-relative">
-            <img width="100%" height="300" src="[{if $size=='big'}][{$product->getPictureUrl(1)}][{elseif $size=='thinest'}][{$product->getIconUrl()}][{else}][{$product->getThumbnailUrl()}][{/if}]" alt="[{$product->oxarticles__oxtitle->value|strip_tags}] [{$product->oxarticles__oxvarselect->value|default:''}]" class="product-img">
+        <div class="position-relative text-center">
+            <img height="300" src="[{if $size=='big'}][{$product->getPictureUrl(1)}][{elseif $size=='thinest'}][{$product->getIconUrl()}][{else}][{$product->getThumbnailUrl()}][{/if}]" alt="[{$product->oxarticles__oxtitle->value|strip_tags}] [{$product->oxarticles__oxvarselect->value|default:''}]" class="product-img">
             <a class="stretched-link" href="[{$_productLink}]" [{if $oView->noIndex()}]rel="nofollow"[{/if}]></a>
         </div>
     </div>
