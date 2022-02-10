@@ -41,18 +41,19 @@
         [{/if}]
 
         [{assign var="actCategory" value=$oView->getActiveCategory()}]
-        <div class="row details-pager d-none d-md-flex" id="detailsItemsPager">
+        <div class="row d-md-flex" id="detailsItemsPager">
             <div class="col-3 details-pager-overview">
-                <a href="[{$actCategory->toListLink}]" class="details-pager-link">
-                    <i class="moga-bars"></i> [{oxmultilang ident="BACK_TO_OVERVIEW"}]
+                <a href="[{$actCategory->toListLink}]" class="details-pager-link d-flex">
+                    <i class="moga-bars"></i>
+                    <span class="details-pager d-none">[{oxmultilang ident="BACK_TO_OVERVIEW"}]</span>
                 </a>
             </div>
             <div class="col-3 details-pager-prev">
                 [{if $actCategory->prevProductLink}]
-                <a id="linkPrevArticle" class="details-pager-link" href="[{$actCategory->prevProductLink}]">
-                    <i class="moga-left"></i>
-                    [{oxmultilang ident="PREVIOUS_PRODUCT"}]
-                </a>
+                    <a id="linkPrevArticle" class="details-pager-link d-flex" href="[{$actCategory->prevProductLink}]">
+                        <i class="moga-left"></i>
+                        <span class="details-pager d-none">[{oxmultilang ident="PREVIOUS_PRODUCT"}]</span>
+                    </a>
                 [{/if}]
             </div>
             <div class="col-3 text-center details-pager-current-page">
@@ -60,10 +61,11 @@
                     [{oxmultilang ident="PRODUCT"}] [{$actCategory->iProductPos}] [{oxmultilang ident="OF"}] [{$actCategory->iCntOfProd}]
                 [{/if}]
             </div>
-            <div class="col-3 text-end details-pager-next">
+            <div class="col-3 details-pager-next">
                 [{if $actCategory->nextProductLink}]
-                    <a id="linkNextArticle" class="details-pager-link" href="[{$actCategory->nextProductLink}]">
-                        [{oxmultilang ident="NEXT_PRODUCT"}] <i class="moga-right"></i>
+                    <a id="linkNextArticle" class="details-pager-link d-flex" href="[{$actCategory->nextProductLink}]" style="float: right">
+                        <span class="d-md-flex d-none nowrap">[{oxmultilang ident="NEXT_PRODUCT"}]</span>
+                        <i class="moga-right"></i>
                     </a>
                 [{/if}]
             </div>

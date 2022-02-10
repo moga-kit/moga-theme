@@ -60,7 +60,7 @@
                                 <img loading="lazy" src="[{$oViewConf->getDynamicImage($product->getThumbnailUrl(), 80, 80, '', true)}]" alt="[{$oBanner->oxactions__oxtitle->value}]" class="card-img">
                             </picture>
                             [{else}]
-                                <img loading="lazy" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="card-img">
+                                <img loading="lazy" width="100" height="100" src="[{$product->getThumbnailUrl()}]" alt="[{$product->oxarticles__oxtitle->value}] [{$product->oxarticles__oxvarselect->value}]" class="card-img">
                             [{/if}]
                         </a>
                     [{/block}]
@@ -168,43 +168,76 @@
                                             </div>
                                         </form>
                                     [{elseif $oViewConf->showSelectListsInList()}]
-                                    [{assign var="oSelections" value=$product->getSelections(1)}]
-                                    [{if $oSelections}]
-                                    <div id="selectlistsselector_[{$iIndex}]" class="selectorsBox">
-                                        [{foreach from=$oSelections item=oList name=selections}]
-                                        [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop" blHideLabel=true}]
-                                        [{/foreach}]
-                                    </div>
-                                    [{/if}]
+                                        [{assign var="oSelections" value=$product->getSelections(1)}]
+                                        [{if $oSelections}]
+                                            <div id="selectlistsselector_[{$iIndex}]" class="selectorsBox">
+                                                [{foreach from=$oSelections item=oList name=selections}]
+                                                    [{include file="widget/product/selectbox.tpl" oSelectionList=$oList sFieldName="sel" iKey=$smarty.foreach.selections.index blHideDefault=true sSelType="seldrop" blHideLabel=true}]
+                                                [{/foreach}]
+                                            </div>
+                                        [{/if}]
                                     [{/if}]
                                     [{/block}]
 
                                     [{block name="widget_product_listitem_line_tobasket"}]
-                                    [{if $blShowToBasket}]
-                                    [{oxhasrights ident="TOBASKET"}]
-                                    <div class="mb-3">
-                                        <div class="input-group">
-                                            <input id="amountToBasket_[{$testid}]" type="text" name="am" value="1" size="3" autocomplete="off" class="form-control amount">
-                                            <button id="toBasket_[{$testid}]" type="submit" aria-label="[{oxmultilang ident="TO_CART"}]" class="btn btn-primary" data-container="body">
-                                                <i class="moga-bag"></i>
-                                            </button>
-                                            [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
-                                            <button data-triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-light removeButton listRemoveButton">
-                                                <i class="moga-times"></i>
-                                            </button>
-                                            [{/if}]
-                                        </div>
-                                    </div>
-                                    [{/oxhasrights}]
-                                    [{else}]
-                                    <a class="btn btn-primary" href="[{$_productLink}]">[{oxmultilang ident="MORE_INFO"}]</a>
+                                        [{if $blShowToBasket}]
+                                            [{oxhasrights ident="TOBASKET"}]
+                                                <form name="tobasket[{$testid}]" [{if $blShowToBasket}]action="[{$oViewConf->getSelfActionLink()}]" method="post"[{else}]action="[{$_productLink}]" method="get"[{/if}]>
+                                                    <div class="hidden">
+                                                        [{$oViewConf->getNavFormParams()}]
+                                                        [{$oViewConf->getHiddenSid()}]
+                                                        <input type="hidden" name="pgNr" value="[{$oView->getActPage()}]">
+                                                        [{if $recommid}]
+                                                            <input type="hidden" name="recommid" value="[{$recommid}]">
+                                                        [{/if}]
+                                                        [{if $blShowToBasket}]
+                                                            [{oxhasrights ident="TOBASKET"}]
+                                                                <input type="hidden" name="cl" value="[{$oViewConf->getTopActiveClassName()}]">
+                                                                [{if $owishid}]
+                                                                    <input type="hidden" name="owishid" value="[{$owishid}]">
+                                                                [{/if}]
+                                                                [{if $toBasketFunction}]
+                                                                    <input type="hidden" name="fnc" value="[{$toBasketFunction}]">
+                                                                [{else}]
+                                                                    <input type="hidden" name="fnc" value="tobasket">
+                                                                [{/if}]
+                                                                <input type="hidden" name="aid" value="[{$product->oxarticles__oxid->value}]">
+                                                                [{if $altproduct}]
+                                                                    <input type="hidden" name="anid" value="[{$altproduct}]">
+                                                                [{else}]
+                                                                    <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                                                                [{/if}]
+                                                                <input type="hidden" name="am" value="1">
+                                                            [{/oxhasrights}]
+                                                        [{else}]
+                                                            <input type="hidden" name="cl" value="details">
+                                                            <input type="hidden" name="anid" value="[{$product->oxarticles__oxnid->value}]">
+                                                        [{/if}]
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <div class="input-group">
+                                                            <input id="amountToBasket_[{$testid}]" type="text" name="am" value="1" size="3" autocomplete="off" class="form-control amount">
+                                                            <button id="toBasket_[{$testid}]" type="submit" aria-label="[{oxmultilang ident="TO_CART"}]" class="btn btn-primary" data-container="body">
+                                                                <i class="moga-bag"></i>
+                                                            </button>
+                                                            [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
+                                                            <button data-triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-light removeButton listRemoveButton">
+                                                                <i class="moga-times"></i>
+                                                            </button>
+                                                            [{/if}]
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            [{/oxhasrights}]
+                                        [{else}]
+                                            <a class="btn btn-primary" href="[{$_productLink}]">[{oxmultilang ident="MORE_INFO"}]</a>
 
-                                    [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
-                                    <button triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger w-100 removeButton">
-                                        <i class="moga-times"></i> [{oxmultilang ident="REMOVE"}]
-                                    </button>
-                                    [{/if}]
-                                    [{/if}]
+                                            [{if $removeFunction && (($owishid && ($owishid==$oxcmp_user->oxuser__oxid->value)) || (($wishid==$oxcmp_user->oxuser__oxid->value)) || $recommid)}]
+                                                <button triggerForm="remove_[{$removeFunction}][{$testid}]" type="submit" class="btn btn-danger w-100 removeButton">
+                                                    <i class="moga-times"></i> [{oxmultilang ident="REMOVE"}]
+                                                </button>
+                                            [{/if}]
+                                        [{/if}]
                                     [{/block}]
                                 </div>
                             </div>
